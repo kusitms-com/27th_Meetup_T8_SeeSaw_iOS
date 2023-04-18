@@ -54,6 +54,10 @@
 		51BA2A5D29EA8C5500071264 /* SeeSaw */ = {
 			isa = PBXGroup;
 			children = (
+				51CECB7429EE56D0001C7832 /* Service */,
+				51CECB7529EE56D8001C7832 /* Model */,
+				51CECB7329EE56C4001C7832 /* Main */,
+				51CECB7629EE5708001C7832 /* Extensions */,
 				51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */,
 				51BA2A6029EA8C5500071264 /* ContentView.swift */,
 				51BA2A6229EA8C5600071264 /* Assets.xcassets */,
@@ -68,6 +72,34 @@
 				51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		51CECB7329EE56C4001C7832 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		51CECB7429EE56D0001C7832 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		51CECB7529EE56D8001C7832 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51CECB7629EE5708001C7832 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
