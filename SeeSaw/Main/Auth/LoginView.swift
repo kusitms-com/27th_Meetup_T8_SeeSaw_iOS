@@ -9,6 +9,8 @@ import AuthenticationServices
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject var kakaoAuthVM: KakaoAuthViewModel = KakaoAuthViewModel()
+    
     var body: some View {
         VStack {
             VStack {
@@ -36,7 +38,7 @@ struct LoginView: View {
             VStack {
                 Text("Kakao Login")
                 Button {
-                    
+                    kakaoAuthVM.handleKakaoLogin()
                 } label: {
                     Image("KakaoLoginWideButton")
                         .resizable()
@@ -44,7 +46,7 @@ struct LoginView: View {
                         .frame(width: 280)
                 }
                 Button {
-                    // logout
+                    kakaoAuthVM.handleKakaoLogout()
                 } label: {
                     Text("카카오 로그아웃")
                         .frame(width: 280, height: 40)
