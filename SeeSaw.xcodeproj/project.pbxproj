@@ -21,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		5175EAC829F277040092FE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5175EACA29F27B490092FE9D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
 		51BA2A6029EA8C5500071264 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 				51BA2A6229EA8C5600071264 /* Assets.xcassets */,
 				51F878E029F26D600077A6C7 /* SeeSaw.entitlements */,
 				51BA2A6429EA8C5600071264 /* Preview Content */,
+				5175EACA29F27B490092FE9D /* Config.xcconfig */,
 			);
 			path = SeeSaw;
 			sourceTree = "<group>";
