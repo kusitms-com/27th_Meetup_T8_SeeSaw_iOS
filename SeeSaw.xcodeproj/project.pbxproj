@@ -12,6 +12,10 @@
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
 		51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */; };
 		51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */; };
+		51F878D429F268110077A6C7 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D329F268110077A6C7 /* Main.swift */; };
+		51F878D729F268220077A6C7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D629F268220077A6C7 /* Model.swift */; };
+		51F878DA29F268340077A6C7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D929F268340077A6C7 /* Service.swift */; };
+		51F878DC29F2689C0077A6C7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 51F878DB29F2689C0077A6C7 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +25,10 @@
 		51BA2A6229EA8C5600071264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		51F878D329F268110077A6C7 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		51F878D629F268220077A6C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		51F878D929F268340077A6C7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		51F878DB29F2689C0077A6C7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 		51BA2A5229EA8C5400071264 = {
 			isa = PBXGroup;
 			children = (
+				51F878DB29F2689C0077A6C7 /* .gitignore */,
 				51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */,
 				51BA2A5D29EA8C5500071264 /* SeeSaw */,
 				51BA2A5C29EA8C5500071264 /* Products */,
@@ -54,9 +63,9 @@
 		51BA2A5D29EA8C5500071264 /* SeeSaw */ = {
 			isa = PBXGroup;
 			children = (
-				51CECB7429EE56D0001C7832 /* Service */,
-				51CECB7529EE56D8001C7832 /* Model */,
-				51CECB7329EE56C4001C7832 /* Main */,
+				51F878D829F268250077A6C7 /* Service */,
+				51F878D529F268170077A6C7 /* Model */,
+				51F878D229F268030077A6C7 /* Main */,
 				51CECB7629EE5708001C7832 /* Extensions */,
 				51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */,
 				51BA2A6029EA8C5500071264 /* ContentView.swift */,
@@ -74,32 +83,35 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		51CECB7329EE56C4001C7832 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		51CECB7429EE56D0001C7832 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		51CECB7529EE56D8001C7832 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		51CECB7629EE5708001C7832 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		51F878D229F268030077A6C7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				51F878D329F268110077A6C7 /* Main.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		51F878D529F268170077A6C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				51F878D629F268220077A6C7 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		51F878D829F268250077A6C7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				51F878D929F268340077A6C7 /* Service.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F878DC29F2689C0077A6C7 /* .gitignore in Resources */,
 				51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */,
 				51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */,
 				51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */,
@@ -196,8 +209,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F878D429F268110077A6C7 /* Main.swift in Sources */,
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
+				51F878DA29F268340077A6C7 /* Service.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
+				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
