@@ -12,7 +12,6 @@
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
 		51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */; };
 		51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */; };
-		51F878D429F268110077A6C7 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D329F268110077A6C7 /* Main.swift */; };
 		51F878D729F268220077A6C7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D629F268220077A6C7 /* Model.swift */; };
 		51F878DA29F268340077A6C7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D929F268340077A6C7 /* Service.swift */; };
 		51F878DC29F2689C0077A6C7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 51F878DB29F2689C0077A6C7 /* .gitignore */; };
@@ -26,7 +25,6 @@
 		51BA2A6229EA8C5600071264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		51F878D329F268110077A6C7 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		51F878D629F268220077A6C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		51F878D929F268340077A6C7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		51F878DB29F2689C0077A6C7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				51F878DD29F269E80077A6C7 /* Auth */,
-				51F878D329F268110077A6C7 /* Main.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				51F878DF29F269FE0077A6C7 /* LoginView.swift in Sources */,
-				51F878D429F268110077A6C7 /* Main.swift in Sources */,
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
 				51F878DA29F268340077A6C7 /* Service.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
