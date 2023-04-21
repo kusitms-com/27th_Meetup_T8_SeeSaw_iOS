@@ -19,27 +19,13 @@ struct SeeSawApp: App {
     
     var body: some Scene {
         WindowGroup {
+            // onOpenURL을 사용해 커스텀 URL 스킴 처리
             ContentView()
+                .onOpenURL { url in
+                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                        AuthController.handleOpenUrl(url: url)
+                    }
+                }
         }
     }
 }
-
-
-/*
- import SwiftUI
- import KakaoSDKCommon
- import KakaoSDKAuth
- ...
-
- @main
- struct SwiftUI_testApp: App {
-
-     ...
-     init() {
-         // Kakao SDK 초기화
-         KakaoSDK.initSDK(appKey: "NATIVE_APP_KEY")
-     }
-     ...
-
- }
- */
