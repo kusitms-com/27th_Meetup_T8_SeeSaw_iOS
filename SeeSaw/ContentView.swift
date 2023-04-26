@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var kakaoAuthVM: KakaoAuthViewModel
+    
     var body: some View {
-        LoginView()
+        if kakaoAuthVM.isLoggedIn ?? false {
+            SeeSawTabView()
+        } else {
+            LoginView()
+        }
     }
 }
 
