@@ -10,32 +10,45 @@ import Foundation
 import KakaoSDKUser
 
 class KakaoAuthViewModel: ObservableObject {
+    @Published var isLoggedIn: Bool?
+    
+    init(isLoggedIn: Bool) {
+        self.isLoggedIn = false
+    }
+    
     func handleKakaoLogin() {
-        // 카카오톡 앱 실행 가능 여부 파악
         if (UserApi.isKakaoTalkLoginAvailable()) {
-            // 카카오톡 앱 실행 가능 O
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    print("loginWithKakaoTalk() success.")
-
-                    // do something
-                    _ = oauthToken
-                }
-            }
+            loginWithKakaoTalkApp()
         } else {
-            // 카카오톡 앱 실행 불가능 X 웹뷰로 로그인
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                    if let error = error {
-                        print(error)
-                    } else {
-                        print("loginWithKakaoAccount() success.")
+            loginWithKakaoTallWebView()
+        }
+    }
+    
+    func loginWithKakaoTalkApp() {
+        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            } else {
+                print("loginWithKakaoTalk() success.")
 
-                        // do something
-                        _ = oauthToken
-                    }
-                }
+                // do something
+                _ = oauthToken
+            }
+            self.isLoggedIn = true
+        }
+    }
+    
+    func loginWithKakaoTallWebView() {
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            } else {
+                print("loginWithKakaoAccount() success.")
+
+                // do something
+                _ = oauthToken
+            }
+            self.isLoggedIn = true
         }
     }
     
@@ -46,6 +59,7 @@ class KakaoAuthViewModel: ObservableObject {
             } else {
                 print("logout() success.")
             }
+            self.isLoggedIn = false
         }
     }
 }

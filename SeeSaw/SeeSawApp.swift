@@ -17,6 +17,8 @@ struct SeeSawApp: App {
         KakaoSDK.initSDK(appKey: kakaoNativeAppKey as! String)
     }
     
+    @StateObject var kakaoAuthVM = KakaoAuthViewModel(isLoggedIn: false)
+    
     var body: some Scene {
         WindowGroup {
             // onOpenURL을 사용해 커스텀 URL 스킴 처리
@@ -26,6 +28,7 @@ struct SeeSawApp: App {
                         AuthController.handleOpenUrl(url: url)
                     }
                 }
+                .environmentObject(kakaoAuthVM)
         }
     }
 }
