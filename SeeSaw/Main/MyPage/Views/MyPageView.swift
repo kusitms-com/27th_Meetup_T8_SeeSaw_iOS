@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MyPageView: View {
+    @State private var nickname = "에몽"
     @State private var showChangeNicknameView = false
     
     var body: some View {
@@ -15,42 +16,16 @@ struct MyPageView: View {
             ZStack {
                 VStack(spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
-                        Rectangle()
-                            .frame(width: 100, height: 4)
-                            .foregroundColor(.SeeSawGreen)
-                            .padding(.top, 40)
-                            .padding(.bottom, 16)
-                        HStack {
-                            Text("에몽")
-                                .font(.ssHeading1)
-                                .foregroundColor(Color.GrayBlack)
-                            Text("님")
-                                .font(.ssHeading1)
-                                .foregroundColor(Color.Gray600)
-                            
-                            Button {
-                                showChangeNicknameView = true
-                            } label: {
-                                ZStack {
-                                    Circle()
-                                        .frame(width: 32, height: 32)
-                                        .foregroundColor(Color.Gray300)
-                                    Image(systemName: "pencil.line")
-                                        .frame(width: 16, height: 16)
-                                        .foregroundColor(Color.Gray500)
-                                }
-                            }
-                            
-                            Spacer()
-                        }
+                        greenRectangle
+                        userNicknameRow
                     }
                     .padding(.bottom, 56)
                     
-                    MyPageTwoRow(topTitle: "알림", bottomTitle: "공지사항")
+                    MyPageTwoRow(topTitle: "알림", bottomTitle: "공지사항", isChevronExist: true)
                     
-                    MyPageTwoRow(topTitle: "개인정보 정책", bottomTitle: "문의하기")
+                    MyPageTwoRow(topTitle: "개인정보 정책", bottomTitle: "문의하기", isChevronExist: true)
                     
-                    MyPageTwoRow(topTitle: "로그아웃", bottomTitle: "회원탈퇴")
+                    MyPageTwoRow(topTitle: "로그아웃", bottomTitle: "회원탈퇴", isChevronExist: false)
                     
                     Spacer()
                 }
@@ -63,18 +38,57 @@ struct MyPageView: View {
             }
         }
     }
+    
+    var greenRectangle: some View {
+        Rectangle()
+            .frame(width: 100, height: 4)
+            .foregroundColor(.SeeSawGreen)
+            .padding(.top, 40)
+            .padding(.bottom, 16)
+    }
+    
+    var changeNicknameButton: some View {
+        ZStack {
+            Circle()
+                .frame(width: 28, height: 28)
+                .foregroundColor(Color.Gray300)
+            Image(systemName: "pencil.line")
+                .frame(width: 16, height: 16)
+                .foregroundColor(Color.Gray500)
+        }
+    }
+    
+    var userNicknameRow: some View {
+        HStack {
+            Text(nickname)
+                .font(.ssHeading1)
+                .foregroundColor(Color.GrayBlack)
+            Text("님")
+                .font(.ssHeading1)
+                .foregroundColor(Color.Gray600)
+            
+            Button {
+                showChangeNicknameView = true
+            } label: {
+                changeNicknameButton
+            }
+            
+            Spacer()
+        }
+    }
 }
 
 struct MyPageTwoRow: View {
     let topTitle: String
     let bottomTitle: String
+    let isChevronExist: Bool
     
     var body: some View {
         VStack(spacing: 0) {
             NavigationLink {
                 
             } label: {
-                MypageRow(isRowTop: true, title: topTitle)
+                MypageRow(isRowTop: true, title: topTitle, isChevronExist: isChevronExist)
             }
             
             Divider()
@@ -82,7 +96,7 @@ struct MyPageTwoRow: View {
             NavigationLink {
                 
             } label: {
-                MypageRow(isRowTop: false, title: bottomTitle)
+                MypageRow(isRowTop: false, title: bottomTitle, isChevronExist: isChevronExist)
             }
         }
         .padding(.bottom, 16)
@@ -93,6 +107,7 @@ struct MypageRow: View {
     // .top, .bottom enum으로 만들기
     let isRowTop: Bool
     let title: String
+    let isChevronExist: Bool
     
     var body: some View {
         ZStack {
@@ -105,7 +120,7 @@ struct MypageRow: View {
             HStack {
                 Text(title)
                 Spacer()
-                Image(systemName: "chevron.right")
+                if isChevronExist { Image(systemName: "chevron.right") }
             }
             .font(.ssBlackBody2)
             .foregroundColor(.black)
@@ -114,22 +129,7 @@ struct MypageRow: View {
     }
 }
 
-extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape( RoundedCorner(radius: radius, corners: corners) )
-    }
-}
 
-struct RoundedCorner: Shape {
-
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
 
 /*
 struct MyPageView: View {
