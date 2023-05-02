@@ -8,51 +8,59 @@
 import SwiftUI
 
 struct MyPageView: View {
+    @State private var showChangeNicknameView = false
+    
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                VStack(alignment: .leading, spacing: 0) {
-                    Rectangle()
-                        .frame(width: 100, height: 8)
-                        .foregroundColor(.SeeSawGreen)
-                        .padding(.top, 40)
-                        .padding(.bottom, 16)
-                    HStack {
-                        Text("에몽")
-                            .font(.ssHeading1)
-                            .foregroundColor(Color.GrayBlack)
-                        Text("님")
-                            .font(.ssHeading1)
-                            .foregroundColor(Color.Gray600)
-                        
-                        Button {
+            ZStack {
+                VStack(spacing: 0) {
+                    VStack(alignment: .leading, spacing: 0) {
+                        Rectangle()
+                            .frame(width: 100, height: 4)
+                            .foregroundColor(.SeeSawGreen)
+                            .padding(.top, 40)
+                            .padding(.bottom, 16)
+                        HStack {
+                            Text("에몽")
+                                .font(.ssHeading1)
+                                .foregroundColor(Color.GrayBlack)
+                            Text("님")
+                                .font(.ssHeading1)
+                                .foregroundColor(Color.Gray600)
                             
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 32, height: 32)
-                                    .foregroundColor(Color.Gray300)
-                                Image(systemName: "pencil.line")
-                                    .frame(width: 16, height: 16)
-                                    .foregroundColor(Color.Gray500)
+                            Button {
+                                showChangeNicknameView = true
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .frame(width: 32, height: 32)
+                                        .foregroundColor(Color.Gray300)
+                                    Image(systemName: "pencil.line")
+                                        .frame(width: 16, height: 16)
+                                        .foregroundColor(Color.Gray500)
+                                }
                             }
+                            
+                            Spacer()
                         }
-                        
-                        Spacer()
                     }
+                    .padding(.bottom, 56)
+                    
+                    MyPageTwoRow(topTitle: "알림", bottomTitle: "공지사항")
+                    
+                    MyPageTwoRow(topTitle: "개인정보 정책", bottomTitle: "문의하기")
+                    
+                    MyPageTwoRow(topTitle: "로그아웃", bottomTitle: "회원탈퇴")
+                    
+                    Spacer()
                 }
-                .padding(.bottom, 56)
+                .padding(.horizontal, 20)
+                .background(Color.Gray200)
                 
-                MyPageTwoRow(topTitle: "알림", bottomTitle: "공지사항")
-                
-                MyPageTwoRow(topTitle: "개인정보 정책", bottomTitle: "문의하기")
-                
-                MyPageTwoRow(topTitle: "로그아웃", bottomTitle: "회원탈퇴")
-                
-                Spacer()
+                if $showChangeNicknameView.wrappedValue {
+                    ChangeNicknameView(showChangeNicknameView: self.$showChangeNicknameView)
+                }
             }
-            .padding(.horizontal, 20)
-            .background(Color.Gray200)
         }
     }
 }
