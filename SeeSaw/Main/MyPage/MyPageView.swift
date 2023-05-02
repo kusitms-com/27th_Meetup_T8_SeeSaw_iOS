@@ -8,6 +8,123 @@
 import SwiftUI
 
 struct MyPageView: View {
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Rectangle()
+                        .frame(width: 100, height: 8)
+                        .foregroundColor(.SeeSawGreen)
+                        .padding(.top, 40)
+                        .padding(.bottom, 16)
+                    HStack {
+                        Text("에몽")
+                            .font(.ssHeading1)
+                            .foregroundColor(Color.GrayBlack)
+                        Text("님")
+                            .font(.ssHeading1)
+                            .foregroundColor(Color.Gray600)
+                        
+                        Button {
+                            
+                        } label: {
+                            ZStack {
+                                Circle()
+                                    .frame(width: 32, height: 32)
+                                    .foregroundColor(Color.Gray300)
+                                Image(systemName: "pencil.line")
+                                    .frame(width: 16, height: 16)
+                                    .foregroundColor(Color.Gray500)
+                            }
+                        }
+                        
+                        Spacer()
+                    }
+                }
+                .padding(.bottom, 56)
+                
+                MyPageTwoRow(topTitle: "알림", bottomTitle: "공지사항")
+                
+                MyPageTwoRow(topTitle: "개인정보 정책", bottomTitle: "문의하기")
+                
+                MyPageTwoRow(topTitle: "로그아웃", bottomTitle: "회원탈퇴")
+                
+                Spacer()
+            }
+            .padding(.horizontal, 20)
+            .background(Color.Gray200)
+        }
+    }
+}
+
+struct MyPageTwoRow: View {
+    let topTitle: String
+    let bottomTitle: String
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            NavigationLink {
+                
+            } label: {
+                MypageRow(isRowTop: true, title: topTitle)
+            }
+            
+            Divider()
+            
+            NavigationLink {
+                
+            } label: {
+                MypageRow(isRowTop: false, title: bottomTitle)
+            }
+        }
+        .padding(.bottom, 16)
+    }
+}
+
+struct MypageRow: View {
+    // .top, .bottom enum으로 만들기
+    let isRowTop: Bool
+    let title: String
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .frame(height: 40)
+                .cornerRadius(10, corners: isRowTop ? [.topLeft, .topRight] : [.bottomLeft, .bottomRight])
+                .foregroundColor(Color.Gray100)
+                .padding(0)
+            
+            HStack {
+                Text(title)
+                Spacer()
+                Image(systemName: "chevron.right")
+            }
+            .font(.ssBlackBody2)
+            .foregroundColor(.black)
+            .padding(.horizontal, 10)
+        }
+    }
+}
+
+extension View {
+    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
+        clipShape( RoundedCorner(radius: radius, corners: corners) )
+    }
+}
+
+struct RoundedCorner: Shape {
+
+    var radius: CGFloat = .infinity
+    var corners: UIRectCorner = .allCorners
+
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        return Path(path.cgPath)
+    }
+}
+
+/*
+struct MyPageView: View {
     @EnvironmentObject var kakaoAuthVM: KakaoAuthViewModel
     
     var body: some View {
@@ -31,6 +148,7 @@ struct MyPageView: View {
         }
     }
 }
+ */
 
 struct MyPageView_Previews: PreviewProvider {
     static var previews: some View {
