@@ -15,7 +15,6 @@ struct MyPageView: View {
             VStack(alignment: .leading) {
                 Text("이름: 이안진")
                 Text("닉네임: 이오")
-                    .font(<#T##font: Font?##Font?#>)
                 Text("로그인 상태: \(kakaoAuthVM.isLoggedIn! ? "로그인" : "로그아웃")")
                 Button {
                     kakaoAuthVM.handleKakaoLogout()
