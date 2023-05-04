@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPageView: View {
     @State private var nickname = "에몽"
     @State private var showChangeNicknameView = false
+    @State private var showLogoutView = false
     
     var body: some View {
         NavigationView {
@@ -25,7 +26,11 @@ struct MyPageView: View {
                     
                     MyPageTwoRow(topTitle: "개인정보 정책", bottomTitle: "문의하기", isChevronExist: true)
                     
-                    MyPageTwoRow(topTitle: "로그아웃", bottomTitle: "회원탈퇴", isChevronExist: false)
+                    Button {
+                        showLogoutView = true
+                    } label: {
+                        MypageRow(isRowTop: true, title: "로그아웃", isChevronExist: false)
+                    }
                     
                     Spacer()
                 }
@@ -34,6 +39,10 @@ struct MyPageView: View {
                 
                 if $showChangeNicknameView.wrappedValue {
                     ChangeNicknameView(showChangeNicknameView: self.$showChangeNicknameView)
+                }
+                
+                if $showLogoutView.wrappedValue {
+                    LogoutView(showLogoutView: self.$showLogoutView)
                 }
             }
         }
@@ -128,8 +137,6 @@ struct MypageRow: View {
         }
     }
 }
-
-
 
 /*
 struct MyPageView: View {

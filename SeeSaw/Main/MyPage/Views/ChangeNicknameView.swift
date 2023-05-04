@@ -18,6 +18,7 @@ struct ChangeNicknameView: View {
     var body: some View {
         VStack {
             title
+            Divider()
             
             Spacer()
             
@@ -27,7 +28,8 @@ struct ChangeNicknameView: View {
             Spacer()
             
             Button {
-                
+                // TODO: 닉네임 저장
+                showChangeNicknameView = false
             } label: {
                 CapsuleButtonView(isActive: !nickname.isEmpty, text: "저장하기", size: .large)
                     .padding(8)

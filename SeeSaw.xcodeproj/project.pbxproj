@@ -18,6 +18,7 @@
 		5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 5175EAC629F274E70092FE9D /* KakaoSDK */; };
 		5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */; };
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
+		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9ECB42A00DD71000E6784 /* ColorExtension.swift */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
@@ -43,6 +44,7 @@
 		5175EACA29F27B490092FE9D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
 		51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
+		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		51A9ECB42A00DD71000E6784 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				5121894629F95667005DD6C2 /* MyPageView.swift */,
 				515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */,
+				51810DAC2A03684500AF3289 /* LogoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				51F878DA29F268340077A6C7 /* Service.swift in Sources */,
 				5121894B29F95676005DD6C2 /* EnergyView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
+				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
