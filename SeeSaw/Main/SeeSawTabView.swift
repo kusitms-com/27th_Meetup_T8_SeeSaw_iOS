@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct SeeSawTabView: View {
+    
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+    }
+    
     var body: some View {
         TabView {
             ValueView()
@@ -15,14 +20,14 @@ struct SeeSawTabView: View {
                     TabItem(imageName: "heart", title: "가치 설계")
                 }
             
-            EnergyView()
-                .tabItem {
-                    TabItem(imageName: "battery.100", title: "에너지")
-                }
-            
             ProjectView()
                 .tabItem {
                     TabItem(imageName: "book.closed.fill", title: "프로젝트")
+                }
+            
+            EnergyView()
+                .tabItem {
+                    TabItem(imageName: "battery.100", title: "에너지")
                 }
             
             MyPageView()
