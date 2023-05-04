@@ -14,6 +14,9 @@ extension Color {
     static let SeeSawYellow = Color("SeeSawYellow")
     static let SeeSawRed = Color("SeeSawRed")
     static let SeeSawGray = Color("SeeSawGray")
+    static let SeeSawDarkYellow = Color("SeeSawDarkYellow")
+    static let SeeSawDarkBlue = Color("SeeSawDarkBlue")
+    static let SeeSawDarkRed = Color("SeeSawDarkRed")
 }
 
 extension Color {
