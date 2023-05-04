@@ -14,25 +14,28 @@ struct ValueButtonView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .cornerRadius(24, corners: .bottomRight)
-                .cornerRadius(24, corners: .topRight)
-                .frame(width: 240, height: 68)
+                .cornerRadius(27, corners: .bottomRight)
+                .cornerRadius(27, corners: .topRight)
+                .frame(width: 184, height: 54)
                 .foregroundColor(valueColor)
-            HStack{
-                Button {
+                .onTapGesture {
                     self.showModal = true
-                } label: {
-                    Text(valueTitle)
-                        .font(.title)
-                        .bold()
                 }
+            HStack {
+                Text(valueTitle)
+                    .font(.ssHeading1)
+                    .font(.system(size: 32))
+                    .foregroundColor(.Gray100)
                 .foregroundColor(.white)
-                .sheet(isPresented: self.$showModal){
+                .sheet(isPresented: self.$showModal) {
                     ValueModalView(valueTitle: self.valueTitle, valueColor: self.valueColor)
                 }
                 Spacer()
-                    .frame(width: 130)
+                    .frame(width: 85)
                 Image(systemName: "arrow.up.right")
+                    .foregroundColor(.Gray900)
+                Spacer()
+                    .frame(width: 5)
             }
         }
     }
@@ -40,6 +43,6 @@ struct ValueButtonView: View {
 
 struct ValueButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ValueButtonView(valueTitle: "도전", valueColor: .red)
+        ValueButtonView(valueTitle: "도전", valueColor: .SeeSawRed)
     }
 }
