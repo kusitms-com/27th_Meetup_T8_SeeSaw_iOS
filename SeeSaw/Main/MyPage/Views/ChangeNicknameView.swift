@@ -17,72 +17,73 @@ struct ChangeNicknameView: View {
 
     var body: some View {
         VStack {
-            ZStack {
-                HStack {
-                    Spacer()
-                    Button {
-                        self.showChangeNicknameView = false
-                    } label: {
-                        Image(systemName: "xmark")
-                            .foregroundColor(Color.Gray500)
-                            .frame(width: 16, height: 16)
-                    }
-                }
-                Text("닉네임 변경")
-                    .font(.ssBlackTitle2)
-                    .foregroundColor(Color.Gray500)
-            }
+            title
             
             Spacer()
             
-            VStack {
-                ZStack(alignment: .trailing) {
-                    TextField("", text: $nickname)
-                        .textInputAutocapitalization(.never)
-                        .font(.ssHeading2)
-                        .focused($focusField, equals: .nickname)
-                        .onAppear {
-                            UITextField.appearance().clearButtonMode = .whileEditing
-                        }
-                }
-                Rectangle()
-                    .frame(height: 1)
-                    .foregroundColor(nickname.isEmpty ? Color.SeeSawRed : Color.Gray300)
-                HStack {
-                    if nickname.isEmpty {
-                        Text("닉네임을 입력해주세요")
-                            .font(.ssBlackCaption)
-                            .foregroundColor(Color.SeeSawRed)
-                    }
-                    Spacer()
-                    Text("(\(nickname.count)/10)")
-                        .font(.ssBlackBody3)
-                        .foregroundColor(Color.Gray600)
-                }
-            }
-            .padding(24)
+            textField
             
             Spacer()
             Spacer()
+            
             Button {
                 
             } label: {
-                HStack {
-                    Spacer()
-                    Text("저장하기")
-                    Spacer()
+                CapsuleButtonView(isActive: !nickname.isEmpty, text: "저장하기", size: .large)
+                    .padding(8)
+            }
+            .disabled(nickname.isEmpty)
+        }
+        .padding(24)
+        .frame(width: 360, height: 324)
+        .background(Color.Gray100)
+        .cornerRadius(20).shadow(radius: 20)
+    }
+    
+    var title: some View {
+        ZStack {
+            HStack {
+                Spacer()
+                Button {
+                    self.showChangeNicknameView = false
+                } label: {
+                    Image(systemName: "xmark")
+                        .foregroundColor(Color.Gray500)
+                        .frame(width: 16, height: 16)
                 }
-                .font(.ssWhiteTitle2)
-                .foregroundColor(.Gray100)
-                .frame(height: 42)
-                .background(nickname.isEmpty ? Color.Gray400 : Color.Gray900)
-                .clipShape(Capsule())
-                .padding(8)
+            }
+            Text("닉네임 변경")
+                .font(.ssBlackTitle2)
+                .foregroundColor(Color.Gray500)
+        }
+    }
+    
+    var textField: some View {
+        VStack {
+            ZStack(alignment: .trailing) {
+                TextField("", text: $nickname)
+                    .textInputAutocapitalization(.never)
+                    .font(.ssHeading2)
+                    .focused($focusField, equals: .nickname)
+                    .onAppear {
+                        UITextField.appearance().clearButtonMode = .whileEditing
+                    }
+            }
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(nickname.isEmpty ? Color.SeeSawRed : Color.Gray300)
+            HStack {
+                if nickname.isEmpty {
+                    Text("닉네임을 입력해주세요")
+                        .font(.ssBlackBody4)
+                        .foregroundColor(Color.SeeSawRed)
+                }
+                Spacer()
+                Text("(\(nickname.count)/10)")
+                    .font(.ssBlackBody3)
+                    .foregroundColor(Color.Gray600)
             }
         }
         .padding(24)
-        .frame(width: 360, height: 440)
-        .background(Color.Gray100)
-        .cornerRadius(20).shadow(radius: 20)
     }
 }
