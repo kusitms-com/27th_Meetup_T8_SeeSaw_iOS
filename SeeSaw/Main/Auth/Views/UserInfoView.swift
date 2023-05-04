@@ -9,7 +9,12 @@ import SwiftUI
 
 struct UserInfoView: View {
     @State private var progress = 0.99
-    var isAllInfoWrited: Bool = true
+    @State var email: String = ""
+    @State var nickname: String = ""
+//    @FocusState private var focusField: Field?
+    var isAllInfoWrited: Bool {
+        return !email.isEmpty && !nickname.isEmpty
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -27,8 +32,40 @@ struct UserInfoView: View {
             Divider()
                 .padding(.bottom, 24)
             
-            Text("이메일")
-            Text("닉네임")
+            VStack(alignment: .leading, spacing: 0) {
+                Text("이메일")
+                    .font(.ssWhiteSubTitle)
+                
+                ZStack(alignment: .trailing) {
+                    TextField("이메일을 입력해주세요", text: $email)
+                        .font(.ssBlackBody1)
+                        .padding(.vertical, 8)
+                        .textInputAutocapitalization(.never)
+                        .keyboardType(.emailAddress)
+                    Image(systemName: "checkmark")
+                        .foregroundColor(email.isEmpty ? .Gray400 : .SeeSawGreen)
+                }
+                
+                Divider()
+            }
+            .padding(.bottom, 40)
+            
+            VStack(alignment: .leading, spacing: 0) {
+                Text("닉네임")
+                    .font(.ssWhiteSubTitle)
+                
+                ZStack(alignment: .trailing) {
+                    TextField("닉네임을 10글자 내로 입력해주세요", text: $nickname)
+                        .font(.ssBlackBody1)
+                        .padding(.vertical, 8)
+                        .textInputAutocapitalization(.never)
+                        .keyboardType(.emailAddress)
+                    Image(systemName: "checkmark")
+                        .foregroundColor(nickname.isEmpty ? .Gray400 : .SeeSawGreen)
+                }
+                
+                Divider()
+            }
             
             Spacer()
             
