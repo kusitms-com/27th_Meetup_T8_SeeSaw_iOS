@@ -31,6 +31,8 @@
 		51F878DA29F268340077A6C7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D929F268340077A6C7 /* Service.swift */; };
 		51F878DC29F2689C0077A6C7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 51F878DB29F2689C0077A6C7 /* .gitignore */; };
 		51F878DF29F269FE0077A6C7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878DE29F269FE0077A6C7 /* LoginView.swift */; };
+		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
+		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		51F878DB29F2689C0077A6C7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		51F878DE29F269FE0077A6C7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		51F878E029F26D600077A6C7 /* SeeSaw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeeSaw.entitlements; sourceTree = "<group>"; };
+		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
+		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 		5121894029F95622005DD6C2 /* Value */ = {
 			isa = PBXGroup;
 			children = (
+				BECC93712A03D8950099BA79 /* ValueButtonView.swift */,
+				BECC936F2A03D8900099BA79 /* ValueModalView.swift */,
 				5121894C29F9567D005DD6C2 /* ValueView.swift */,
 			);
 			path = Value;
@@ -333,6 +339,7 @@
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
+				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
 				51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
@@ -340,6 +347,7 @@
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
+				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
