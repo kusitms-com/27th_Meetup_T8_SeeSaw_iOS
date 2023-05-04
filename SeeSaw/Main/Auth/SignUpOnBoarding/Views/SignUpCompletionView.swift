@@ -22,7 +22,16 @@ struct SignUpCompletionView: View {
             Button {
                 
             } label: {
-                CapsuleButtonView(isActive: true, text: "시작하기", size: .large)
+                HStack {
+                    Spacer()
+                    Text("시작하기")
+                    Spacer()
+                }
+                .font(.ssWhiteBody1)
+                .foregroundColor(.Gray100)
+                .frame(height: 44)
+                .background(Color.SeeSawGreen)
+                .clipShape(Capsule())
             }
         }
         .padding(20)

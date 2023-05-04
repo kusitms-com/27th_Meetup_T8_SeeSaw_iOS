@@ -16,6 +16,7 @@
 		514852F52A03A61100351A9D /* AgreeTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F42A03A61100351A9D /* AgreeTermsView.swift */; };
 		514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F62A03ADF400351A9D /* UserInfoView.swift */; };
 		514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */; };
+		514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514853002A04002E00351A9D /* ExplainValuesView.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
 		515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */; };
 		515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263F2A015957006C3FE5 /* RoundedCorner.swift */; };
@@ -47,6 +48,7 @@
 		514852F42A03A61100351A9D /* AgreeTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeTermsView.swift; sourceTree = "<group>"; };
 		514852F62A03ADF400351A9D /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletionView.swift; sourceTree = "<group>"; };
+		514853002A04002E00351A9D /* ExplainValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainValuesView.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameView.swift; sourceTree = "<group>"; };
 		515E263F2A015957006C3FE5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
@@ -115,14 +117,54 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
-		514852F32A03A5B200351A9D /* Views */ = {
+		514852FA2A03FF4900351A9D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				51F878DE29F269FE0077A6C7 /* LoginTestView.swift */,
+				5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */,
+				514852FD2A03FF8F00351A9D /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		514852FB2A03FF5D00351A9D /* SignUpOnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				514852FE2A03FFA900351A9D /* Views */,
+			);
+			path = SignUpOnBoarding;
+			sourceTree = "<group>";
+		};
+		514852FC2A03FF6900351A9D /* SelectValuesOnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				514852FF2A04001200351A9D /* Views */,
+			);
+			path = SelectValuesOnBoarding;
+			sourceTree = "<group>";
+		};
+		514852FD2A03FF8F00351A9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				514852F12A039C8000351A9D /* LoginView.swift */,
+				51F878DE29F269FE0077A6C7 /* LoginTestView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		514852FE2A03FFA900351A9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				514852F42A03A61100351A9D /* AgreeTermsView.swift */,
 				514852F62A03ADF400351A9D /* UserInfoView.swift */,
 				514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		514852FF2A04001200351A9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				514853002A04002E00351A9D /* ExplainValuesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,8 +276,9 @@
 		51F878DD29F269E80077A6C7 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				514852F32A03A5B200351A9D /* Views */,
-				5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */,
+				514852FA2A03FF4900351A9D /* Login */,
+				514852FB2A03FF5D00351A9D /* SignUpOnBoarding */,
+				514852FC2A03FF6900351A9D /* SelectValuesOnBoarding */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -363,6 +406,7 @@
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
+				514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */,
 				514852F52A03A61100351A9D /* AgreeTermsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
