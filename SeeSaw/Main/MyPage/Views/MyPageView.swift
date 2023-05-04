@@ -26,10 +26,20 @@ struct MyPageView: View {
                     
                     MyPageTwoRow(topTitle: "개인정보 정책", bottomTitle: "문의하기", isChevronExist: true)
                     
-                    Button {
-                        showLogoutView = true
-                    } label: {
-                        MypageRow(isRowTop: true, title: "로그아웃", isChevronExist: false)
+                    VStack(spacing: 0) {
+                        Button {
+                            showLogoutView = true
+                        } label: {
+                            MypageRow(isRowTop: true, title: "로그아웃", isChevronExist: false)
+                        }
+                        
+                        Divider()
+                        
+                        NavigationLink {
+                            DeleteAccountView()
+                        } label: {
+                            MypageRow(isRowTop: false, title: "회원탈퇴", isChevronExist: false)
+                        }
                     }
                     
                     Spacer()
