@@ -69,8 +69,8 @@ struct UserInfoView: View {
             
             Spacer()
             
-            Button {
-                
+            NavigationLink {
+                SignUpCompletionView()
             } label: {
                 CapsuleButtonView(isActive: isAllInfoWrited,
                                   text: "다음", size: .large)

@@ -19,8 +19,8 @@ struct SignUpCompletionView: View {
             
             Spacer()
             
-            Button {
-                
+            NavigationLink {
+                ExplainValuesView().navigationBarBackButtonHidden(true)
             } label: {
                 HStack {
                     Spacer()

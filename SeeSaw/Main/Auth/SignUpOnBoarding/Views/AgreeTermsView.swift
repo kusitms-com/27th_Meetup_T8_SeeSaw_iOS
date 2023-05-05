@@ -18,73 +18,74 @@ struct AgreeTermsView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            ProgressView(value: progress)
-                .padding(.vertical, 28)
-            
-            Text("안녕하세요 :)\n약관에 동의해주세요")
-                .font(.ssHeading2)
-                .foregroundColor(.GrayBlack)
-            Text("여러분의 개인정보와 서비스 이용 권리 잘 지켜드릴게요")
-                .font(.ssWhiteBody2)
-                .foregroundColor(.Gray600)
-                .padding(.vertical, 20)
-            
-            Divider()
-                .padding(.bottom, 24)
-            
-            VStack {
-                TermView(isNecessary: true,
-                         title: "개인정보처리방침",
-                         isTermAgree: $isFirstTermAgree)
-                TermView(isNecessary: true,
-                         title: "개인정보 수집 이용 동의",
-                         isTermAgree: $isSecondTermAgree)
-                TermView(isNecessary: true,
-                         title: "이용약관",
-                         isTermAgree: $isThirdTermAgree)
-                TermView(isNecessary: false,
-                         title: "마케팅 수신 동의",
-                         isTermAgree: $isFourthTermAgree)
-            }
-            
-            Divider()
-            
-            allTermsAgreeView
-            
-            Spacer()
-            
-            Button {
+        NavigationView {
+            VStack(alignment: .leading, spacing: 0) {
+                ProgressView(value: progress)
+                    .padding(.top, 68)
+                    .padding(.bottom, 28)
                 
-            } label: {
-                CapsuleButtonView(isActive: isAllTermsAgree,
-                                  text: "다음", size: .large)
+                Text("안녕하세요 :)\n약관에 동의해주세요")
+                    .font(.ssHeading2)
+                    .foregroundColor(.GrayBlack)
+                Text("여러분의 개인정보와 서비스 이용 권리 잘 지켜드릴게요")
+                    .font(.ssWhiteBody2)
+                    .foregroundColor(.Gray600)
+                    .padding(.vertical, 20)
+                
+                Divider()
+                    .padding(.bottom, 24)
+                
+                VStack {
+                    TermView(isNecessary: true,
+                             title: "개인정보처리방침",
+                             isTermAgree: $isFirstTermAgree)
+                    TermView(isNecessary: true,
+                             title: "개인정보 수집 이용 동의",
+                             isTermAgree: $isSecondTermAgree)
+                    TermView(isNecessary: true,
+                             title: "이용약관",
+                             isTermAgree: $isThirdTermAgree)
+                    TermView(isNecessary: false,
+                             title: "마케팅 수신 동의",
+                             isTermAgree: $isFourthTermAgree)
+                }
+                
+                Divider()
+                
+                allTermsAgreeView
+                
+                Spacer()
+                
+                NavigationLink {
+                    UserInfoView()
+                } label: {
+                    CapsuleButtonView(isActive: isAllTermsAgree,
+                                      text: "다음", size: .large)
+                }
+                .disabled(!isAllTermsAgree)
             }
-            .disabled(!isAllTermsAgree)
+            .padding(20)
         }
-        .padding(20)
     }
     
     var allTermsAgreeView: some View {
-        HStack(alignment: .center) {
-            Button {
-                isFirstTermAgree = true
-                isSecondTermAgree = true
-                isThirdTermAgree = true
-                isFourthTermAgree = true
-            } label: {
+        Button {
+            isFirstTermAgree = true
+            isSecondTermAgree = true
+            isThirdTermAgree = true
+            isFourthTermAgree = true
+        } label: {
+            HStack(alignment: .center) {
                 Image(systemName: "checkmark.square")
                     .font(.system(size: 28))
                     .foregroundColor(isAllTermsAgree ? .black : .Gray600)
+                Text("모두 동의할게요")
+                    .font(.ssBlackTitle2)
+                    .foregroundColor(.black)
+                Spacer()
             }
-            Text("모두 동의할게요")
-                .font(.ssBlackTitle2)
-                .foregroundColor(.black)
-            Spacer()
-            Image(systemName: "chevron.right")
-                .foregroundColor(.Gray500)
+            .padding(.top, 20)
         }
-        .padding(.top, 20)
     }
 }
 
