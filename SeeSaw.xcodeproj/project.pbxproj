@@ -18,6 +18,7 @@
 		5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 5175EAC629F274E70092FE9D /* KakaoSDK */; };
 		5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */; };
 		517AE9382A0797E70028D670 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE9372A0797E70028D670 /* GifImage.swift */; };
+		517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 517AE93A2A07987E0028D670 /* LoginImage.gif */; };
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */; };
@@ -48,6 +49,7 @@
 		5175EACA29F27B490092FE9D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
 		517AE9372A0797E70028D670 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		517AE93A2A07987E0028D670 /* LoginImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoginImage.gif; sourceTree = "<group>"; };
 		51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
 		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
@@ -128,9 +130,18 @@
 		517AE9362A0797D70028D670 /* GifImage */ = {
 			isa = PBXGroup;
 			children = (
+				517AE9392A07982A0028D670 /* GifAssets */,
 				517AE9372A0797E70028D670 /* GifImage.swift */,
 			);
 			path = GifImage;
+			sourceTree = "<group>";
+		};
+		517AE9392A07982A0028D670 /* GifAssets */ = {
+			isa = PBXGroup;
+			children = (
+				517AE93A2A07987E0028D670 /* LoginImage.gif */,
+			);
+			path = GifAssets;
 			sourceTree = "<group>";
 		};
 		51810DA92A0361E300AF3289 /* Components */ = {
@@ -299,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */,
 				51F878DC29F2689C0077A6C7 /* .gitignore in Resources */,
 				51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */,
 				51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */,
