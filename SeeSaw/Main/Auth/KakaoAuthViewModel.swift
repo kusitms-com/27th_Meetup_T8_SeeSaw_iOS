@@ -17,7 +17,7 @@ class KakaoAuthViewModel: ObservableObject {
     }
     
     func handleKakaoLogin() {
-        if (UserApi.isKakaoTalkLoginAvailable()) {
+        if UserApi.isKakaoTalkLoginAvailable() {
             loginWithKakaoTalkApp()
         } else {
             loginWithKakaoTallWebView()
