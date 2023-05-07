@@ -20,6 +20,7 @@
 		517AE9382A0797E70028D670 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE9372A0797E70028D670 /* GifImage.swift */; };
 		517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 517AE93A2A07987E0028D670 /* LoginImage.gif */; };
 		517AE93E2A079F930028D670 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE93D2A079F930028D670 /* ApiClient.swift */; };
+		517AE9412A07ADB70028D670 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 517AE9402A07ADB70028D670 /* KeychainSwift */; };
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */; };
@@ -76,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517AE9412A07ADB70028D670 /* KeychainSwift in Frameworks */,
 				5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +277,7 @@
 			name = SeeSaw;
 			packageProductDependencies = (
 				5175EAC629F274E70092FE9D /* KakaoSDK */,
+				517AE9402A07ADB70028D670 /* KeychainSwift */,
 			);
 			productName = SeeSaw;
 			productReference = 51BA2A5B29EA8C5500071264 /* SeeSaw.app */;
@@ -306,6 +309,7 @@
 			mainGroup = 51BA2A5229EA8C5400071264;
 			packageReferences = (
 				5175EAC529F274E70092FE9D /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				517AE93F2A07ADB70028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 51BA2A5C29EA8C5500071264 /* Products */;
 			projectDirPath = "";
@@ -602,6 +606,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		517AE93F2A07ADB70028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -609,6 +621,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5175EAC529F274E70092FE9D /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDK;
+		};
+		517AE9402A07ADB70028D670 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 517AE93F2A07ADB70028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
