@@ -19,6 +19,8 @@
 		5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */; };
 		517AE9382A0797E70028D670 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE9372A0797E70028D670 /* GifImage.swift */; };
 		517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 517AE93A2A07987E0028D670 /* LoginImage.gif */; };
+		517AE93E2A079F930028D670 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE93D2A079F930028D670 /* ApiClient.swift */; };
+		517AE9412A07ADB70028D670 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 517AE9402A07ADB70028D670 /* KeychainSwift */; };
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */; };
@@ -50,6 +52,7 @@
 		5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
 		517AE9372A0797E70028D670 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		517AE93A2A07987E0028D670 /* LoginImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoginImage.gif; sourceTree = "<group>"; };
+		517AE93D2A079F930028D670 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
 		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517AE9412A07ADB70028D670 /* KeychainSwift in Frameworks */,
 				5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +146,14 @@
 				517AE93A2A07987E0028D670 /* LoginImage.gif */,
 			);
 			path = GifAssets;
+			sourceTree = "<group>";
+		};
+		517AE93C2A079F780028D670 /* ApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				517AE93D2A079F930028D670 /* ApiClient.swift */,
+			);
+			path = ApiClient;
 			sourceTree = "<group>";
 		};
 		51810DA92A0361E300AF3289 /* Components */ = {
@@ -231,6 +243,7 @@
 		51F878D829F268250077A6C7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				517AE93C2A079F780028D670 /* ApiClient */,
 				517AE9362A0797D70028D670 /* GifImage */,
 			);
 			path = Service;
@@ -264,6 +277,7 @@
 			name = SeeSaw;
 			packageProductDependencies = (
 				5175EAC629F274E70092FE9D /* KakaoSDK */,
+				517AE9402A07ADB70028D670 /* KeychainSwift */,
 			);
 			productName = SeeSaw;
 			productReference = 51BA2A5B29EA8C5500071264 /* SeeSaw.app */;
@@ -295,6 +309,7 @@
 			mainGroup = 51BA2A5229EA8C5400071264;
 			packageReferences = (
 				5175EAC529F274E70092FE9D /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				517AE93F2A07ADB70028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 51BA2A5C29EA8C5500071264 /* Products */;
 			projectDirPath = "";
@@ -358,6 +373,7 @@
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
+				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
 				51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */,
@@ -590,6 +606,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		517AE93F2A07ADB70028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -597,6 +621,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5175EAC529F274E70092FE9D /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDK;
+		};
+		517AE9402A07ADB70028D670 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 517AE93F2A07ADB70028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
