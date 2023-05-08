@@ -17,6 +17,7 @@
         "revision" : "d788f9a5a888f16253b9c3d9f3bd794835708c3f",
         "version" : "2.15.0"
       }
+<<<<<<< Updated upstream
     },
     {
       "identity" : "keychain-swift",
@@ -26,6 +27,8 @@
         "revision" : "d108a1fa6189e661f91560548ef48651ed8d93b9",
         "version" : "20.0.0"
       }
+=======
+>>>>>>> Stashed changes
     }
   ],
   "version" : 2
