@@ -9,6 +9,7 @@ import AuthenticationServices
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject var kakaoAuthVM = KakaoAuthViewModel(isLoggedIn: false)
     @StateObject var appleAuthVM = AppleAuthViewModel()
     @State private var idTokenString = ""
     
@@ -23,7 +24,7 @@ struct LoginView: View {
             Spacer()
             
             Button {
-                // TODO: kakao login
+                kakaoAuthVM.handleKakaoLogin()
             } label: {
                 kakaoLoginButton
             }
