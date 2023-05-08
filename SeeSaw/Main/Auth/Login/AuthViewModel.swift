@@ -2,7 +2,7 @@
 //  AuthViewModel.swift
 //  SeeSaw
 //
-//  Created by 이안진 on 2023/05/08.
+//  Created by 이안진 on 2023/05/09.
 //
 
 import Alamofire
@@ -16,6 +16,11 @@ struct PostRegenerateTokenRequest: Codable {
 struct PostRegenerateTokenResponse: Codable {
     let accessToken: String
     let refreshToken: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
+        case refreshToken = "refresh_token"
+    }
 }
 
 class AuthViewModel: ObservableObject {
@@ -51,7 +56,6 @@ class AuthViewModel: ObservableObject {
                                       forKey: "refreshToken")
                     print("accessToken \(response.accessToken)")
                     print("refreshToken \(response.refreshToken)")
-                    print("keychain \(self.keychain.get("refreshToken") ?? "keychain에 없음")")
                 case .failure(let error):
                     print(error)
                     self.isLoggedIn = false
