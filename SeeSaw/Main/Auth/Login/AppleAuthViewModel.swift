@@ -57,6 +57,7 @@ class AppleAuthViewModel: ObservableObject {
                                       withAccess: .accessibleWhenUnlocked)
                     print("accessToken \(response.accessToken)")
                     print("refreshToken \(response.refreshToken)")
+                    print("keychain \(self.keychain.get("refreshToken") ?? "keychain에 없음")")
                 case .failure(let error):
                     print(error)
                 }
