@@ -9,6 +9,9 @@ import AuthenticationServices
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject var appleAuthVM = AppleAuthViewModel()
+    @State private var idTokenString = ""
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("시소와 함께\n일과 삶 사이의 균형을 찾아보세요")
@@ -26,9 +29,28 @@ struct LoginView: View {
             }
             
             SignInWithAppleButton(.signIn) { request in
-                print(request)
+                request.requestedScopes = [.email, .fullName]
             } onCompletion: { result in
-                print(result)
+                switch result {
+                case .success(let auth):
+                    switch auth.credential {
+                    case let credential as ASAuthorizationAppleIDCredential:
+                        print("DEBUG realuserstatus: \(credential.realUserStatus)")
+                        
+                        guard let idToken = credential.identityToken else { return }
+                        idTokenString = String(data: idToken, encoding: .utf8) ?? ""
+                        print("DEBUG identityToken: \(idTokenString)")
+                        
+                        appleAuthVM.login(req: PostLoginRequest(provider: "apple",
+                                                                idToken: idTokenString,
+                                                                accessToken: "",
+                                                                refreshToken: ""))
+                    default:
+                        print("DEBUG: sign success but credetial is nil")
+                    }
+                case .failure(let error):
+                    print("DEBUG: apple login fail: \(error)")
+                }
             }
             .frame(height: 60)
             .frame(maxWidth: .infinity)

@@ -22,6 +22,7 @@
 		515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263F2A015957006C3FE5 /* RoundedCorner.swift */; };
 		5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 5175EAC629F274E70092FE9D /* KakaoSDK */; };
 		5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */; };
+		517AE9432A089CE00028D670 /* AppleAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE9422A089CE00028D670 /* AppleAuthViewModel.swift */; };
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */; };
@@ -55,6 +56,7 @@
 		5175EAC829F277040092FE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5175EACA29F27B490092FE9D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
+		517AE9422A089CE00028D670 /* AppleAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthViewModel.swift; sourceTree = "<group>"; };
 		51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
 		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
@@ -120,8 +122,9 @@
 		514852FA2A03FF4900351A9D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */,
 				514852FD2A03FF8F00351A9D /* Views */,
+				5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */,
+				517AE9422A089CE00028D670 /* AppleAuthViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
+				517AE9432A089CE00028D670 /* AppleAuthViewModel.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
