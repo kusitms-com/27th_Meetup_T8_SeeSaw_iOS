@@ -25,7 +25,7 @@ struct SeeSawApp: App {
             // onOpenURL을 사용해 커스텀 URL 스킴 처리
             ContentView()
                 .onOpenURL { url in
-                    if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                    if AuthApi.isKakaoTalkLoginUrl(url) {
                         AuthController.handleOpenUrl(url: url)
                     }
                 }
