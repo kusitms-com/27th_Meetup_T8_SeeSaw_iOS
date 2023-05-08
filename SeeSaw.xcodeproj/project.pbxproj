@@ -12,12 +12,17 @@
 		5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894829F9566F005DD6C2 /* ProjectView.swift */; };
 		5121894B29F95676005DD6C2 /* EnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894A29F95676005DD6C2 /* EnergyView.swift */; };
 		5121894D29F9567D005DD6C2 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894C29F9567D005DD6C2 /* ValueView.swift */; };
+		514852F22A039C8000351A9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F12A039C8000351A9D /* LoginView.swift */; };
+		514852F52A03A61100351A9D /* AgreeTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F42A03A61100351A9D /* AgreeTermsView.swift */; };
+		514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F62A03ADF400351A9D /* UserInfoView.swift */; };
+		514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */; };
+		514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514853002A04002E00351A9D /* ExplainValuesView.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
 		515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */; };
 		515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263F2A015957006C3FE5 /* RoundedCorner.swift */; };
 		5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 5175EAC629F274E70092FE9D /* KakaoSDK */; };
 		5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */; };
-		517AE9382A0797E70028D670 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE9372A0797E70028D670 /* GifImage.swift */; };
+        517AE9382A0797E70028D670 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE9372A0797E70028D670 /* GifImage.swift */; };
 		517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = 517AE93A2A07987E0028D670 /* LoginImage.gif */; };
 		517AE93E2A079F930028D670 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE93D2A079F930028D670 /* ApiClient.swift */; };
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
@@ -43,13 +48,18 @@
 		5121894829F9566F005DD6C2 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		5121894A29F95676005DD6C2 /* EnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyView.swift; sourceTree = "<group>"; };
 		5121894C29F9567D005DD6C2 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
+		514852F12A039C8000351A9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		514852F42A03A61100351A9D /* AgreeTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeTermsView.swift; sourceTree = "<group>"; };
+		514852F62A03ADF400351A9D /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletionView.swift; sourceTree = "<group>"; };
+		514853002A04002E00351A9D /* ExplainValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainValuesView.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameView.swift; sourceTree = "<group>"; };
 		515E263F2A015957006C3FE5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		5175EAC829F277040092FE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5175EACA29F27B490092FE9D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
-		517AE9372A0797E70028D670 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+        517AE9372A0797E70028D670 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		517AE93A2A07987E0028D670 /* LoginImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = LoginImage.gif; sourceTree = "<group>"; };
 		517AE93D2A079F930028D670 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
@@ -65,7 +75,6 @@
 		51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		51F878D629F268220077A6C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		51F878DB29F2689C0077A6C7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		51F878DE29F269FE0077A6C7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		51F878E029F26D600077A6C7 /* SeeSaw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeeSaw.entitlements; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
@@ -76,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517AE9482A08EA410028D670 /* KeychainSwift in Frameworks */,
 				5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +125,59 @@
 				515E263C2A014501006C3FE5 /* Views */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		514852FA2A03FF4900351A9D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				514852FD2A03FF8F00351A9D /* Views */,
+				5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */,
+				517AE9422A089CE00028D670 /* AppleAuthViewModel.swift */,
+				517AE9442A08E8460028D670 /* AuthViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		514852FB2A03FF5D00351A9D /* SignUpOnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				514852FE2A03FFA900351A9D /* Views */,
+			);
+			path = SignUpOnBoarding;
+			sourceTree = "<group>";
+		};
+		514852FC2A03FF6900351A9D /* SelectValuesOnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				514852FF2A04001200351A9D /* Views */,
+			);
+			path = SelectValuesOnBoarding;
+			sourceTree = "<group>";
+		};
+		514852FD2A03FF8F00351A9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				514852F12A039C8000351A9D /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		514852FE2A03FFA900351A9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				514852F42A03A61100351A9D /* AgreeTermsView.swift */,
+				514852F62A03ADF400351A9D /* UserInfoView.swift */,
+				514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		514852FF2A04001200351A9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				514853002A04002E00351A9D /* ExplainValuesView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		515E263C2A014501006C3FE5 /* Views */ = {
@@ -250,8 +313,9 @@
 		51F878DD29F269E80077A6C7 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				51F878DE29F269FE0077A6C7 /* LoginView.swift */,
-				5175EACB29F289200092FE9D /* KakaoAuthViewModel.swift */,
+				514852FA2A03FF4900351A9D /* Login */,
+				514852FB2A03FF5D00351A9D /* SignUpOnBoarding */,
+				514852FC2A03FF6900351A9D /* SelectValuesOnBoarding */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -275,6 +339,7 @@
 			name = SeeSaw;
 			packageProductDependencies = (
 				5175EAC629F274E70092FE9D /* KakaoSDK */,
+				517AE9472A08EA410028D670 /* KeychainSwift */,
 			);
 			productName = SeeSaw;
 			productReference = 51BA2A5B29EA8C5500071264 /* SeeSaw.app */;
@@ -306,6 +371,7 @@
 			mainGroup = 51BA2A5229EA8C5400071264;
 			packageReferences = (
 				5175EAC529F274E70092FE9D /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				517AE9462A08EA410028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 51BA2A5C29EA8C5500071264 /* Products */;
 			projectDirPath = "";
@@ -367,6 +433,7 @@
 				5121894B29F95676005DD6C2 /* EnergyView.swift in Sources */,
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
+				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
@@ -375,9 +442,12 @@
 				51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
+				517AE9432A089CE00028D670 /* AppleAuthViewModel.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
+				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
+				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
 				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
 			);
@@ -602,6 +672,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		517AE9462A08EA410028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -609,6 +687,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5175EAC529F274E70092FE9D /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
 			productName = KakaoSDK;
+		};
+		517AE9472A08EA410028D670 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 517AE9462A08EA410028D670 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -31,3 +31,7 @@ extension Color {
     static let Gray900 = Color("Gray900")
     static let GrayBlack = Color("GrayBlack")
 }
+
+extension Color {
+    static let KakaoColor = Color("KakaoColor")
+}
