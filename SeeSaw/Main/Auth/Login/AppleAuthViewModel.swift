@@ -7,6 +7,7 @@
 
 import Alamofire
 import Foundation
+import KeychainSwift
 
 struct PostLoginRequest: Codable {
     let provider: String
@@ -26,6 +27,8 @@ struct PostLoginResponse: Codable {
 }
 
 class AppleAuthViewModel: ObservableObject {
+    let keychain = KeychainSwift()
+    
     func login(req: PostLoginRequest) {
         let url = "http://ec2-3-36-172-10.ap-northeast-2.compute.amazonaws.com/auth/login"
         let parameters: [String: Any] = [
@@ -46,8 +49,14 @@ class AppleAuthViewModel: ObservableObject {
             .responseDecodable(of: PostLoginResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    print("accessToken", response.accessToken)
-                    print("refreshToken", response.refreshToken)
+                    self.keychain.set(response.accessToken,
+                                      forKey: "accessToken",
+                                      withAccess: .accessibleWhenUnlocked)
+                    self.keychain.set(response.refreshToken,
+                                      forKey: "refreshToken",
+                                      withAccess: .accessibleWhenUnlocked)
+                    print("accessToken \(response.accessToken)")
+                    print("refreshToken \(response.refreshToken)")
                 case .failure(let error):
                     print(error)
                 }
