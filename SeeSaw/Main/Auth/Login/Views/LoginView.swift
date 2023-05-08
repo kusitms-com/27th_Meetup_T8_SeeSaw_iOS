@@ -9,6 +9,7 @@ import AuthenticationServices
 import SwiftUI
 
 struct LoginView: View {
+    @EnvironmentObject var authVM: AuthViewModel
     @StateObject var kakaoAuthVM = KakaoAuthViewModel(isLoggedIn: false)
     @StateObject var appleAuthVM = AppleAuthViewModel()
     @State private var idTokenString = ""
@@ -46,6 +47,7 @@ struct LoginView: View {
                                                                 idToken: idTokenString,
                                                                 accessToken: "",
                                                                 refreshToken: ""))
+                        self.authVM.isLoggedIn = true
                     default:
                         print("DEBUG: sign success but credetial is nil")
                     }

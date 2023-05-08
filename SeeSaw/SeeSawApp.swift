@@ -7,6 +7,7 @@
 
 import KakaoSDKAuth
 import KakaoSDKCommon
+import KeychainSwift
 import SwiftUI
 
 @main
@@ -17,7 +18,7 @@ struct SeeSawApp: App {
         KakaoSDK.initSDK(appKey: kakaoNativeAppKey as! String)
     }
     
-    @StateObject var kakaoAuthVM = KakaoAuthViewModel(isLoggedIn: false)
+    @StateObject var authVM = AuthViewModel(isLoggedIn: false)
     
     var body: some Scene {
         WindowGroup {
@@ -28,7 +29,7 @@ struct SeeSawApp: App {
                         AuthController.handleOpenUrl(url: url)
                     }
                 }
-                .environmentObject(kakaoAuthVM)
+                .environmentObject(authVM)
         }
     }
 }

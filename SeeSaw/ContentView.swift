@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var kakaoAuthVM: KakaoAuthViewModel
+    @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
-        if kakaoAuthVM.isLoggedIn ?? false {
+        if authVM.isLoggedIn ?? false {
             SeeSawTabView()
         } else {
             LoginView()
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
