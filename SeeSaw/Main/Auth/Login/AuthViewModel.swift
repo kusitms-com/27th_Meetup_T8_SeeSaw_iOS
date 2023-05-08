@@ -46,15 +46,15 @@ class AuthViewModel: ObservableObject {
                 case .success(let response):
                     self.isLoggedIn = true
                     self.keychain.set(response.accessToken,
-                                      forKey: "accessToken",
-                                      withAccess: .accessibleWhenUnlocked)
+                                      forKey: "accessToken")
                     self.keychain.set(response.refreshToken,
-                                      forKey: "refreshToken",
-                                      withAccess: .accessibleWhenUnlocked)
+                                      forKey: "refreshToken")
                     print("accessToken \(response.accessToken)")
                     print("refreshToken \(response.refreshToken)")
+                    print("keychain \(self.keychain.get("refreshToken") ?? "keychain에 없음")")
                 case .failure(let error):
                     print(error)
+                    self.isLoggedIn = false
                 }
             }
     }
