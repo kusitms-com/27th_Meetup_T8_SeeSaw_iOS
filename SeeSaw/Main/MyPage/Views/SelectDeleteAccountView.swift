@@ -24,9 +24,9 @@ struct SelectDeleteAccountView: View {
             Spacer()
             
             VStack {
-                CapsuleButtonView(isActive: false, text: "탈퇴할래요", size: .large)
+                CapsuleButtonView(color: Color.Gray400, text: "탈퇴할래요", size: .large)
                     .padding(.bottom, 12)
-                CapsuleButtonView(isActive: true, text: "탈퇴 안 할래요", size: .large)
+                CapsuleButtonView(color: Color.Gray900, text: "탈퇴 안 할래요", size: .large)
                     .padding(.bottom, 20)
             }
         }

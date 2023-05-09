@@ -27,13 +27,13 @@ struct LogoutView: View {
                     // TODO: 로그아웃
                     showLogoutView = false
                 } label: {
-                    CapsuleButtonView(isActive: true, text: "네", size: .small)
+                    CapsuleButtonView(color: Color.Gray900, text: "네", size: .small)
                         .padding(8)
                 }
                 Button {
                     showLogoutView = false
                 } label: {
-                    CapsuleButtonView(isActive: false, text: "아니요", size: .small)
+                    CapsuleButtonView(color: Color.Gray400, text: "아니요", size: .small)
                         .padding(8)
                 }
             }

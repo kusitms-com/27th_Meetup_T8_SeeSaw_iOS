@@ -31,7 +31,9 @@ struct ChangeNicknameView: View {
                 // TODO: 닉네임 저장
                 showChangeNicknameView = false
             } label: {
-                CapsuleButtonView(isActive: !nickname.isEmpty, text: "저장하기", size: .large)
+                CapsuleButtonView(color: nickname.isEmpty ? Color.Gray400 : Color.Gray900,
+                                  text: "저장하기",
+                                  size: .large)
                     .padding(8)
             }
             .disabled(nickname.isEmpty)
