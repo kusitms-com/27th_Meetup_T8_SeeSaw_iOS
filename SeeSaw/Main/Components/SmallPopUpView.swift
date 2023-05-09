@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct SmallPopUpView: View {
-    let title: String = "로그아웃"
-    let isXmarkExist: Bool = true
-    let isImageExist: Bool = true
+    let title: String
+    let isXmarkExist: Bool
+    let isImageExist: Bool
     
-    let isImageGIF: Bool = false
-    let imageName: String = "LogoutImage"
-    let text: String = "텍스트"
+    let isImageGIF: Bool
+    let imageName: String
+    let text: String
     
-    let buttonContext: String = "네"
-    let buttonColor: Color = Color.Gray900
-    var buttonAction: () -> Void = { }
+    let buttonContext: String
+    let buttonColor: Color
+    var buttonAction: () -> Void
     
     var body: some View {
         VStack(spacing: 0) {
@@ -81,11 +81,5 @@ struct SmallPopUpView: View {
                               size: .large)
             .padding([.bottom, .horizontal], 24)
         }
-    }
-}
-
-struct SmallPopUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        SmallPopUpView()
     }
 }

@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct LargePopUpView: View {
-    let title: String = "로그아웃"
-    let isXmarkExist: Bool = true
+    let title: String
+    let isXmarkExist: Bool
     
-    let isImageGIF: Bool = false
-    let imageName: String = "LogoutImage"
-    let text: String = "텍스트"
+    let isImageGIF: Bool
+    let imageName: String
+    let text: String
     
-    let firstButtonContext: String = "네"
-    let secondButtonContext: String = "아니오"
-    var firstButtonAction: () -> Void = { }
-    var secondButtonAction: () -> Void = { }
+    let firstButtonContext: String
+    let secondButtonContext: String
+    var firstButtonAction: () -> Void
+    var secondButtonAction: () -> Void
     
     var body: some View {
         VStack(spacing: 0) {
@@ -88,11 +88,5 @@ struct LargePopUpView: View {
                 .padding([.bottom, .trailing], 24)
             }
         }
-    }
-}
-
-struct LargePopUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        LargePopUpView()
     }
 }
