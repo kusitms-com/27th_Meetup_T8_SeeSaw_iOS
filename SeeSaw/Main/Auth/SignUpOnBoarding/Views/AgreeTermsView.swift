@@ -59,8 +59,9 @@ struct AgreeTermsView: View {
                 NavigationLink {
                     UserInfoView()
                 } label: {
-                    CapsuleButtonView(isActive: isAllTermsAgree,
-                                      text: "다음", size: .large)
+                    CapsuleButtonView(color: isAllTermsAgree ? Color.Gray900 : Color.Gray400,
+                                      text: "다음",
+                                      size: .large)
                 }
                 .disabled(!isAllTermsAgree)
             }

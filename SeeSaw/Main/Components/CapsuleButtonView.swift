@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CapsuleButtonView: View {
-    var isActive: Bool
+    let color: Color
     let text: String
     let size: ButtonSize
+    
     enum ButtonSize {
         case large
         case middle
@@ -37,7 +38,7 @@ struct CapsuleButtonView: View {
         .font(.ssWhiteBody1)
         .foregroundColor(.Gray100)
         .frame(height: 44)
-        .background(isActive ? Color.Gray900 : Color.Gray400)
+        .background(color)
         .clipShape(Capsule())
     }
 }

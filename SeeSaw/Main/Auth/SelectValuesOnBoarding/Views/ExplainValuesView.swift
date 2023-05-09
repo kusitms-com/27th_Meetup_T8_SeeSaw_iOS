@@ -78,7 +78,7 @@ struct ExplainValuesView: View {
             .tabViewStyle(.page)
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
-            CapsuleButtonView(isActive: false,
+            CapsuleButtonView(color: Color.Gray400,
                               text: "다음",
                               size: .large)
         }

@@ -40,7 +40,9 @@ struct DeleteAccountView: View {
             NavigationLink {
                 SelectDeleteAccountView()
             } label: {
-                CapsuleButtonView(isActive: true, text: "다음", size: .large)
+                CapsuleButtonView(color: Color.Gray900,
+                                  text: "다음",
+                                  size: .large)
                     .opacity(isDeleteAccountViewOn ? 1 : 0)
                     .animation(.easeIn(duration: 1).delay(5), value: isDeleteAccountViewOn)
                     .padding(.bottom, 20)
