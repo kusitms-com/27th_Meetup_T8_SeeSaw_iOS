@@ -22,26 +22,64 @@ struct MyPageView: View {
                             .padding(.bottom, 16)
                         userNicknameRow
                     }
-                    .padding(.bottom, 56)
-                    
-                    MyPageTwoRow(topTitle: "알림", bottomTitle: "공지사항", isChevronExist: true)
-                    
-                    MyPageTwoRow(topTitle: "개인정보 정책", bottomTitle: "문의하기", isChevronExist: true)
+                    .padding(.bottom, 36)
                     
                     VStack(spacing: 0) {
-                        Button {
-                            showLogoutView = true
+                        NavigationLink {
+                            
                         } label: {
-                            MypageRow(isRowTop: true, title: "로그아웃", isChevronExist: false)
+                            MypageRow(isRowTop: true,
+                                      title: "알림",
+                                      isChevronExist: true)
                         }
                         
                         Divider()
                         
                         NavigationLink {
-                            DeleteAccountView()
+                            
                         } label: {
-                            MypageRow(isRowTop: false, title: "회원탈퇴", isChevronExist: false)
+                            MypageRow(isRowTop: false,
+                                      title: "공지사항",
+                                      isChevronExist: true)
                         }
+                    }
+                    .padding(.bottom, 16)
+                    
+                    VStack(spacing: 0) {
+                        NavigationLink {
+                            
+                        } label: {
+                            MypageRow(isRowTop: true,
+                                      title: "권한설정",
+                                      isChevronExist: true)
+                        }
+                        
+                        Divider()
+                        
+                        NavigationLink {
+                            
+                        } label: {
+                            MypageRow(isRowTop: false,
+                                      title: "문의하기",
+                                      isChevronExist: true)
+                        }
+                    }
+                    .padding(.bottom, 16)
+                    
+                    Button {
+                        showLogoutView = true
+                    } label: {
+                        MypageRow(isRowTop: true,
+                                  title: "로그아웃",
+                                  isChevronExist: false)
+                    }
+                    
+                    Divider()
+                    
+                    NavigationLink {
+                        DeleteAccountView()
+                    } label: {
+                        MypageRow(isRowTop: false, title: "회원탈퇴", isChevronExist: false)
                     }
                     
                     Spacer()
@@ -97,31 +135,6 @@ struct MyPageView: View {
         Image("EditNickname")
             .frame(width: 16, height: 16)
             .foregroundColor(Color.Gray500)
-    }
-}
-
-struct MyPageTwoRow: View {
-    let topTitle: String
-    let bottomTitle: String
-    let isChevronExist: Bool
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            NavigationLink {
-                
-            } label: {
-                MypageRow(isRowTop: true, title: topTitle, isChevronExist: isChevronExist)
-            }
-            
-            Divider()
-            
-            NavigationLink {
-                
-            } label: {
-                MypageRow(isRowTop: false, title: bottomTitle, isChevronExist: isChevronExist)
-            }
-        }
-        .padding(.bottom, 16)
     }
 }
 
