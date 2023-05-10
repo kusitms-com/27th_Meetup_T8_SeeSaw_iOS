@@ -30,7 +30,7 @@ struct ValueModalView: View {
                         .frame(height: 50)
                     VStack(alignment: .leading) {
                         Text(valueTitle)
-                            .font(.system(size: 40, weight: .bold))
+                            .font(.ssHeading3)
                             .foregroundColor(valueColor == .SeeSawYellow ? .GrayBlack : .Gray100)
                         Text(valueTitle + "과 관련된 프로젝트와 루틴들이에요")
                             .font(.system(size: 12))
