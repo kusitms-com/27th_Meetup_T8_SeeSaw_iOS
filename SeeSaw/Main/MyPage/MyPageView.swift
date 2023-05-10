@@ -71,13 +71,8 @@ struct MyPageView: View {
                 .padding(.horizontal, 20)
                 .background(Color.Gray200)
                 
-                if $showChangeNicknameView.wrappedValue {
-                    ZStack {
-                        Color.black.opacity(0.2)
-                            .ignoresSafeArea()
-                        ChangeNicknameView(nickname: self.nickname,
-                                           showChangeNicknameView: self.$showChangeNicknameView)
-                    }
+            if $showChangeNicknameView.wrappedValue {                        ChangeNicknameView(nickname: self.nickname,
+                                       showChangeNicknameView: self.$showChangeNicknameView)
                 }
                 
                 if $showLogoutView.wrappedValue {

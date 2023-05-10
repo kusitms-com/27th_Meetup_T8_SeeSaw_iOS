@@ -16,23 +16,28 @@ struct ChangeNicknameView: View {
     @Binding var showChangeNicknameView: Bool
 
     var body: some View {
-        VStack(spacing: 0) {
-            header
-                .padding(.vertical, 20)
+        ZStack {
+            Color.black.opacity(0.2)
+                .ignoresSafeArea()
             
-            Divider()
-            
-            Spacer()
-            textField
-                .padding(44)
-            Spacer()
-            
-            buttonView
-                .padding([.bottom, .horizontal], 24)
+            VStack(spacing: 0) {
+                header
+                    .padding(.vertical, 20)
+                
+                Divider()
+                
+                Spacer()
+                textField
+                    .padding(44)
+                Spacer()
+                
+                buttonView
+                    .padding([.bottom, .horizontal], 24)
+            }
+            .frame(width: 360, height: 324)
+            .background(Color.Gray100)
+            .cornerRadius(20).shadow(radius: 20)
         }
-        .frame(width: 360, height: 324)
-        .background(Color.Gray100)
-        .cornerRadius(20).shadow(radius: 20)
     }
     
     var header: some View {
