@@ -10,8 +10,8 @@ import SwiftUI
 
 extension Font {
     static var ssHeading1: Font { Font.system(size: 32, weight: .heavy) }
-    
     static var ssHeading2: Font { Font.system(size: 24, weight: .heavy) }
+    static var ssHeading3: Font { Font.system(size: 40, weight: .heavy) }
     
     static var ssBlackTitle1: Font { Font.system(size: 20, weight: .bold) }
     static var ssWhiteTitle1: Font { Font.system(size: 20, weight: .heavy) }

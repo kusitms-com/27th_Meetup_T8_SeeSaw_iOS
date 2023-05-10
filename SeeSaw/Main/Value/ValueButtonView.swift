@@ -14,29 +14,28 @@ struct ValueButtonView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .cornerRadius(27, corners: .bottomRight)
-                .cornerRadius(27, corners: .topRight)
+                .cornerRadius(27, corners: [.bottomRight, .topRight])
                 .frame(width: 184, height: 54)
                 .foregroundColor(valueColor)
                 .onTapGesture {
                     self.showModal = true
                 }
-            HStack {
-                Text(valueTitle)
-                    .font(.ssHeading1)
-                    .font(.system(size: 32))
-                    .foregroundColor(.Gray100)
-                .foregroundColor(.white)
                 .sheet(isPresented: self.$showModal) {
                     ValueModalView(valueTitle: self.valueTitle, valueColor: self.valueColor)
                 }
+            HStack {
                 Spacer()
-                    .frame(width: 85)
+                    .frame(width: 8)
+                Text(valueTitle)
+                    .font(.ssHeading1)
+                    .foregroundColor(.Gray100)
+                Spacer()
                 Image(systemName: "arrow.up.right")
                     .foregroundColor(.Gray900)
                 Spacer()
-                    .frame(width: 5)
+                    .frame(width: 20)
             }
+            .frame(width: 184)
         }
     }
 }
