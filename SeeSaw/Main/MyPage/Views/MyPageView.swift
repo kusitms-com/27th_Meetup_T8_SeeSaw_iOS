@@ -18,6 +18,8 @@ struct MyPageView: View {
                 VStack(spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
                         greenRectangle
+                            .padding(.top, 40)
+                            .padding(.bottom, 16)
                         userNicknameRow
                     }
                     .padding(.bottom, 56)
@@ -48,52 +50,53 @@ struct MyPageView: View {
                 .background(Color.Gray200)
                 
                 if $showChangeNicknameView.wrappedValue {
-                    ChangeNicknameView(showChangeNicknameView: self.$showChangeNicknameView)
+                    ZStack {
+                        Color.black.opacity(0.2)
+                        ChangeNicknameView(showChangeNicknameView: self.$showChangeNicknameView)
+                    }
                 }
                 
                 if $showLogoutView.wrappedValue {
                     LogoutView(showLogoutView: self.$showLogoutView)
                 }
             }
+            .navigationTitle("마이페이지")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
     
     var greenRectangle: some View {
         Rectangle()
-            .frame(width: 100, height: 4)
+            .frame(width: 80, height: 4)
             .foregroundColor(.SeeSawGreen)
-            .padding(.top, 40)
-            .padding(.bottom, 16)
-    }
-    
-    var changeNicknameButton: some View {
-        ZStack {
-            Circle()
-                .frame(width: 28, height: 28)
-                .foregroundColor(Color.Gray300)
-            Image(systemName: "pencil.line")
-                .frame(width: 16, height: 16)
-                .foregroundColor(Color.Gray500)
-        }
     }
     
     var userNicknameRow: some View {
-        HStack {
-            Text(nickname)
-                .font(.ssHeading1)
-                .foregroundColor(Color.GrayBlack)
-            Text("님")
-                .font(.ssHeading1)
-                .foregroundColor(Color.Gray600)
+        HStack(spacing: 0) {
+            HStack(spacing: 0) {
+                Text(nickname)
+                    .font(.ssHeading1)
+                    .foregroundColor(Color.GrayBlack)
+                Text("님")
+                    .font(.ssHeading1)
+                    .foregroundColor(Color.Gray600)
+            }
+            .padding(.trailing, 16)
             
             Button {
                 showChangeNicknameView = true
             } label: {
-                changeNicknameButton
+                editNicknameImage
             }
             
             Spacer()
         }
+    }
+    
+    var editNicknameImage: some View {
+        Image("EditNickname")
+            .frame(width: 16, height: 16)
+            .foregroundColor(Color.Gray500)
     }
 }
 
