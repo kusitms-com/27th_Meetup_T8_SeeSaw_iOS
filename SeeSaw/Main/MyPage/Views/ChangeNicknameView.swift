@@ -16,30 +16,20 @@ struct ChangeNicknameView: View {
     @Binding var showChangeNicknameView: Bool
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             header
+                .padding(.vertical, 20)
             
             Divider()
             
             Spacer()
-            
             textField
-            
+                .padding(44)
             Spacer()
-            Spacer()
             
-            Button {
-                // TODO: 닉네임 저장
-                showChangeNicknameView = false
-            } label: {
-                CapsuleButtonView(color: nickname.isEmpty ? Color.Gray400 : Color.Gray900,
-                                  text: "저장하기",
-                                  size: .large)
-                    .padding(8)
-            }
-            .disabled(nickname.isEmpty)
+            buttonView
+                .padding([.bottom, .horizontal], 24)
         }
-        .padding(24)
         .frame(width: 360, height: 324)
         .background(Color.Gray100)
         .cornerRadius(20).shadow(radius: 20)
@@ -55,14 +45,13 @@ struct ChangeNicknameView: View {
                     self.showChangeNicknameView = false
                 } label: {
                     Image(systemName: "xmark")
-                        .font(.system(size: 16))
+                        .font(.system(size: 20))
                         .padding(.trailing, 24)
                 }
             }
             
         }
         .foregroundColor(Color.Gray500)
-        .padding(.vertical)
     }
     
     var textField: some View {
@@ -75,6 +64,9 @@ struct ChangeNicknameView: View {
                     .onAppear {
                         UITextField.appearance().clearButtonMode = .whileEditing
                     }
+                    .onChange(of: nickname, perform: {
+                              nickname = String($0.prefix(10))
+                            })
             }
             Rectangle()
                 .frame(height: 1)
@@ -91,68 +83,17 @@ struct ChangeNicknameView: View {
                     .foregroundColor(Color.Gray600)
             }
         }
-        .padding(24)
+    }
+    
+    var buttonView: some View {
+        Button {
+            // TODO: 닉네임 저장
+            showChangeNicknameView = false
+        } label: {
+            CapsuleButtonView(color: nickname.isEmpty ? Color.Gray400 : Color.Gray900,
+                              text: "저장하기",
+                              size: .large)
+        }
+        .disabled(nickname.isEmpty)
     }
 }
-
-/*
- let title: String
- let isXmarkExist: Bool
- let isImageExist: Bool
- 
- let isImageGIF: Bool
- let imageName: String
- let text: String
- 
- let buttonContext: String
- let buttonColor: Color
- var buttonAction: () -> Void
- 
- var body: some View {
-     VStack(spacing: 0) {
-         headerView
-         
-         Divider()
-         
-         context
-         buttonsView
-     }
-     .frame(width: 360, height: 324)
-     .background(Color.Gray100)
-     .cornerRadius(20).shadow(radius: 20)
- }
- 
- 
- var context: some View {
-     VStack(spacing: 0) {
-         Spacer()
-         
-         if isImageExist && isImageGIF {
-             GifImage(imageName)
-                 .frame(height: 92)
-         } else if isImageExist {
-             Image(imageName)
-                 .resizable()
-                 .scaledToFit()
-                 .frame(height: 92)
-         }
-             
-         Text(text)
-             .font(.ssBlackTitle2)
-         
-         Spacer()
-     }
-     .padding(36)
- }
- 
- var buttonsView: some View {
-     Button {
-         buttonAction()
-     } label: {
-         CapsuleButtonView(color: buttonColor,
-                           text: buttonContext,
-                           size: .large)
-         .padding([.bottom, .horizontal], 24)
-     }
- }
- */
