@@ -46,13 +46,7 @@ struct MyPageView: View {
                     .padding(.bottom, 16)
                     
                     VStack(spacing: 0) {
-                        NavigationLink {
-                            
-                        } label: {
-                            MyPageRow(isRowTop: true,
-                                      title: "권한설정",
-                                      isChevronExist: true)
-                        }
+                        provisioningView
                         
                         Divider()
                         
@@ -137,6 +131,17 @@ struct MyPageView: View {
         Image("EditNickname")
             .frame(width: 16, height: 16)
             .foregroundColor(Color.Gray500)
+    }
+    
+    // 마이페이지 메뉴 View
+    var provisioningView: some View {
+        NavigationLink {
+            ProvisioningView()
+        } label: {
+            MyPageRow(isRowTop: true,
+                      title: "권한설정",
+                      isChevronExist: true)
+        }
     }
 }
 
