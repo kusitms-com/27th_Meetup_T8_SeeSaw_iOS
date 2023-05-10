@@ -105,15 +105,15 @@ struct MyPageView: View {
             Button {
                 showChangeNicknameView = true
             } label: {
-                editNicknameImage
+                changeNicknameImage
             }
             
             Spacer()
         }
     }
     
-    var editNicknameImage: some View {
-        Image("EditNickname")
+    var changeNicknameImage: some View {
+        Image("ChangeNickname")
             .frame(width: 16, height: 16)
             .foregroundColor(Color.Gray500)
     }
@@ -145,7 +145,7 @@ struct MyPageView: View {
         } label: {
             MyPageRow(isRowTop: false,
                       title: "회원탈퇴",
-                      isChevronExist: false)
+                      isChevronExist: true)
         }
     }
 }
