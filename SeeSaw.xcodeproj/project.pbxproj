@@ -44,6 +44,7 @@
 		51F878D729F268220077A6C7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D629F268220077A6C7 /* Model.swift */; };
 		51F878DC29F2689C0077A6C7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 51F878DB29F2689C0077A6C7 /* .gitignore */; };
 		51F878DF29F269FE0077A6C7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		BE7C06DC2A0BA88E00C7D647 /* ValueYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06DB2A0BA88E00C7D647 /* ValueYearView.swift */; };
 		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
 		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		51F878D629F268220077A6C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		51F878DB29F2689C0077A6C7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		51F878E029F26D600077A6C7 /* SeeSaw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeeSaw.entitlements; sourceTree = "<group>"; };
+		BE7C06DB2A0BA88E00C7D647 /* ValueYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueYearView.swift; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				BECC93712A03D8950099BA79 /* ValueButtonView.swift */,
 				BECC936F2A03D8900099BA79 /* ValueModalView.swift */,
 				5121894C29F9567D005DD6C2 /* ValueView.swift */,
+				BE7C06DB2A0BA88E00C7D647 /* ValueYearView.swift */,
 			);
 			path = Value;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
+				BE7C06DC2A0BA88E00C7D647 /* ValueYearView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
