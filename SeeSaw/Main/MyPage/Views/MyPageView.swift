@@ -90,7 +90,8 @@ struct MyPageView: View {
                 if $showChangeNicknameView.wrappedValue {
                     ZStack {
                         Color.black.opacity(0.2)
-                        ChangeNicknameView(showChangeNicknameView: self.$showChangeNicknameView)
+                        ChangeNicknameView(nickname: self.nickname,
+                                           showChangeNicknameView: self.$showChangeNicknameView)
                     }
                 }
                 

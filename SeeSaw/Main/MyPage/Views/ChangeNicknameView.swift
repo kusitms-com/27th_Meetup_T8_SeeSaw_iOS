@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChangeNicknameView: View {
-    @State private var nickname = "이오"
+    @State var nickname: String
     enum Field: Hashable {
         case nickname
     }
@@ -17,7 +17,8 @@ struct ChangeNicknameView: View {
 
     var body: some View {
         VStack {
-            title
+            header
+            
             Divider()
             
             Spacer()
@@ -44,22 +45,24 @@ struct ChangeNicknameView: View {
         .cornerRadius(20).shadow(radius: 20)
     }
     
-    var title: some View {
+    var header: some View {
         ZStack {
+            Text("닉네임 변경")
+                .font(.ssBlackTitle2)
             HStack {
                 Spacer()
                 Button {
                     self.showChangeNicknameView = false
                 } label: {
                     Image(systemName: "xmark")
-                        .foregroundColor(Color.Gray500)
-                        .frame(width: 16, height: 16)
+                        .font(.system(size: 16))
+                        .padding(.trailing, 24)
                 }
             }
-            Text("닉네임 변경")
-                .font(.ssBlackTitle2)
-                .foregroundColor(Color.Gray500)
+            
         }
+        .foregroundColor(Color.Gray500)
+        .padding(.vertical)
     }
     
     var textField: some View {
@@ -91,3 +94,65 @@ struct ChangeNicknameView: View {
         .padding(24)
     }
 }
+
+/*
+ let title: String
+ let isXmarkExist: Bool
+ let isImageExist: Bool
+ 
+ let isImageGIF: Bool
+ let imageName: String
+ let text: String
+ 
+ let buttonContext: String
+ let buttonColor: Color
+ var buttonAction: () -> Void
+ 
+ var body: some View {
+     VStack(spacing: 0) {
+         headerView
+         
+         Divider()
+         
+         context
+         buttonsView
+     }
+     .frame(width: 360, height: 324)
+     .background(Color.Gray100)
+     .cornerRadius(20).shadow(radius: 20)
+ }
+ 
+ 
+ var context: some View {
+     VStack(spacing: 0) {
+         Spacer()
+         
+         if isImageExist && isImageGIF {
+             GifImage(imageName)
+                 .frame(height: 92)
+         } else if isImageExist {
+             Image(imageName)
+                 .resizable()
+                 .scaledToFit()
+                 .frame(height: 92)
+         }
+             
+         Text(text)
+             .font(.ssBlackTitle2)
+         
+         Spacer()
+     }
+     .padding(36)
+ }
+ 
+ var buttonsView: some View {
+     Button {
+         buttonAction()
+     } label: {
+         CapsuleButtonView(color: buttonColor,
+                           text: buttonContext,
+                           size: .large)
+         .padding([.bottom, .horizontal], 24)
+     }
+ }
+ */
