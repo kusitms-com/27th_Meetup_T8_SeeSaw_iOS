@@ -28,7 +28,7 @@ struct MyPageView: View {
                         NavigationLink {
                             
                         } label: {
-                            MypageRow(isRowTop: true,
+                            MyPageRow(isRowTop: true,
                                       title: "알림",
                                       isChevronExist: true)
                         }
@@ -38,7 +38,7 @@ struct MyPageView: View {
                         NavigationLink {
                             
                         } label: {
-                            MypageRow(isRowTop: false,
+                            MyPageRow(isRowTop: false,
                                       title: "공지사항",
                                       isChevronExist: true)
                         }
@@ -49,7 +49,7 @@ struct MyPageView: View {
                         NavigationLink {
                             
                         } label: {
-                            MypageRow(isRowTop: true,
+                            MyPageRow(isRowTop: true,
                                       title: "권한설정",
                                       isChevronExist: true)
                         }
@@ -59,7 +59,7 @@ struct MyPageView: View {
                         NavigationLink {
                             
                         } label: {
-                            MypageRow(isRowTop: false,
+                            MyPageRow(isRowTop: false,
                                       title: "문의하기",
                                       isChevronExist: true)
                         }
@@ -69,7 +69,7 @@ struct MyPageView: View {
                     Button {
                         showLogoutView = true
                     } label: {
-                        MypageRow(isRowTop: true,
+                        MyPageRow(isRowTop: true,
                                   title: "로그아웃",
                                   isChevronExist: false)
                     }
@@ -79,7 +79,7 @@ struct MyPageView: View {
                     NavigationLink {
                         DeleteAccountView()
                     } label: {
-                        MypageRow(isRowTop: false, title: "회원탈퇴", isChevronExist: false)
+                        MyPageRow(isRowTop: false, title: "회원탈퇴", isChevronExist: false)
                     }
                     
                     Spacer()
@@ -135,32 +135,6 @@ struct MyPageView: View {
         Image("EditNickname")
             .frame(width: 16, height: 16)
             .foregroundColor(Color.Gray500)
-    }
-}
-
-struct MypageRow: View {
-    // .top, .bottom enum으로 만들기
-    let isRowTop: Bool
-    let title: String
-    let isChevronExist: Bool
-    
-    var body: some View {
-        ZStack {
-            Rectangle()
-                .frame(height: 40)
-                .cornerRadius(10, corners: isRowTop ? [.topLeft, .topRight] : [.bottomLeft, .bottomRight])
-                .foregroundColor(Color.Gray100)
-                .padding(0)
-            
-            HStack {
-                Text(title)
-                Spacer()
-                if isChevronExist { Image(systemName: "chevron.right") }
-            }
-            .font(.ssBlackBody2)
-            .foregroundColor(.black)
-            .padding(.horizontal, 10)
-        }
     }
 }
 
