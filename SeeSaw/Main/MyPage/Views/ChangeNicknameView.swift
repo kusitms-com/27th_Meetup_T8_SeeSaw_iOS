@@ -56,32 +56,36 @@ struct ChangeNicknameView: View {
     
     var textField: some View {
         VStack {
-            ZStack(alignment: .trailing) {
-                TextField("", text: $nickname)
-                    .textInputAutocapitalization(.never)
-                    .font(.ssHeading2)
-                    .focused($focusField, equals: .nickname)
-                    .onAppear {
-                        UITextField.appearance().clearButtonMode = .whileEditing
-                    }
-                    .onChange(of: nickname, perform: {
-                              nickname = String($0.prefix(10))
-                            })
-            }
+            TextField("", text: $nickname)
+                .textInputAutocapitalization(.never)
+                .font(.ssHeading2)
+                .focused($focusField, equals: .nickname)
+                .onAppear {
+                    UITextField.appearance().clearButtonMode = .whileEditing
+                }
+                .onChange(of: nickname, perform: {
+                          nickname = String($0.prefix(10))
+                        })
+            
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(nickname.isEmpty ? Color.SeeSawRed : Color.Gray300)
-            HStack {
-                if nickname.isEmpty {
-                    Text("닉네임을 입력해주세요")
-                        .font(.ssBlackBody4)
-                        .foregroundColor(Color.SeeSawRed)
-                }
-                Spacer()
-                Text("(\(nickname.count)/10)")
-                    .font(.ssBlackBody3)
-                    .foregroundColor(Color.Gray600)
+            
+            alertEnterNickname
+        }
+    }
+    
+    var alertEnterNickname: some View {
+        HStack {
+            if nickname.isEmpty {
+                Text("닉네임을 입력해주세요")
+                    .font(.ssBlackBody4)
+                    .foregroundColor(Color.SeeSawRed)
             }
+            Spacer()
+            Text("(\(nickname.count)/10)")
+                .font(.ssBlackBody3)
+                .foregroundColor(Color.Gray600)
         }
     }
     
