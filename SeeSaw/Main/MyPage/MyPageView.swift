@@ -46,7 +46,7 @@ struct MyPageView: View {
                     .padding(.bottom, 16)
                     
                     VStack(spacing: 0) {
-                        provisioningView
+                        provisioningViewRow
                         
                         Divider()
                         
@@ -60,20 +60,10 @@ struct MyPageView: View {
                     }
                     .padding(.bottom, 16)
                     
-                    Button {
-                        showLogoutView = true
-                    } label: {
-                        MyPageRow(isRowTop: true,
-                                  title: "로그아웃",
-                                  isChevronExist: false)
-                    }
-                    
-                    Divider()
-                    
-                    NavigationLink {
-                        DeleteAccountView()
-                    } label: {
-                        MyPageRow(isRowTop: false, title: "회원탈퇴", isChevronExist: false)
+                    VStack(spacing: 0) {
+                        logoutViewRow
+                        Divider()
+                        signOutViewRow
                     }
                     
                     Spacer()
@@ -133,14 +123,34 @@ struct MyPageView: View {
             .foregroundColor(Color.Gray500)
     }
     
-    // 마이페이지 메뉴 View
-    var provisioningView: some View {
+    // 마이페이지 메뉴 Views
+    var provisioningViewRow: some View {
         NavigationLink {
             ProvisioningView()
         } label: {
             MyPageRow(isRowTop: true,
                       title: "권한설정",
                       isChevronExist: true)
+        }
+    }
+    
+    var logoutViewRow: some View {
+        Button {
+            showLogoutView = true
+        } label: {
+            MyPageRow(isRowTop: true,
+                      title: "로그아웃",
+                      isChevronExist: false)
+        }
+    }
+    
+    var signOutViewRow: some View {
+        NavigationLink {
+            DeleteAccountView()
+        } label: {
+            MyPageRow(isRowTop: false,
+                      title: "회원탈퇴",
+                      isChevronExist: false)
         }
     }
 }
