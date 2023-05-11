@@ -12,6 +12,8 @@
 		5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894829F9566F005DD6C2 /* ProjectView.swift */; };
 		5121894B29F95676005DD6C2 /* EnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894A29F95676005DD6C2 /* EnergyView.swift */; };
 		5121894D29F9567D005DD6C2 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894C29F9567D005DD6C2 /* ValueView.swift */; };
+		5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5139CCA82A0BD05800181B55 /* MyPageRow.swift */; };
+		5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5139CCAD2A0BF97F00181B55 /* ProvisioningView.swift */; };
 		514852F22A039C8000351A9D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F12A039C8000351A9D /* LoginView.swift */; };
 		514852F52A03A61100351A9D /* AgreeTermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F42A03A61100351A9D /* AgreeTermsView.swift */; };
 		514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F62A03ADF400351A9D /* UserInfoView.swift */; };
@@ -55,6 +57,8 @@
 		5121894829F9566F005DD6C2 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		5121894A29F95676005DD6C2 /* EnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyView.swift; sourceTree = "<group>"; };
 		5121894C29F9567D005DD6C2 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
+		5139CCA82A0BD05800181B55 /* MyPageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRow.swift; sourceTree = "<group>"; };
+		5139CCAD2A0BF97F00181B55 /* ProvisioningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningView.swift; sourceTree = "<group>"; };
 		514852F12A039C8000351A9D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		514852F42A03A61100351A9D /* AgreeTermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgreeTermsView.swift; sourceTree = "<group>"; };
 		514852F62A03ADF400351A9D /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
@@ -136,9 +140,47 @@
 		5121894329F9564B005DD6C2 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				515E263C2A014501006C3FE5 /* Views */,
+				5121894629F95667005DD6C2 /* MyPageView.swift */,
+				5139CCA82A0BD05800181B55 /* MyPageRow.swift */,
+				5139CCAF2A0BF9B100181B55 /* ChangeNickname */,
+				5139CCAC2A0BF91000181B55 /* Provisioning */,
+				5139CCAB2A0BF8F500181B55 /* Logout */,
+				5139CCAA2A0BF8C900181B55 /* SignOut */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		5139CCAA2A0BF8C900181B55 /* SignOut */ = {
+			isa = PBXGroup;
+			children = (
+				51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */,
+				51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */,
+			);
+			path = SignOut;
+			sourceTree = "<group>";
+		};
+		5139CCAB2A0BF8F500181B55 /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				51810DAC2A03684500AF3289 /* LogoutView.swift */,
+			);
+			path = Logout;
+			sourceTree = "<group>";
+		};
+		5139CCAC2A0BF91000181B55 /* Provisioning */ = {
+			isa = PBXGroup;
+			children = (
+				5139CCAD2A0BF97F00181B55 /* ProvisioningView.swift */,
+			);
+			path = Provisioning;
+			sourceTree = "<group>";
+		};
+		5139CCAF2A0BF9B100181B55 /* ChangeNickname */ = {
+			isa = PBXGroup;
+			children = (
+				515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */,
+			);
+			path = ChangeNickname;
 			sourceTree = "<group>";
 		};
 		514852FA2A03FF4900351A9D /* Login */ = {
@@ -190,18 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				514853002A04002E00351A9D /* ExplainValuesView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		515E263C2A014501006C3FE5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				5121894629F95667005DD6C2 /* MyPageView.swift */,
-				515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */,
-				51810DAC2A03684500AF3289 /* LogoutView.swift */,
-				51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */,
-				51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -447,6 +477,7 @@
 				51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */,
 				51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */,
 				5121894729F95667005DD6C2 /* MyPageView.swift in Sources */,
+				5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */,
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
 				5121894B29F95676005DD6C2 /* EnergyView.swift in Sources */,
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
@@ -456,6 +487,7 @@
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
+				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
 				51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */,

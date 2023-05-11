@@ -13,7 +13,7 @@ struct LargePopUpView: View {
     
     let isImageGIF: Bool
     let imageName: String
-    let text: String
+    let popUpMessage: String
     
     let firstButtonContext: String
     let secondButtonContext: String
@@ -62,7 +62,7 @@ struct LargePopUpView: View {
                     .frame(height: 200)
             }
                 
-            Text(text)
+            Text(popUpMessage)
                 .font(.ssBlackTitle2)
         }
         .padding(36)
