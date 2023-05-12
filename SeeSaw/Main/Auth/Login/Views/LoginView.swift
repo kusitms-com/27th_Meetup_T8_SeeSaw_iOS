@@ -43,10 +43,10 @@ struct LoginView: View {
                         idTokenString = String(data: idToken, encoding: .utf8) ?? ""
                         print("DEBUG identityToken: \(idTokenString)")
                         
-                        appleAuthVM.login(req: PostLoginRequest(provider: "apple",
-                                                                idToken: idTokenString,
-                                                                accessToken: "",
-                                                                refreshToken: ""))
+                        authVM.login(req: PostLoginRequest(provider: "apple",
+                                                           idToken: idTokenString,
+                                                           accessToken: "",
+                                                           refreshToken: ""))
                         self.authVM.isLoggedIn = true
                     default:
                         print("DEBUG: sign success but credetial is nil")
