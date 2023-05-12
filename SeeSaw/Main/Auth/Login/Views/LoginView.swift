@@ -52,7 +52,6 @@ struct LoginView: View {
                                                            idToken: idTokenString,
                                                            accessToken: "",
                                                            refreshToken: ""))
-                        self.authVM.isLoggedIn = true
                     default:
                         print("DEBUG: sign success but credetial is nil")
                     }

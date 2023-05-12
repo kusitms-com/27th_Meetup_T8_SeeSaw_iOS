@@ -53,6 +53,7 @@ class AuthViewModel: ObservableObject {
                         print("DEBUG accessToken: \(loginRes.accessToken)")
                         print("DEBUG refreshToken: \(loginRes.refreshToken)")
                         print("keychain \(self.keychain.get("refreshToken") ?? "keychain에 없음")")
+                        self.isLoggedIn = true
                     case 409:
                         guard let errorRes = try? decoder.decode(PostLogin409Response.self, from: data) else { return }
                         print(errorRes.message)
@@ -65,10 +66,10 @@ class AuthViewModel: ObservableObject {
             }
     }
     
-    func regenerateToken(req: PostRegenerateTokenRequest) {
+    func regenerateToken() {
         let url = "http://ec2-3-36-172-10.ap-northeast-2.compute.amazonaws.com/auth/regenerate-token"
         let parameters: [String: Any] = [
-            "refresh_token": req.refreshToken
+            "refresh_token": keychain.get("refreshToken") ?? ""
         ]
         let headers: HTTPHeaders = [
             "Content-Type": "application/json"
