@@ -9,41 +9,13 @@ import SwiftUI
 
 struct BatteryDashboardView: View {
     @State var progress: Double = 0.8
+    @State private var showBatteryInformation: Bool = false
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .center, spacing: 0) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        HStack {
-                            Text("SeeSaw")
-                            Spacer()
-                            Button {
-                                
-                            } label: {
-                                Image(systemName: "person.crop.circle")
-                            }
-                        }
-                        .font(.system(size: 28))
-                        .foregroundColor(.Gray400)
-                        .padding(.bottom, 28)
-                        
-                        VStack(alignment: .leading) {
-                            Text("에몽님의")
-                            Text("에너지 배터리")
-                        }
-                        .font(.ssHeading1)
-                        
-                        Button {
-                            progress = 0.5
-                        } label: {
-                            Image(systemName: "questionmark.circle")
-                                .font(.system(size: 28))
-                                .foregroundColor(.Gray400)
-                                .padding(.vertical, 8)
-                        }
-                    }
-                    .padding(.horizontal, 20)
+                    header
                     
                     // 배터리
                     ZStack(alignment: .center) {
@@ -153,9 +125,60 @@ struct BatteryDashboardView: View {
                     .background(Color.Gray100)
                 }
             }
+            .navigationTitle("")
             .background(Color.Gray200)
         }
+        .sheet(isPresented: $showBatteryInformation) {
+            BatteryInformationView()
+                .frame(height: 400)
+        }
+        
     }
+    
+    // 닉네임, 마이페이지, 배터리정보
+    var header: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            myPageToolBarRow
+            title
+            batteryInformationButton
+        }
+        .padding(.horizontal, 20)
+    }
+    
+    var myPageToolBarRow: some View {
+        HStack {
+            Text("SeeSaw")
+            Spacer()
+            NavigationLink {
+                MyPageView()
+            } label: {
+                Image(systemName: "person.crop.circle")
+            }
+        }
+        .font(.system(size: 28))
+        .foregroundColor(.Gray400)
+        .padding(.bottom, 28)
+    }
+    
+    var title: some View {
+        VStack(alignment: .leading) {
+            Text("에몽님의")
+            Text("에너지 배터리")
+        }
+        .font(.ssHeading1)
+    }
+    
+    var batteryInformationButton: some View {
+        Button {
+            showBatteryInformation = true
+        } label: {
+            Image(systemName: "questionmark.circle")
+                .font(.system(size: 28))
+                .foregroundColor(.Gray400)
+                .padding(.vertical, 8)
+        }
+    }
+    
 }
 
 struct BatteryDashboardView_Previews: PreviewProvider {
