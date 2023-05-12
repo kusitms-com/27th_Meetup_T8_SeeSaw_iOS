@@ -32,8 +32,8 @@ struct BatteryDashboardView: View {
                                 .padding(4)
                             Text("아직 고속충전을 하지 않았어요")
                             Text("고속충전을 하러 가볼까요")
-                            Button {
-                                progress = 0.8
+                            NavigationLink {
+                                FastChargeView()
                             } label: {
                                 CapsuleButtonView(color: .Gray900,
                                                   text: "고속충전하기",
