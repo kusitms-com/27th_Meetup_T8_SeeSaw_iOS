@@ -46,26 +46,7 @@ struct BatteryDashboardView: View {
                     VStack {
                         HStack {
                             // 활동량
-                            VStack(alignment: .leading) {
-                                Text("활동량")
-                                    .font(.ssHeading2)
-                                ZStack(alignment: .bottom) {
-                                    Rectangle()
-                                        .cornerRadius(10)
-                                        .foregroundColor(.Gray200)
-                                        .frame(height: 260)
-                                    VStack {
-                                        Text("활동량 목표")
-                                            .font(.ssBlackBody1)
-                                            .foregroundColor(.Gray500)
-                                        CapsuleButtonView(color: .Gray900,
-                                                          text: "설정하기",
-                                                          size: .small)
-                                    }
-                                    .padding(.bottom, 12)
-                                }
-                            }
-                            .padding(.horizontal, 8)
+                            energy
                             
                             // 수면
                             VStack(alignment: .leading) {
@@ -99,9 +80,10 @@ struct BatteryDashboardView: View {
             .background(Color.Gray200)
         }
         .sheet(isPresented: $showBatteryInformation) {
+            
             BatteryInformationView()
-                .frame(height: 400)
         }
+//        .presentationDetents([.fraction(0.5)])
         
     }
     
@@ -195,6 +177,35 @@ struct BatteryDashboardView: View {
                 .font(.system(size: 100))
                 .fontWeight(.semibold)
         }
+    }
+    
+    // 활동량, 수면
+    var energy: some View {
+        VStack(alignment: .leading) {
+            Text("활동량")
+                .font(.ssHeading2)
+            ZStack(alignment: .bottom) {
+                Rectangle()
+                    .cornerRadius(10)
+                    .foregroundColor(.Gray200)
+                    .frame(height: 260)
+                VStack {
+                    Text("활동량 목표")
+                        .font(.ssBlackBody1)
+                        .foregroundColor(.Gray500)
+                    
+                    NavigationLink {
+                        ProvisioningEnergyView()
+                    } label: {
+                        CapsuleButtonView(color: .Gray900,
+                                          text: "설정하기",
+                                          size: .small)
+                    }
+                }
+                .padding(.bottom, 12)
+            }
+        }
+        .padding(.horizontal, 8)
     }
 }
 
