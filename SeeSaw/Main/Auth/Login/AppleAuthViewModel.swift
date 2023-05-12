@@ -9,23 +9,6 @@ import Alamofire
 import Foundation
 import KeychainSwift
 
-struct PostLoginRequest: Codable {
-    let provider: String
-    let idToken: String
-    let accessToken: String
-    let refreshToken: String
-}
-
-struct PostLoginResponse: Codable {
-    let accessToken: String
-    let refreshToken: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case accessToken = "access_token"
-        case refreshToken = "refresh_token"
-    }
-}
-
 class AppleAuthViewModel: ObservableObject {
     let keychain = KeychainSwift()
     
