@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BatteryDashboardView: View {
-    @State var progress: Double = 0.8
+    @State var progress: Double = 0.2
     @State private var showBatteryInformation: Bool = false
     
     var body: some View {
@@ -16,41 +16,7 @@ struct BatteryDashboardView: View {
             ScrollView {
                 VStack(alignment: .center, spacing: 0) {
                     header
-                    
-                    // 배터리
-                    ZStack(alignment: .center) {
-                        Circle()
-                            .foregroundColor(.Gray100)
-                            .frame(width: 380, height: 380)
-                        
-                        Circle()
-                            .stroke( // 1
-                                Color.SeeSawGreen.opacity(0.3),
-                                lineWidth: 30
-                            )
-                            .frame(width: 300, height: 300)
-                        
-                        Circle()
-                            .trim(from: 0, to: progress) // 1
-                            .stroke(
-                                Color.SeeSawGreen,
-                                style: StrokeStyle(
-                                    lineWidth: 30,
-                                    lineCap: .round
-                                )
-                            )
-                            .frame(width: 300, height: 300)
-                            .rotationEffect(.degrees(-90))
-                            .animation(.easeOut, value: progress)
-                        
-                        Text("%")
-                            .font(.ssHeading1)
-                            .offset(x: 72, y: -40)
-                        
-                        Text("80")
-                            .font(.system(size: 100))
-                            .fontWeight(.semibold)
-                    }
+                    batteryProgress
                     
                     // 고속충전
                     ZStack {
@@ -66,9 +32,13 @@ struct BatteryDashboardView: View {
                                 .padding(4)
                             Text("아직 고속충전을 하지 않았어요")
                             Text("고속충전을 하러 가볼까요")
-                            CapsuleButtonView(color: .Gray900,
-                                              text: "고속충전하기",
-                                              size: .small)
+                            Button {
+                                progress = 0.8
+                            } label: {
+                                CapsuleButtonView(color: .Gray900,
+                                                  text: "고속충전하기",
+                                                  size: .small)
+                            }
                         }
                     }
                     
@@ -179,6 +149,53 @@ struct BatteryDashboardView: View {
         }
     }
     
+    // 배터리 원형 표시
+    var batteryProgress: some View {
+        ZStack(alignment: .center) {
+            batteryProgressCircle
+            batteryValue
+        }
+    }
+    
+    var batteryProgressCircle: some View {
+        ZStack {
+            Circle()
+                .foregroundColor(.Gray100)
+                .frame(width: 380, height: 380)
+            
+            Circle()
+                .stroke( // 1
+                    Color.SeeSawGreen.opacity(0.3),
+                    lineWidth: 30
+                )
+                .frame(width: 300, height: 300)
+            
+            Circle()
+                .trim(from: 0, to: progress) // 1
+                .stroke(
+                    Color.SeeSawGreen,
+                    style: StrokeStyle(
+                        lineWidth: 30,
+                        lineCap: .round
+                    )
+                )
+                .frame(width: 300, height: 300)
+                .rotationEffect(.degrees(-90))
+                .animation(.easeOut, value: progress)
+        }
+    }
+    
+    var batteryValue: some View {
+        ZStack {
+            Text("%")
+                .font(.ssHeading1)
+                .offset(x: 72, y: -40)
+            
+            Text("\(Int(progress * 100))")
+                .font(.system(size: 100))
+                .fontWeight(.semibold)
+        }
+    }
 }
 
 struct BatteryDashboardView_Previews: PreviewProvider {
