@@ -26,13 +26,15 @@ class KakaoAuthViewModel: ObservableObject {
     
     func loginWithKakaoTalkApp() {
         UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+            guard let oauthToken = oauthToken else {
+                print("nil oauthtoken")
+                return
+            }
             if let error = error {
                 print(error)
             } else {
                 print("loginWithKakaoTalk() success.")
-
-                // do something
-                _ = oauthToken
+                print("DEBUG: \(oauthToken)")
             }
             self.isLoggedIn = true
         }
@@ -40,11 +42,15 @@ class KakaoAuthViewModel: ObservableObject {
     
     func loginWithKakaoTallWebView() {
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            guard let idToken = oauthToken?.idToken else {
+                print("nil oauthtoken")
+                return
+            }
             if let error = error {
                 print(error)
             } else {
                 print("loginWithKakaoAccount() success.")
-
+                print("DEBUG: \(idToken)")
                 // do something
                 _ = oauthToken
             }
