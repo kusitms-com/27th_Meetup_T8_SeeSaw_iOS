@@ -9,20 +9,6 @@ import Alamofire
 import Foundation
 import KeychainSwift
 
-struct PostRegenerateTokenRequest: Codable {
-    let refreshToken: String
-}
-
-struct PostRegenerateTokenResponse: Codable {
-    let accessToken: String
-    let refreshToken: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case accessToken = "access_token"
-        case refreshToken = "refresh_token"
-    }
-}
-
 class AuthViewModel: ObservableObject {
     @Published var isLoggedIn: Bool?
     
