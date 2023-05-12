@@ -35,18 +35,30 @@ class AuthViewModel: ObservableObject {
                    parameters: parameters,
                    encoding: JSONEncoding.default,
                    headers: headers)
-            .responseDecodable(of: PostLoginResponse.self) { response in
+            .responseData { response in
                 switch response.result {
-                case .success(let response):
-                    self.keychain.set(response.accessToken,
-                                      forKey: "accessToken",
-                                      withAccess: .accessibleWhenUnlocked)
-                    self.keychain.set(response.refreshToken,
-                                      forKey: "refreshToken",
-                                      withAccess: .accessibleWhenUnlocked)
-                    print("accessToken \(response.accessToken)")
-                    print("refreshToken \(response.refreshToken)")
-                    print("keychain \(self.keychain.get("refreshToken") ?? "keychain에 없음")")
+                case .success:
+                    let decoder = JSONDecoder()
+                    guard let statusCode = response.response?.statusCode else { return }
+                    guard let data = response.value else { return }
+                    switch statusCode {
+                    case 200:
+                        guard let loginRes = try? decoder.decode(PostLoginResponse.self, from: data) else { return }
+                        self.keychain.set(loginRes.accessToken,
+                                          forKey: "accessToken",
+                                          withAccess: .accessibleWhenUnlocked)
+                        self.keychain.set(loginRes.refreshToken,
+                                          forKey: "refreshToken",
+                                          withAccess: .accessibleWhenUnlocked)
+                        print("DEBUG accessToken: \(loginRes.accessToken)")
+                        print("DEBUG refreshToken: \(loginRes.refreshToken)")
+                        print("keychain \(self.keychain.get("refreshToken") ?? "keychain에 없음")")
+                    case 409:
+                        guard let errorRes = try? decoder.decode(PostLogin409Response.self, from: data) else { return }
+                        print(errorRes.message)
+                    default:
+                        print("DEBUG: not 200")
+                    }
                 case .failure(let error):
                     print(error)
                 }

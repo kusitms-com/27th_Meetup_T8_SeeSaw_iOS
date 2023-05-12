@@ -23,3 +23,11 @@ struct PostLoginResponse: Codable {
         case refreshToken = "refresh_token"
     }
 }
+
+struct PostLogin409Response: Codable {
+    let timestamp: String
+    let status: Int
+    let error: String
+    let message: String
+    let path: String
+}

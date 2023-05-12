@@ -25,7 +25,12 @@ struct LoginView: View {
             Spacer()
             
             Button {
-                kakaoAuthVM.handleKakaoLogin()
+                kakaoAuthVM.handleKakaoLogin { idToken in
+                    authVM.login(req: PostLoginRequest(provider: "kakao",
+                                                       idToken: idToken,
+                                                       accessToken: "",
+                                                       refreshToken: ""))
+                }
             } label: {
                 kakaoLoginButton
             }
