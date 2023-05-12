@@ -94,20 +94,45 @@ struct BatteryDashboardView: View {
                 
                 VStack {
                     HStack {
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text("활동량")
-                            Rectangle()
-                                .cornerRadius(10)
-                                .foregroundColor(.Gray200)
-                                .frame(height: 260)
+                                .font(.ssHeading2)
+                            ZStack(alignment: .bottom) {
+                                Rectangle()
+                                    .cornerRadius(10)
+                                    .foregroundColor(.Gray200)
+                                    .frame(height: 260)
+                                VStack {
+                                    Text("활동량 목표")
+                                        .font(.ssBlackBody1)
+                                        .foregroundColor(.Gray500)
+                                    CapsuleButtonView(color: .Gray900,
+                                                      text: "설정하기",
+                                                      size: .small)
+                                }
+                                .padding(.bottom, 12)
+                            }
                         }
                         .padding(.horizontal, 8)
-                        VStack {
-                            Text("활동량")
-                            Rectangle()
-                                .cornerRadius(10)
-                                .foregroundColor(.Gray200)
-                                .frame(height: 260)
+                        
+                        VStack(alignment: .leading) {
+                            Text("수면")
+                                .font(.ssHeading2)
+                            ZStack(alignment: .bottom) {
+                                Rectangle()
+                                    .cornerRadius(10)
+                                    .foregroundColor(.Gray200)
+                                    .frame(height: 260)
+                                VStack {
+                                    Text("수면시간 목표")
+                                        .font(.ssBlackBody1)
+                                        .foregroundColor(.Gray500)
+                                    CapsuleButtonView(color: .Gray900,
+                                                      text: "설정하기",
+                                                      size: .small)
+                                }
+                                .padding(.bottom, 12)
+                            }
                         }
                         .padding(.horizontal, 8)
                     }
