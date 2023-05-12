@@ -34,6 +34,8 @@
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */; };
 		51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */; };
+		51A1E5B92A0E039D00404E11 /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5B82A0E039D00404E11 /* PostLogin.swift */; };
+		51A1E5BB2A0E05F200404E11 /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BA2A0E05F200404E11 /* PostRegenerate.swift */; };
 		51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9ECB42A00DD71000E6784 /* ColorExtension.swift */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
@@ -79,6 +81,8 @@
 		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 		51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeleteAccountView.swift; sourceTree = "<group>"; };
+		51A1E5B82A0E039D00404E11 /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
+		51A1E5BA2A0E05F200404E11 /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		51A9ECB42A00DD71000E6784 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
@@ -272,6 +276,15 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		51A1E5B72A0E037600404E11 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				51A1E5B82A0E039D00404E11 /* PostLogin.swift */,
+				51A1E5BA2A0E05F200404E11 /* PostRegenerate.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		51BA2A5229EA8C5400071264 = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +310,7 @@
 				51F878E029F26D600077A6C7 /* SeeSaw.entitlements */,
 				51F878D829F268250077A6C7 /* Service */,
 				51F878D529F268170077A6C7 /* Model */,
+				51A1E5B72A0E037600404E11 /* DTO */,
 				51F878D229F268030077A6C7 /* Main */,
 				51CECB7629EE5708001C7832 /* Extensions */,
 				51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */,
@@ -484,6 +498,7 @@
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
+				51A1E5BB2A0E05F200404E11 /* PostRegenerate.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
@@ -496,6 +511,7 @@
 				517AE9432A089CE00028D670 /* AppleAuthViewModel.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
+				51A1E5B92A0E039D00404E11 /* PostLogin.swift in Sources */,
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
