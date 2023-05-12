@@ -36,6 +36,8 @@
 		51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */; };
 		51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */; };
 		51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */; };
+		51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */; };
+		51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C32A0EABC300404E11 /* FastChargeView.swift */; };
 		51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9ECB42A00DD71000E6784 /* ColorExtension.swift */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
@@ -83,6 +85,8 @@
 		51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeleteAccountView.swift; sourceTree = "<group>"; };
 		51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInformationView.swift; sourceTree = "<group>"; };
 		51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningEnergyView.swift; sourceTree = "<group>"; };
+		51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSleepGoalView.swift; sourceTree = "<group>"; };
+		51A1E5C32A0EABC300404E11 /* FastChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeView.swift; sourceTree = "<group>"; };
 		51A9ECB42A00DD71000E6784 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
@@ -129,8 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */,
-				51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */,
-				51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */,
+				51A1E5C02A0EA82600404E11 /* Views */,
 			);
 			path = Battery;
 			sourceTree = "<group>";
@@ -276,6 +279,17 @@
 				51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		51A1E5C02A0EA82600404E11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */,
+				51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */,
+				51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */,
+				51A1E5C32A0EABC300404E11 /* FastChargeView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		51BA2A5229EA8C5400071264 = {
@@ -487,6 +501,7 @@
 				5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */,
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
+				51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */,
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
@@ -508,6 +523,7 @@
 				5139CCB12A0C9F1200181B55 /* BatteryDashboardView.swift in Sources */,
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
 				BE7C06DC2A0BA88E00C7D647 /* ValueYearView.swift in Sources */,
+				51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
