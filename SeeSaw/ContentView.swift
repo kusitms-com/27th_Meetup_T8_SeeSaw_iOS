@@ -22,7 +22,7 @@ struct ContentView: View {
         }
         .onAppear {
             print("실행")
-            authVM.regenerateToken(req: PostRegenerateTokenRequest(refreshToken: keychain.get("refreshToken") ?? ""))
+            authVM.regenerateToken()
         }
     }
 }
