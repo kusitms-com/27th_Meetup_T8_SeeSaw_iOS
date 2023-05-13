@@ -25,7 +25,7 @@ struct SeeSawTabView: View {
                     TabItem(imageName: "book.closed.fill", title: "프로젝트")
                 }
             
-            EnergyView()
+            BatteryDashboardView()
                 .tabItem {
                     TabItem(imageName: "battery.100", title: "에너지")
                 }

@@ -13,7 +13,7 @@ struct MyPageView: View {
     @State private var showLogoutView = false
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack {
                 VStack(spacing: 0) {
                     VStack(alignment: .leading, spacing: 0) {
@@ -81,7 +81,7 @@ struct MyPageView: View {
             }
             .navigationTitle("마이페이지")
             .navigationBarTitleDisplayMode(.inline)
-        }
+//        }
     }
     
     var greenRectangle: some View {
@@ -150,8 +150,8 @@ struct MyPageView: View {
     }
 }
 
-struct MyPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyPageView()
-    }
-}
+//struct MyPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyPageView()
+//    }
+//}
