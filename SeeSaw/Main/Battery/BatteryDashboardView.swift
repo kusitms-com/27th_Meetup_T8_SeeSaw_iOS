@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct BatteryDashboardView: View {
-    @State var progress: Double = 0.2
+    @State private var show = false
+    @State var progress: Double = 0.0
     @State private var showBatteryInformation: Bool = false
     
     var body: some View {
@@ -63,10 +64,13 @@ struct BatteryDashboardView: View {
             .background(Color.Gray200)
         }
         .sheet(isPresented: $showBatteryInformation) {
-            
             BatteryInformationView()
         }
-//        .presentationDetents([.fraction(0.5)])
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                progress = 0.8
+            }
+        }
         
     }
     
@@ -146,7 +150,7 @@ struct BatteryDashboardView: View {
                 )
                 .frame(width: 300, height: 300)
                 .rotationEffect(.degrees(-90))
-                .animation(.easeOut, value: progress)
+                .animation(.easeOut(duration: 2.0), value: progress)
         }
     }
     
