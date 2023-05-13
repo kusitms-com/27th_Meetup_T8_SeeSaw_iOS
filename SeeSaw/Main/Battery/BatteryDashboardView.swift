@@ -16,7 +16,12 @@ struct BatteryDashboardView: View {
             ScrollView {
                 VStack(alignment: .center, spacing: 0) {
                     header
-                    batteryProgress
+                    
+                    NavigationLink {
+                        BatteryHistoryView()
+                    } label: {
+                        batteryProgress
+                    }
                     
                     // 고속충전
                     ZStack {
