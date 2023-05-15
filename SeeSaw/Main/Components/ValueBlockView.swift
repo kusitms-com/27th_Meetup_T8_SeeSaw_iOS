@@ -10,6 +10,7 @@ import SwiftUI
 struct ValueBlockView: View {
     let backgroundColor: Color
     let text: String
+    var showArrow: Bool = true
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -21,9 +22,11 @@ struct ValueBlockView: View {
                     .font(.ssHeading1)
                     .foregroundColor(Color.Gray100)
                 Spacer()
-                Image(systemName: "arrow.up.right")
-                    .font(.system(size: 24))
-                    .padding(.trailing, 10)
+                if showArrow {
+                    Image(systemName: "arrow.up.right")
+                        .font(.system(size: 24))
+                        .padding(.trailing, 10)
+                }
             }
             .padding(10)
         }

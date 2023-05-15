@@ -13,6 +13,9 @@
 		5121894729F95667005DD6C2 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894629F95667005DD6C2 /* MyPageView.swift */; };
 		5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894829F9566F005DD6C2 /* ProjectView.swift */; };
 		5121894D29F9567D005DD6C2 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894C29F9567D005DD6C2 /* ValueView.swift */; };
+		5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122C5982A11F8FC00DAD9A8 /* SignOutView.swift */; };
+		5122C59B2A12016200DAD9A8 /* ShowValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122C59A2A12016200DAD9A8 /* ShowValuesView.swift */; };
+		51348A072A121C4D005F9163 /* GetValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51348A062A121C4D005F9163 /* GetValues.swift */; };
 		5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5139CCA82A0BD05800181B55 /* MyPageRow.swift */; };
 		5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5139CCAD2A0BF97F00181B55 /* ProvisioningView.swift */; };
 		5139CCB12A0C9F1200181B55 /* BatteryDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */; };
@@ -34,7 +37,6 @@
 		517AE9432A089CE00028D670 /* AppleAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517AE9422A089CE00028D670 /* AppleAuthViewModel.swift */; };
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
-		51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */; };
 		51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */; };
 		51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */; };
 		51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */; };
@@ -65,6 +67,9 @@
 		5121894629F95667005DD6C2 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		5121894829F9566F005DD6C2 /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		5121894C29F9567D005DD6C2 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
+		5122C5982A11F8FC00DAD9A8 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
+		5122C59A2A12016200DAD9A8 /* ShowValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowValuesView.swift; sourceTree = "<group>"; };
+		51348A062A121C4D005F9163 /* GetValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetValues.swift; sourceTree = "<group>"; };
 		5139CCA82A0BD05800181B55 /* MyPageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRow.swift; sourceTree = "<group>"; };
 		5139CCAD2A0BF97F00181B55 /* ProvisioningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningView.swift; sourceTree = "<group>"; };
 		5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardView.swift; sourceTree = "<group>"; };
@@ -86,7 +91,6 @@
 		517AE9422A089CE00028D670 /* AppleAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthViewModel.swift; sourceTree = "<group>"; };
 		51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
 		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
-		51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 		51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeleteAccountView.swift; sourceTree = "<group>"; };
 		51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInformationView.swift; sourceTree = "<group>"; };
 		51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningEnergyView.swift; sourceTree = "<group>"; };
@@ -168,7 +172,8 @@
 		5139CCAA2A0BF8C900181B55 /* SignOut */ = {
 			isa = PBXGroup;
 			children = (
-				51810DAE2A036C6800AF3289 /* DeleteAccountView.swift */,
+				5122C5982A11F8FC00DAD9A8 /* SignOutView.swift */,
+				5122C59A2A12016200DAD9A8 /* ShowValuesView.swift */,
 				51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */,
 			);
 			path = SignOut;
@@ -292,6 +297,7 @@
 			children = (
 				511AA1D82A100A4700DAF26A /* PostLogin.swift */,
 				511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */,
+				51348A062A121C4D005F9163 /* GetValues.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -529,7 +535,6 @@
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
-				51810DAF2A036C6800AF3289 /* DeleteAccountView.swift in Sources */,
 				511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */,
 				511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
@@ -543,8 +548,11 @@
 				5139CCB12A0C9F1200181B55 /* BatteryDashboardView.swift in Sources */,
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
 				BE7C06DC2A0BA88E00C7D647 /* ValueYearView.swift in Sources */,
+				5122C59B2A12016200DAD9A8 /* ShowValuesView.swift in Sources */,
 				51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
+				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
+				51348A072A121C4D005F9163 /* GetValues.swift in Sources */,
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
 				514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */,
