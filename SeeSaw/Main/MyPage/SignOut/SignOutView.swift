@@ -20,18 +20,22 @@ struct SignOutView: View {
                 .font(.ssHeading1)
             HStack {
                 ValueBlockView(backgroundColor: .SeeSawGreen,
-                               text: "\(usedSeeSawDays)일")
+                               text: "\(usedSeeSawDays)일",
+                               showArrow: false)
                 Text("동안")
                     .font(.ssHeading1)
                 
                 Spacer()
             }
             ValueBlockView(backgroundColor: .SeeSawYellow,
-                           text: firstValue)
+                           text: firstValue,
+                           showArrow: false)
             ValueBlockView(backgroundColor: .SeeSawBlue,
-                           text: secondValue)
+                           text: secondValue,
+                           showArrow: false)
             ValueBlockView(backgroundColor: .SeeSawRed,
-                           text: thirdValue)
+                           text: thirdValue,
+                           showArrow: false)
             
             Text("를 지키기 위해 달려왔어요")
                 .font(.ssHeading1)
