@@ -15,6 +15,7 @@
 		5121894D29F9567D005DD6C2 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894C29F9567D005DD6C2 /* ValueView.swift */; };
 		5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122C5982A11F8FC00DAD9A8 /* SignOutView.swift */; };
 		5122C59B2A12016200DAD9A8 /* ShowValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122C59A2A12016200DAD9A8 /* ShowValuesView.swift */; };
+		51348A072A121C4D005F9163 /* GetValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51348A062A121C4D005F9163 /* GetValues.swift */; };
 		5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5139CCA82A0BD05800181B55 /* MyPageRow.swift */; };
 		5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5139CCAD2A0BF97F00181B55 /* ProvisioningView.swift */; };
 		5139CCB12A0C9F1200181B55 /* BatteryDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */; };
@@ -68,6 +69,7 @@
 		5121894C29F9567D005DD6C2 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
 		5122C5982A11F8FC00DAD9A8 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		5122C59A2A12016200DAD9A8 /* ShowValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowValuesView.swift; sourceTree = "<group>"; };
+		51348A062A121C4D005F9163 /* GetValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetValues.swift; sourceTree = "<group>"; };
 		5139CCA82A0BD05800181B55 /* MyPageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRow.swift; sourceTree = "<group>"; };
 		5139CCAD2A0BF97F00181B55 /* ProvisioningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningView.swift; sourceTree = "<group>"; };
 		5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardView.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				511AA1D82A100A4700DAF26A /* PostLogin.swift */,
 				511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */,
+				51348A062A121C4D005F9163 /* GetValues.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
+				51348A072A121C4D005F9163 /* GetValues.swift in Sources */,
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
 				514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */,

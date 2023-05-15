@@ -10,11 +10,11 @@ import SwiftUI
 struct ShowValuesView: View {
     @State private var nickname = "에몽"
     @State private var usedSeeSawDays = "365"
-    @State private var firstValue = "가치"
-    @State private var secondValue = "여유"
-    @State private var thirdValue = "사랑"
-    
     @State private var showSignOutView = false
+    
+    @StateObject var api = ApiClient()
+    @State var values: [String] = []
+    private let colors: [Color] = [.SeeSawYellow, .SeeSawBlue, .SeeSawRed]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -30,39 +30,32 @@ struct ShowValuesView: View {
                 Spacer()
             }
             .opacity(showSignOutView ? 1 : 0)
-            .animation(.easeInOut(duration: 1.0), value: showSignOutView)
+//            .animation(.easeInOut(duration: 1.0), value: showSignOutView)
             
-            ValueBlockView(backgroundColor: .SeeSawYellow,
-                           text: firstValue,
-                           showArrow: false)
+            ForEach(values.indices, id: \.self) { index in
+                ValueBlockView(backgroundColor: colors[index],
+                               text: values[index],
+                               showArrow: false)
                 .opacity(showSignOutView ? 1 : 0)
-                .animation(.easeInOut(duration: 1.0).delay(0.6), value: showSignOutView)
-            
-            ValueBlockView(backgroundColor: .SeeSawBlue,
-                           text: secondValue,
-                           showArrow: false)
-                .opacity(showSignOutView ? 1 : 0)
-                .animation(.easeInOut(duration: 1.0).delay(1.6), value: showSignOutView)
-            
-            ValueBlockView(backgroundColor: .SeeSawRed,
-                           text: thirdValue,
-                           showArrow: false)
-                .opacity(showSignOutView ? 1 : 0)
-                .animation(.easeInOut(duration: 1.0).delay(2.6), value: showSignOutView)
+//                .animation(.easeInOut(duration: 1.0).delay(0.6), value: showSignOutView)
+            }
             
             Text("를 지키기 위해 달려왔어요")
                 .font(.ssHeading1)
                 .opacity(showSignOutView ? 1 : 0)
-                .animation(.easeInOut(duration: 1.0).delay(3.6), value: showSignOutView)
+//                .animation(.easeInOut(duration: 1.0).delay(3.6), value: showSignOutView)
             
             Spacer()
             
             threeChevronDown
                 .opacity(showSignOutView ? 1 : 0)
-                .animation(.easeInOut(duration: 1.0).delay(4.6), value: showSignOutView)
+                .animation(.easeInOut(duration: 1.0).delay(1.0), value: showSignOutView)
         }
         .padding(20)
         .onAppear {
+            api.getValues { valuesArray in
+                values = valuesArray
+            }
             showSignOutView = true
         }
     }
