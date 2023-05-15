@@ -20,7 +20,7 @@ enum SetSleepGoalDescription {
 }
 
 struct SetSleepGoalView: View {
-    @State var sleepGoal: Double = 6.0
+    @State var sleepGoal: Int = 6
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -38,7 +38,7 @@ struct SetSleepGoalView: View {
                 Spacer()
                 
                 Button {
-                    sleepGoal -= 0.5
+                    sleepGoal -= 1
                 } label: {
                     ZStack {
                         Image(systemName: "minus.circle.fill")
@@ -60,7 +60,7 @@ struct SetSleepGoalView: View {
                 .foregroundColor(.Gray900)
                 
                 Button {
-                    sleepGoal += 0.5
+                    sleepGoal += 1
                 } label: {
                     ZStack {
                         Image(systemName: "plus.circle.fill")
@@ -75,11 +75,15 @@ struct SetSleepGoalView: View {
             Spacer()
             Spacer()
             
-            NavigationLink {
-                BatteryDashboardView()
-                    .navigationBarBackButtonHidden()
+            Button {
+                
             } label: {
-                CapsuleButtonView(color: .Gray900, text: "설정 완료", size: .large)
+                NavigationLink {
+                    BatteryDashboardView()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    CapsuleButtonView(color: .Gray900, text: "설정 완료", size: .large)
+                }
             }
             
         }
