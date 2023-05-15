@@ -17,6 +17,7 @@ enum SetSleepGoalDescription {
 }
 
 struct SetSleepGoalView: View {
+    @StateObject var setGoalVM = SetGoalViewModel()
     @State var sleepGoal: Int = 6
     
     var body: some View {
@@ -45,15 +46,20 @@ struct SetSleepGoalView: View {
             Spacer()
             
             Button {
-                
+                setGoalVM.postSleepGoal()
+                print("wow")
             } label: {
-                NavigationLink {
-                    BatteryDashboardView()
-                        .navigationBarBackButtonHidden()
-                } label: {
-                    CapsuleButtonView(color: .Gray900, text: "설정 완료", size: .large)
-                }
+                CapsuleButtonView(color: .Gray900, text: "설정 완료", size: .large)
             }
+            
+            /*
+             NavigationLink {
+                 BatteryDashboardView()
+                     .navigationBarBackButtonHidden()
+             } label: {
+                 
+             }
+             */
             
         }
         .navigationTitle("수면시간 목표 설정")

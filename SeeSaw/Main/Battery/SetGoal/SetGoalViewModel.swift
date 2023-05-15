@@ -8,8 +8,8 @@
 import Foundation
 
 class SetGoalViewModel: ObservableObject {
-    let baseUrl = Bundle.main.infoDictionary?["BASE_URL"] ?? ""
+    let baseUrl = "http://\(Bundle.main.infoDictionary?["BASE_URL"] ?? "nil baseUrl")"
     func postSleepGoal() {
-        print(baseUrl)
+        print("DEBUG postSleepGoal: \(baseUrl)")
     }
 }
