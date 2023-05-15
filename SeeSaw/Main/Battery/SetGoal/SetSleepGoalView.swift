@@ -34,35 +34,9 @@ struct SetSleepGoalView: View {
             HStack {
                 Spacer()
                 
-                Button {
-                    sleepGoal -= 1
-                } label: {
-                    ZStack {
-                        Image(systemName: "minus.circle.fill")
-                            .foregroundColor(.SeeSawRed)
-                            .font(.system(size: 48))
-                    }
-                }
-                
-                HStack(spacing: 0) {
-                    Text(String(sleepGoal))
-                        .font(.system(size: 64))
-                        .fontWeight(.bold)
-                    Text("시간")
-                        .font(.ssHeading2)
-                }
-                .foregroundColor(.Gray900)
-                .padding(.horizontal, 32)
-                
-                Button {
-                    sleepGoal += 1
-                } label: {
-                    ZStack {
-                        Image(systemName: "plus.circle.fill")
-                            .foregroundColor(.SeeSawGreen)
-                            .font(.system(size: 48))
-                    }
-                }
+                minusOneHourButton
+                sleepGoalHour
+                plusOneHourButton
                 
                 Spacer()
             }
@@ -86,6 +60,42 @@ struct SetSleepGoalView: View {
         .navigationBarTitleDisplayMode(.inline)
         .padding(20)
         .background(Color.Gray200)
+    }
+    
+    var minusOneHourButton: some View {
+        Button {
+            sleepGoal -= 1
+        } label: {
+            ZStack {
+                Image(systemName: "minus.circle.fill")
+                    .foregroundColor(.SeeSawRed)
+                    .font(.system(size: 48))
+            }
+        }
+    }
+    
+    var plusOneHourButton: some View {
+        Button {
+            sleepGoal += 1
+        } label: {
+            ZStack {
+                Image(systemName: "plus.circle.fill")
+                    .foregroundColor(.SeeSawGreen)
+                    .font(.system(size: 48))
+            }
+        }
+    }
+    
+    var sleepGoalHour: some View {
+        HStack(spacing: 0) {
+            Text(String(sleepGoal))
+                .font(.system(size: 64))
+                .fontWeight(.bold)
+            Text("시간")
+                .font(.ssHeading2)
+        }
+        .foregroundColor(.Gray900)
+        .padding(.horizontal, 32)
     }
 }
 
