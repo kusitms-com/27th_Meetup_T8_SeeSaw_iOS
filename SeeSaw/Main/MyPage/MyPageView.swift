@@ -141,7 +141,7 @@ struct MyPageView: View {
     
     var signOutViewRow: some View {
         NavigationLink {
-            DeleteAccountView()
+            SignOutView()
         } label: {
             MyPageRow(isRowTop: false,
                       title: "회원탈퇴",
@@ -150,8 +150,8 @@ struct MyPageView: View {
     }
 }
 
-//struct MyPageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyPageView()
-//    }
-//}
+ struct MyPageView_Previews: PreviewProvider {
+    static var previews: some View {
+        MyPageView()
+    }
+ }
