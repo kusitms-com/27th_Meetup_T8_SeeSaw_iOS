@@ -12,26 +12,22 @@ struct SignUpCompletionView: View {
         VStack(alignment: .leading) {
             Spacer()
             
-            Text("회원가입 완료!\n시소와 함께 균형을 찾아가볼까요?")
+            Text("회원가입 완료!\n시소와 함께\n균형을 찾아가볼까요?")
                 .font(.ssHeading2)
+            
             Rectangle()
                 .frame(height: 400)
+                .foregroundColor(.Gray300)
             
             Spacer()
             
             NavigationLink {
-                ExplainValuesView().navigationBarBackButtonHidden(true)
+                ExplainValuesView()
+                    .navigationBarBackButtonHidden(true)
             } label: {
-                HStack {
-                    Spacer()
-                    Text("시작하기")
-                    Spacer()
-                }
-                .font(.ssWhiteBody1)
-                .foregroundColor(.Gray100)
-                .frame(height: 44)
-                .background(Color.SeeSawGreen)
-                .clipShape(Capsule())
+                CapsuleButtonView(color: .SeeSawGreen,
+                                  text: "시작하기",
+                                  size: .large)
             }
         }
         .padding(20)

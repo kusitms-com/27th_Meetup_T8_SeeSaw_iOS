@@ -11,7 +11,6 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var authVM: AuthViewModel
     @StateObject var kakaoAuthVM = KakaoAuthViewModel(isLoggedIn: false)
-    @StateObject var appleAuthVM = AppleAuthViewModel()
     @State private var idTokenString = ""
     
     var body: some View {
