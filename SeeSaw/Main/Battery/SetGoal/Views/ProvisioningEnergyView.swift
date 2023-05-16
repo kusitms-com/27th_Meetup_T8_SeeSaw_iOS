@@ -10,15 +10,15 @@ import SwiftUI
 enum ProvisioningEnergyDescription {
     static let allowTitle = """
 시소가 건강앱에
-접근할 수 있도록 허용합니다
+접근할 수 있도록 허용하시겠어요?
 """
     static let allowMessage = """
-건강 앱 엑세스를 허용하면,
-앱 내 활동 데이터(활동 칼로리)를 시소로 불러옵니다.
+건강 앱 접근을 허용하면,
+앱 내 활동 데이터를 시소로 불러와요
 
-나중에 시스템 설정에서 이 엑세스를 변경할 수 있습니다.
+나중에 설정에서 접근 허용 여부를 변경할 수 있어요
 """
-    static let allowButtonMessage = "계속하기"
+    static let allowButtonMessage = "허용하고 계속하기"
     
     static let setGoalTitle = """
 영차영차
