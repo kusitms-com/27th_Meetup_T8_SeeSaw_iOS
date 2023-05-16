@@ -25,7 +25,7 @@ struct UserInfoView: View {
             progressBar
                 .padding(.bottom, 28)
             
-            Text("만나서 반가워요!\n기본 정보를 입력해주세요\(String(allValidate))")
+            Text("만나서 반가워요!\n기본 정보를 입력해주세요")
                 .font(.ssHeading2)
                 .foregroundColor(.GrayBlack)
             
