@@ -9,80 +9,91 @@ import SwiftUI
 
 enum ValuesMessages {
     static let first = """
-현재에 집중하다보면
-때로는 삶의 중요한 가치를 놓치기도 하죠.
+현재에 집중하다 보면
+중요한 가치를 놓치기도 하죠.
 
 시소는 바쁜 일상 속에서도
-중요한 가치를 잃지 않도록 도와줍니다.
-
+나만의 가치를 잃지 않도록 도와줘요.
 """
     static let second = """
-이제 여러분에게
-중요한 세 가지 가치를 설정합니다.
+중요한 3가지 가치를 설정해요.
+시소는 가치를 향한 00님의 여정을 함께해요!
 
-이 가치들과 관련된 실천 하나하나가
-여러분의 삶에 필요한 에너지를
-충전시켜줄 거예요.
+일상에서 가치를 실천하면
+삶에 필요한 에너지가 충전돼요.
 """
     static let third = """
-또, 프로젝트를 기록하며
-그 가치를 향해 잘 나아가고 있는지
-점검할 수 있습니다.
+프로젝트를 회고하며
+가치를 향해 잘 나아가고 있는지
+점검할 수 있어요.
 
-그럼 이제 가치를 설정하러 가볼까요?
-
+그럼 가치를 설정하러 가볼까요?
 """
 }
 
 struct ExplainValuesView: View {
+    @State private var selectedView = 1
+    
     var body: some View {
         VStack {
-            TabView {
-                VStack(alignment: .leading) {
+                HStack {
                     Spacer()
                     
-                    Rectangle()
-                        .frame(height: 300)
-                        .padding(.bottom, 20)
-                    
-                    Text(ValuesMessages.first)
-                    
-                    Spacer()
+                    Button {
+                        selectedView = 3
+                    } label: {
+                        HStack {
+                            Text("건너뛰기")
+                            Image(systemName: "arrow.right")
+                        }
+                        .foregroundColor(.Gray400)
+                        .opacity(selectedView != 3 ? 1.0 : 0.0)
+                    }
+                    .disabled(selectedView == 3)
                 }
-                
-                VStack(alignment: .leading) {
-                    Spacer()
-                    
-                    Rectangle()
-                        .frame(height: 300)
-                        .padding(.bottom, 20)
-                        .foregroundColor(.SeeSawGreen)
-                    
-                    Text(ValuesMessages.second)
-                    
-                    Spacer()
-                }
-                
-                VStack(alignment: .leading) {
-                    Spacer()
-                    
-                    Rectangle()
-                        .frame(height: 300)
-                        .padding(.bottom, 20)
-                    
-                    Text(ValuesMessages.third)
-                    
-                    Spacer()
-                }
+            
+            TabView(selection: $selectedView) {
+                ExplainValue(text: ValuesMessages.first, color: .SeeSawGreen)
+                    .tag(1)
+                ExplainValue(text: ValuesMessages.second, color: .SeeSawBlue)
+                    .tag(2)
+                ExplainValue(text: ValuesMessages.third, color: .SeeSawGreen)
+                    .tag(3)
             }
             .tabViewStyle(.page)
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
-            CapsuleButtonView(color: Color.Gray400,
-                              text: "다음",
-                              size: .large)
+            NavigationLink {
+                
+            } label: {
+                CapsuleButtonView(color: Color.SeeSawGreen,
+                                  text: "가치 설정하기",
+                                  size: .large)
+                .opacity(selectedView != 3 ? 0.0 : 1.0)
+            }
+            .disabled(selectedView != 3)
         }
         .padding(20)
+    }
+}
+
+struct ExplainValue: View {
+    let text: String
+    let color: Color
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Spacer()
+            
+            Rectangle()
+                .frame(height: 300)
+                .padding(.bottom, 20)
+                .foregroundColor(color)
+            
+            Text(text)
+            
+            Spacer()
+        }
     }
 }
 
