@@ -67,6 +67,7 @@ struct BatteryDashboardView: View {
             BatteryInformationView()
         }
         .onAppear {
+            print("onappear")
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 progress = 0.8
             }

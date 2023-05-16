@@ -1,34 +1,23 @@
 //
-//  SetSleepGoalView.swift
+//  SetActivityGoalView.swift
 //  SeeSaw
 //
-//  Created by 이안진 on 2023/05/13.
+//  Created by 이안진 on 2023/05/16.
 //
 
 import SwiftUI
 
-enum SetSleepGoalDescription {
-    static let title = """
-드르렁...
-하루 목표 수면 시간을 설정해볼까요?
-"""
-    static let message = """
-평소의 수면 시간 또는 원하는 수준의 수면 시간을
-기준으로 일일 목표를 설정해보세요.
-하루 평균 6-8시간이 적당해요!
-"""
-}
-
-struct SetSleepGoalView: View {
-    @State var sleepGoal: Double = 6.0
+struct SetActivityGoalView: View {
+    @StateObject var setGoalVM = SetGoalViewModel()
+    @State var activityGoal = 200
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(SetSleepGoalDescription.title)
+            Text(ProvisioningEnergyDescription.setGoalTitle)
                 .font(.ssHeading2)
                 .foregroundColor(.Gray900)
                 .padding(.bottom, 20)
-            Text(SetSleepGoalDescription.message)
+            Text(ProvisioningEnergyDescription.setGoalMessage)
                 .font(.ssBlackBody2)
                 .foregroundColor(.Gray600)
             
@@ -38,7 +27,7 @@ struct SetSleepGoalView: View {
                 Spacer()
                 
                 Button {
-                    sleepGoal -= 0.5
+                    activityGoal -= 10
                 } label: {
                     ZStack {
                         Image(systemName: "minus.circle.fill")
@@ -48,19 +37,16 @@ struct SetSleepGoalView: View {
                 }
                 
                 HStack(alignment: .top, spacing: 0) {
-                    Text(String(sleepGoal))
+                    Text(String(activityGoal))
                         .font(.system(size: 64))
                         .fontWeight(.bold)
-//                    TextField("", text: $goalEnergy)
-//                        .keyboardType(.numberPad)
-//                        .font(.system(size: 64))
-                    Text("시간")
+                    Text("kcal")
                         .font(.ssHeading2)
                 }
                 .foregroundColor(.Gray900)
                 
                 Button {
-                    sleepGoal += 0.5
+                    activityGoal += 10
                 } label: {
                     ZStack {
                         Image(systemName: "plus.circle.fill")
@@ -79,19 +65,21 @@ struct SetSleepGoalView: View {
                 BatteryDashboardView()
                     .navigationBarBackButtonHidden()
             } label: {
-                CapsuleButtonView(color: .Gray900, text: "설정 완료", size: .large)
+                CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.setGoalButtonMessage, size: .large)
             }
-            
+            .simultaneousGesture(TapGesture().onEnded {
+                setGoalVM.postActivityGoal(activityGoal: activityGoal)
+            })
         }
-        .navigationTitle("접근 허용")
+        .navigationTitle("활동량 목표 설정")
         .navigationBarTitleDisplayMode(.inline)
         .padding(20)
         .background(Color.Gray200)
     }
 }
 
-struct SetSleepGoalView_Previews: PreviewProvider {
+struct SetActivityGoalView_Previews: PreviewProvider {
     static var previews: some View {
-        SetSleepGoalView()
+        SetActivityGoalView()
     }
 }
