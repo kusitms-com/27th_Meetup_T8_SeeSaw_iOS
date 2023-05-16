@@ -52,6 +52,7 @@
 		51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */; };
 		51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */; };
 		51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6566D2A1344A000610369 /* SetActivityGoalView.swift */; };
+		51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6566F2A13474600610369 /* ProvisioningEnergyDescription.swift */; };
 		51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */; };
 		51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B62A0A065600F1F73B /* LargePopUpView.swift */; };
 		51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */; };
@@ -110,6 +111,7 @@
 		51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		51C6566D2A1344A000610369 /* SetActivityGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityGoalView.swift; sourceTree = "<group>"; };
+		51C6566F2A13474600610369 /* ProvisioningEnergyDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningEnergyDescription.swift; sourceTree = "<group>"; };
 		51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBlockView.swift; sourceTree = "<group>"; };
 		51DD74B62A0A065600F1F73B /* LargePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargePopUpView.swift; sourceTree = "<group>"; };
 		51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPopUpView.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				51348A0D2A12604F005F9163 /* Views */,
+				51C6566F2A13474600610369 /* ProvisioningEnergyDescription.swift */,
 				51348A092A1252E6005F9163 /* SetGoalViewModel.swift */,
 			);
 			path = SetGoal;
@@ -550,6 +553,7 @@
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
 				51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */,
+				51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */,
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
