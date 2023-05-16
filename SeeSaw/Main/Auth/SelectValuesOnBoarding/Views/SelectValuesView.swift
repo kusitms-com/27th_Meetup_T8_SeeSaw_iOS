@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+// import UIKit
 
 struct SelectValuesView: View {
     @State private var nickname = "에몽"
@@ -21,6 +22,7 @@ struct SelectValuesView: View {
             GridItem(.flexible(), spacing: nil, alignment: nil)
         ]
     @State private var selectedValues: [String] = []
+    @State private var isModalPresented = false
     
     var body: some View {
         VStack(spacing: 0) {
@@ -57,7 +59,6 @@ struct SelectValuesView: View {
                         VStack(alignment: .leading) {
                             if selectedValues.isEmpty {
                                 Text(".  .  .")
-                                    .foregroundColor(.GrayBlack)
                             } else {
                                 HStack(spacing: 0) {
                                     Text("나는 ")
@@ -69,6 +70,7 @@ struct SelectValuesView: View {
                                 Text("한 해를 보내고 싶어요")
                             }
                         }
+                        .foregroundColor(.GrayBlack)
                         .font(.ssBlackTitle1)
                         .padding(.leading, 40)
                     }
@@ -123,10 +125,27 @@ struct SelectValuesView: View {
 //                }
                 
                 Spacer()
+                
+                Button {
+                    isModalPresented = true
+                } label: {
+                    CapsuleButtonView(color: .Gray900,
+                                      text: "가치 저장하기",
+                                      size: .large)
+                }
             }
             .padding([.horizontal, .bottom], 20)
         }
         .background(Color.Gray200)
+        .halfSheet(showSheet: $isModalPresented) {
+            Button {
+                isModalPresented = false
+            } label: {
+                Text("wow")
+            }
+        } onEnd: {
+            print("onend")
+        }
     }
 }
 
