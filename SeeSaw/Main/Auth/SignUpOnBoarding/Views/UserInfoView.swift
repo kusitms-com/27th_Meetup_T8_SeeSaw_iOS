@@ -10,14 +10,14 @@ import SwiftUI
 struct UserInfoView: View {
     @State var email: String = ""
     @State var nickname: String = ""
-    var isAllInfoWrited: Bool {
-        return !email.isEmpty && !nickname.isEmpty
-    }
     var isNotVaildEmail: Bool {
         return !email.isEmpty && !isValidEmail(email)
     }
     var isNotVaildNickname: Bool {
         return !nickname.isEmpty && !isValidNickname(nickname)
+    }
+    var allValidate: Bool {
+        return isValidEmail(email) && isValidNickname(nickname)
     }
     
     var body: some View {
@@ -25,7 +25,7 @@ struct UserInfoView: View {
             progressBar
                 .padding(.bottom, 28)
             
-            Text("만나서 반가워요!\n기본 정보를 입력해주세요")
+            Text("만나서 반가워요!\n기본 정보를 입력해주세요\(String(allValidate))")
                 .font(.ssHeading2)
                 .foregroundColor(.GrayBlack)
             
@@ -42,11 +42,11 @@ struct UserInfoView: View {
                 SignUpCompletionView()
                     .navigationBarBackButtonHidden(true)
             } label: {
-                CapsuleButtonView(color: isAllInfoWrited ? Color.Gray900 : Color.Gray400,
+                CapsuleButtonView(color: allValidate ? Color.Gray900 : Color.Gray400,
                                   text: "다음",
                                   size: .large)
             }
-            .disabled(!isAllInfoWrited)
+            .disabled(allValidate == false)
         }
         .padding(20)
         .background(Color.Gray200)
