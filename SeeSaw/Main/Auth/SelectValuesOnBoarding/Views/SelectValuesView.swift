@@ -138,11 +138,7 @@ struct SelectValuesView: View {
         }
         .background(Color.Gray200)
         .halfSheet(showSheet: $isModalPresented) {
-            Button {
-                isModalPresented = false
-            } label: {
-                Text("wow")
-            }
+            SaveValuesSheetView(isModalPresented: $isModalPresented)
         } onEnd: {
             print("onend")
         }
