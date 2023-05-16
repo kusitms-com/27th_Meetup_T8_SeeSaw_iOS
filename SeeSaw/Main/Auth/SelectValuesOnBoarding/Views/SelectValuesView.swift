@@ -23,6 +23,7 @@ struct SelectValuesView: View {
         ]
     @State private var selectedValues: [String] = []
     @State private var isModalPresented = false
+    let selectedValueColors: [Color] = [.Gray300, .SeeSawYellow, .SeeSawBlue, .SeeSawRed]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -103,26 +104,12 @@ struct SelectValuesView: View {
                                 .background(
                                     Rectangle()
                                         .cornerRadius(100, corners: .allCorners)
-                                        .foregroundColor(selectedValues.contains(value) ? .SeeSawGreen : .Gray300)
+                                        .foregroundColor(selectedValueColors[(selectedValues.firstIndex(of: value) ?? -1) + 1])
                                 )
                         }
                         .disabled(!selectedValues.contains(value) && selectedValues.count == 3)
                     }
                 }
-                
-//                Button {
-//
-//                } label: {
-//                    Text("직접 입력")
-//                        .foregroundColor(.Gray700)
-//                        .padding(.vertical, 6)
-//                        .padding(.horizontal, 12)
-//                        .background(
-//                            Rectangle()
-//                                .cornerRadius(100, corners: .allCorners)
-//                                .foregroundColor(.Gray300)
-//                        )
-//                }
                 
                 Spacer()
                 
