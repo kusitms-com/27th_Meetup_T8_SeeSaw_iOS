@@ -49,10 +49,29 @@ struct SelectValuesView: View {
                 
                 HStack {
                     Spacer()
-                    Rectangle()
-                        .cornerRadius(90, corners: [.topLeft, .bottomLeft])
-                        .frame(width: 360, height: 92)
-                        .foregroundColor(.GrayWhite)
+                    ZStack(alignment: .leading) {
+                        Rectangle()
+                            .cornerRadius(90, corners: [.topLeft, .bottomLeft])
+                            .frame(width: 360, height: 92)
+                            .foregroundColor(.GrayWhite)
+                        VStack(alignment: .leading) {
+                            if selectedValues.isEmpty {
+                                Text(".  .  .")
+                                    .foregroundColor(.GrayBlack)
+                            } else {
+                                HStack(spacing: 0) {
+                                    Text("나는 ")
+                                    ForEach(selectedValues, id: \.self) { value in
+                                        Text("\(value) ")
+                                    }
+                                    Text("에 가치를 두는")
+                                }
+                                Text("한 해를 보내고 싶어요")
+                            }
+                        }
+                        .font(.ssBlackTitle1)
+                        .padding(.leading, 40)
+                    }
                 }
             }
             .padding(.vertical, 30)
