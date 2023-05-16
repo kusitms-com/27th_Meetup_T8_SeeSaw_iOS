@@ -11,9 +11,11 @@ import KeychainSwift
 
 class AuthViewModel: ObservableObject {
     @Published var isLoggedIn: Bool?
+    @Published var isRegenerated: Bool?
     
     init(isLoggedIn: Bool) {
         self.isLoggedIn = false
+        self.isRegenerated = false
     }
     
     let keychain = KeychainSwift()
@@ -84,6 +86,7 @@ class AuthViewModel: ObservableObject {
                 switch response.result {
                 case .success(let response):
                     self.isLoggedIn = true
+                    self.isRegenerated = true
                     self.keychain.set(response.accessToken,
                                       forKey: "accessToken")
                     self.keychain.set(response.refreshToken,

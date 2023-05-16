@@ -16,8 +16,10 @@ struct ContentView: View {
         VStack {
             if authVM.isLoggedIn ?? false {
                 SeeSawTabView()
-            } else {
+            } else if authVM.isRegenerated ?? false {
                 LoginView()
+            } else {
+                LaunchScreenView()
             }
         }
         .onAppear {
