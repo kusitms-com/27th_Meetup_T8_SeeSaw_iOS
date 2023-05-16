@@ -13,6 +13,12 @@ struct UserInfoView: View {
     var isAllInfoWrited: Bool {
         return !email.isEmpty && !nickname.isEmpty
     }
+    var isNotVaildEmail: Bool {
+        return !email.isEmpty && !isValidEmail(email)
+    }
+    var isNotVaildNickname: Bool {
+        return !nickname.isEmpty && !isValidNickname(nickname)
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -43,6 +49,7 @@ struct UserInfoView: View {
             .disabled(!isAllInfoWrited)
         }
         .padding(20)
+        .background(Color.Gray200)
     }
     
     var progressBar: some View {
@@ -71,10 +78,19 @@ struct UserInfoView: View {
                     .textInputAutocapitalization(.never)
                     .keyboardType(.emailAddress)
                 Image(systemName: "checkmark")
-                    .foregroundColor(email.isEmpty ? .Gray400 : .SeeSawGreen)
+                    .foregroundColor(email.isEmpty ? .Gray400 : (isNotVaildEmail ? .SeeSawRed : .SeeSawGreen))
             }
             
-            Divider()
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(isNotVaildEmail ? .SeeSawRed : .Gray300)
+                .padding(.bottom, 8)
+            
+            if isNotVaildEmail {
+                Text("올바른 이메일 형식이 아니에요")
+                    .font(.ssBlackBody4)
+                    .foregroundColor(.SeeSawRed)
+            }
         }
     }
     
@@ -89,11 +105,34 @@ struct UserInfoView: View {
                     .padding(.vertical, 8)
                     .textInputAutocapitalization(.never)
                 Image(systemName: "checkmark")
-                    .foregroundColor(nickname.isEmpty ? .Gray400 : .SeeSawGreen)
+                    .foregroundColor(nickname.isEmpty ? .Gray400 : (isNotVaildNickname ? .SeeSawRed : .SeeSawGreen))
             }
             
-            Divider()
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(isNotVaildNickname ? .SeeSawRed : .Gray300)
+                .padding(.bottom, 8)
+            
+            if isNotVaildNickname {
+                Text("한글, 영문, 숫자만 입력할 수 있어요")
+                    .font(.ssBlackBody4)
+                    .foregroundColor(.SeeSawRed)
+            }
         }
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    func isValidNickname(_ nickname: String) -> Bool {
+        let nicknameRegEx = "[가-힣A-Za-z0-9]{1,10}"
+
+        let nicknamePred = NSPredicate(format: "SELF MATCHES %@", nicknameRegEx)
+        return nicknamePred.evaluate(with: nickname)
     }
 }
 
