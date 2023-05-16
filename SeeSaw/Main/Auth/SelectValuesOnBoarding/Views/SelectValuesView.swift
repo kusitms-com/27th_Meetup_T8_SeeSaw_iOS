@@ -116,16 +116,17 @@ struct SelectValuesView: View {
                 Button {
                     isModalPresented = true
                 } label: {
-                    CapsuleButtonView(color: .Gray900,
+                    CapsuleButtonView(color: selectedValues.count != 3 ? .Gray400 : .Gray900,
                                       text: "가치 저장하기",
                                       size: .large)
                 }
+                .disabled(selectedValues.count != 3)
             }
             .padding([.horizontal, .bottom], 20)
         }
         .background(Color.Gray200)
         .halfSheet(showSheet: $isModalPresented) {
-            SaveValuesSheetView(isModalPresented: $isModalPresented)
+            SaveValuesSheetView(isModalPresented: $isModalPresented, values: $selectedValues)
         } onEnd: {
             print("onend")
         }

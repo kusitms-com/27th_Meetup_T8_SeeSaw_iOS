@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SaveValuesSheetView: View {
     @Binding var isModalPresented: Bool
+    @Binding var values: [String]
+    let selectedValueColors: [Color] = [.SeeSawYellow, .SeeSawBlue, .SeeSawRed]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -31,20 +33,17 @@ struct SaveValuesSheetView: View {
             Spacer()
             
             HStack(spacing: 16) {
-                Rectangle()
-                    .cornerRadius(90, corners: .allCorners)
-                    .frame(height: 46)
-                    .foregroundColor(.SeeSawYellow)
-                
-                Rectangle()
-                    .cornerRadius(90, corners: .allCorners)
-                    .frame(height: 46)
-                    .foregroundColor(.SeeSawBlue)
-                
-                Rectangle()
-                    .cornerRadius(90, corners: .allCorners)
-                    .frame(height: 46)
-                    .foregroundColor(.SeeSawRed)
+                ForEach(0..<3) { index in
+                    ZStack {
+                        Rectangle()
+                            .cornerRadius(90, corners: .allCorners)
+                            .frame(height: 46)
+                            .foregroundColor(selectedValueColors[index])
+                        Text(values[index])
+                            .font(.ssWhiteTitle2)
+                            .foregroundColor(.GrayWhite)
+                    }
+                }
             }
             
             Spacer()
