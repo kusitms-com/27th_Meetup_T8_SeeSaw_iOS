@@ -177,11 +177,19 @@
 		51348A082A124F9D005F9163 /* SetGoal */ = {
 			isa = PBXGroup;
 			children = (
-				51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */,
-				51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */,
+				51348A0D2A12604F005F9163 /* Views */,
 				51348A092A1252E6005F9163 /* SetGoalViewModel.swift */,
 			);
 			path = SetGoal;
+			sourceTree = "<group>";
+		};
+		51348A0D2A12604F005F9163 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */,
+				51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5139CCAA2A0BF8C900181B55 /* SignOut */ = {

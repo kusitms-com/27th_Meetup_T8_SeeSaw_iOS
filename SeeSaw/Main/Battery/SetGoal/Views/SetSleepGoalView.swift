@@ -12,13 +12,14 @@ enum SetSleepGoalDescription {
     static let message = """
 평소의 수면시간 또는
 원하는 수준의 수면시간을 기준으로
-일일 목표를 설정해보세요
+하루 목표를 설정해보세요
 """
 }
 
 struct SetSleepGoalView: View {
     @StateObject var setGoalVM = SetGoalViewModel()
     @State var sleepGoal: Int = 6
+    @State private var setSleepGoal: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -45,22 +46,15 @@ struct SetSleepGoalView: View {
             Spacer()
             Spacer()
             
-            Button {
-                setGoalVM.postSleepGoal()
-                print("wow")
+            NavigationLink {
+                BatteryDashboardView()
+                    .navigationBarBackButtonHidden()
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "설정 완료", size: .large)
             }
-            
-            /*
-             NavigationLink {
-                 BatteryDashboardView()
-                     .navigationBarBackButtonHidden()
-             } label: {
-                 
-             }
-             */
-            
+            .simultaneousGesture(TapGesture().onEnded {
+                setGoalVM.postSleepGoal(sleepGoal: sleepGoal)
+            })
         }
         .navigationTitle("수면시간 목표 설정")
         .navigationBarTitleDisplayMode(.inline)
