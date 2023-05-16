@@ -51,6 +51,7 @@
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
 		51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */; };
 		51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */; };
+		51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6566D2A1344A000610369 /* SetActivityGoalView.swift */; };
 		51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */; };
 		51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B62A0A065600F1F73B /* LargePopUpView.swift */; };
 		51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */; };
@@ -108,6 +109,7 @@
 		51BA2A6229EA8C5600071264 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51BA2A6529EA8C5600071264 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		51C6566D2A1344A000610369 /* SetActivityGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityGoalView.swift; sourceTree = "<group>"; };
 		51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBlockView.swift; sourceTree = "<group>"; };
 		51DD74B62A0A065600F1F73B /* LargePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargePopUpView.swift; sourceTree = "<group>"; };
 		51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPopUpView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		51348A0D2A12604F005F9163 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				51C6566D2A1344A000610369 /* SetActivityGoalView.swift */,
 				51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */,
 				51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */,
 			);
@@ -562,6 +565,7 @@
 				511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
+				51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */,
 				517AE9432A089CE00028D670 /* AppleAuthViewModel.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
