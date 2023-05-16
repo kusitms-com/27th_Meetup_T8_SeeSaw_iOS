@@ -34,6 +34,7 @@ struct UserInfoView: View {
             
             NavigationLink {
                 SignUpCompletionView()
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 CapsuleButtonView(color: isAllInfoWrited ? Color.Gray900 : Color.Gray400,
                                   text: "다음",
