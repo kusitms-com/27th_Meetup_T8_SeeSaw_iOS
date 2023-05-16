@@ -50,7 +50,8 @@ struct ExplainValuesView: View {
             .indexViewStyle(.page(backgroundDisplayMode: .always))
             
             NavigationLink {
-                
+                SelectValuesView()
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 CapsuleButtonView(color: Color.SeeSawGreen,
                                   text: "가치 설정하기",
