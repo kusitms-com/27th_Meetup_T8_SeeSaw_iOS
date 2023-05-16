@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ProvisioningEnergyView: View {
-    @State private var showSetGoalEnergy = false
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(ProvisioningEnergyDescription.allowTitle)

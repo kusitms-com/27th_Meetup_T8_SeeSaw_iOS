@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SetActivityGoalView: View {
-    @State var goalEnergy = 200
+    @StateObject var setGoalVM = SetGoalViewModel()
+    @State var activityGoal = 200
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -26,7 +27,7 @@ struct SetActivityGoalView: View {
                 Spacer()
                 
                 Button {
-                    goalEnergy -= 10
+                    activityGoal -= 10
                 } label: {
                     ZStack {
                         Image(systemName: "minus.circle.fill")
@@ -36,7 +37,7 @@ struct SetActivityGoalView: View {
                 }
                 
                 HStack(alignment: .top, spacing: 0) {
-                    Text(String(goalEnergy))
+                    Text(String(activityGoal))
                         .font(.system(size: 64))
                         .fontWeight(.bold)
                     Text("kcal")
@@ -45,7 +46,7 @@ struct SetActivityGoalView: View {
                 .foregroundColor(.Gray900)
                 
                 Button {
-                    goalEnergy += 10
+                    activityGoal += 10
                 } label: {
                     ZStack {
                         Image(systemName: "plus.circle.fill")
@@ -66,6 +67,9 @@ struct SetActivityGoalView: View {
             } label: {
                 CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.setGoalButtonMessage, size: .large)
             }
+            .simultaneousGesture(TapGesture().onEnded {
+                setGoalVM.postActivityGoal(activityGoal: activityGoal)
+            })
         }
         .navigationTitle("활동량 목표 설정")
         .navigationBarTitleDisplayMode(.inline)

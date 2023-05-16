@@ -28,7 +28,32 @@ class SetGoalViewModel: ObservableObject {
                    parameters: parameters,
                    encoding: JSONEncoding.default,
                    headers: headers)
-            .responseDecodable(of: PostSleepGoalResponse.self) { response in
+            .responseDecodable(of: PostGoalResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print(response)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
+    func postActivityGoal(activityGoal: Int) {
+        let url = "\(baseUrl)/api/battery/goal/activity"
+        let parameters: [String: Any] = [
+            "value": activityGoal
+        ]
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url,
+                   method: .post,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+            .responseDecodable(of: PostGoalResponse.self) { response in
                 switch response.result {
                 case .success(let response):
                     print(response)
