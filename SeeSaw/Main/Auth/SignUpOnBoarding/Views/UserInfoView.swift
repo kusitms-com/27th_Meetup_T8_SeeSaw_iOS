@@ -24,7 +24,7 @@ struct UserInfoView: View {
                 .foregroundColor(.GrayBlack)
             
             Divider()
-                .padding(.vertical, 24)
+                .padding(.vertical, 20)
             
             emailTextField
                 .padding(.bottom, 40)

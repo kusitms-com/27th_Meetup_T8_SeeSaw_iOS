@@ -25,7 +25,7 @@ struct AgreeTermsView: View {
                 titleView
                 
                 Divider()
-                    .padding(.bottom, 24)
+                    .padding(.bottom, 20)
                 
                 VStack {
                     TermView(isNecessary: true,
