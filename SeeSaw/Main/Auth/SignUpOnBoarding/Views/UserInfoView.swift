@@ -18,54 +18,19 @@ struct UserInfoView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ProgressView(value: progress)
-                .padding(.vertical, 28)
+            progressBar
+                .padding(.bottom, 28)
             
             Text("만나서 반가워요!\n기본 정보를 입력해주세요")
                 .font(.ssHeading2)
                 .foregroundColor(.GrayBlack)
-            Text("시소가 여러분을 어떻게 불러드릴까요?")
-                .font(.ssWhiteBody2)
-                .foregroundColor(.Gray600)
-                .padding(.vertical, 20)
             
             Divider()
-                .padding(.bottom, 24)
+                .padding(.vertical, 24)
             
-            VStack(alignment: .leading, spacing: 0) {
-                Text("이메일")
-                    .font(.ssWhiteSubTitle)
-                
-                ZStack(alignment: .trailing) {
-                    TextField("이메일을 입력해주세요", text: $email)
-                        .font(.ssBlackBody1)
-                        .padding(.vertical, 8)
-                        .textInputAutocapitalization(.never)
-                        .keyboardType(.emailAddress)
-                    Image(systemName: "checkmark")
-                        .foregroundColor(email.isEmpty ? .Gray400 : .SeeSawGreen)
-                }
-                
-                Divider()
-            }
-            .padding(.bottom, 40)
-            
-            VStack(alignment: .leading, spacing: 0) {
-                Text("닉네임")
-                    .font(.ssWhiteSubTitle)
-                
-                ZStack(alignment: .trailing) {
-                    TextField("닉네임을 10글자 내로 입력해주세요", text: $nickname)
-                        .font(.ssBlackBody1)
-                        .padding(.vertical, 8)
-                        .textInputAutocapitalization(.never)
-                        .keyboardType(.emailAddress)
-                    Image(systemName: "checkmark")
-                        .foregroundColor(nickname.isEmpty ? .Gray400 : .SeeSawGreen)
-                }
-                
-                Divider()
-            }
+            emailTextField
+                .padding(.bottom, 40)
+            nicknameTextField
             
             Spacer()
             
@@ -79,6 +44,57 @@ struct UserInfoView: View {
             .disabled(!isAllInfoWrited)
         }
         .padding(20)
+    }
+    
+    var progressBar: some View {
+        HStack(spacing: 8) {
+            Rectangle()
+                .cornerRadius(12, corners: .allCorners)
+                .frame(height: 6)
+                .foregroundColor(.SeeSawGreen)
+            
+            Rectangle()
+                .cornerRadius(12, corners: .allCorners)
+                .frame(height: 6)
+                .foregroundColor(.SeeSawGreen)
+        }
+    }
+    
+    var emailTextField: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("이메일")
+                .font(.ssWhiteSubTitle)
+            
+            ZStack(alignment: .trailing) {
+                TextField("이메일을 입력해주세요", text: $email)
+                    .font(.ssBlackBody1)
+                    .padding(.vertical, 8)
+                    .textInputAutocapitalization(.never)
+                    .keyboardType(.emailAddress)
+                Image(systemName: "checkmark")
+                    .foregroundColor(email.isEmpty ? .Gray400 : .SeeSawGreen)
+            }
+            
+            Divider()
+        }
+    }
+    
+    var nicknameTextField: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("닉네임")
+                .font(.ssWhiteSubTitle)
+            
+            ZStack(alignment: .trailing) {
+                TextField("한글, 영분, 숫자를 10글자 내로 입력해주세요", text: $nickname)
+                    .font(.ssBlackBody1)
+                    .padding(.vertical, 8)
+                    .textInputAutocapitalization(.never)
+                Image(systemName: "checkmark")
+                    .foregroundColor(nickname.isEmpty ? .Gray400 : .SeeSawGreen)
+            }
+            
+            Divider()
+        }
     }
 }
 
