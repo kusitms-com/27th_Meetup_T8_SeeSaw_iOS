@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct UserInfoView: View {
-    @State private var progress = 0.99
     @State var email: String = ""
     @State var nickname: String = ""
-//    @FocusState private var focusField: Field?
     var isAllInfoWrited: Bool {
         return !email.isEmpty && !nickname.isEmpty
     }

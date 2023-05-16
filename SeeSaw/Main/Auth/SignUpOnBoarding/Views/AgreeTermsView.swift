@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AgreeTermsView: View {
-    @State private var progress = 0.5
     @State var isFirstTermAgree: Bool = false
     @State var isSecondTermAgree: Bool = false
     @State var isThirdTermAgree: Bool = false
