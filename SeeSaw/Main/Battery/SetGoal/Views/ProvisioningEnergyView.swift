@@ -45,9 +45,8 @@ struct ProvisioningEnergyView: View {
             
             Spacer()
             
-            Button {
-                showSetGoalEnergy = true
-                
+            NavigationLink {
+                SetActivityGoalView()
             } label: {
                 CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.allowButtonMessage, size: .large)
             }
