@@ -53,6 +53,7 @@
 		51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */; };
 		51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6566D2A1344A000610369 /* SetActivityGoalView.swift */; };
 		51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6566F2A13474600610369 /* ProvisioningEnergyDescription.swift */; };
+		51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C656712A1359D200610369 /* LaunchScreenView.swift */; };
 		51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */; };
 		51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B62A0A065600F1F73B /* LargePopUpView.swift */; };
 		51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */; };
@@ -112,6 +113,7 @@
 		51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		51C6566D2A1344A000610369 /* SetActivityGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetActivityGoalView.swift; sourceTree = "<group>"; };
 		51C6566F2A13474600610369 /* ProvisioningEnergyDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningEnergyDescription.swift; sourceTree = "<group>"; };
+		51C656712A1359D200610369 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBlockView.swift; sourceTree = "<group>"; };
 		51DD74B62A0A065600F1F73B /* LargePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargePopUpView.swift; sourceTree = "<group>"; };
 		51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPopUpView.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 		51F878DD29F269E80077A6C7 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				51C656712A1359D200610369 /* LaunchScreenView.swift */,
 				514852FA2A03FF4900351A9D /* Login */,
 				514852FB2A03FF5D00351A9D /* SignUpOnBoarding */,
 				514852FC2A03FF6900351A9D /* SelectValuesOnBoarding */,
@@ -544,6 +547,7 @@
 			files = (
 				5121894D29F9567D005DD6C2 /* ValueView.swift in Sources */,
 				51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */,
+				51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */,
 				51F878DF29F269FE0077A6C7 /* (null) in Sources */,
 				517AE9382A0797E70028D670 /* GifImage.swift in Sources */,
 				51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */,
