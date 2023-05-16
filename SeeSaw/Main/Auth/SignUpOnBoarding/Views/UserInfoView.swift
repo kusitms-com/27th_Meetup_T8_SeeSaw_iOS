@@ -104,6 +104,9 @@ struct UserInfoView: View {
                     .font(.ssBlackBody1)
                     .padding(.vertical, 8)
                     .textInputAutocapitalization(.never)
+                    .onChange(of: nickname, perform: {
+                              nickname = String($0.prefix(10))
+                            })
                 Image(systemName: "checkmark")
                     .foregroundColor(nickname.isEmpty ? .Gray400 : (isNotVaildNickname ? .SeeSawRed : .SeeSawGreen))
             }
