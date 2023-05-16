@@ -36,21 +36,7 @@ struct ExplainValuesView: View {
     
     var body: some View {
         VStack {
-                HStack {
-                    Spacer()
-                    
-                    Button {
-                        selectedView = 3
-                    } label: {
-                        HStack {
-                            Text("건너뛰기")
-                            Image(systemName: "arrow.right")
-                        }
-                        .foregroundColor(.Gray400)
-                        .opacity(selectedView != 3 ? 1.0 : 0.0)
-                    }
-                    .disabled(selectedView == 3)
-                }
+            skipButton
             
             TabView(selection: $selectedView) {
                 ExplainValue(text: ValuesMessages.first, color: .SeeSawGreen)
@@ -74,6 +60,24 @@ struct ExplainValuesView: View {
             .disabled(selectedView != 3)
         }
         .padding(20)
+    }
+    
+    var skipButton: some View {
+        HStack {
+            Spacer()
+            
+            Button {
+                selectedView = 3
+            } label: {
+                HStack {
+                    Text("건너뛰기")
+                    Image(systemName: "arrow.right")
+                }
+                .foregroundColor(.Gray400)
+                .opacity(selectedView != 3 ? 1.0 : 0.0)
+            }
+            .disabled(selectedView == 3)
+        }
     }
 }
 
