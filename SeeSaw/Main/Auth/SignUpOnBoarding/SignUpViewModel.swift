@@ -14,10 +14,10 @@ class SignUpViewModel: ObservableObject {
     let baseUrl = "http://\(Bundle.main.infoDictionary?["BASE_URL"] ?? "nil baseUrl")"
     
     func postUserInfo(agreeMarketing: Bool, email: String, nickname: String) {
-        let url = "\(baseUrl)/api/signup"
+        let url = "\(baseUrl)/auth/signup"
         let parameters: [String: Any] = ["agreeMarketing": agreeMarketing,
                                          "email": email,
-                                         "nickname": nickname]
+                                         "nickName": nickname]
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"

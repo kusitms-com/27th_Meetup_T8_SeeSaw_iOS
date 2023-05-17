@@ -10,6 +10,8 @@ import SwiftUI
 struct UserInfoView: View {
     @State var email: String = ""
     @State var nickname: String = ""
+    @Binding var agreeMarketing: Bool
+    @StateObject var signUpVM = SignUpViewModel()
     var isNotVaildEmail: Bool {
         return !email.isEmpty && !isValidEmail(email)
     }
@@ -47,6 +49,9 @@ struct UserInfoView: View {
                                   size: .large)
             }
             .disabled(allValidate == false)
+            .simultaneousGesture(TapGesture().onEnded {
+                signUpVM.postUserInfo(agreeMarketing: agreeMarketing, email: email, nickname: nickname)
+            })
         }
         .padding(20)
         .background(Color.Gray200)
@@ -136,11 +141,5 @@ struct UserInfoView: View {
 
         let nicknamePred = NSPredicate(format: "SELF MATCHES %@", nicknameRegEx)
         return nicknamePred.evaluate(with: nickname)
-    }
-}
-
-struct UserInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        UserInfoView()
     }
 }
