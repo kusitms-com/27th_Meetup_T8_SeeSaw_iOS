@@ -1,4 +1,4 @@
-///
+//
 //  ValueView.swift
 //  SeeSaw
 //
@@ -12,6 +12,18 @@ struct ValueView: View {
     @State var valueYear: Int = 0
     var body: some View {
         VStack(alignment: .leading) {
+            HStack {
+                Image("SeeSawLogoImage")
+                Spacer()
+                Button {
+                    
+                } label: {
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                        .foregroundColor(.Gray400)
+                }
+            }
             VStack(alignment: .leading) {
                 Text("가치 설계도")
                     .font(.ssHeading1)
@@ -41,7 +53,9 @@ struct ValueView: View {
                     
                 })
             }
+            Spacer()
         }
+        .padding(20)
     }
 }
 
