@@ -34,6 +34,8 @@
 		5156171E2A14716900743B5F /* ProjectGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617172A14716900743B5F /* ProjectGoalView.swift */; };
 		5156171F2A14716900743B5F /* ProjectStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617182A14716900743B5F /* ProjectStrengthView.swift */; };
 		515617202A14716900743B5F /* ProjectTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617192A14716900743B5F /* ProjectTermView.swift */; };
+		515617222A14891000743B5F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617212A14891000743B5F /* SignUpViewModel.swift */; };
+		515617242A148A8000743B5F /* PostSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617232A148A8000743B5F /* PostSignUp.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
 		515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */; };
 		515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263F2A015957006C3FE5 /* RoundedCorner.swift */; };
@@ -103,6 +105,8 @@
 		515617172A14716900743B5F /* ProjectGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectGoalView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectGoalView.swift"; sourceTree = "<group>"; };
 		515617182A14716900743B5F /* ProjectStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectStrengthView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectStrengthView.swift"; sourceTree = "<group>"; };
 		515617192A14716900743B5F /* ProjectTermView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTermView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectTermView.swift"; sourceTree = "<group>"; };
+		515617212A14891000743B5F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		515617232A148A8000743B5F /* PostSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSignUp.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameView.swift; sourceTree = "<group>"; };
 		515E263F2A015957006C3FE5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				514852FE2A03FFA900351A9D /* Views */,
+				515617212A14891000743B5F /* SignUpViewModel.swift */,
 			);
 			path = SignUpOnBoarding;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */,
 				51348A062A121C4D005F9163 /* GetValues.swift */,
 				51348A0B2A125FAD005F9163 /* PostGoal.swift */,
+				515617232A148A8000743B5F /* PostSignUp.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -582,6 +588,7 @@
 				517AE9382A0797E70028D670 /* GifImage.swift in Sources */,
 				51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */,
 				51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */,
+				515617242A148A8000743B5F /* PostSignUp.swift in Sources */,
 				5121894729F95667005DD6C2 /* MyPageView.swift in Sources */,
 				5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */,
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
@@ -597,6 +604,7 @@
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
+				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
 				51348A0C2A125FAD005F9163 /* PostGoal.swift in Sources */,
