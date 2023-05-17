@@ -86,7 +86,6 @@ class AuthViewModel: ObservableObject {
                 switch response.result {
                 case .success(let response):
                     self.isLoggedIn = true
-                    self.isRegenerated = true
                     self.keychain.set(response.accessToken,
                                       forKey: "accessToken")
                     self.keychain.set(response.refreshToken,
@@ -98,5 +97,7 @@ class AuthViewModel: ObservableObject {
                     self.isLoggedIn = false
                 }
             }
+        
+        self.isRegenerated = true
     }
 }

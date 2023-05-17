@@ -16,10 +16,11 @@ struct SelectValuesView: View {
                   "사랑", "재미", "조화", "정직", "즐거움",
                   "침착", "평화", "행복"]
     let columns = [
-            GridItem(.flexible(), spacing: nil, alignment: nil),
-            GridItem(.flexible(), spacing: nil, alignment: nil),
-            GridItem(.flexible(), spacing: nil, alignment: nil),
-            GridItem(.flexible(), spacing: nil, alignment: nil)
+        GridItem(.flexible(), spacing: 0, alignment: .leading),
+        GridItem(.flexible(), spacing: 0, alignment: .leading),
+        GridItem(.flexible(), spacing: 0, alignment: .leading),
+        GridItem(.flexible(), spacing: 0, alignment: .leading),
+        GridItem(.flexible(), spacing: 0, alignment: .leading)
         ]
     @State private var selectedValues: [String] = []
     @State private var isModalPresented = false
