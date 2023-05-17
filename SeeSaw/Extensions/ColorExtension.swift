@@ -30,6 +30,7 @@ extension Color {
     static let Gray800 = Color("Gray800")
     static let Gray900 = Color("Gray900")
     static let GrayBlack = Color("GrayBlack")
+    static let GrayWhite = Color("GrayWhite")
 }
 
 extension Color {

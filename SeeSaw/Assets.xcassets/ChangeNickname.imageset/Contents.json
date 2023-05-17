@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "kakao_login_large_wide.png",
+      "filename" : "EditNickname.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "EditNickname2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

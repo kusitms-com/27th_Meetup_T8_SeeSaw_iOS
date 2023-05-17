@@ -11,7 +11,6 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var authVM: AuthViewModel
     @StateObject var kakaoAuthVM = KakaoAuthViewModel(isLoggedIn: false)
-    @StateObject var appleAuthVM = AppleAuthViewModel()
     @State private var idTokenString = ""
     
     var body: some View {
@@ -25,7 +24,12 @@ struct LoginView: View {
             Spacer()
             
             Button {
-                kakaoAuthVM.handleKakaoLogin()
+                kakaoAuthVM.handleKakaoLogin { idToken in
+                    authVM.login(req: PostLoginRequest(provider: "kakao",
+                                                       idToken: idToken,
+                                                       accessToken: "",
+                                                       refreshToken: ""))
+                }
             } label: {
                 kakaoLoginButton
             }
@@ -43,11 +47,10 @@ struct LoginView: View {
                         idTokenString = String(data: idToken, encoding: .utf8) ?? ""
                         print("DEBUG identityToken: \(idTokenString)")
                         
-                        appleAuthVM.login(req: PostLoginRequest(provider: "apple",
-                                                                idToken: idTokenString,
-                                                                accessToken: "",
-                                                                refreshToken: ""))
-                        self.authVM.isLoggedIn = true
+                        authVM.login(req: PostLoginRequest(provider: "apple",
+                                                           idToken: idTokenString,
+                                                           accessToken: "",
+                                                           refreshToken: ""))
                     default:
                         print("DEBUG: sign success but credetial is nil")
                     }

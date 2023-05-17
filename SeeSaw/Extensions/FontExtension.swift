@@ -22,7 +22,7 @@ extension Font {
     static var ssBlackSubTitle: Font { Font.system(size: 16, weight: .semibold) }
     static var ssWhiteSubTitle: Font { Font.system(size: 16, weight: .bold) }
     
-    static var ssBlackBody1: Font { Font.system(size: 16, weight: .bold) }
+    static var ssBlackBody1: Font { Font.system(size: 16, weight: .semibold) }
     static var ssWhiteBody1: Font { Font.system(size: 16, weight: .heavy) }
     
     static var ssBlackBody2: Font { Font.system(size: 14, weight: .regular) }

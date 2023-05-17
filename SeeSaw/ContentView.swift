@@ -16,13 +16,15 @@ struct ContentView: View {
         VStack {
             if authVM.isLoggedIn ?? false {
                 SeeSawTabView()
-            } else {
+            } else if authVM.isRegenerated ?? false {
                 LoginView()
+            } else {
+                LaunchScreenView()
             }
         }
         .onAppear {
             print("실행")
-            authVM.regenerateToken(req: PostRegenerateTokenRequest(refreshToken: keychain.get("refreshToken") ?? ""))
+            authVM.regenerateToken()
         }
     }
 }

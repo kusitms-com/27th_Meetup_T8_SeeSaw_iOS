@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AgreeTermsView: View {
-    @State private var progress = 0.5
     @State var isFirstTermAgree: Bool = false
     @State var isSecondTermAgree: Bool = false
     @State var isThirdTermAgree: Bool = false
@@ -20,20 +19,13 @@ struct AgreeTermsView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 0) {
-                ProgressView(value: progress)
-                    .padding(.top, 68)
+                progressBar
                     .padding(.bottom, 28)
                 
-                Text("안녕하세요 :)\n약관에 동의해주세요")
-                    .font(.ssHeading2)
-                    .foregroundColor(.GrayBlack)
-                Text("여러분의 개인정보와 서비스 이용 권리 잘 지켜드릴게요")
-                    .font(.ssWhiteBody2)
-                    .foregroundColor(.Gray600)
-                    .padding(.vertical, 20)
+                titleView
                 
                 Divider()
-                    .padding(.bottom, 24)
+                    .padding(.bottom, 20)
                 
                 VStack {
                     TermView(isNecessary: true,
@@ -66,6 +58,32 @@ struct AgreeTermsView: View {
                 .disabled(!isAllTermsAgree)
             }
             .padding(20)
+        }
+    }
+    
+    var progressBar: some View {
+        HStack(spacing: 8) {
+            Rectangle()
+                .cornerRadius(12, corners: .allCorners)
+                .frame(height: 6)
+                .foregroundColor(.SeeSawGreen)
+            
+            Rectangle()
+                .cornerRadius(12, corners: .allCorners)
+                .frame(height: 6)
+                .foregroundColor(.Gray300)
+        }
+    }
+    
+    var titleView: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("안녕하세요 :)\n약관에 동의해주세요")
+                .font(.ssHeading2)
+                .foregroundColor(.GrayBlack)
+            Text("여러분의 개인정보와 서비스 이용 권리, 시소가 지켜드릴게요")
+                .font(.ssWhiteBody2)
+                .foregroundColor(.Gray600)
+                .padding(.vertical, 20)
         }
     }
     
