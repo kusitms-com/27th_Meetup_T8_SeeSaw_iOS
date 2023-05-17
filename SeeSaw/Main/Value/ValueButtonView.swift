@@ -22,6 +22,7 @@ struct ValueButtonView: View {
                 }
                 .sheet(isPresented: self.$showModal) {
                     ValueModalView(valueTitle: self.valueTitle, valueColor: self.valueColor)
+                        .frame(height: UIScreen.main.bounds.size.height / 2)
                 }
             HStack {
                 Spacer()
