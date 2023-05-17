@@ -100,7 +100,7 @@ struct UserInfoView: View {
                 .font(.ssWhiteSubTitle)
             
             ZStack(alignment: .trailing) {
-                TextField("한글, 영분, 숫자를 10글자 내로 입력해주세요", text: $nickname)
+                TextField("한글, 영문, 숫자를 10글자 내로 입력해주세요", text: $nickname)
                     .font(.ssBlackBody1)
                     .padding(.vertical, 8)
                     .textInputAutocapitalization(.never)
