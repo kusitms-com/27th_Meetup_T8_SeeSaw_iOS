@@ -25,7 +25,18 @@ struct BatteryDashboardView: View {
         return ratio < 1.0 ? ratio : 1.0
     }
     
-    @State var isSleepGoalExist: Bool = false
+    @State var isSleepGoalExist: Bool = true
+    @State var todaySleepAmount: Int = 6
+    @State var isTodaySleepAmountExist: Bool = true
+    @State var sleepCondition: String = "Bad"
+    enum SleepDescription {
+        static let GoodIcon = "😙"
+        static let GoodDescription = "알맞게 잤어요"
+        static let BadIcon = "😑"
+        static let BadDescription = "적게 잤어요"
+        static let TerribleIcon = "🤯"
+        static let TerribleDescription = "너무 적게 잤어요"
+    }
     
     @State private var show = false
     
@@ -193,7 +204,7 @@ struct BatteryDashboardView: View {
         }
     }
     
-    // 활동량, 수면
+    // 활동량
     var energy: some View {
         VStack(alignment: .leading) {
             Text("활동량")
@@ -258,6 +269,7 @@ struct BatteryDashboardView: View {
         }
     }
     
+    // 수면
     var sleep: some View {
         VStack(alignment: .leading) {
             Text("수면")
@@ -267,14 +279,106 @@ struct BatteryDashboardView: View {
                     .cornerRadius(10)
                     .foregroundColor(.Gray200)
                     .frame(height: 260)
-                if isSleepGoalExist {
-                    
+                if isTodaySleepAmountExist {
+                    VStack(alignment: .center, spacing: 12) {
+                        HStack {
+                            Text("얼마나 주무셨나요?")
+                            Spacer()
+                        }
+                        .font(.ssBlackBody1)
+                        .foregroundColor(.Gray500)
+                        .padding(.leading, 8)
+                        
+                        Spacer()
+                        
+                        Text("\(todaySleepAmount)시간")
+                            .font(.ssHeading1)
+                            .foregroundColor(.Gray900)
+                        if sleepCondition == "Good" {
+                            Text("\(SleepDescription.GoodIcon)")
+                                .font(.system(size: 60))
+                            
+                            Spacer()
+                            
+                            Text(SleepDescription.GoodDescription)
+                                .font(.ssWhiteBody1)
+                                .foregroundColor(.GrayBlack)
+                                .padding(.trailing, 8)
+                        } else if sleepCondition == "Bad" {
+                            Text("\(SleepDescription.BadIcon)")
+                                .font(.system(size: 60))
+                            
+                            Spacer()
+                            
+                            Text(SleepDescription.BadDescription)
+                                .font(.ssWhiteBody1)
+                                .foregroundColor(.GrayBlack)
+                                .padding(.trailing, 8)
+                        } else{
+                            Text("\(SleepDescription.TerribleIcon)")
+                                .font(.system(size: 60))
+                            
+                            Spacer()
+                            
+                            Text(SleepDescription.TerribleDescription)
+                                .font(.ssWhiteBody1)
+                                .foregroundColor(.GrayBlack)
+                                .padding(.trailing, 8)
+                        }
+                    }
+                    .padding(.vertical, 16)
+                } else if isSleepGoalExist {
+                    setTodaySleepAmount
                 } else {
                     setSleepGoal
                 }
             }
         }
         .padding(.horizontal, 8)
+    }
+    
+    var setTodaySleepAmount: some View {
+        VStack(alignment: .center, spacing: 12) {
+            HStack {
+                Text("얼마나 주무셨나요?")
+                Spacer()
+            }
+            .font(.ssBlackBody1)
+            .foregroundColor(.Gray500)
+            .padding(.leading, 8)
+            
+            Spacer()
+            
+            Text("\(todaySleepAmount)시간")
+                .font(.ssHeading1)
+                .foregroundColor(.Gray400)
+                
+            HStack {
+                Button {
+                    todaySleepAmount -= 1
+                } label: {
+                    Image(systemName: "minus.circle.fill")
+                        .font(.system(size: 48))
+                        .foregroundColor(.SeeSawRed)
+                }
+                Button {
+                    todaySleepAmount += 1
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.system(size: 48))
+                        .foregroundColor(.SeeSawGreen)
+                }
+            }
+            
+            Spacer()
+            Button {
+                
+            } label: {
+                CapsuleButtonView(color: .Gray900, text: "입력 완료", size: .large)
+                    .padding(.horizontal, 12)
+            }
+        }
+        .padding(.vertical, 16)
     }
     
     var setSleepGoal: some View {
