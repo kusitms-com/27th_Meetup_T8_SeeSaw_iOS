@@ -12,6 +12,8 @@ struct BatteryDashboardView: View {
     @State private var showBatteryInformation: Bool = false
     
     @State var battery: Int = 0
+    
+    @State var isFastChargeExist: Bool = false
     @State private var show = false
     
     var body: some View {
@@ -26,6 +28,7 @@ struct BatteryDashboardView: View {
                                 .padding(.top, 10)
                                 .padding(.horizontal, 20)
                             
+                            // 배터리
                             ZStack(alignment: .topLeading) {
                                 // 배터리 원형 그래프
                                 NavigationLink {
@@ -40,28 +43,7 @@ struct BatteryDashboardView: View {
                             .padding(.top, 12)
                             
                             // 고속충전
-                            ZStack {
-                                Rectangle()
-                                    .cornerRadius(200,
-                                                  corners: .allCorners)
-                                    .foregroundColor(.Gray100)
-                                    .frame(width: 380, height: 200)
-                                
-                                VStack {
-                                    Text("고속충전")
-                                        .font(.ssHeading2)
-                                        .padding(4)
-                                    Text("아직 고속충전을 하지 않았어요")
-                                    Text("고속충전을 하러 가볼까요")
-                                    NavigationLink {
-                                        FastChargeView()
-                                    } label: {
-                                        CapsuleButtonView(color: .Gray900,
-                                                          text: "고속충전하기",
-                                                          size: .small)
-                                    }
-                                }
-                            }
+                            fastCharge
                             
                             // 활동량, 수면
                             VStack {
@@ -135,6 +117,53 @@ struct BatteryDashboardView: View {
         }
     }
     
+    // 고속충전 현황
+    var fastCharge: some View {
+        ZStack {
+            ZStack(alignment: .top) {
+                HalfCircle()
+                    .fill()
+                    .aspectRatio(2.0, contentMode: .fit)
+                    .foregroundColor(.Gray100)
+                
+                HStack {
+                    Text("고속충전")
+                        .font(.ssHeading2)
+                        .foregroundColor(.Gray900)
+                        .padding(.leading, 20)
+                        .padding(.top, 28)
+                    
+                    Spacer()
+                }
+            }
+            
+            if isFastChargeExist {
+                
+            } else {
+                fastChargeButton
+            }
+        }
+    }
+    
+    // 고속충전 추가 버튼
+    var fastChargeButton: some View {
+        VStack {
+            VStack {
+                Text("오늘 고속충전을 하지 않았어요")
+                Text("지금 하러 가볼까요?")
+            }
+            .font(.ssBlackBody2)
+            
+            NavigationLink {
+                FastChargeView()
+            } label: {
+                CapsuleButtonView(color: .Gray900,
+                                  text: "고속충전하기",
+                                  size: .small)
+            }
+        }
+    }
+    
     // 활동량, 수면
     var energy: some View {
         VStack(alignment: .leading) {
@@ -189,6 +218,16 @@ struct BatteryDashboardView: View {
             }
         }
         .padding(.horizontal, 8)
+    }
+}
+
+struct HalfCircle: Shape {
+    func path(in rect: CGRect) -> Path {
+        let radius = rect.width / 2
+        let center = CGPoint(x: rect.midX, y: 0)
+        var path = Path()
+        path.addArc(center: center, radius: radius, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 0), clockwise: true)
+        return path
     }
 }
 
