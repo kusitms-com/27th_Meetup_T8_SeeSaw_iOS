@@ -27,7 +27,7 @@ struct BatteryDashboardView: View {
     
     @State var isSleepGoalExist: Bool = true
     @State var todaySleepAmount: Int = 6
-    @State var isTodaySleepAmountExist: Bool = true
+    @State var isTodaySleepAmountExist: Bool = false
     @State var sleepCondition: String = "Bad"
     enum SleepDescription {
         static let GoodIcon = "😙"
@@ -280,53 +280,7 @@ struct BatteryDashboardView: View {
                     .foregroundColor(.Gray200)
                     .frame(height: 260)
                 if isTodaySleepAmountExist {
-                    VStack(alignment: .center, spacing: 12) {
-                        HStack {
-                            Text("얼마나 주무셨나요?")
-                            Spacer()
-                        }
-                        .font(.ssBlackBody1)
-                        .foregroundColor(.Gray500)
-                        .padding(.leading, 8)
-                        
-                        Spacer()
-                        
-                        Text("\(todaySleepAmount)시간")
-                            .font(.ssHeading1)
-                            .foregroundColor(.Gray900)
-                        if sleepCondition == "Good" {
-                            Text("\(SleepDescription.GoodIcon)")
-                                .font(.system(size: 60))
-                            
-                            Spacer()
-                            
-                            Text(SleepDescription.GoodDescription)
-                                .font(.ssWhiteBody1)
-                                .foregroundColor(.GrayBlack)
-                                .padding(.trailing, 8)
-                        } else if sleepCondition == "Bad" {
-                            Text("\(SleepDescription.BadIcon)")
-                                .font(.system(size: 60))
-                            
-                            Spacer()
-                            
-                            Text(SleepDescription.BadDescription)
-                                .font(.ssWhiteBody1)
-                                .foregroundColor(.GrayBlack)
-                                .padding(.trailing, 8)
-                        } else{
-                            Text("\(SleepDescription.TerribleIcon)")
-                                .font(.system(size: 60))
-                            
-                            Spacer()
-                            
-                            Text(SleepDescription.TerribleDescription)
-                                .font(.ssWhiteBody1)
-                                .foregroundColor(.GrayBlack)
-                                .padding(.trailing, 8)
-                        }
-                    }
-                    .padding(.vertical, 16)
+                    sleepStatus
                 } else if isSleepGoalExist {
                     setTodaySleepAmount
                 } else {
@@ -335,6 +289,56 @@ struct BatteryDashboardView: View {
             }
         }
         .padding(.horizontal, 8)
+    }
+    
+    var sleepStatus: some View {
+        VStack(alignment: .center, spacing: 12) {
+            HStack {
+                Text("얼마나 주무셨나요?")
+                Spacer()
+            }
+            .font(.ssBlackBody1)
+            .foregroundColor(.Gray500)
+            .padding(.leading, 8)
+            
+            Spacer()
+            
+            Text("\(todaySleepAmount)시간")
+                .font(.ssHeading1)
+                .foregroundColor(.Gray900)
+            if sleepCondition == "Good" {
+                Text("\(SleepDescription.GoodIcon)")
+                    .font(.system(size: 60))
+                
+                Spacer()
+                
+                Text(SleepDescription.GoodDescription)
+                    .font(.ssWhiteBody1)
+                    .foregroundColor(.GrayBlack)
+                    .padding(.trailing, 8)
+            } else if sleepCondition == "Bad" {
+                Text("\(SleepDescription.BadIcon)")
+                    .font(.system(size: 60))
+                
+                Spacer()
+                
+                Text(SleepDescription.BadDescription)
+                    .font(.ssWhiteBody1)
+                    .foregroundColor(.GrayBlack)
+                    .padding(.trailing, 8)
+            } else {
+                Text("\(SleepDescription.TerribleIcon)")
+                    .font(.system(size: 60))
+                
+                Spacer()
+                
+                Text(SleepDescription.TerribleDescription)
+                    .font(.ssWhiteBody1)
+                    .foregroundColor(.GrayBlack)
+                    .padding(.trailing, 8)
+            }
+        }
+        .padding(.vertical, 16)
     }
     
     var setTodaySleepAmount: some View {
@@ -372,7 +376,7 @@ struct BatteryDashboardView: View {
             
             Spacer()
             Button {
-                
+                isTodaySleepAmountExist = true
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "입력 완료", size: .large)
                     .padding(.horizontal, 12)
