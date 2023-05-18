@@ -14,6 +14,10 @@ struct BatteryDashboardView: View {
     @State var battery: Int = 0
     
     @State var isFastChargeExist: Bool = false
+    
+    @State var isEnergyGoalExist: Bool = false
+    @State var isSleepGoalExist: Bool = false
+    
     @State private var show = false
     
     var body: some View {
@@ -56,8 +60,8 @@ struct BatteryDashboardView: View {
                             }
                             .background(Color.Gray100)
                         }
-                    }
-                }
+                    } // ScrollView
+                } // GeometryReder
                 .background(Color.Gray200)
             }
             .navigationTitle("")
@@ -174,23 +178,34 @@ struct BatteryDashboardView: View {
                     .cornerRadius(10)
                     .foregroundColor(.Gray200)
                     .frame(height: 260)
-                VStack {
-                    Text("활동량 목표")
-                        .font(.ssBlackBody1)
-                        .foregroundColor(.Gray500)
+                if isEnergyGoalExist {
                     
-                    NavigationLink {
-                        ProvisioningEnergyView()
-                    } label: {
-                        CapsuleButtonView(color: .Gray900,
-                                          text: "설정하기",
-                                          size: .small)
-                    }
+                } else {
+                    setEnergyGoal
                 }
-                .padding(.bottom, 12)
             }
         }
         .padding(.horizontal, 8)
+    }
+    
+    var setEnergyGoal: some View {
+        ZStack(alignment: .bottom) {
+            Image("SetGoalImage")
+            VStack {
+                Text("활동량 목표")
+                    .font(.ssBlackBody1)
+                    .foregroundColor(.Gray500)
+                
+                NavigationLink {
+                    ProvisioningEnergyView()
+                } label: {
+                    CapsuleButtonView(color: .Gray900,
+                                      text: "설정하기",
+                                      size: .small)
+                }
+            }
+            .padding(.bottom, 12)
+        }
     }
     
     var sleep: some View {
@@ -202,22 +217,33 @@ struct BatteryDashboardView: View {
                     .cornerRadius(10)
                     .foregroundColor(.Gray200)
                     .frame(height: 260)
-                VStack {
-                    Text("수면시간 목표")
-                        .font(.ssBlackBody1)
-                        .foregroundColor(.Gray500)
-                    NavigationLink {
-                        SetSleepGoalView()
-                    } label: {
-                        CapsuleButtonView(color: .Gray900,
-                                          text: "설정하기",
-                                          size: .small)
-                    }
+                if isSleepGoalExist {
+                    
+                } else {
+                    setSleepGoal
                 }
-                .padding(.bottom, 12)
             }
         }
         .padding(.horizontal, 8)
+    }
+    
+    var setSleepGoal: some View {
+        ZStack(alignment: .bottom) {
+            Image("SetSleepGoalImage")
+            VStack {
+                Text("수면시간 목표")
+                    .font(.ssBlackBody1)
+                    .foregroundColor(.Gray500)
+                NavigationLink {
+                    SetSleepGoalView()
+                } label: {
+                    CapsuleButtonView(color: .Gray900,
+                                      text: "설정하기",
+                                      size: .small)
+                }
+            }
+            .padding(.bottom, 12)
+        }
     }
 }
 

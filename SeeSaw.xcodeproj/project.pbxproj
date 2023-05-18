@@ -181,9 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */,
+				5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */,
 				51348A082A124F9D005F9163 /* SetGoal */,
 				51A1E5C02A0EA82600404E11 /* Views */,
-				5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */,
 			);
 			path = Battery;
 			sourceTree = "<group>";
