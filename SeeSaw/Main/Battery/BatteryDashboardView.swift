@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct BatteryDashboardView: View {
-    @State private var show = false
-    @State var progress: Double = 0.0
+    @AppStorage("nickname") var nickname: String = "이오링"
     @State private var showBatteryInformation: Bool = false
+    
+    @State var progress: Double = 0.0
+    @State private var show = false
+    
     
     var body: some View {
         NavigationView {
@@ -19,12 +22,17 @@ struct BatteryDashboardView: View {
                 
                 ScrollView {
                     VStack(alignment: .center, spacing: 0) {
-                        VStack(alignment: .leading, spacing: 0) {
-                            VStack(alignment: .leading) {
-                                Text("에몽님의")
-                                Text("에너지 배터리")
+                        title
+                            .padding(.top, 10)
+                            .padding(.horizontal, 20)
+                        
+                        ZStack(alignment: .topLeading) {
+                            NavigationLink {
+                                BatteryHistoryView()
+                            } label: {
+                                Circle()
+                                    .foregroundColor(.GrayWhite)
                             }
-                            .font(.ssHeading1)
                             
                             Button {
                                 showBatteryInformation = true
@@ -32,16 +40,10 @@ struct BatteryDashboardView: View {
                                 Image(systemName: "questionmark.circle")
                                     .font(.system(size: 28))
                                     .foregroundColor(.Gray400)
-                                    .padding(.vertical, 8)
+                                    .padding(.leading, 20)
                             }
                         }
-                        .padding(.horizontal, 20)
-                        
-                        NavigationLink {
-                            BatteryHistoryView()
-                        } label: {
-                            batteryProgress
-                        }
+                        .padding(.top, 12)
                         
                         // 고속충전
                         ZStack {
@@ -110,6 +112,18 @@ struct BatteryDashboardView: View {
         .padding(.horizontal, 20)
         .padding(.bottom, 8)
         .background(Color.Gray100)
+    }
+    
+    var title: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text("\(nickname)님의")
+                Text("에너지 배터리")
+            }
+            .font(.ssHeading1)
+            
+            Spacer()
+        }
     }
     
     // 배터리 원형 표시
