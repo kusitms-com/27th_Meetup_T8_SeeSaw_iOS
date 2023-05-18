@@ -13,9 +13,18 @@ struct BatteryDashboardView: View {
     
     @State var battery: Int = 0
     
-    @State var isFastChargeExist: Bool = false
+    @State var isFastChargeExist: Bool = true
+    @State var fastChargeTitle: String = "홍제천 산책하기"
+    @State var fastChargeValue: String = "여유"
     
-    @State var isEnergyGoalExist: Bool = false
+    @State var isEnergyGoalExist: Bool = true
+    var energyGoal: Int = 250
+    var todayEnergy: Int = 160
+    var energyRatio: Double {
+        let ratio = Double(todayEnergy) / Double(energyGoal)
+        return ratio < 1.0 ? ratio : 1.0
+    }
+    
     @State var isSleepGoalExist: Bool = false
     
     @State private var show = false
@@ -47,7 +56,7 @@ struct BatteryDashboardView: View {
                             .padding(.top, 12)
                             
                             // 고속충전
-                            fastCharge
+                            // fastCharge
                             
                             // 활동량, 수면
                             VStack {
@@ -142,10 +151,26 @@ struct BatteryDashboardView: View {
             }
             
             if isFastChargeExist {
-                
+                fastChargeStatus
             } else {
                 fastChargeButton
             }
+        }
+    }
+    
+    var fastChargeStatus: some View {
+        VStack(spacing: 12) {
+            Image("FastChargeCheck")
+            Text(fastChargeTitle)
+                .font(.ssWhiteBody2)
+                .foregroundColor(.Gray600)
+            HStack {
+                Text(fastChargeValue)
+                    .foregroundColor(.SeeSawBlue)
+                Text("가득한 하루!")
+                    .foregroundColor(.Gray900)
+            }
+            .font(.ssWhiteSubTitle)
         }
     }
     
@@ -179,13 +204,38 @@ struct BatteryDashboardView: View {
                     .foregroundColor(.Gray200)
                     .frame(height: 260)
                 if isEnergyGoalExist {
-                    
+                    energyStatus
                 } else {
                     setEnergyGoal
                 }
             }
         }
         .padding(.horizontal, 8)
+    }
+    
+    var energyStatus: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("얼마나 움직이셨나요?")
+                .font(.ssBlackBody1)
+                .foregroundColor(.Gray500)
+                .padding(.leading, 8)
+            
+            ZStack {
+                RightHalfCircle(plusRatio: 1.0)
+                    .stroke(Color.SeeSawGreen.opacity(0.3), lineWidth: 32)
+                RightHalfCircle(plusRatio: energyRatio)
+                    .stroke(Color.SeeSawGreen.opacity(0.7), lineWidth: 32)
+            }
+            
+            HStack {
+                Spacer()
+                Text("\(todayEnergy) / \(energyGoal) kcal")
+                    .font(.ssWhiteBody1)
+                    .foregroundColor(.GrayBlack)
+                    .padding(.trailing, 8)
+            }
+        }
+        .padding(.vertical, 16)
     }
     
     var setEnergyGoal: some View {
