@@ -38,8 +38,6 @@ struct BatteryDashboardView: View {
         static let TerribleDescription = "너무 적게 잤어요"
     }
     
-    @State private var show = false
-    
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
@@ -67,7 +65,7 @@ struct BatteryDashboardView: View {
                             .padding(.top, 12)
                             
                             // 고속충전
-                            // fastCharge
+                            fastCharge
                             
                             // 활동량, 수면
                             VStack {
@@ -86,8 +84,10 @@ struct BatteryDashboardView: View {
             }
             .navigationTitle("")
         }
-        .sheet(isPresented: $showBatteryInformation) {
+        .halfSheet(showSheet: $showBatteryInformation) {
             BatteryInformationView()
+        } onEnd: {
+            print("battery info half sheet dismiss")
         }
         .onAppear {
             print("onappear")
