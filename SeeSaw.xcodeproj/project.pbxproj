@@ -58,6 +58,7 @@
 		51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C32A0EABC300404E11 /* FastChargeView.swift */; };
 		51A1E5C62A0F580A00404E11 /* BatteryHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */; };
 		51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9ECB42A00DD71000E6784 /* ColorExtension.swift */; };
+		51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
@@ -132,6 +133,7 @@
 		51A1E5C32A0EABC300404E11 /* FastChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeView.swift; sourceTree = "<group>"; };
 		51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryView.swift; sourceTree = "<group>"; };
 		51A9ECB42A00DD71000E6784 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightHalfCircle.swift; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
 		51BA2A6029EA8C5500071264 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -386,6 +388,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		51AA9A5D2A16C270005C14FC /* Circle */ = {
+			isa = PBXGroup;
+			children = (
+				5195D40D2A16B89B004CE657 /* HalfCircle.swift */,
+				51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */,
+			);
+			path = Circle;
+			sourceTree = "<group>";
+		};
 		51BA2A5229EA8C5400071264 = {
 			isa = PBXGroup;
 			children = (
@@ -434,11 +445,11 @@
 		51CECB7629EE5708001C7832 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				51AA9A5D2A16C270005C14FC /* Circle */,
 				51A9ECB42A00DD71000E6784 /* ColorExtension.swift */,
 				515E261A2A00E31B006C3FE5 /* FontExtension.swift */,
 				515E263F2A015957006C3FE5 /* RoundedCorner.swift */,
 				51C656772A13A60800610369 /* HalfSheetExtension.swift */,
-				5195D40D2A16B89B004CE657 /* HalfCircle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -613,6 +624,7 @@
 				51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */,
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
+				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
