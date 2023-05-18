@@ -11,11 +11,16 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var authVM: AuthViewModel
     let keychain = KeychainSwift()
+    @AppStorage("onboarding") var isOnboardingCompleted: Bool = false
     
     var body: some View {
         VStack {
             if authVM.isLoggedIn ?? false {
-                SeeSawTabView()
+                if isOnboardingCompleted {
+                    SeeSawTabView()
+                } else {
+                    AgreeTermsView()
+                }
             } else if authVM.isRegenerated ?? false {
                 LoginView()
             } else {

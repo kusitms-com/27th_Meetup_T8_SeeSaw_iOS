@@ -11,6 +11,7 @@ struct SaveValuesSheetView: View {
     @Binding var isModalPresented: Bool
     @Binding var values: [String]
     let selectedValueColors: [Color] = [.SeeSawYellow, .SeeSawBlue, .SeeSawRed]
+    @AppStorage("onboarding") var isOnboardingCompleted: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -56,6 +57,7 @@ struct SaveValuesSheetView: View {
             
             Button {
                 isModalPresented = false
+                isOnboardingCompleted = true
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "저장할래요", size: .large)
             }

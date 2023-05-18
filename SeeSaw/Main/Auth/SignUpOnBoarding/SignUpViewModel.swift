@@ -28,12 +28,22 @@ class SignUpViewModel: ObservableObject {
                    parameters: parameters,
                    encoding: JSONEncoding.default,
                    headers: headers)
-            .responseDecodable(of: PostSignUpResponse.self) { response in
+            .responseData { response in
                 switch response.result {
-                case .success(let response):
-                    print(response)
+                case .success:
+                    let decoder = JSONDecoder()
+                    guard let statusCode = response.response?.statusCode else { return }
+                    guard let data = response.value else { return }
+                    switch statusCode {
+                    case 200:
+                        guard let signUpRes = try? decoder.decode(PostSignUpResponse.self, from: data) else { return }
+                        print(signUpRes.message)
+                        print("DEBUG postUserInfo: success")
+                    default:
+                        print("DEBUG postUserInfo: not 200")
+                    }
                 case .failure(let error):
-                    print(error)
+                    print("DEBUG postUserInfo: \(error)")
                 }
             }
     }
