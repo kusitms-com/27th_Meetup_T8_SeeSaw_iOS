@@ -222,9 +222,9 @@ struct BatteryDashboardView: View {
             
             ZStack {
                 RightHalfCircle(plusRatio: 1.0)
-                    .stroke(Color.SeeSawGreen.opacity(0.3), lineWidth: 32)
+                    .stroke(Color.BatteryLow, lineWidth: 32)
                 RightHalfCircle(plusRatio: energyRatio)
-                    .stroke(Color.SeeSawGreen.opacity(0.7), lineWidth: 32)
+                    .stroke(Color.BatteryHigh, lineWidth: 32)
             }
             
             HStack {
