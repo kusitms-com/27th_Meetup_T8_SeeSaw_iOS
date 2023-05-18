@@ -14,54 +14,74 @@ struct BatteryDashboardView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .center, spacing: 0) {
-                    header
-                    
-                    NavigationLink {
-                        BatteryHistoryView()
-                    } label: {
-                        batteryProgress
-                    }
-                    
-                    // 고속충전
-                    ZStack {
-                        Rectangle()
-                            .cornerRadius(200,
-                                          corners: .allCorners)
-                            .foregroundColor(.Gray100)
-                            .frame(width: 380, height: 200)
-                        
-                        VStack {
-                            Text("고속충전")
-                                .font(.ssHeading2)
-                                .padding(4)
-                            Text("아직 고속충전을 하지 않았어요")
-                            Text("고속충전을 하러 가볼까요")
-                            NavigationLink {
-                                FastChargeView()
+            VStack(spacing: 0) {
+                toolBar
+                
+                ScrollView {
+                    VStack(alignment: .center, spacing: 0) {
+                        VStack(alignment: .leading, spacing: 0) {
+                            VStack(alignment: .leading) {
+                                Text("에몽님의")
+                                Text("에너지 배터리")
+                            }
+                            .font(.ssHeading1)
+                            
+                            Button {
+                                showBatteryInformation = true
                             } label: {
-                                CapsuleButtonView(color: .Gray900,
-                                                  text: "고속충전하기",
-                                                  size: .small)
+                                Image(systemName: "questionmark.circle")
+                                    .font(.system(size: 28))
+                                    .foregroundColor(.Gray400)
+                                    .padding(.vertical, 8)
                             }
                         }
-                    }
-                    
-                    // 활동량, 수면
-                    VStack {
-                        HStack {
-                            energy
-                            sleep
+                        .padding(.horizontal, 20)
+                        
+                        NavigationLink {
+                            BatteryHistoryView()
+                        } label: {
+                            batteryProgress
                         }
-                        .padding(12)
-                        .padding(.bottom, 60)
+                        
+                        // 고속충전
+                        ZStack {
+                            Rectangle()
+                                .cornerRadius(200,
+                                              corners: .allCorners)
+                                .foregroundColor(.Gray100)
+                                .frame(width: 380, height: 200)
+                            
+                            VStack {
+                                Text("고속충전")
+                                    .font(.ssHeading2)
+                                    .padding(4)
+                                Text("아직 고속충전을 하지 않았어요")
+                                Text("고속충전을 하러 가볼까요")
+                                NavigationLink {
+                                    FastChargeView()
+                                } label: {
+                                    CapsuleButtonView(color: .Gray900,
+                                                      text: "고속충전하기",
+                                                      size: .small)
+                                }
+                            }
+                        }
+                        
+                        // 활동량, 수면
+                        VStack {
+                            HStack {
+                                energy
+                                sleep
+                            }
+                            .padding(12)
+                            .padding(.bottom, 60)
+                        }
+                        .background(Color.Gray100)
                     }
-                    .background(Color.Gray100)
                 }
+                .background(Color.Gray200)
             }
             .navigationTitle("")
-            .background(Color.Gray200)
         }
         .sheet(isPresented: $showBatteryInformation) {
             BatteryInformationView()
@@ -75,48 +95,21 @@ struct BatteryDashboardView: View {
         
     }
     
-    // 닉네임, 마이페이지, 배터리정보
-    var header: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            myPageToolBarRow
-            title
-            batteryInformationButton
-        }
-        .padding(.horizontal, 20)
-    }
-    
-    var myPageToolBarRow: some View {
+    var toolBar: some View {
         HStack {
-            Text("SeeSaw")
+            Image("LifeLog")
             Spacer()
             NavigationLink {
                 MyPageView()
             } label: {
                 Image(systemName: "person.crop.circle")
+                    .font(.system(size: 28))
+                    .foregroundColor(.Gray400)
             }
         }
-        .font(.system(size: 28))
-        .foregroundColor(.Gray400)
-        .padding(.bottom, 28)
-    }
-    
-    var title: some View {
-        VStack(alignment: .leading) {
-            Text("에몽님의")
-            Text("에너지 배터리")
-        }
-        .font(.ssHeading1)
-    }
-    
-    var batteryInformationButton: some View {
-        Button {
-            showBatteryInformation = true
-        } label: {
-            Image(systemName: "questionmark.circle")
-                .font(.system(size: 28))
-                .foregroundColor(.Gray400)
-                .padding(.vertical, 8)
-        }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 8)
+        .background(Color.Gray100)
     }
     
     // 배터리 원형 표시
