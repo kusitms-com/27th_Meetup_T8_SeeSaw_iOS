@@ -63,9 +63,13 @@ struct SelectValuesView: View {
                                 Text(".  .  .")
                             } else {
                                 HStack(spacing: 0) {
-                                    Text("나는 ")
                                     ForEach(selectedValues, id: \.self) { value in
-                                        Text("\(value) ")
+                                        if let index = selectedValues.firstIndex(of: value) {
+                                            if index > 0 {
+                                                Text(" · ")
+                                            }
+                                        }
+                                        Text("\(value)")
                                     }
                                     Text("에 가치를 두는")
                                 }
