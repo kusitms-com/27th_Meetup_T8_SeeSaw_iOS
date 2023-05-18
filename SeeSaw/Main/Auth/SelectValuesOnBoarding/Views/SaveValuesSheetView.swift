@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SaveValuesSheetView: View {
+    @AppStorage("nickname") var nickname: String = ""
     @Binding var isModalPresented: Bool
     @Binding var values: [String]
     let selectedValueColors: [Color] = [.SeeSawYellow, .SeeSawBlue, .SeeSawRed]
@@ -27,7 +28,7 @@ struct SaveValuesSheetView: View {
             
             Divider()
                 .padding(.bottom, 12)
-            Text("에몽님이 설정한 올해의 가치예요")
+            Text("\(nickname)님이 설정한 올해의 가치예요")
                 .foregroundColor(.Gray800)
             Text("내년 1월 1일 전까지 수정할 수 없어요\n이대로 저장하시겠어요?")
                 .font(.ssBlackTitle1)
