@@ -51,6 +51,7 @@
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */; };
 		5195D40C2A16A98C004CE657 /* BatteryProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */; };
+		5195D40E2A16B89B004CE657 /* HalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195D40D2A16B89B004CE657 /* HalfCircle.swift */; };
 		51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */; };
 		51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */; };
 		51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */; };
@@ -124,6 +125,7 @@
 		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeleteAccountView.swift; sourceTree = "<group>"; };
 		5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryProgressCircleView.swift; sourceTree = "<group>"; };
+		5195D40D2A16B89B004CE657 /* HalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfCircle.swift; sourceTree = "<group>"; };
 		51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInformationView.swift; sourceTree = "<group>"; };
 		51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningEnergyView.swift; sourceTree = "<group>"; };
 		51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSleepGoalView.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				515E261A2A00E31B006C3FE5 /* FontExtension.swift */,
 				515E263F2A015957006C3FE5 /* RoundedCorner.swift */,
 				51C656772A13A60800610369 /* HalfSheetExtension.swift */,
+				5195D40D2A16B89B004CE657 /* HalfCircle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 				5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
 				51348A072A121C4D005F9163 /* GetValues.swift in Sources */,
+				5195D40E2A16B89B004CE657 /* HalfCircle.swift in Sources */,
 				515617202A14716900743B5F /* ProjectTermView.swift in Sources */,
 				51C6567A2A13A71600610369 /* SaveValuesSheetView.swift in Sources */,
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,

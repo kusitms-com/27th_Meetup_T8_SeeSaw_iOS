@@ -56,7 +56,7 @@ struct BatteryDashboardView: View {
                                     sleep
                                 }
                                 .padding(12)
-                                .padding(.bottom, 60)
+                                .padding(.bottom, 32)
                             }
                             .background(Color.Gray100)
                         }
@@ -244,16 +244,6 @@ struct BatteryDashboardView: View {
             }
             .padding(.bottom, 12)
         }
-    }
-}
-
-struct HalfCircle: Shape {
-    func path(in rect: CGRect) -> Path {
-        let radius = rect.width / 2
-        let center = CGPoint(x: rect.midX, y: 0)
-        var path = Path()
-        path.addArc(center: center, radius: radius, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 0), clockwise: true)
-        return path
     }
 }
 
