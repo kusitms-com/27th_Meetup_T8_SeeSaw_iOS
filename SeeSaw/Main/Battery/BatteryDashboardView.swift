@@ -11,74 +11,69 @@ struct BatteryDashboardView: View {
     @AppStorage("nickname") var nickname: String = "이오링"
     @State private var showBatteryInformation: Bool = false
     
-    @State var progress: Double = 0.0
+    @State var battery: Int = 0
     @State private var show = false
-    
     
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
                 toolBar
                 
-                ScrollView {
-                    VStack(alignment: .center, spacing: 0) {
-                        title
-                            .padding(.top, 10)
-                            .padding(.horizontal, 20)
-                        
-                        ZStack(alignment: .topLeading) {
-                            NavigationLink {
-                                BatteryHistoryView()
-                            } label: {
-                                Circle()
-                                    .foregroundColor(.GrayWhite)
-                            }
+                GeometryReader { geometry in
+                    ScrollView {
+                        VStack(alignment: .center, spacing: 0) {
+                            title
+                                .padding(.top, 10)
+                                .padding(.horizontal, 20)
                             
-                            Button {
-                                showBatteryInformation = true
-                            } label: {
-                                Image(systemName: "questionmark.circle")
-                                    .font(.system(size: 28))
-                                    .foregroundColor(.Gray400)
-                                    .padding(.leading, 20)
-                            }
-                        }
-                        .padding(.top, 12)
-                        
-                        // 고속충전
-                        ZStack {
-                            Rectangle()
-                                .cornerRadius(200,
-                                              corners: .allCorners)
-                                .foregroundColor(.Gray100)
-                                .frame(width: 380, height: 200)
-                            
-                            VStack {
-                                Text("고속충전")
-                                    .font(.ssHeading2)
-                                    .padding(4)
-                                Text("아직 고속충전을 하지 않았어요")
-                                Text("고속충전을 하러 가볼까요")
+                            ZStack(alignment: .topLeading) {
+                                // 배터리 원형 그래프
                                 NavigationLink {
-                                    FastChargeView()
+                                    BatteryHistoryView()
                                 } label: {
-                                    CapsuleButtonView(color: .Gray900,
-                                                      text: "고속충전하기",
-                                                      size: .small)
+                                    BatteryProgressCircleView(geometry: geometry, battery: $battery)
+                                }
+                                
+                                // 배터리 정보 버튼
+                                batteryInfoButton
+                            }
+                            .padding(.top, 12)
+                            
+                            // 고속충전
+                            ZStack {
+                                Rectangle()
+                                    .cornerRadius(200,
+                                                  corners: .allCorners)
+                                    .foregroundColor(.Gray100)
+                                    .frame(width: 380, height: 200)
+                                
+                                VStack {
+                                    Text("고속충전")
+                                        .font(.ssHeading2)
+                                        .padding(4)
+                                    Text("아직 고속충전을 하지 않았어요")
+                                    Text("고속충전을 하러 가볼까요")
+                                    NavigationLink {
+                                        FastChargeView()
+                                    } label: {
+                                        CapsuleButtonView(color: .Gray900,
+                                                          text: "고속충전하기",
+                                                          size: .small)
+                                    }
                                 }
                             }
-                        }
-                        
-                        // 활동량, 수면
-                        VStack {
-                            HStack {
-                                energy
-                                sleep
+                            
+                            // 활동량, 수면
+                            VStack {
+                                HStack {
+                                    energy
+                                    sleep
+                                }
+                                .padding(12)
+                                .padding(.bottom, 60)
                             }
-                            .padding(12)
-                            .padding(.bottom, 60)
+                            .background(Color.Gray100)
                         }
-                        .background(Color.Gray100)
                     }
                 }
                 .background(Color.Gray200)
@@ -91,12 +86,13 @@ struct BatteryDashboardView: View {
         .onAppear {
             print("onappear")
             DispatchQueue.main.asyncAfter(deadline: .now()) {
-                progress = 0.8
+                battery = 80
             }
         }
         
     }
-    
+
+    // "라이프로그", 마이페이지 버튼
     var toolBar: some View {
         HStack {
             Image("LifeLog")
@@ -114,6 +110,7 @@ struct BatteryDashboardView: View {
         .background(Color.Gray100)
     }
     
+    // ##님의 에너지 배터리
     var title: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -126,51 +123,15 @@ struct BatteryDashboardView: View {
         }
     }
     
-    // 배터리 원형 표시
-    var batteryProgress: some View {
-        ZStack(alignment: .center) {
-            batteryProgressCircle
-            batteryValue
-        }
-    }
-    
-    var batteryProgressCircle: some View {
-        ZStack {
-            Circle()
-                .foregroundColor(.Gray100)
-                .frame(width: 380, height: 380)
-            
-            Circle()
-                .stroke( // 1
-                    Color.SeeSawGreen.opacity(0.3),
-                    lineWidth: 30
-                )
-                .frame(width: 300, height: 300)
-            
-            Circle()
-                .trim(from: 0, to: progress) // 1
-                .stroke(
-                    Color.SeeSawGreen,
-                    style: StrokeStyle(
-                        lineWidth: 30,
-                        lineCap: .round
-                    )
-                )
-                .frame(width: 300, height: 300)
-                .rotationEffect(.degrees(-90))
-                .animation(.easeOut(duration: 2.0), value: progress)
-        }
-    }
-    
-    var batteryValue: some View {
-        ZStack {
-            Text("%")
-                .font(.ssHeading1)
-                .offset(x: 72, y: -40)
-            
-            Text("\(Int(progress * 100))")
-                .font(.system(size: 100))
-                .fontWeight(.semibold)
+    // 배터리에 대한 정보 모달을 보여주는 버튼
+    var batteryInfoButton: some View {
+        Button {
+            showBatteryInformation = true
+        } label: {
+            Image(systemName: "questionmark.circle")
+                .font(.system(size: 28))
+                .foregroundColor(.Gray400)
+                .padding(.leading, 20)
         }
     }
     
