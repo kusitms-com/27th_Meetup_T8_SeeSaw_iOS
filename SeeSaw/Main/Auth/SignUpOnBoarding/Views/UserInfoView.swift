@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserInfoView: View {
     @State var email: String = ""
-    @State var nickname: String = ""
+    @AppStorage("nickname") var nickname: String = ""
     @Binding var agreeMarketing: Bool
     @StateObject var signUpVM = SignUpViewModel()
     var isNotVaildEmail: Bool {
