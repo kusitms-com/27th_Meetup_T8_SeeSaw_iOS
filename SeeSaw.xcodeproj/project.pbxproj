@@ -39,6 +39,7 @@
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
 		515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */; };
 		515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263F2A015957006C3FE5 /* RoundedCorner.swift */; };
+		51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */; };
 		517532202A094D2400BF107D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5175321F2A094D2400BF107D /* KeychainSwift */; };
 		517532222A094DA400BF107D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517532212A094DA400BF107D /* AuthViewModel.swift */; };
 		5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 5175EAC629F274E70092FE9D /* KakaoSDK */; };
@@ -110,6 +111,7 @@
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameView.swift; sourceTree = "<group>"; };
 		515E263F2A015957006C3FE5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSelectedValues.swift; sourceTree = "<group>"; };
 		517532212A094DA400BF107D /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		5175EAC829F277040092FE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5175EACA29F27B490092FE9D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -280,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				514852FE2A03FFA900351A9D /* Views */,
-				515617212A14891000743B5F /* SignUpViewModel.swift */,
 			);
 			path = SignUpOnBoarding;
 			sourceTree = "<group>";
@@ -365,6 +366,7 @@
 				51348A062A121C4D005F9163 /* GetValues.swift */,
 				51348A0B2A125FAD005F9163 /* PostGoal.swift */,
 				515617232A148A8000743B5F /* PostSignUp.swift */,
+				51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -470,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				51C656712A1359D200610369 /* LaunchScreenView.swift */,
+				515617212A14891000743B5F /* SignUpViewModel.swift */,
 				514852FA2A03FF4900351A9D /* Login */,
 				514852FB2A03FF5D00351A9D /* SignUpOnBoarding */,
 				514852FC2A03FF6900351A9D /* SelectValuesOnBoarding */,
@@ -601,6 +604,7 @@
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
+				51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */,
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,

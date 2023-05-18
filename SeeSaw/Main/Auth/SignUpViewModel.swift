@@ -47,4 +47,27 @@ class SignUpViewModel: ObservableObject {
                 }
             }
     }
+    
+    func postSelectedValues(selectedValues: [String]) {
+        let url = "\(baseUrl)/auth/signup"
+        let parameters: [String: Any] = ["values" : selectedValues]
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url,
+                   method: .post,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+            .responseDecodable(of: PostSelectedValuesResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print("DEBUG postSelectedValues: \(response.message)")
+                case .failure(let error):
+                    print("DEBUG postSelectedValues: \(error)")
+                }
+            }
+    }
 }
