@@ -11,6 +11,7 @@ struct SaveValuesSheetView: View {
     @Binding var isModalPresented: Bool
     @Binding var values: [String]
     let selectedValueColors: [Color] = [.SeeSawYellow, .SeeSawBlue, .SeeSawRed]
+    @StateObject var signUpVM = SignUpViewModel()
     @AppStorage("onboarding") var isOnboardingCompleted: Bool = false
     
     var body: some View {
@@ -56,6 +57,7 @@ struct SaveValuesSheetView: View {
             }
             
             Button {
+                signUpVM.postSelectedValues(selectedValues: values)
                 isModalPresented = false
                 isOnboardingCompleted = true
             } label: {

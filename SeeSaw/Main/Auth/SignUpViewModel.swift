@@ -49,8 +49,8 @@ class SignUpViewModel: ObservableObject {
     }
     
     func postSelectedValues(selectedValues: [String]) {
-        let url = "\(baseUrl)/auth/signup"
-        let parameters: [String: Any] = ["values" : selectedValues]
+        let url = "\(baseUrl)/api/value"
+        let parameters: [String: Any] = ["values": selectedValues]
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
