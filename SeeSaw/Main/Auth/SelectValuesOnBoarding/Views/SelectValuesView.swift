@@ -9,7 +9,7 @@ import SwiftUI
 // import UIKit
 
 struct SelectValuesView: View {
-    @State private var nickname = "에몽"
+    @AppStorage("nickname") var nickname: String = ""
     @State var values = ["도전", "여유", "희망", "공손", "긍정",
                   "기쁨", "모험", "도덕", "배려", "성실",
                   "신뢰", "열정", "유능", "유연", "예의",
