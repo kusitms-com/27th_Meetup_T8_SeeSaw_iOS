@@ -9,31 +9,42 @@ import SwiftUI
 
 struct ActivityHistoryView: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text("Today")
-                    .font(.ssHeading2)
-                    .foregroundColor(.Gray900)
-                Spacer()
-                NavigationLink {
-                    
-                } label: {
-                    Text("목표수정")
-                        .font(.ssWhiteBody2)
-                        .foregroundColor(.Gray700)
-                        .padding(.vertical, 6)
-                        .padding(.horizontal, 14)
-                        .background(
-                            Rectangle()
-                                .cornerRadius(90, corners: .allCorners)
-                                .foregroundColor(.Gray300))
+        GeometryReader { geometry in
+            VStack {
+                HStack {
+                    Text("Today")
+                        .font(.ssHeading2)
+                        .foregroundColor(.Gray900)
+                    Spacer()
+                    NavigationLink {
+                        
+                    } label: {
+                        Text("목표수정")
+                            .font(.ssWhiteBody2)
+                            .foregroundColor(.Gray700)
+                            .padding(.vertical, 6)
+                            .padding(.horizontal, 14)
+                            .background(
+                                Rectangle()
+                                    .cornerRadius(90, corners: .allCorners)
+                                    .foregroundColor(.Gray300))
+                    }
+                }
+                .padding(.bottom, 16)
+                
+                ActivityProgressHalfCircleView(geometry: geometry)
+                    .padding(.bottom, 20)
+                
+                ZStack {
+                    Rectangle()
+                        .cornerRadius(12, corners: .allCorners)
                 }
             }
-            .padding(.bottom, 16)
-            
-            ActivityProgressHalfCircleView()
         }
         .padding(20)
+        .background(Color.Gray200)
+        .navigationTitle("나의 활동량")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
