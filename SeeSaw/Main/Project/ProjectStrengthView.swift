@@ -19,8 +19,8 @@ struct ProjectStrengthView: View {
                 .font(.ssBlackTitle2)
                 .foregroundColor(.Gray600)
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top, 24)
-                .padding(.bottom, 12)
+                .padding(.top, 18)
+                .padding(.bottom, 6)
             HStack(spacing: 140) {
                 Slider(value: $valueStrength, in: 1...3, step: 1)
                     .frame(width: 300, height: 12)

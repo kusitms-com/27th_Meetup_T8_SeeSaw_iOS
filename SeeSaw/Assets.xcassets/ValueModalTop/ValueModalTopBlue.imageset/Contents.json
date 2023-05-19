@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Intersect-2.svg",
+      "filename" : "Intersect-5.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Intersect-5 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Intersect-5 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }

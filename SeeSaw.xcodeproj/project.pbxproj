@@ -85,6 +85,22 @@
 		51F878DC29F2689C0077A6C7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 51F878DB29F2689C0077A6C7 /* .gitignore */; };
 		51F878DF29F269FE0077A6C7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		BE7C06DC2A0BA88E00C7D647 /* ValueYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06DB2A0BA88E00C7D647 /* ValueYearView.swift */; };
+		BE7C06DE2A0BAD7200C7D647 /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06DD2A0BAD7200C7D647 /* AddProjectView.swift */; };
+		BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06DF2A0BAD7700C7D647 /* CompleteProjectView.swift */; };
+		BE7C06E22A0BAD7B00C7D647 /* ProgressProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06E12A0BAD7B00C7D647 /* ProgressProjectView.swift */; };
+		BE7C06E42A0BAD8000C7D647 /* ProjectGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06E32A0BAD7F00C7D647 /* ProjectGoalView.swift */; };
+		BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06E52A0BAD8600C7D647 /* ProjectNameView.swift */; };
+		BE7C06E82A0BAD8C00C7D647 /* ProjectStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06E72A0BAD8B00C7D647 /* ProjectStrengthView.swift */; };
+		BE7C06EA2A0BAD8E00C7D647 /* ProjectTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06E92A0BAD8E00C7D647 /* ProjectTermView.swift */; };
+		BE7C06EC2A0BAD9300C7D647 /* ProjectValueSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06EB2A0BAD9300C7D647 /* ProjectValueSelectView.swift */; };
+		BE7C06F22A13A06C00C7D647 /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F12A13A06C00C7D647 /* ProjectDetailView.swift */; };
+		BE7C06F42A14A51300C7D647 /* ValueProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F32A14A51300C7D647 /* ValueProjectView.swift */; };
+		BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F52A14A60100C7D647 /* ValueProgressView.swift */; };
+		BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F72A14AA1200C7D647 /* ValueQuickChargeView.swift */; };
+		BE7C06FA2A14C59D00C7D647 /* ProjectEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */; };
+		BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */; };
+		BE7C06FE2A16558100C7D647 /* ProjectRetrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */; };
+		BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */; };
 		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
 		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -169,6 +185,22 @@
 		51F878DB29F2689C0077A6C7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		51F878E029F26D600077A6C7 /* SeeSaw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeeSaw.entitlements; sourceTree = "<group>"; };
 		BE7C06DB2A0BA88E00C7D647 /* ValueYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueYearView.swift; sourceTree = "<group>"; };
+		BE7C06DD2A0BAD7200C7D647 /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
+		BE7C06DF2A0BAD7700C7D647 /* CompleteProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteProjectView.swift; sourceTree = "<group>"; };
+		BE7C06E12A0BAD7B00C7D647 /* ProgressProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressProjectView.swift; sourceTree = "<group>"; };
+		BE7C06E32A0BAD7F00C7D647 /* ProjectGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectGoalView.swift; sourceTree = "<group>"; };
+		BE7C06E52A0BAD8600C7D647 /* ProjectNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectNameView.swift; sourceTree = "<group>"; };
+		BE7C06E72A0BAD8B00C7D647 /* ProjectStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectStrengthView.swift; sourceTree = "<group>"; };
+		BE7C06E92A0BAD8E00C7D647 /* ProjectTermView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTermView.swift; sourceTree = "<group>"; };
+		BE7C06EB2A0BAD9300C7D647 /* ProjectValueSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectValueSelectView.swift; sourceTree = "<group>"; };
+		BE7C06F12A13A06C00C7D647 /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
+		BE7C06F32A14A51300C7D647 /* ValueProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueProjectView.swift; sourceTree = "<group>"; };
+		BE7C06F52A14A60100C7D647 /* ValueProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueProgressView.swift; sourceTree = "<group>"; };
+		BE7C06F72A14AA1200C7D647 /* ValueQuickChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueQuickChargeView.swift; sourceTree = "<group>"; };
+		BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditModalView.swift; sourceTree = "<group>"; };
+		BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeleteModalView.swift; sourceTree = "<group>"; };
+		BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRetrospectionView.swift; sourceTree = "<group>"; };
+		BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRectangleVIew.swift; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +225,9 @@
 				BECC936F2A03D8900099BA79 /* ValueModalView.swift */,
 				5121894C29F9567D005DD6C2 /* ValueView.swift */,
 				BE7C06DB2A0BA88E00C7D647 /* ValueYearView.swift */,
+				BE7C06F32A14A51300C7D647 /* ValueProjectView.swift */,
+				BE7C06F52A14A60100C7D647 /* ValueProgressView.swift */,
+				BE7C06F72A14AA1200C7D647 /* ValueQuickChargeView.swift */,
 			);
 			path = Value;
 			sourceTree = "<group>";
@@ -211,15 +246,20 @@
 		5121894229F9563A005DD6C2 /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				515617142A14716900743B5F /* AddProjectView.swift */,
-				515617162A14716900743B5F /* CompleteProjectView.swift */,
-				515617172A14716900743B5F /* ProjectGoalView.swift */,
-				515617132A14716900743B5F /* ProjectNameView.swift */,
-				515617182A14716900743B5F /* ProjectStrengthView.swift */,
-				515617192A14716900743B5F /* ProjectTermView.swift */,
-				515617152A14716900743B5F /* ProjectValueSelectView.swift */,
-				515617112A14714900743B5F /* ProgressProjectView.swift */,
+				BE7C06E12A0BAD7B00C7D647 /* ProgressProjectView.swift */,
+				BE7C06DF2A0BAD7700C7D647 /* CompleteProjectView.swift */,
+				BE7C06E32A0BAD7F00C7D647 /* ProjectGoalView.swift */,
+				BE7C06E52A0BAD8600C7D647 /* ProjectNameView.swift */,
+				BE7C06E72A0BAD8B00C7D647 /* ProjectStrengthView.swift */,
+				BE7C06E92A0BAD8E00C7D647 /* ProjectTermView.swift */,
+				BE7C06DD2A0BAD7200C7D647 /* AddProjectView.swift */,
+				BE7C06EB2A0BAD9300C7D647 /* ProjectValueSelectView.swift */,
 				5121894829F9566F005DD6C2 /* ProjectView.swift */,
+				BE7C06F12A13A06C00C7D647 /* ProjectDetailView.swift */,
+				BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */,
+				BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */,
+				BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */,
+				BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -647,9 +687,16 @@
 				51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */,
 				51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */,
 				51F878DF29F269FE0077A6C7 /* (null) in Sources */,
+				BE7C06EA2A0BAD8E00C7D647 /* ProjectTermView.swift in Sources */,
 				517AE9382A0797E70028D670 /* GifImage.swift in Sources */,
 				51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */,
+				BE7C06DE2A0BAD7200C7D647 /* AddProjectView.swift in Sources */,
+				BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */,
+				BE7C06E82A0BAD8C00C7D647 /* ProjectStrengthView.swift in Sources */,
+				BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */,
 				51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */,
+				BE7C06E22A0BAD7B00C7D647 /* ProgressProjectView.swift in Sources */,
+				BE7C06EC2A0BAD9300C7D647 /* ProjectValueSelectView.swift in Sources */,
 				515617242A148A8000743B5F /* PostSignUp.swift in Sources */,
 				5121894729F95667005DD6C2 /* MyPageView.swift in Sources */,
 				5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */,
@@ -669,7 +716,9 @@
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
-				51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
+        51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
+        BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */,
+        BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */,
 				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
@@ -689,11 +738,14 @@
 				51C656782A13A60800610369 /* HalfSheetExtension.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
+				BE7C06FA2A14C59D00C7D647 /* ProjectEditModalView.swift in Sources */,
 				51A1E5C62A0F580A00404E11 /* BatteryHistoryView.swift in Sources */,
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
+				BE7C06E42A0BAD8000C7D647 /* ProjectGoalView.swift in Sources */,
 				5156171C2A14716900743B5F /* ProjectValueSelectView.swift in Sources */,
 				5195D40C2A16A98C004CE657 /* BatteryProgressCircleView.swift in Sources */,
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,
+				BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */,
 				5139CCB12A0C9F1200181B55 /* BatteryDashboardView.swift in Sources */,
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
 				51348A0A2A1252E6005F9163 /* SetGoalViewModel.swift in Sources */,
@@ -712,8 +764,12 @@
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
 				514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */,
+				BE7C06FE2A16558100C7D647 /* ProjectRetrospectionView.swift in Sources */,
 				514852F52A03A61100351A9D /* AgreeTermsView.swift in Sources */,
+				BE7C06F42A14A51300C7D647 /* ValueProjectView.swift in Sources */,
 				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
+				BE7C06F22A13A06C00C7D647 /* ProjectDetailView.swift in Sources */,
+				BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
