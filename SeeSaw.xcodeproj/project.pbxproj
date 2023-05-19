@@ -200,12 +200,10 @@
 		5121894129F9562F005DD6C2 /* Battery */ = {
 			isa = PBXGroup;
 			children = (
-				5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */,
-				5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */,
+				51A1E5C02A0EA82600404E11 /* Dashboard */,
 				51AA9A602A174025005C14FC /* FastCharge */,
 				51348A082A124F9D005F9163 /* SetGoal */,
 				51AA9A692A178E87005C14FC /* BatteryHistory */,
-				51A1E5C02A0EA82600404E11 /* Views */,
 			);
 			path = Battery;
 			sourceTree = "<group>";
@@ -398,12 +396,14 @@
 			path = DTO;
 			sourceTree = "<group>";
 		};
-		51A1E5C02A0EA82600404E11 /* Views */ = {
+		51A1E5C02A0EA82600404E11 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */,
 				51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */,
+				5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */,
 			);
-			path = Views;
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		51AA9A5D2A16C270005C14FC /* Shape */ = {
