@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct BatteryDashboardView: View {
-    @AppStorage("nickname") var nickname: String = "이오링"
+    @AppStorage("nickname") var nickname: String = ""
     @State private var showBatteryInformation: Bool = false
     
     @State var battery: Int = 0
     
-    @State var isFastChargeExist: Bool = true
+    @State var isFastChargeExist: Bool = false
     @State var fastChargeTitle: String = "홍제천 산책하기"
     @State var fastChargeValue: String = "여유"
     
-    @State var isEnergyGoalExist: Bool = true
+    @State var isEnergyGoalExist: Bool = false
     var energyGoal: Int = 250
     var todayEnergy: Int = 160
     var energyRatio: Double {
@@ -25,7 +25,7 @@ struct BatteryDashboardView: View {
         return ratio < 1.0 ? ratio : 1.0
     }
     
-    @State var isSleepGoalExist: Bool = true
+    @State var isSleepGoalExist: Bool = false
     @State var todaySleepAmount: Int = 6
     @State var isTodaySleepAmountExist: Bool = false
     @State var sleepCondition: String = "Bad"

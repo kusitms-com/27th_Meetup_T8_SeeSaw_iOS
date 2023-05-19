@@ -59,6 +59,7 @@
 		51A1E5C62A0F580A00404E11 /* BatteryHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */; };
 		51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9ECB42A00DD71000E6784 /* ColorExtension.swift */; };
 		51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */; };
+		51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
@@ -134,6 +135,7 @@
 		51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryView.swift; sourceTree = "<group>"; };
 		51A9ECB42A00DD71000E6784 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightHalfCircle.swift; sourceTree = "<group>"; };
+		51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeCompletionView.swift; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
 		51BA2A6029EA8C5500071264 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */,
 				5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */,
+				51AA9A602A174025005C14FC /* FastCharge */,
 				51348A082A124F9D005F9163 /* SetGoal */,
 				51A1E5C02A0EA82600404E11 /* Views */,
 			);
@@ -382,7 +385,6 @@
 			isa = PBXGroup;
 			children = (
 				51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */,
-				51A1E5C32A0EABC300404E11 /* FastChargeView.swift */,
 				51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */,
 			);
 			path = Views;
@@ -395,6 +397,15 @@
 				51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */,
 			);
 			path = Circle;
+			sourceTree = "<group>";
+		};
+		51AA9A602A174025005C14FC /* FastCharge */ = {
+			isa = PBXGroup;
+			children = (
+				51A1E5C32A0EABC300404E11 /* FastChargeView.swift */,
+				51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */,
+			);
+			path = FastCharge;
 			sourceTree = "<group>";
 		};
 		51BA2A5229EA8C5400071264 = {
@@ -631,6 +642,7 @@
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
 				51348A0C2A125FAD005F9163 /* PostGoal.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
+				51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */,
 				51C656742A137BC200610369 /* SelectValuesView.swift in Sources */,
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
 				511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */,

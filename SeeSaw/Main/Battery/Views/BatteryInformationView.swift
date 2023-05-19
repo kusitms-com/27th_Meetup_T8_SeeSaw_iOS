@@ -41,7 +41,7 @@ struct BatteryInformationView: View {
                     .font(.ssBlackBody1)
                     .foregroundColor(.Gray900)
             }
-            .padding(.top, 60)
+            .padding(.top, 44)
             .padding(.bottom, 40)
             
             VStack(alignment: .leading, spacing: 12) {
