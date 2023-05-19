@@ -1,0 +1,15 @@
+//
+//  PostSelectedValues.swift
+//  SeeSaw
+//
+//  Created by 이안진 on 2023/05/18.
+//
+
+import Foundation
+
+struct PostSelectedValuesResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: Int?
+}

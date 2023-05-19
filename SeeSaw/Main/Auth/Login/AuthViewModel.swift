@@ -60,7 +60,7 @@ class AuthViewModel: ObservableObject {
                         guard let errorRes = try? decoder.decode(PostLogin409Response.self, from: data) else { return }
                         print(errorRes.message)
                     default:
-                        print("DEBUG: not 200")
+                        print("DEBUG: not 200 \(data)")
                     }
                 case .failure(let error):
                     print(error)
