@@ -29,6 +29,9 @@ struct ActivityHistoryView: View {
                                 .foregroundColor(.Gray300))
                 }
             }
+            .padding(.bottom, 16)
+            
+            ActivityProgressHalfCircleView()
         }
         .padding(20)
     }

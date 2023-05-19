@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		510B32B62A17F3AC00026E07 /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B52A17F3AC00026E07 /* ActivityHistoryView.swift */; };
+		510B32B82A17FD4800026E07 /* ActivityProgressHalfCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B72A17FD4800026E07 /* ActivityProgressHalfCircleView.swift */; };
+		510B32BA2A17FD5F00026E07 /* TopHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B92A17FD5F00026E07 /* TopHalfCircle.swift */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -100,6 +102,8 @@
 
 /* Begin PBXFileReference section */
 		510B32B52A17F3AC00026E07 /* ActivityHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHistoryView.swift; sourceTree = "<group>"; };
+		510B32B72A17FD4800026E07 /* ActivityProgressHalfCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressHalfCircleView.swift; sourceTree = "<group>"; };
+		510B32B92A17FD5F00026E07 /* TopHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHalfCircle.swift; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				510B32B52A17F3AC00026E07 /* ActivityHistoryView.swift */,
+				510B32B72A17FD4800026E07 /* ActivityProgressHalfCircleView.swift */,
 			);
 			path = ActivityHistory;
 			sourceTree = "<group>";
@@ -470,6 +475,7 @@
 				5195D40D2A16B89B004CE657 /* HalfCircle.swift */,
 				51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */,
 				51AA9A672A1786C9005C14FC /* Line.swift */,
+				510B32B92A17FD5F00026E07 /* TopHalfCircle.swift */,
 			);
 			path = Shape;
 			sourceTree = "<group>";
@@ -706,10 +712,12 @@
 				51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */,
 				51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */,
 				51F878DF29F269FE0077A6C7 /* (null) in Sources */,
+				510B32BA2A17FD5F00026E07 /* TopHalfCircle.swift in Sources */,
 				BE7C06EA2A0BAD8E00C7D647 /* ProjectTermView.swift in Sources */,
 				517AE9382A0797E70028D670 /* GifImage.swift in Sources */,
 				51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */,
 				BE7C06DE2A0BAD7200C7D647 /* AddProjectView.swift in Sources */,
+				510B32B82A17FD4800026E07 /* ActivityProgressHalfCircleView.swift in Sources */,
 				BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */,
 				BE7C06E82A0BAD8C00C7D647 /* ProjectStrengthView.swift in Sources */,
 				BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */,
