@@ -20,7 +20,7 @@ struct ProjectValueSelectView: View {
                     valueIndex = 0
                 } label: {
                     Text(valueSelect[0])
-                        .frame(width: 148, height: 48)
+                        .frame(width: 148, height: 36)
                         .font(.ssWhiteBody1)
                         .foregroundColor(.GrayBlack)
                 }
@@ -31,7 +31,7 @@ struct ProjectValueSelectView: View {
                     valueIndex = 1
                 } label: {
                     Text(valueSelect[1])
-                        .frame(width: 148, height: 48)
+                        .frame(width: 148, height: 36)
                         .font(.ssWhiteBody1)
                         .foregroundColor(.GrayBlack)
                 }
@@ -44,7 +44,7 @@ struct ProjectValueSelectView: View {
                     valueIndex = 2
                 } label: {
                     Text(valueSelect[2])
-                        .frame(width: 148, height: 48)
+                        .frame(width: 148, height: 36)
                         .font(.ssWhiteBody1)
                         .foregroundColor(.GrayBlack)
                 }
@@ -55,7 +55,7 @@ struct ProjectValueSelectView: View {
                     valueIndex = 3
                 } label: {
                     Text("미선택")
-                        .frame(width: 148, height: 48)
+                        .frame(width: 148, height: 36)
                         .font(.ssWhiteBody1)
                         .foregroundColor(.GrayBlack)
                 }
