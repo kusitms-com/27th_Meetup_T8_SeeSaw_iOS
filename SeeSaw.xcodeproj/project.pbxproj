@@ -61,6 +61,7 @@
 		51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */; };
 		51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */; };
 		51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */ = {isa = PBXBuildFile; fileRef = 51AA9A632A1743EA005C14FC /* FastCharge.gif */; };
+		51AA9A682A1786C9005C14FC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A672A1786C9005C14FC /* Line.swift */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
@@ -138,6 +139,7 @@
 		51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightHalfCircle.swift; sourceTree = "<group>"; };
 		51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeCompletionView.swift; sourceTree = "<group>"; };
 		51AA9A632A1743EA005C14FC /* FastCharge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FastCharge.gif; sourceTree = "<group>"; };
+		51AA9A672A1786C9005C14FC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
 		51BA2A6029EA8C5500071264 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -393,13 +395,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		51AA9A5D2A16C270005C14FC /* Circle */ = {
+		51AA9A5D2A16C270005C14FC /* Shape */ = {
 			isa = PBXGroup;
 			children = (
 				5195D40D2A16B89B004CE657 /* HalfCircle.swift */,
 				51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */,
+				51AA9A672A1786C9005C14FC /* Line.swift */,
 			);
-			path = Circle;
+			path = Shape;
 			sourceTree = "<group>";
 		};
 		51AA9A602A174025005C14FC /* FastCharge */ = {
@@ -459,7 +462,7 @@
 		51CECB7629EE5708001C7832 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				51AA9A5D2A16C270005C14FC /* Circle */,
+				51AA9A5D2A16C270005C14FC /* Shape */,
 				51A9ECB42A00DD71000E6784 /* ColorExtension.swift */,
 				515E261A2A00E31B006C3FE5 /* FontExtension.swift */,
 				515E263F2A015957006C3FE5 /* RoundedCorner.swift */,
@@ -630,6 +633,7 @@
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
 				515617122A14714900743B5F /* ProgressProjectView.swift in Sources */,
 				5156171B2A14716900743B5F /* AddProjectView.swift in Sources */,
+				51AA9A682A1786C9005C14FC /* Line.swift in Sources */,
 				51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */,
 				51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */,
 				5156171F2A14716900743B5F /* ProjectStrengthView.swift in Sources */,

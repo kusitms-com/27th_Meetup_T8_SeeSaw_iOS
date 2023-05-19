@@ -18,19 +18,10 @@ struct BatteryHistoryView: View {
                 
                 ZStack(alignment: .bottom) {
                     VStack(spacing: 0) {
-                        Line()
-                            .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                            .frame(height: 1)
-                            .foregroundColor(.Gray300)
-                        Line()
-                            .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                            .frame(height: 1)
-                            .foregroundColor(.Gray300)
+                        dashedLine
+                        dashedLine
                             .padding(.vertical, 72)
-                        Line()
-                            .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                            .frame(height: 1)
-                            .foregroundColor(.Gray300)
+                        dashedLine
                     }
                     
                     HStack(alignment: .bottom, spacing: 24) {
@@ -243,16 +234,16 @@ struct BatteryHistoryView: View {
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.Gray200)
     }
-}
-
-struct Line: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: rect.width, y: 0))
-        return path
+    
+    var dashedLine: some View {
+        Line()
+            .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+            .frame(height: 1)
+            .foregroundColor(.Gray300)
     }
 }
+
+
 
 struct BatteryHistoryView_Previews: PreviewProvider {
     static var previews: some View {
