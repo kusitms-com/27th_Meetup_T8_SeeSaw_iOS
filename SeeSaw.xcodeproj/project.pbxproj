@@ -26,14 +26,6 @@
 		514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F62A03ADF400351A9D /* UserInfoView.swift */; };
 		514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */; };
 		514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514853002A04002E00351A9D /* ExplainValuesView.swift */; };
-		515617122A14714900743B5F /* ProgressProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617112A14714900743B5F /* ProgressProjectView.swift */; };
-		5156171A2A14716900743B5F /* ProjectNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617132A14716900743B5F /* ProjectNameView.swift */; };
-		5156171B2A14716900743B5F /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617142A14716900743B5F /* AddProjectView.swift */; };
-		5156171C2A14716900743B5F /* ProjectValueSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617152A14716900743B5F /* ProjectValueSelectView.swift */; };
-		5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617162A14716900743B5F /* CompleteProjectView.swift */; };
-		5156171E2A14716900743B5F /* ProjectGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617172A14716900743B5F /* ProjectGoalView.swift */; };
-		5156171F2A14716900743B5F /* ProjectStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617182A14716900743B5F /* ProjectStrengthView.swift */; };
-		515617202A14716900743B5F /* ProjectTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617192A14716900743B5F /* ProjectTermView.swift */; };
 		515617222A14891000743B5F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617212A14891000743B5F /* SignUpViewModel.swift */; };
 		515617242A148A8000743B5F /* PostSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617232A148A8000743B5F /* PostSignUp.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
@@ -125,14 +117,14 @@
 		514852F62A03ADF400351A9D /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletionView.swift; sourceTree = "<group>"; };
 		514853002A04002E00351A9D /* ExplainValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainValuesView.swift; sourceTree = "<group>"; };
-		515617112A14714900743B5F /* ProgressProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProgressProjectView.swift"; sourceTree = "<group>"; };
-		515617132A14716900743B5F /* ProjectNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectNameView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectNameView.swift"; sourceTree = "<group>"; };
-		515617142A14716900743B5F /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/AddProjectView.swift"; sourceTree = "<group>"; };
-		515617152A14716900743B5F /* ProjectValueSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectValueSelectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectValueSelectView.swift"; sourceTree = "<group>"; };
-		515617162A14716900743B5F /* CompleteProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompleteProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/CompleteProjectView.swift"; sourceTree = "<group>"; };
-		515617172A14716900743B5F /* ProjectGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectGoalView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectGoalView.swift"; sourceTree = "<group>"; };
-		515617182A14716900743B5F /* ProjectStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectStrengthView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectStrengthView.swift"; sourceTree = "<group>"; };
-		515617192A14716900743B5F /* ProjectTermView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTermView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectTermView.swift"; sourceTree = "<group>"; };
+		515617112A14714900743B5F /* ProgressProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressProjectView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProgressProjectView.swift"; sourceTree = "<absolute>"; };
+		515617132A14716900743B5F /* ProjectNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectNameView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectNameView.swift"; sourceTree = "<absolute>"; };
+		515617142A14716900743B5F /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProjectView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/AddProjectView.swift"; sourceTree = "<absolute>"; };
+		515617152A14716900743B5F /* ProjectValueSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectValueSelectView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectValueSelectView.swift"; sourceTree = "<absolute>"; };
+		515617162A14716900743B5F /* CompleteProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompleteProjectView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/CompleteProjectView.swift"; sourceTree = "<absolute>"; };
+		515617172A14716900743B5F /* ProjectGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectGoalView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectGoalView.swift"; sourceTree = "<absolute>"; };
+		515617182A14716900743B5F /* ProjectStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectStrengthView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectStrengthView.swift"; sourceTree = "<absolute>"; };
+		515617192A14716900743B5F /* ProjectTermView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTermView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectTermView.swift"; sourceTree = "<absolute>"; };
 		515617212A14891000743B5F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		515617232A148A8000743B5F /* PostSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSignUp.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -218,6 +210,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		510B32B12A17C8F800026E07 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				515617112A14714900743B5F /* ProgressProjectView.swift */,
+				515617142A14716900743B5F /* AddProjectView.swift */,
+				515617182A14716900743B5F /* ProjectStrengthView.swift */,
+				515617132A14716900743B5F /* ProjectNameView.swift */,
+				515617172A14716900743B5F /* ProjectGoalView.swift */,
+				515617152A14716900743B5F /* ProjectValueSelectView.swift */,
+				515617162A14716900743B5F /* CompleteProjectView.swift */,
+				515617192A14716900743B5F /* ProjectTermView.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		5121894029F95622005DD6C2 /* Value */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +491,7 @@
 				51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */,
 				51F878DB29F2689C0077A6C7 /* .gitignore */,
 				51BA2A5C29EA8C5500071264 /* Products */,
+				510B32B12A17C8F800026E07 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -702,12 +710,9 @@
 				5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */,
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
-				515617122A14714900743B5F /* ProgressProjectView.swift in Sources */,
-				5156171B2A14716900743B5F /* AddProjectView.swift in Sources */,
 				51AA9A682A1786C9005C14FC /* Line.swift in Sources */,
 				51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */,
 				51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */,
-				5156171F2A14716900743B5F /* ProjectStrengthView.swift in Sources */,
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
@@ -716,9 +721,9 @@
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
-        51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
-        BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */,
-        BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */,
+				51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
+				BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */,
+				BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */,
 				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
@@ -732,9 +737,7 @@
 				51AA9A712A17BFE6005C14FC /* BatteryHistoryCardRow.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
-				5156171A2A14716900743B5F /* ProjectNameView.swift in Sources */,
 				51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */,
-				5156171E2A14716900743B5F /* ProjectGoalView.swift in Sources */,
 				51C656782A13A60800610369 /* HalfSheetExtension.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
@@ -742,7 +745,6 @@
 				51A1E5C62A0F580A00404E11 /* BatteryHistoryView.swift in Sources */,
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
 				BE7C06E42A0BAD8000C7D647 /* ProjectGoalView.swift in Sources */,
-				5156171C2A14716900743B5F /* ProjectValueSelectView.swift in Sources */,
 				5195D40C2A16A98C004CE657 /* BatteryProgressCircleView.swift in Sources */,
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,
 				BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */,
@@ -753,12 +755,10 @@
 				5122C59B2A12016200DAD9A8 /* ShowValuesView.swift in Sources */,
 				51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
-				5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
 				51AA9A6F2A17BFB5005C14FC /* BatteryHistoryCardView.swift in Sources */,
 				51348A072A121C4D005F9163 /* GetValues.swift in Sources */,
 				5195D40E2A16B89B004CE657 /* HalfCircle.swift in Sources */,
-				515617202A14716900743B5F /* ProjectTermView.swift in Sources */,
 				51AA9A6B2A178EA6005C14FC /* BatteryChartView.swift in Sources */,
 				51C6567A2A13A71600610369 /* SaveValuesSheetView.swift in Sources */,
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
