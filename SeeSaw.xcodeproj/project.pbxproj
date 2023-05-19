@@ -75,6 +75,10 @@
 		BE7C06F42A14A51300C7D647 /* ValueProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F32A14A51300C7D647 /* ValueProjectView.swift */; };
 		BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F52A14A60100C7D647 /* ValueProgressView.swift */; };
 		BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F72A14AA1200C7D647 /* ValueQuickChargeView.swift */; };
+		BE7C06FA2A14C59D00C7D647 /* ProjectEditModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */; };
+		BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */; };
+		BE7C06FE2A16558100C7D647 /* ProjectRetrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */; };
+		BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */; };
 		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
 		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -149,6 +153,10 @@
 		BE7C06F32A14A51300C7D647 /* ValueProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueProjectView.swift; sourceTree = "<group>"; };
 		BE7C06F52A14A60100C7D647 /* ValueProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueProgressView.swift; sourceTree = "<group>"; };
 		BE7C06F72A14AA1200C7D647 /* ValueQuickChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueQuickChargeView.swift; sourceTree = "<group>"; };
+		BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEditModalView.swift; sourceTree = "<group>"; };
+		BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeleteModalView.swift; sourceTree = "<group>"; };
+		BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRetrospectionView.swift; sourceTree = "<group>"; };
+		BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRectangleVIew.swift; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +211,10 @@
 				BE7C06EB2A0BAD9300C7D647 /* ProjectValueSelectView.swift */,
 				5121894829F9566F005DD6C2 /* ProjectView.swift */,
 				BE7C06F12A13A06C00C7D647 /* ProjectDetailView.swift */,
+				BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */,
+				BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */,
+				BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */,
+				BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -597,6 +609,7 @@
 				BE7C06DE2A0BAD7200C7D647 /* AddProjectView.swift in Sources */,
 				BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */,
 				BE7C06E82A0BAD8C00C7D647 /* ProjectStrengthView.swift in Sources */,
+				BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */,
 				51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */,
 				BE7C06E22A0BAD7B00C7D647 /* ProgressProjectView.swift in Sources */,
 				BE7C06EC2A0BAD9300C7D647 /* ProjectValueSelectView.swift in Sources */,
@@ -628,10 +641,12 @@
 				51C656782A13A60800610369 /* HalfSheetExtension.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
+				BE7C06FA2A14C59D00C7D647 /* ProjectEditModalView.swift in Sources */,
 				51A1E5C62A0F580A00404E11 /* BatteryHistoryView.swift in Sources */,
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
 				BE7C06E42A0BAD8000C7D647 /* ProjectGoalView.swift in Sources */,
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,
+				BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */,
 				5139CCB12A0C9F1200181B55 /* BatteryDashboardView.swift in Sources */,
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
 				51348A0A2A1252E6005F9163 /* SetGoalViewModel.swift in Sources */,
@@ -645,6 +660,7 @@
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
 				514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */,
+				BE7C06FE2A16558100C7D647 /* ProjectRetrospectionView.swift in Sources */,
 				514852F52A03A61100351A9D /* AgreeTermsView.swift in Sources */,
 				BE7C06F42A14A51300C7D647 /* ValueProjectView.swift in Sources */,
 				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
