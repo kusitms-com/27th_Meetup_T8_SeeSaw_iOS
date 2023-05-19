@@ -26,6 +26,7 @@ struct GifImage: UIViewRepresentable {
             baseURL: url.deletingLastPathComponent()
         )
         webView.scrollView.isScrollEnabled = false
+        webView.isOpaque = false
 
         return webView
     }

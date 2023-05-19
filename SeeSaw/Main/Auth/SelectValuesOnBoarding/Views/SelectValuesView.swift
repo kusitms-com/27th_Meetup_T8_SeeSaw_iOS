@@ -89,7 +89,7 @@ struct SelectValuesView: View {
         .halfSheet(showSheet: $isModalPresented) {
             SaveValuesSheetView(isModalPresented: $isModalPresented, values: $selectedValues)
         } onEnd: {
-            print("onend")
+            print("set value halfSheet dismiss")
         }
         .onAppear(perform: { isAnimating = true })
     }
