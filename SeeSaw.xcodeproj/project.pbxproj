@@ -63,6 +63,10 @@
 		51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */ = {isa = PBXBuildFile; fileRef = 51AA9A632A1743EA005C14FC /* FastCharge.gif */; };
 		51AA9A682A1786C9005C14FC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A672A1786C9005C14FC /* Line.swift */; };
 		51AA9A6B2A178EA6005C14FC /* BatteryChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A6A2A178EA6005C14FC /* BatteryChartView.swift */; };
+		51AA9A6D2A17BF8E005C14FC /* BatteryHistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A6C2A17BF8E005C14FC /* BatteryHistoryDetailView.swift */; };
+		51AA9A6F2A17BFB5005C14FC /* BatteryHistoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A6E2A17BFB5005C14FC /* BatteryHistoryCardView.swift */; };
+		51AA9A712A17BFE6005C14FC /* BatteryHistoryCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A702A17BFE6005C14FC /* BatteryHistoryCardRow.swift */; };
+		51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
@@ -142,6 +146,10 @@
 		51AA9A632A1743EA005C14FC /* FastCharge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FastCharge.gif; sourceTree = "<group>"; };
 		51AA9A672A1786C9005C14FC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		51AA9A6A2A178EA6005C14FC /* BatteryChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryChartView.swift; sourceTree = "<group>"; };
+		51AA9A6C2A17BF8E005C14FC /* BatteryHistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryDetailView.swift; sourceTree = "<group>"; };
+		51AA9A6E2A17BFB5005C14FC /* BatteryHistoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryCardView.swift; sourceTree = "<group>"; };
+		51AA9A702A17BFE6005C14FC /* BatteryHistoryCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryCardRow.swift; sourceTree = "<group>"; };
+		51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBatteryVariation.swift; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
 		51BA2A6029EA8C5500071264 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -385,6 +393,7 @@
 				51348A0B2A125FAD005F9163 /* PostGoal.swift */,
 				515617232A148A8000743B5F /* PostSignUp.swift */,
 				51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */,
+				51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -421,6 +430,9 @@
 			children = (
 				51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */,
 				51AA9A6A2A178EA6005C14FC /* BatteryChartView.swift */,
+				51AA9A6C2A17BF8E005C14FC /* BatteryHistoryDetailView.swift */,
+				51AA9A6E2A17BFB5005C14FC /* BatteryHistoryCardView.swift */,
+				51AA9A702A17BFE6005C14FC /* BatteryHistoryCardRow.swift */,
 			);
 			path = BatteryHistory;
 			sourceTree = "<group>";
@@ -631,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5121894D29F9567D005DD6C2 /* ValueView.swift in Sources */,
+				51AA9A6D2A17BF8E005C14FC /* BatteryHistoryDetailView.swift in Sources */,
 				51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */,
 				51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */,
 				51F878DF29F269FE0077A6C7 /* (null) in Sources */,
@@ -656,6 +669,7 @@
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
+				51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
 				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
@@ -666,6 +680,7 @@
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
 				511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */,
 				511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */,
+				51AA9A712A17BFE6005C14FC /* BatteryHistoryCardRow.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
 				5156171A2A14716900743B5F /* ProjectNameView.swift in Sources */,
@@ -688,6 +703,7 @@
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
+				51AA9A6F2A17BFB5005C14FC /* BatteryHistoryCardView.swift in Sources */,
 				51348A072A121C4D005F9163 /* GetValues.swift in Sources */,
 				5195D40E2A16B89B004CE657 /* HalfCircle.swift in Sources */,
 				515617202A14716900743B5F /* ProjectTermView.swift in Sources */,
