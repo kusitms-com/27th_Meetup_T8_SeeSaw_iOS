@@ -13,7 +13,21 @@ struct FastChargeCompletionView: View {
     
     var body: some View {
         VStack {
-            checkSelectedValue
+//            checkSelectedValue
+            VStack(alignment: .leading, spacing: 12) {
+                Text("배터리 충전 완료!")
+                    .font(.ssHeading2)
+                    .foregroundColor(.Gray900)
+                Text("내일도 고속충전하러 오세요")
+                    .font(.ssBlackBody1)
+                
+                GifImage("FastCharge")
+                    .frame(width: 300)
+                
+                HStack {
+                    Spacer()
+                }
+            }
             
             Spacer()
             Button {
@@ -23,6 +37,7 @@ struct FastChargeCompletionView: View {
             }
         }
         .padding(20)
+        .background(Color.Gray200)
         .navigationTitle("고속충전")
         .navigationBarTitleDisplayMode(.inline)
     }

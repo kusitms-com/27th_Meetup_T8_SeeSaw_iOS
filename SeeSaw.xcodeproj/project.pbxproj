@@ -60,6 +60,7 @@
 		51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9ECB42A00DD71000E6784 /* ColorExtension.swift */; };
 		51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */; };
 		51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */; };
+		51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */ = {isa = PBXBuildFile; fileRef = 51AA9A632A1743EA005C14FC /* FastCharge.gif */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
@@ -136,6 +137,7 @@
 		51A9ECB42A00DD71000E6784 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightHalfCircle.swift; sourceTree = "<group>"; };
 		51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeCompletionView.swift; sourceTree = "<group>"; };
+		51AA9A632A1743EA005C14FC /* FastCharge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FastCharge.gif; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
 		51BA2A6029EA8C5500071264 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		517AE9392A07982A0028D670 /* GifAssets */ = {
 			isa = PBXGroup;
 			children = (
+				51AA9A632A1743EA005C14FC /* FastCharge.gif */,
 				517AE93A2A07987E0028D670 /* LoginImage.gif */,
 			);
 			path = GifAssets;
@@ -575,6 +578,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */,
 				517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */,
 				51F878DC29F2689C0077A6C7 /* .gitignore in Resources */,
 				51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */,
