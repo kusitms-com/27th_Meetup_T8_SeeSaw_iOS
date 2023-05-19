@@ -58,8 +58,9 @@ struct FastChargeView: View {
                     }
                     .padding(.bottom, 20)
                 }
-                Button {
-                    
+                NavigationLink {
+                    FastChargeCompletionView(selectedFastChargeValue: $selectedFastChargeValue)
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     CapsuleButtonView(color: isFastChargeButtonAvailable ? .Gray900 : .Gray400,
                                       text: "고속충전 완료",

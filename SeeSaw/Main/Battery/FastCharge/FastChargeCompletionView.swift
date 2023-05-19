@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FastChargeCompletionView: View {
     @AppStorage("nickname") var nickname: String = "이오링"
-    @State var selectedFastChargeValue = "여유"
+    @Binding var selectedFastChargeValue: String
     @State private var showSelecteValue: Bool = true
     
     var body: some View {
@@ -30,7 +30,8 @@ struct FastChargeCompletionView: View {
                 }
             } else {
                 NavigationLink {
-                    
+                    BatteryDashboardView()
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     CapsuleButtonView(color: .Gray900, text: "완료", size: .large)
                 }
@@ -78,11 +79,5 @@ struct FastChargeCompletionView: View {
                 Spacer()
             }
         }
-    }
-}
-
-struct FastChargeCompletionView_Previews: PreviewProvider {
-    static var previews: some View {
-        FastChargeCompletionView()
     }
 }
