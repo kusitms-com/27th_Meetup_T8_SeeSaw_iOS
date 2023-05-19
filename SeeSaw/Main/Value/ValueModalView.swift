@@ -79,8 +79,9 @@ struct ValueModalView: View {
                         ValueQuickChargeView(valueTitle: self.valueTitle, valueColor: self.valueColor, chargeNum: self.chargeNum)
                     }
                 }
-            }]
+            }
         }
+        .background(.white)
     }
 }
 
