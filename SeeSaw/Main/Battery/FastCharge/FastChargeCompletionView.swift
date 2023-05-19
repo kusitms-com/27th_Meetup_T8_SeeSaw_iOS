@@ -10,30 +10,30 @@ import SwiftUI
 struct FastChargeCompletionView: View {
     @AppStorage("nickname") var nickname: String = "이오링"
     @State var selectedFastChargeValue = "여유"
+    @State private var showSelecteValue: Bool = true
     
     var body: some View {
         VStack {
-//            checkSelectedValue
-            VStack(alignment: .leading, spacing: 12) {
-                Text("배터리 충전 완료!")
-                    .font(.ssHeading2)
-                    .foregroundColor(.Gray900)
-                Text("내일도 고속충전하러 오세요")
-                    .font(.ssBlackBody1)
-                
-                GifImage("FastCharge")
-                    .frame(width: 300)
-                
-                HStack {
-                    Spacer()
-                }
+            if showSelecteValue {
+                checkSelectedValue
+            } else {
+                completeFastCharge
             }
             
             Spacer()
-            Button {
-                
-            } label: {
-                CapsuleButtonView(color: .Gray900, text: "다음", size: .large)
+            
+            if showSelecteValue {
+                Button {
+                    showSelecteValue = false
+                } label: {
+                    CapsuleButtonView(color: .Gray900, text: "다음", size: .large)
+                }
+            } else {
+                NavigationLink {
+                    
+                } label: {
+                    CapsuleButtonView(color: .Gray900, text: "완료", size: .large)
+                }
             }
         }
         .padding(20)
@@ -61,6 +61,23 @@ struct FastChargeCompletionView: View {
         }
         .font(.ssHeading1)
         .foregroundColor(.GrayBlack)
+    }
+    
+    var completeFastCharge: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("배터리 충전 완료!")
+                .font(.ssHeading2)
+                .foregroundColor(.Gray900)
+            Text("내일도 고속충전하러 오세요")
+                .font(.ssBlackBody1)
+            
+            GifImage("FastCharge")
+                .frame(width: 300)
+            
+            HStack {
+                Spacer()
+            }
+        }
     }
 }
 
