@@ -20,9 +20,10 @@ struct ValueButtonView: View {
                 .onTapGesture {
                     self.showModal = true
                 }
-                .sheet(isPresented: self.$showModal) {
+                .halfSheet(showSheet: self.$showModal) {
                     ValueModalView(valueTitle: self.valueTitle, valueColor: self.valueColor)
-                        .frame(height: UIScreen.main.bounds.size.height / 2)
+                } onEnd: {
+                    print("onend")
                 }
             HStack {
                 Spacer()
