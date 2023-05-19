@@ -30,6 +30,7 @@ struct ValueQuickChargeView: View {
                     .font(.ssBlackTitle1)
                     .foregroundColor(.Gray800)
             }
+            Spacer()
         }
     }
 }

@@ -19,7 +19,7 @@ struct ValueProjectView: View {
                         HStack {
                             Text(dataItem.title)
                             Spacer()
-                            ValueProgressView(value: Double(dataItem.progress))
+                            ValueProgressView(value: Double(dataItem.progress), backColor: .Gray300, foreColor: .black)
                                 .frame(width: 160, height: 12)
                         }
                         .padding(.leading, 30)
