@@ -10,17 +10,17 @@ import SwiftUI
 
 struct SelectValuesView: View {
     @AppStorage("nickname") var nickname: String = ""
-    @State var values = ["도전", "여유", "희망", "공손", "긍정",
-                  "기쁨", "모험", "도덕", "배려", "성실",
-                  "신뢰", "열정", "유능", "유연", "예의",
-                  "사랑", "재미", "조화", "정직", "즐거움",
-                  "침착", "평화", "행복"]
+    @State var values = ["도전", "여유", "용기", "배려", "따뜻함",
+                         "열정", "성장", "소통", "신뢰", "유연함",
+                         "끈기", "배움", "행복", "공유", "즐거움",
+                         "사랑", "성실", "정의", "조화", "감사",
+                         "자유", "긍정", "성취", "명예", "지혜"]
     let columns = [
-        GridItem(.flexible(), spacing: 0, alignment: .leading),
-        GridItem(.flexible(), spacing: 0, alignment: .leading),
-        GridItem(.flexible(), spacing: 0, alignment: .leading),
-//        GridItem(.flexible(), spacing: 0, alignment: .leading),
-        GridItem(.flexible(), spacing: 0, alignment: .leading)
+        GridItem(.adaptive(minimum: 40), spacing: 0, alignment: .leading),
+        GridItem(.adaptive(minimum: 40), spacing: 0, alignment: .leading),
+        GridItem(.adaptive(minimum: 40), spacing: 0, alignment: .leading),
+        GridItem(.adaptive(minimum: 40), spacing: 0, alignment: .leading),
+        GridItem(.adaptive(minimum: 40), spacing: 0, alignment: .leading)
         ]
     @State private var selectedValues: [String] = []
     @State private var isModalPresented = false
@@ -48,7 +48,7 @@ struct SelectValuesView: View {
                 addMyValue
                 .padding(.bottom)
                 
-                LazyVGrid(columns: columns, alignment: .leading) {
+                LazyVGrid(columns: columns, alignment: .leading, spacing: 16) {
                     ForEach(values, id: \.self) { value in
                         Button {
                             if let index = selectedValues.firstIndex(of: value) {
@@ -87,7 +87,8 @@ struct SelectValuesView: View {
         }
         .background(Color.Gray200)
         .halfSheet(showSheet: $isModalPresented) {
-            SaveValuesSheetView(isModalPresented: $isModalPresented, values: $selectedValues)
+            SaveValuesSheetView(isModalPresented: $isModalPresented,
+                                values: $selectedValues)
         } onEnd: {
             print("set value halfSheet dismiss")
         }
@@ -149,9 +150,7 @@ struct SelectValuesView: View {
                                 }
                                 Text("\(value)")
                             }
-                            Text("에 가치를 두는")
                         }
-                        Text("한 해를 보내고 싶어요")
                     }
                 }
                 .foregroundColor(.GrayBlack)

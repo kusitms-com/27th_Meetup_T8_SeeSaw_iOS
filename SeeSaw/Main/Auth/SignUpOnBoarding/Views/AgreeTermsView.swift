@@ -66,6 +66,7 @@ struct AgreeTermsView: View {
                 .disabled(requiredTermsAllAgree == false)
             }
             .padding(20)
+            .background(Color.Gray200)
             .sheet(isPresented: $show) {
                 SafariView(url: URL(string: "https://www.notion.so/0f6f88cfcc70415c8cbe7f5bedb99ba5")!)
                     .ignoresSafeArea()
