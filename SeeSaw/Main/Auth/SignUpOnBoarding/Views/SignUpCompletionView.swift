@@ -12,7 +12,7 @@ struct SignUpCompletionView: View {
         VStack(alignment: .leading) {
             Spacer()
             
-            Text("회원가입 완료!\n시소와 함께\n균형을 찾아가볼까요?")
+            Text("회원가입 완료!\n시소와 함께\n균형을 찾으러 가볼까요?")
                 .font(.ssHeading2)
             
             Rectangle()
