@@ -38,7 +38,7 @@ class MyPageViewModel: ObservableObject {
             }
     }
     
-    func getUserHistory() {
+    func getUserHistory(completion: @escaping (Int, [String]) -> Void) {
         let url = "\(baseUrl)/api/user/history"
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
@@ -52,8 +52,9 @@ class MyPageViewModel: ObservableObject {
             .responseDecodable(of: GetUserHistoryResponse.self) { response in
                 switch response.result {
                 case .success(let response):
-                    print(response.result.usingDays)
-                    print(response.result.values)
+                    let usingDays = response.result.usingDays
+                    let values = response.result.values
+                    completion(usingDays, values)
                 case .failure(let error):
                     print(error)
                 }

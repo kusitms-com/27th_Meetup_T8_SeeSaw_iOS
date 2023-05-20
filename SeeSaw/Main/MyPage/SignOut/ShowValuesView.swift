@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShowValuesView: View {
     @State private var nickname = "에몽"
-    @State private var usedSeeSawDays = "365"
+    @State private var usedSeeSawDays = 365
     @State private var showSignOutView = false
     
     @StateObject var api = ApiClient()
@@ -31,21 +31,16 @@ struct ShowValuesView: View {
                 
                 Spacer()
             }
-            .opacity(showSignOutView ? 1 : 0)
-//            .animation(.easeInOut(duration: 1.0), value: showSignOutView)
             
             ForEach(values.indices, id: \.self) { index in
-                ValueBlockView(backgroundColor: colors[index],
+                ValueBlockView(backgroundColor: colors[index % 3],
                                text: values[index],
                                showArrow: false)
-                .opacity(showSignOutView ? 1 : 0)
-//                .animation(.easeInOut(duration: 1.0).delay(0.6), value: showSignOutView)
             }
             
-            Text("를 지키기 위해 달려왔어요")
+            Text("의 가치를 발견하는\n하루하루를 보내왔어요")
+                .lineSpacing(12)
                 .font(.ssHeading1)
-                .opacity(showSignOutView ? 1 : 0)
-//                .animation(.easeInOut(duration: 1.0).delay(3.6), value: showSignOutView)
             
             Spacer()
             
@@ -55,10 +50,10 @@ struct ShowValuesView: View {
         }
         .padding(20)
         .onAppear {
-//            api.getValues { valuesArray in
-//                values = valuesArray
-//            }
-            myPageVM.getUserHistory()
+            myPageVM.getUserHistory { usingDays, usedValues in
+                usedSeeSawDays = usingDays
+                values = usedValues
+            }
             showSignOutView = true
         }
     }
