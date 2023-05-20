@@ -13,11 +13,11 @@ struct BatteryDashboardView: View {
     
     @State var battery: Int = 0
     
-    @State var isFastChargeExist: Bool = false
+    @State var isFastChargeExist: Bool = true
     @State var fastChargeTitle: String = "홍제천 산책하기"
     @State var fastChargeValue: String = "여유"
     
-    @State var isEnergyGoalExist: Bool = false
+    @State var isEnergyGoalExist: Bool = true
     var energyGoal: Int = 250
     var todayEnergy: Int = 160
     var energyRatio: Double {
@@ -170,18 +170,20 @@ struct BatteryDashboardView: View {
     }
     
     var fastChargeStatus: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 0) {
             Image("FastChargeCheck")
+                .padding(.bottom, 12)
             Text(fastChargeTitle)
                 .font(.ssWhiteBody2)
                 .foregroundColor(.Gray600)
+                .padding(.bottom, 4)
             HStack {
                 Text(fastChargeValue)
                     .foregroundColor(.SeeSawBlue)
                 Text("가득한 하루!")
                     .foregroundColor(.Gray900)
             }
-            .font(.ssWhiteSubTitle)
+            .font(.ssWhiteTitle1)
         }
     }
     
@@ -209,15 +211,19 @@ struct BatteryDashboardView: View {
         VStack(alignment: .leading) {
             Text("활동량")
                 .font(.ssHeading2)
-            ZStack(alignment: .bottom) {
-                Rectangle()
-                    .cornerRadius(10)
-                    .foregroundColor(.Gray200)
-                    .frame(height: 260)
-                if isEnergyGoalExist {
-                    energyStatus
-                } else {
-                    setEnergyGoal
+            NavigationLink {
+                ActivityHistoryView()
+            } label: {
+                ZStack(alignment: .bottom) {
+                    Rectangle()
+                        .cornerRadius(10)
+                        .foregroundColor(.Gray200)
+                        .frame(height: 260)
+                    if isEnergyGoalExist {
+                        energyStatus
+                    } else {
+                        setEnergyGoal
+                    }
                 }
             }
         }

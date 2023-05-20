@@ -8,36 +8,45 @@
 import SwiftUI
 
 struct ActivityHistoryView: View {
+    @EnvironmentObject var dateHolder: DateHolder
+    
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                HStack {
-                    Text("Today")
-                        .font(.ssHeading2)
-                        .foregroundColor(.Gray900)
-                    Spacer()
-                    NavigationLink {
-                        
-                    } label: {
-                        Text("목표수정")
-                            .font(.ssWhiteBody2)
-                            .foregroundColor(.Gray700)
-                            .padding(.vertical, 6)
-                            .padding(.horizontal, 14)
-                            .background(
-                                Rectangle()
-                                    .cornerRadius(90, corners: .allCorners)
-                                    .foregroundColor(.Gray300))
+            ScrollView(showsIndicators: false) {
+                VStack {
+                    HStack {
+                        Text("Today")
+                            .font(.ssHeading2)
+                            .foregroundColor(.Gray900)
+                        Spacer()
+                        NavigationLink {
+                            
+                        } label: {
+                            Text("목표수정")
+                                .font(.ssWhiteBody2)
+                                .foregroundColor(.Gray700)
+                                .padding(.vertical, 6)
+                                .padding(.horizontal, 14)
+                                .background(
+                                    Rectangle()
+                                        .cornerRadius(90, corners: .allCorners)
+                                        .foregroundColor(.Gray300))
+                        }
                     }
-                }
-                .padding(.bottom, 16)
-                
-                ActivityProgressHalfCircleView(geometry: geometry)
-                    .padding(.bottom, 20)
-                
-                ZStack {
-                    Rectangle()
-                        .cornerRadius(12, corners: .allCorners)
+                    .padding(.bottom, 16)
+                    
+                    ActivityProgressHalfCircleView(geometry: geometry)
+                        .padding(.bottom, 20)
+                   
+                    CalendarView()
+                        .environmentObject(dateHolder)
+                        .padding(.horizontal, 8)
+                        .padding(.bottom, 60)
+                        .background(
+                            Rectangle()
+                                .cornerRadius(12, corners: .allCorners)
+                                .foregroundColor(.Gray100))
+                        .padding(.bottom, 40)
                 }
             }
         }
