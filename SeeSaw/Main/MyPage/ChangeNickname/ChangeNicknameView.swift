@@ -92,6 +92,10 @@ struct ChangeNicknameView: View {
                 Text("닉네임을 입력해주세요")
                     .font(.ssBlackBody4)
                     .foregroundColor(Color.SeeSawRed)
+            } else if isNotVaildNickname {
+                Text("한글, 영문, 숫자만 입력할 수 있어요")
+                    .font(.ssBlackBody4)
+                    .foregroundColor(Color.SeeSawRed)
             }
             Spacer()
             Text("(\(newNickname.count)/10)")
