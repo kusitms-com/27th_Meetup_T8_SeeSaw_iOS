@@ -35,7 +35,7 @@ extension Color {
 
 extension Color {
     static let BatteryHigh = Color("BatteryHigh")
-    static let BatteryMidium = Color("BatteryMidium")
+    static let BatteryMedium = Color("BatteryMedium")
     static let BatteryLow = Color("BatteryLow")
 }
 

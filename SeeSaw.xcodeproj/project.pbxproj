@@ -10,6 +10,12 @@
 		510B32B62A17F3AC00026E07 /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B52A17F3AC00026E07 /* ActivityHistoryView.swift */; };
 		510B32B82A17FD4800026E07 /* ActivityProgressHalfCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B72A17FD4800026E07 /* ActivityProgressHalfCircleView.swift */; };
 		510B32BA2A17FD5F00026E07 /* TopHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B92A17FD5F00026E07 /* TopHalfCircle.swift */; };
+		510B32BD2A17FFAA00026E07 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32BC2A17FFAA00026E07 /* CalendarView.swift */; };
+		510B32BF2A18000100026E07 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32BE2A18000100026E07 /* DateHolder.swift */; };
+		510B32C12A18002C00026E07 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C02A18002C00026E07 /* CalendarHelper.swift */; };
+		510B32C32A18005B00026E07 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C22A18005B00026E07 /* CalendarCell.swift */; };
+		510B32C52A18007F00026E07 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C42A18007F00026E07 /* MonthStruct.swift */; };
+		510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C62A1800AF00026E07 /* DateScrollerView.swift */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -104,6 +110,12 @@
 		510B32B52A17F3AC00026E07 /* ActivityHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHistoryView.swift; sourceTree = "<group>"; };
 		510B32B72A17FD4800026E07 /* ActivityProgressHalfCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressHalfCircleView.swift; sourceTree = "<group>"; };
 		510B32B92A17FD5F00026E07 /* TopHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHalfCircle.swift; sourceTree = "<group>"; };
+		510B32BC2A17FFAA00026E07 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		510B32BE2A18000100026E07 /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
+		510B32C02A18002C00026E07 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		510B32C22A18005B00026E07 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		510B32C42A18007F00026E07 /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
+		510B32C62A1800AF00026E07 /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -240,6 +252,19 @@
 			path = ActivityHistory;
 			sourceTree = "<group>";
 		};
+		510B32BB2A17FF3000026E07 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				510B32BC2A17FFAA00026E07 /* CalendarView.swift */,
+				510B32C62A1800AF00026E07 /* DateScrollerView.swift */,
+				510B32C22A18005B00026E07 /* CalendarCell.swift */,
+				510B32BE2A18000100026E07 /* DateHolder.swift */,
+				510B32C02A18002C00026E07 /* CalendarHelper.swift */,
+				510B32C42A18007F00026E07 /* MonthStruct.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		5121894029F95622005DD6C2 /* Value */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +287,7 @@
 				51348A082A124F9D005F9163 /* SetGoal */,
 				51AA9A692A178E87005C14FC /* BatteryHistory */,
 				510B32B42A17F38C00026E07 /* ActivityHistory */,
+				510B32BB2A17FF3000026E07 /* Calendar */,
 			);
 			path = Battery;
 			sourceTree = "<group>";
@@ -714,6 +740,7 @@
 				51F878DF29F269FE0077A6C7 /* (null) in Sources */,
 				510B32BA2A17FD5F00026E07 /* TopHalfCircle.swift in Sources */,
 				BE7C06EA2A0BAD8E00C7D647 /* ProjectTermView.swift in Sources */,
+				510B32C12A18002C00026E07 /* CalendarHelper.swift in Sources */,
 				517AE9382A0797E70028D670 /* GifImage.swift in Sources */,
 				51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */,
 				BE7C06DE2A0BAD7200C7D647 /* AddProjectView.swift in Sources */,
@@ -721,6 +748,7 @@
 				BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */,
 				BE7C06E82A0BAD8C00C7D647 /* ProjectStrengthView.swift in Sources */,
 				BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */,
+				510B32C52A18007F00026E07 /* MonthStruct.swift in Sources */,
 				51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */,
 				BE7C06E22A0BAD7B00C7D647 /* ProgressProjectView.swift in Sources */,
 				BE7C06EC2A0BAD9300C7D647 /* ProjectValueSelectView.swift in Sources */,
@@ -739,6 +767,7 @@
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
+				510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
 				BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */,
@@ -757,6 +786,7 @@
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
 				51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */,
+				510B32BD2A17FFAA00026E07 /* CalendarView.swift in Sources */,
 				51C656782A13A60800610369 /* HalfSheetExtension.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */,
@@ -768,6 +798,8 @@
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,
 				BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */,
 				5139CCB12A0C9F1200181B55 /* BatteryDashboardView.swift in Sources */,
+				510B32BF2A18000100026E07 /* DateHolder.swift in Sources */,
+				510B32C32A18005B00026E07 /* CalendarCell.swift in Sources */,
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
 				51348A0A2A1252E6005F9163 /* SetGoalViewModel.swift in Sources */,
 				BE7C06DC2A0BA88E00C7D647 /* ValueYearView.swift in Sources */,
