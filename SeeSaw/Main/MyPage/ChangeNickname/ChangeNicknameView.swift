@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct ChangeNicknameView: View {
-    @State var nickname: String
+    @AppStorage("nickname") var nickname: String = "이오링"
+    @State private var newNickname: String = ""
+    var isNotVaildNickname: Bool {
+        return !newNickname.isEmpty && !isValidNickname(newNickname)
+    }
     enum Field: Hashable {
         case nickname
     }
@@ -38,6 +42,7 @@ struct ChangeNicknameView: View {
             .background(Color.Gray100)
             .cornerRadius(20).shadow(radius: 20)
         }
+        .onAppear { newNickname = nickname }
     }
     
     var header: some View {
@@ -61,20 +66,20 @@ struct ChangeNicknameView: View {
     
     var textField: some View {
         VStack {
-            TextField("", text: $nickname)
+            TextField("", text: $newNickname)
                 .textInputAutocapitalization(.never)
                 .font(.ssHeading2)
                 .focused($focusField, equals: .nickname)
                 .onAppear {
                     UITextField.appearance().clearButtonMode = .whileEditing
                 }
-                .onChange(of: nickname, perform: {
-                          nickname = String($0.prefix(10))
+                .onChange(of: newNickname, perform: {
+                          newNickname = String($0.prefix(10))
                         })
             
             Rectangle()
                 .frame(height: 1)
-                .foregroundColor(nickname.isEmpty ? Color.SeeSawRed : Color.Gray300)
+                .foregroundColor(isNotVaildNickname ? .SeeSawRed : .Gray300)
             
             alertEnterNickname
         }
@@ -82,13 +87,13 @@ struct ChangeNicknameView: View {
     
     var alertEnterNickname: some View {
         HStack {
-            if nickname.isEmpty {
+            if newNickname.isEmpty {
                 Text("닉네임을 입력해주세요")
                     .font(.ssBlackBody4)
                     .foregroundColor(Color.SeeSawRed)
             }
             Spacer()
-            Text("(\(nickname.count)/10)")
+            Text("(\(newNickname.count)/10)")
                 .font(.ssBlackBody3)
                 .foregroundColor(Color.Gray600)
         }
@@ -97,12 +102,20 @@ struct ChangeNicknameView: View {
     var buttonView: some View {
         Button {
             // TODO: 닉네임 저장
+            nickname = newNickname
             showChangeNicknameView = false
         } label: {
-            CapsuleButtonView(color: nickname.isEmpty ? Color.Gray400 : Color.Gray900,
+            CapsuleButtonView(color: newNickname.isEmpty ? Color.Gray400 : Color.Gray900,
                               text: "저장하기",
                               size: .large)
         }
-        .disabled(nickname.isEmpty)
+        .disabled(newNickname.isEmpty)
+    }
+    
+    func isValidNickname(_ nickname: String) -> Bool {
+        let nicknameRegEx = "[가-힣A-Za-z0-9]{1,10}"
+
+        let nicknamePred = NSPredicate(format: "SELF MATCHES %@", nicknameRegEx)
+        return nicknamePred.evaluate(with: nickname)
     }
 }
