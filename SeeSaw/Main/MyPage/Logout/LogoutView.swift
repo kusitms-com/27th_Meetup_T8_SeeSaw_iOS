@@ -30,12 +30,7 @@ struct LogoutView: View {
     }
     
     func logout() {
-        let keychain = KeychainSwift()
-        keychain.delete("accessToken")
-        keychain.delete("accessToken")
-        
-        authVM.isLoggedIn = false
-        
+        authVM.logout()
         self.showLogoutView = false
     }
     

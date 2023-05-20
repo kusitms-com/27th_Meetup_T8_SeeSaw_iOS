@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ShowValuesView: View {
-    @State private var nickname = "에몽"
+    @AppStorage("nickname") var nickname: String = "이오링"
     @State private var usedSeeSawDays = 365
     @State private var showSignOutView = false
     
