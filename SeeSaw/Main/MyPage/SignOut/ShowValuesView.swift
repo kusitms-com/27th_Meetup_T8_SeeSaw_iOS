@@ -13,6 +13,8 @@ struct ShowValuesView: View {
     @State private var showSignOutView = false
     
     @StateObject var api = ApiClient()
+    @StateObject var myPageVM = MyPageViewModel()
+    
     @State var values: [String] = []
     private let colors: [Color] = [.SeeSawYellow, .SeeSawBlue, .SeeSawRed]
     
@@ -53,9 +55,10 @@ struct ShowValuesView: View {
         }
         .padding(20)
         .onAppear {
-            api.getValues { valuesArray in
-                values = valuesArray
-            }
+//            api.getValues { valuesArray in
+//                values = valuesArray
+//            }
+            myPageVM.getUserHistory()
             showSignOutView = true
         }
     }

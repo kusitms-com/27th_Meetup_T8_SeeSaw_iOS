@@ -14,6 +14,7 @@
 		510B32D32A193E4800026E07 /* SignUpCompletion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32D22A193E4800026E07 /* SignUpCompletion.gif */; };
 		510B32D72A1947E900026E07 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D62A1947E900026E07 /* MyPageViewModel.swift */; };
 		510B32D92A19492900026E07 /* PutNicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D82A19492900026E07 /* PutNicknameResponse.swift */; };
+		510B32DB2A1950EB00026E07 /* GetUserHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -112,6 +113,7 @@
 		510B32D22A193E4800026E07 /* SignUpCompletion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SignUpCompletion.gif; sourceTree = "<group>"; };
 		510B32D62A1947E900026E07 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		510B32D82A19492900026E07 /* PutNicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutNicknameResponse.swift; sourceTree = "<group>"; };
+		510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserHistoryResponse.swift; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 				51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */,
 				51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */,
 				510B32D82A19492900026E07 /* PutNicknameResponse.swift */,
+				510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
 				BE7C06F22A13A06C00C7D647 /* ProjectDetailView.swift in Sources */,
 				BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */,
+				510B32DB2A1950EB00026E07 /* GetUserHistoryResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

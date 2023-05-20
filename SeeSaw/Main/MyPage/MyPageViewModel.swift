@@ -37,4 +37,26 @@ class MyPageViewModel: ObservableObject {
                 }
             }
     }
+    
+    func getUserHistory() {
+        let url = "\(baseUrl)/api/user/history"
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url,
+                   method: .get,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+            .responseDecodable(of: GetUserHistoryResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print(response.result.usingDays)
+                    print(response.result.values)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
 }
