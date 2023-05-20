@@ -43,13 +43,19 @@ struct ExplainValuesView: View {
             skipButton
             
             TabView(selection: $selectedView) {
-                ExplainValue(text: ValuesMessages.first, color: .SeeSawGreen)
+                ExplainValue(text: ValuesMessages.first,
+                             color: .SeeSawGreen,
+                             imageName: "ValueExplainFirst")
                     .tag(1)
                 
-                ExplainValue(text: "\(ValuesMessages.secondFront) \(nickname)\(ValuesMessages.secondBack)", color: .SeeSawBlue)
+                ExplainValue(text: "\(ValuesMessages.secondFront) \(nickname)\(ValuesMessages.secondBack)",
+                             color: .SeeSawBlue,
+                             imageName: "ValueExplainSecond")
                     .tag(2)
                 
-                ExplainValue(text: ValuesMessages.third, color: .SeeSawGreen)
+                ExplainValue(text: ValuesMessages.third,
+                             color: .SeeSawGreen,
+                             imageName: "ValueExplainThird")
                     .tag(3)
             }
             .tabViewStyle(.page)
@@ -91,17 +97,19 @@ struct ExplainValuesView: View {
 struct ExplainValue: View {
     let text: String
     let color: Color
+    let imageName: String
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             Spacer()
             
-            Rectangle()
-                .frame(height: 300)
-                .padding(.bottom, 20)
-                .foregroundColor(color)
+            HStack {
+                Text(text)
+                Spacer()
+            }
             
-            Text(text)
+            GifImage(imageName)
+                .frame(height: 440)
             
             Spacer()
         }

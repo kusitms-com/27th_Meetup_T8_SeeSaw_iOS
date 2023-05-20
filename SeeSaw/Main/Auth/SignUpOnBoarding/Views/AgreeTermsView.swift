@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct AgreeTermsView: View {
-    @State var isFirstTermAgree: Bool = false
-    @State var isSecondTermAgree: Bool = false
-    @State var isThirdTermAgree: Bool = false
-    @State var isFourthTermAgree: Bool = false
-    var isAllTermsAgree: Bool {
-        return isFirstTermAgree && isSecondTermAgree && isThirdTermAgree
+    @State var dataTermAgree: Bool = false
+    @State var usingTermAgree: Bool = false
+    @State var marketingTermAgree: Bool = false
+    var requiredTermsAllAgree: Bool {
+        return dataTermAgree && usingTermAgree
     }
+    @State var show = false
     
     var body: some View {
         NavigationView {
@@ -28,18 +28,26 @@ struct AgreeTermsView: View {
                     .padding(.bottom, 20)
                 
                 VStack {
-                    TermView(isNecessary: true,
-                             title: "개인정보처리방침",
-                             isTermAgree: $isFirstTermAgree)
-                    TermView(isNecessary: true,
-                             title: "개인정보 수집 이용 동의",
-                             isTermAgree: $isSecondTermAgree)
-                    TermView(isNecessary: true,
-                             title: "이용약관",
-                             isTermAgree: $isThirdTermAgree)
+                    Button {
+                        show = true
+                    } label: {
+                        TermView(isNecessary: true,
+                                 title: "개인정보 수집 이용 동의",
+                                 isTermAgree: $dataTermAgree)
+                    }
+                    
+                    Button {
+                        show = true
+                    } label: {
+                        TermView(isNecessary: true,
+                                 title: "이용약관",
+                                 isTermAgree: $usingTermAgree)
+                    }
+                    
                     TermView(isNecessary: false,
                              title: "마케팅 수신 동의",
-                             isTermAgree: $isFourthTermAgree)
+                             isTermAgree: $marketingTermAgree,
+                             showChevron: false)
                 }
                 
                 Divider()
@@ -49,15 +57,20 @@ struct AgreeTermsView: View {
                 Spacer()
                 
                 NavigationLink {
-                    UserInfoView(agreeMarketing: $isFourthTermAgree)
+                    UserInfoView(agreeMarketing: $marketingTermAgree)
                 } label: {
-                    CapsuleButtonView(color: isAllTermsAgree ? Color.Gray900 : Color.Gray400,
+                    CapsuleButtonView(color: requiredTermsAllAgree ? Color.Gray900 : Color.Gray400,
                                       text: "다음",
                                       size: .large)
                 }
-                .disabled(!isAllTermsAgree)
+                .disabled(requiredTermsAllAgree == false)
             }
             .padding(20)
+            .background(Color.Gray200)
+            .sheet(isPresented: $show) {
+                SafariView(url: URL(string: "https://www.notion.so/0f6f88cfcc70415c8cbe7f5bedb99ba5")!)
+                    .ignoresSafeArea()
+            }
         }
     }
     
@@ -89,15 +102,14 @@ struct AgreeTermsView: View {
     
     var allTermsAgreeView: some View {
         Button {
-            isFirstTermAgree = true
-            isSecondTermAgree = true
-            isThirdTermAgree = true
-            isFourthTermAgree = true
+            dataTermAgree = true
+            usingTermAgree = true
+            marketingTermAgree = true
         } label: {
             HStack(alignment: .center) {
                 Image(systemName: "checkmark.square")
                     .font(.system(size: 28))
-                    .foregroundColor(isAllTermsAgree ? .black : .Gray600)
+                    .foregroundColor(requiredTermsAllAgree ? .black : .Gray600)
                 Text("모두 동의할게요")
                     .font(.ssBlackTitle2)
                     .foregroundColor(.black)
@@ -112,6 +124,7 @@ struct TermView: View {
     let isNecessary: Bool
     let title: String
     @Binding var isTermAgree: Bool
+    var showChevron: Bool = true
     
     var body: some View {
         HStack(alignment: .center) {
@@ -120,17 +133,19 @@ struct TermView: View {
             } label: {
                 Image(systemName: "checkmark.square")
                     .font(.system(size: 28))
-                    .foregroundColor(isTermAgree ? .black : .Gray600)
+                    .foregroundColor(isTermAgree ? .GrayBlack : .Gray400)
             }
             Text("(\(isNecessary ? "필수" : "선택"))")
                 .font(.ssBlackBody1)
-                .foregroundColor(Color.Gray900)
+                .foregroundColor(isTermAgree ? .GrayBlack : .Gray400)
             Text(title)
                 .font(.ssBlackBody2)
-                .foregroundColor(Color.Gray900)
+                .foregroundColor(isTermAgree ? .GrayBlack : .Gray400)
             Spacer()
-            Image(systemName: "chevron.right")
-                .foregroundColor(.Gray500)
+            if showChevron {
+                Image(systemName: "chevron.right")
+                    .foregroundColor(isTermAgree ? .GrayBlack : .Gray400)
+            }
         }
         .padding(.bottom, 20)
     }

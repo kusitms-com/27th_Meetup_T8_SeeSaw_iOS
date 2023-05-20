@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */; };
+		510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */; };
+		510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */; };
+		510B32D12A19311100026E07 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D02A19311100026E07 /* SafariView.swift */; };
+		510B32D32A193E4800026E07 /* SignUpCompletion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32D22A193E4800026E07 /* SignUpCompletion.gif */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -98,6 +103,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainThird.gif; sourceTree = "<group>"; };
+		510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainSecond.gif; sourceTree = "<group>"; };
+		510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainFirst.gif; sourceTree = "<group>"; };
+		510B32D02A19311100026E07 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		510B32D22A193E4800026E07 /* SignUpCompletion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SignUpCompletion.gif; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -404,8 +414,12 @@
 		517AE9392A07982A0028D670 /* GifAssets */ = {
 			isa = PBXGroup;
 			children = (
+				510B32D22A193E4800026E07 /* SignUpCompletion.gif */,
 				51AA9A632A1743EA005C14FC /* FastCharge.gif */,
 				517AE93A2A07987E0028D670 /* LoginImage.gif */,
+				510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */,
+				510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */,
+				510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */,
 			);
 			path = GifAssets;
 			sourceTree = "<group>";
@@ -569,6 +583,7 @@
 			children = (
 				517AE93C2A079F780028D670 /* ApiClient */,
 				517AE9362A0797D70028D670 /* GifImage */,
+				510B32D02A19311100026E07 /* SafariView.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -653,10 +668,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */,
+				510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */,
 				517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */,
 				51F878DC29F2689C0077A6C7 /* .gitignore in Resources */,
 				51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */,
+				510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */,
+				510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */,
 				51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */,
+				510B32D32A193E4800026E07 /* SignUpCompletion.gif in Resources */,
 				51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -718,6 +737,7 @@
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
 				51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */,
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
+				510B32D12A19311100026E07 /* SafariView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
