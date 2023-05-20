@@ -18,6 +18,7 @@ struct ChangeNicknameView: View {
     }
     @FocusState private var focusField: Field?
     @Binding var showChangeNicknameView: Bool
+    @StateObject var myPageVM = MyPageViewModel()
 
     var body: some View {
         ZStack {
@@ -101,7 +102,7 @@ struct ChangeNicknameView: View {
     
     var buttonView: some View {
         Button {
-            // TODO: 닉네임 저장
+            myPageVM.putNickname(nickname: newNickname)
             nickname = newNickname
             showChangeNicknameView = false
         } label: {
