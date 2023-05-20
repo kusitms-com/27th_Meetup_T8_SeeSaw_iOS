@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyPageView: View {
-    @State private var nickname = "에몽"
+    @AppStorage("nickname") var nickname: String = "이오링"
     @State private var showChangeNicknameView = false
     @State private var showLogoutView = false
     
