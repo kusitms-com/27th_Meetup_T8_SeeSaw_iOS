@@ -5,10 +5,12 @@
 //  Created by 이안진 on 2023/05/04.
 //
 
+import KeychainSwift
 import SwiftUI
 
 struct LogoutView: View {
     @Binding var showLogoutView: Bool
+    @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
         ZStack {
@@ -28,7 +30,12 @@ struct LogoutView: View {
     }
     
     func logout() {
-        // TODO: logout
+        let keychain = KeychainSwift()
+        keychain.delete("accessToken")
+        keychain.delete("accessToken")
+        
+        authVM.isLoggedIn = false
+        
         self.showLogoutView = false
     }
     
