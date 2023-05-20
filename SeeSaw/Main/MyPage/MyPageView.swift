@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MyPageView: View {
-    @State private var nickname = "에몽"
+    @AppStorage("nickname") var nickname: String = "이오링"
     @State private var showChangeNicknameView = false
     @State private var showLogoutView = false
     
@@ -26,7 +26,7 @@ struct MyPageView: View {
                     
                     VStack(spacing: 0) {
                         NavigationLink {
-                            
+                            notiView
                         } label: {
                             MyPageRow(isRowTop: true,
                                       title: "알림",
@@ -36,7 +36,7 @@ struct MyPageView: View {
                         Divider()
                         
                         NavigationLink {
-                            
+                            announceView
                         } label: {
                             MyPageRow(isRowTop: false,
                                       title: "공지사항",
@@ -119,6 +119,38 @@ struct MyPageView: View {
     }
     
     // 마이페이지 메뉴 Views
+    var notiView: some View {
+        VStack {
+            Spacer()
+            Text("알림이 없습니다")
+                .font(.ssBlackTitle2)
+                .foregroundColor(.Gray500)
+            HStack {
+                Spacer()
+            }
+            Spacer()
+        }
+        .background(Color.Gray200)
+        .navigationTitle("알림")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    var announceView: some View {
+        VStack {
+            Spacer()
+            Text("공지사항이 없습니다")
+                .font(.ssBlackTitle2)
+                .foregroundColor(.Gray500)
+            HStack {
+                Spacer()
+            }
+            Spacer()
+        }
+        .background(Color.Gray200)
+        .navigationTitle("공지사항")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
     var provisioningViewRow: some View {
         NavigationLink {
             ProvisioningView()
