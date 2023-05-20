@@ -20,28 +20,31 @@ struct ShowValuesView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("\(nickname)님은")
-                .font(.ssHeading1)
-            HStack {
-                ValueBlockView(backgroundColor: .SeeSawGreen,
-                               text: "\(usedSeeSawDays)일",
-                               showArrow: false)
-                Text("동안")
-                    .font(.ssHeading1)
-                
-                Spacer()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("\(nickname)님은")
+                        .font(.ssHeading1)
+                    HStack {
+                        ValueBlockView(backgroundColor: .SeeSawGreen,
+                                       text: "\(usedSeeSawDays)일",
+                                       showArrow: false)
+                        Text("동안")
+                            .font(.ssHeading1)
+                        
+                        Spacer()
+                    }
+                    
+                    ForEach(values.indices, id: \.self) { index in
+                        ValueBlockView(backgroundColor: colors[index % 3],
+                                       text: values[index],
+                                       showArrow: false)
+                    }
+                    
+                    Text("의 가치를 발견하는\n하루하루를 보내왔어요")
+                        .lineSpacing(12)
+                        .font(.ssHeading1)
+                }
             }
-            
-            ForEach(values.indices, id: \.self) { index in
-                ValueBlockView(backgroundColor: colors[index % 3],
-                               text: values[index],
-                               showArrow: false)
-            }
-            
-            Text("의 가치를 발견하는\n하루하루를 보내왔어요")
-                .lineSpacing(12)
-                .font(.ssHeading1)
-            
             Spacer()
             
             threeChevronDown
