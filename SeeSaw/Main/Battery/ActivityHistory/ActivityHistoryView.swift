@@ -46,7 +46,7 @@ struct ActivityHistoryView: View {
                             Rectangle()
                                 .cornerRadius(12, corners: .allCorners)
                                 .foregroundColor(.Gray100))
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 52)
                 }
             }
         }
