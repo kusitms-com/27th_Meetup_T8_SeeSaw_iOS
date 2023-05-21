@@ -11,6 +11,7 @@ struct BatteryDashboardFastChargeView: View {
     @Binding var isFastChargeExist: Bool
     @Binding var fastChargeTitle: String
     @Binding var fastChargeValue: String
+    @Binding var showFastChargeExistPopUp: Bool
     
     var body: some View {
         ZStack {
@@ -32,7 +33,11 @@ struct BatteryDashboardFastChargeView: View {
             }
             
             if isFastChargeExist {
-                fastChargeStatus
+                Button {
+                    showFastChargeExistPopUp = true
+                } label: {
+                    fastChargeStatus
+                }
             } else {
                 fastChargeButton
             }
