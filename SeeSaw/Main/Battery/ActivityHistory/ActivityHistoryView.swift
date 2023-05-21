@@ -72,6 +72,7 @@ struct ActivityHistoryView: View {
 struct EditEnergyGoalView: View {
     @Binding var activityGoal: Int
     @Binding var showEditActivityGoal: Bool
+    @StateObject var setGoalVM = SetGoalViewModel()
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -94,7 +95,7 @@ struct EditEnergyGoalView: View {
             
             Button {
                 showEditActivityGoal = false
-                // TODO: 에너지 목표 설정
+                setGoalVM.postActivityGoal(activityGoal: activityGoal)
             } label: {
                 CapsuleButtonView(color: Color.Gray900, text: "설정 완료", size: .large)
             }
