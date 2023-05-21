@@ -16,7 +16,7 @@ struct DateScrollerView: View {
                 today()
             } label: {
                 Image(systemName: "arrow.uturn.left")
-                    .foregroundColor(.Gray300)
+                    .foregroundColor(isToday() ? .Gray300 : .SeeSawGreen)
                     .font(.system(size: 20))
                     .padding(.trailing, 16)
             }
@@ -59,5 +59,16 @@ struct DateScrollerView: View {
     
     func today() {
         dateHolder.date = Date()
+    }
+    
+    func getMonth(from date: Date) -> String {
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: date)
+        return String(month)
+    }
+    
+    func isToday() -> Bool {
+        var today = Date()
+        return getMonth(from: today) == getMonth(from: dateHolder.date)
     }
 }
