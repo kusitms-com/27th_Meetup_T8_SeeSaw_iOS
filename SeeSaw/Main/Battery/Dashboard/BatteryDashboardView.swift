@@ -13,27 +13,19 @@ struct BatteryDashboardView: View {
     
     @State var battery: Int = 0
     
-    @State var isFastChargeExist: Bool = false
+    @State var isFastChargeExist: Bool = true
     @State var fastChargeTitle: String = "홍제천 산책하기"
     @State var fastChargeValue: String = "여유"
     @State var showFastChargeExistPopUp: Bool = false
     
-    @State var isEnergyGoalExist: Bool = false
+    @State var isEnergyGoalExist: Bool = true
     @State var energyGoal: Int = 250
     @State var todayEnergy: Int = 160
     
-    @State var isSleepGoalExist: Bool = false
-    @State var todaySleepAmount: Int = 6
+    @State var isSleepGoalExist: Bool = true
+    @State var todaySleepAmount: Int = 8
     @State var isTodaySleepAmountExist: Bool = false
-    @State var sleepCondition: String = "Bad"
-    enum SleepDescription {
-        static let GoodIcon = "😙"
-        static let GoodDescription = "알맞게 잤어요"
-        static let BadIcon = "😑"
-        static let BadDescription = "적게 잤어요"
-        static let TerribleIcon = "🤯"
-        static let TerribleDescription = "너무 적게 잤어요"
-    }
+    @State var sleepCondition: String = "Good"
     
     var body: some View {
         NavigationView {
@@ -90,7 +82,7 @@ struct BatteryDashboardView: View {
                                     HStack {
                                         BatteryDashboardEnergyView(isEnergyGoalExist: $isEnergyGoalExist, energyGoal: $energyGoal, todayEnergy: $todayEnergy)
                                         
-                                        sleep
+                                        BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
                                     }
                                     .padding(12)
                                     .padding(.bottom, 32)
@@ -167,9 +159,29 @@ struct BatteryDashboardView: View {
                 .padding(.leading, 20)
         }
     }
-   
-    // 수면
-    var sleep: some View {
+}
+
+struct BatteryDashboardView_Previews: PreviewProvider {
+    static var previews: some View {
+        BatteryDashboardView()
+    }
+}
+
+struct BatteryDashboardSleepView: View {
+    @Binding var isSleepGoalExist: Bool
+    @Binding var todaySleepAmount: Int
+    @Binding var isTodaySleepAmountExist: Bool
+    @Binding var sleepCondition: String
+    enum SleepDescription {
+        static let GoodIcon = "SleepGood"
+        static let GoodDescription = "알맞게 잤어요"
+        static let BadIcon = "SleepBad"
+        static let BadDescription = "적게 잤어요"
+        static let TerribleIcon = "SleepTerrible"
+        static let TerribleDescription = "너무 적게 잤어요"
+    }
+    
+    var body: some View {
         VStack(alignment: .leading) {
             Text("수면")
                 .font(.ssHeading2)
@@ -205,9 +217,11 @@ struct BatteryDashboardView: View {
             Text("\(todaySleepAmount)시간")
                 .font(.ssHeading1)
                 .foregroundColor(.Gray900)
+            
             if sleepCondition == "Good" {
-                Text("\(SleepDescription.GoodIcon)")
-                    .font(.system(size: 60))
+                Image("\(SleepDescription.GoodIcon)")
+                    .resizable()
+                    .frame(width: 72, height: 64)
                 
                 Spacer()
                 
@@ -216,8 +230,9 @@ struct BatteryDashboardView: View {
                     .foregroundColor(.GrayBlack)
                     .padding(.trailing, 8)
             } else if sleepCondition == "Bad" {
-                Text("\(SleepDescription.BadIcon)")
-                    .font(.system(size: 60))
+                Image("\(SleepDescription.BadIcon)")
+                    .resizable()
+                    .frame(width: 72, height: 64)
                 
                 Spacer()
                 
@@ -226,8 +241,9 @@ struct BatteryDashboardView: View {
                     .foregroundColor(.GrayBlack)
                     .padding(.trailing, 8)
             } else {
-                Text("\(SleepDescription.TerribleIcon)")
-                    .font(.system(size: 60))
+                Image("\(SleepDescription.TerribleIcon)")
+                    .resizable()
+                    .frame(width: 72, height: 64)
                 
                 Spacer()
                 
@@ -287,6 +303,8 @@ struct BatteryDashboardView: View {
     var setSleepGoal: some View {
         ZStack(alignment: .bottom) {
             Image("SetSleepGoalImage")
+                .resizable()
+            
             VStack {
                 Text("수면시간 목표")
                     .font(.ssBlackBody1)
@@ -301,11 +319,5 @@ struct BatteryDashboardView: View {
             }
             .padding(.bottom, 12)
         }
-    }
-}
-
-struct BatteryDashboardView_Previews: PreviewProvider {
-    static var previews: some View {
-        BatteryDashboardView()
     }
 }

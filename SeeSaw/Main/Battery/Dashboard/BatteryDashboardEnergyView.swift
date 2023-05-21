@@ -67,6 +67,8 @@ struct BatteryDashboardEnergyView: View {
     var setEnergyGoal: some View {
         ZStack(alignment: .bottom) {
             Image("SetGoalImage")
+                .resizable()
+            
             VStack {
                 Text("활동량 목표")
                     .font(.ssBlackBody1)
