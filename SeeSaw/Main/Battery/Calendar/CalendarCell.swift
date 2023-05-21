@@ -25,7 +25,8 @@ struct CalendarCell: View {
             Rectangle()
                 .cornerRadius(8, corners: .allCorners)
                 .foregroundColor(monthStruct().monthType == MonthType.current ? colorArray[colorType] : Color.Gray100.opacity(0.0))
-                .frame(width: 48, height: 52)
+                .frame(height: 52)
+                .frame(maxWidth: .infinity)
             VStack(spacing: 4) {
                 Text(monthStruct().day())
                     .font(.ssBlackTitle2)

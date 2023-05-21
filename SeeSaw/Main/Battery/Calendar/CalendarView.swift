@@ -21,13 +21,14 @@ struct CalendarView: View {
             
             HStack {
                 Spacer()
-                VStack(alignment: .leading) {
-                    HStack {
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 4) {
                         Rectangle()
                             .cornerRadius(4, corners: .allCorners)
                             .foregroundColor(.BatteryHigh)
                             .frame(width: 16, height: 16)
                         Text("너무 많이 움직였어요")
+                            .font(.ssBlackBody3)
                     }
                     HStack {
                         Rectangle()
@@ -35,6 +36,7 @@ struct CalendarView: View {
                             .foregroundColor(.BatteryMedium)
                             .frame(width: 16, height: 16)
                         Text("알맞게 움직였어요")
+                            .font(.ssBlackBody3)
                     }
                     HStack {
                         Rectangle()
@@ -42,10 +44,12 @@ struct CalendarView: View {
                             .foregroundColor(.BatteryLow)
                             .frame(width: 16, height: 16)
                         Text("적게 움직였어요")
+                            .font(.ssBlackBody3)
                     }
                 }
             }
-            .offset(y: -52)
+            .offset(y: -32)
+            .padding(.trailing, 8)
         }
     }
     
