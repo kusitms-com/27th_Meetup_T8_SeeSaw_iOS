@@ -84,11 +84,14 @@ struct BatteryDashboardView: View {
             }
             .navigationTitle("")
         }
-        .halfSheet(showSheet: $showBatteryInformation) {
-            BatteryInformationView()
-        } onEnd: {
-            print("battery info half sheet dismiss")
-        }
+        .sheet(isPresented: $showBatteryInformation, content: {
+            if #available(iOS 16.0, *) {
+                BatteryInformationView()
+                    .presentationDetents([.fraction(0.6)])
+            } else {
+                BatteryInformationView()
+            }
+        })
         .onAppear {
             print("onappear")
             DispatchQueue.main.asyncAfter(deadline: .now()) {
