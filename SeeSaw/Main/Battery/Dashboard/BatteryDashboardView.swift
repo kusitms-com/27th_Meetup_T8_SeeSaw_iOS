@@ -18,12 +18,8 @@ struct BatteryDashboardView: View {
     @State var fastChargeValue: String = "여유"
     
     @State var isEnergyGoalExist: Bool = true
-    var energyGoal: Int = 250
-    var todayEnergy: Int = 160
-    var energyRatio: Double {
-        let ratio = Double(todayEnergy) / Double(energyGoal)
-        return ratio < 1.0 ? ratio : 1.0
-    }
+    @State var energyGoal: Int = 250
+    @State var todayEnergy: Int = 160
     
     @State var isSleepGoalExist: Bool = false
     @State var todaySleepAmount: Int = 6
@@ -65,14 +61,12 @@ struct BatteryDashboardView: View {
                             .padding(.top, 12)
                             
                             // 고속충전
-                            BatteryDashboardFastChargeView(isFastChargeExist: $isFastChargeExist,
-                                                           fastChargeTitle: $fastChargeTitle,
-                                                           fastChargeValue: $fastChargeValue)
+                            BatteryDashboardFastChargeView(isFastChargeExist: $isFastChargeExist, fastChargeTitle: $fastChargeTitle, fastChargeValue: $fastChargeValue)
                             
                             // 활동량, 수면
                             VStack {
                                 HStack {
-                                    energy
+                                    BatteryDashboardEnergyView(isEnergyGoalExist: $isEnergyGoalExist, energyGoal: $energyGoal, todayEnergy: $todayEnergy)
                                     sleep
                                 }
                                 .padding(12)
@@ -145,76 +139,7 @@ struct BatteryDashboardView: View {
                 .padding(.leading, 20)
         }
     }
-    
-    // 활동량
-    var energy: some View {
-        VStack(alignment: .leading) {
-            Text("활동량")
-                .font(.ssHeading2)
-            NavigationLink {
-                ActivityHistoryView()
-            } label: {
-                ZStack(alignment: .bottom) {
-                    Rectangle()
-                        .cornerRadius(10)
-                        .foregroundColor(.Gray200)
-                        .frame(height: 260)
-                    if isEnergyGoalExist {
-                        energyStatus
-                    } else {
-                        setEnergyGoal
-                    }
-                }
-            }
-        }
-        .padding(.horizontal, 8)
-    }
-    
-    var energyStatus: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("얼마나 움직이셨나요?")
-                .font(.ssBlackBody1)
-                .foregroundColor(.Gray500)
-                .padding(.leading, 8)
-            
-            ZStack {
-                RightHalfCircle(plusRatio: 1.0)
-                    .stroke(Color.BatteryLow, lineWidth: 32)
-                RightHalfCircle(plusRatio: energyRatio)
-                    .stroke(Color.BatteryHigh, lineWidth: 32)
-            }
-            
-            HStack {
-                Spacer()
-                Text("\(todayEnergy) / \(energyGoal) kcal")
-                    .font(.ssWhiteBody1)
-                    .foregroundColor(.GrayBlack)
-                    .padding(.trailing, 8)
-            }
-        }
-        .padding(.vertical, 16)
-    }
-    
-    var setEnergyGoal: some View {
-        ZStack(alignment: .bottom) {
-            Image("SetGoalImage")
-            VStack {
-                Text("활동량 목표")
-                    .font(.ssBlackBody1)
-                    .foregroundColor(.Gray500)
-                
-                NavigationLink {
-                    ProvisioningEnergyView()
-                } label: {
-                    CapsuleButtonView(color: .Gray900,
-                                      text: "설정하기",
-                                      size: .small)
-                }
-            }
-            .padding(.bottom, 12)
-        }
-    }
-    
+   
     // 수면
     var sleep: some View {
         VStack(alignment: .leading) {

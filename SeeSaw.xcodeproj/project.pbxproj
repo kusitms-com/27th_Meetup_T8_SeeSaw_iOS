@@ -17,6 +17,7 @@
 		510B32C52A18007F00026E07 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C42A18007F00026E07 /* MonthStruct.swift */; };
 		510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C62A1800AF00026E07 /* DateScrollerView.swift */; };
 		510B32DD2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */; };
+		510B32DF2A1A918500026E07 /* BatteryDashboardEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -118,6 +119,7 @@
 		510B32C42A18007F00026E07 /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
 		510B32C62A1800AF00026E07 /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
 		510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardFastChargeView.swift; sourceTree = "<group>"; };
+		510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardEnergyView.swift; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 				51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */,
 				5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */,
 				510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */,
+				510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */,
 				51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */,
 				51F878DF29F269FE0077A6C7 /* (null) in Sources */,
+				510B32DF2A1A918500026E07 /* BatteryDashboardEnergyView.swift in Sources */,
 				510B32BA2A17FD5F00026E07 /* TopHalfCircle.swift in Sources */,
 				BE7C06EA2A0BAD8E00C7D647 /* ProjectTermView.swift in Sources */,
 				510B32C12A18002C00026E07 /* CalendarHelper.swift in Sources */,
