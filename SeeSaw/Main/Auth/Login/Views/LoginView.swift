@@ -62,6 +62,7 @@ struct LoginView: View {
             .frame(maxWidth: .infinity)
         }
         .padding(20)
+        .background(Color.Gray200)
     }
     
     var kakaoLoginButton: some View {

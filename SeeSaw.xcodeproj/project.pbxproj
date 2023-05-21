@@ -23,6 +23,14 @@
 		510B32E52A1AABA800026E07 /* EditEnergyGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */; };
 		510B32E82A1AAE3900026E07 /* SleepHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */; };
 		510B32EA2A1AB51400026E07 /* EditSleepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */; };
+		510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */; };
+		510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */; };
+		510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */; };
+		510B32D12A19311100026E07 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D02A19311100026E07 /* SafariView.swift */; };
+		510B32D32A193E4800026E07 /* SignUpCompletion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32D22A193E4800026E07 /* SignUpCompletion.gif */; };
+		510B32D72A1947E900026E07 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D62A1947E900026E07 /* MyPageViewModel.swift */; };
+		510B32D92A19492900026E07 /* PutNicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D82A19492900026E07 /* PutNicknameResponse.swift */; };
+		510B32DB2A1950EB00026E07 /* GetUserHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -130,6 +138,14 @@
 		510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEnergyGoalView.swift; sourceTree = "<group>"; };
 		510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryView.swift; sourceTree = "<group>"; };
 		510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSleepGoalView.swift; sourceTree = "<group>"; };
+		510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainThird.gif; sourceTree = "<group>"; };
+		510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainSecond.gif; sourceTree = "<group>"; };
+		510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainFirst.gif; sourceTree = "<group>"; };
+		510B32D02A19311100026E07 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		510B32D22A193E4800026E07 /* SignUpCompletion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SignUpCompletion.gif; sourceTree = "<group>"; };
+		510B32D62A1947E900026E07 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		510B32D82A19492900026E07 /* PutNicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutNicknameResponse.swift; sourceTree = "<group>"; };
+		510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserHistoryResponse.swift; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -347,6 +363,7 @@
 				5139CCAC2A0BF91000181B55 /* Provisioning */,
 				5139CCAB2A0BF8F500181B55 /* Logout */,
 				5139CCAA2A0BF8C900181B55 /* SignOut */,
+				510B32D62A1947E900026E07 /* MyPageViewModel.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -471,8 +488,12 @@
 		517AE9392A07982A0028D670 /* GifAssets */ = {
 			isa = PBXGroup;
 			children = (
+				510B32D22A193E4800026E07 /* SignUpCompletion.gif */,
 				51AA9A632A1743EA005C14FC /* FastCharge.gif */,
 				517AE93A2A07987E0028D670 /* LoginImage.gif */,
+				510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */,
+				510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */,
+				510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */,
 			);
 			path = GifAssets;
 			sourceTree = "<group>";
@@ -506,6 +527,8 @@
 				515617232A148A8000743B5F /* PostSignUp.swift */,
 				51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */,
 				51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */,
+				510B32D82A19492900026E07 /* PutNicknameResponse.swift */,
+				510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -641,6 +664,7 @@
 			children = (
 				517AE93C2A079F780028D670 /* ApiClient */,
 				517AE9362A0797D70028D670 /* GifImage */,
+				510B32D02A19311100026E07 /* SafariView.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -725,10 +749,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */,
+				510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */,
 				517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */,
 				51F878DC29F2689C0077A6C7 /* .gitignore in Resources */,
 				51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */,
+				510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */,
+				510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */,
 				51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */,
+				510B32D32A193E4800026E07 /* SignUpCompletion.gif in Resources */,
 				51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -790,6 +818,7 @@
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
 				51AA9A682A1786C9005C14FC /* Line.swift in Sources */,
+				510B32D72A1947E900026E07 /* MyPageViewModel.swift in Sources */,
 				51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */,
 				51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */,
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
@@ -797,12 +826,14 @@
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
 				51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */,
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
+				510B32D12A19311100026E07 /* SafariView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
 				510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
 				BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */,
+				510B32D92A19492900026E07 /* PutNicknameResponse.swift in Sources */,
 				BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */,
 				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
@@ -858,6 +889,7 @@
 				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
 				BE7C06F22A13A06C00C7D647 /* ProjectDetailView.swift in Sources */,
 				BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */,
+				510B32DB2A1950EB00026E07 /* GetUserHistoryResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

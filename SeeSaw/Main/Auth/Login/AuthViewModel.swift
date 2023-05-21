@@ -12,13 +12,12 @@ import KeychainSwift
 class AuthViewModel: ObservableObject {
     @Published var isLoggedIn: Bool?
     @Published var isRegenerated: Bool?
+    let keychain = KeychainSwift()
     
     init(isLoggedIn: Bool) {
         self.isLoggedIn = false
         self.isRegenerated = false
     }
-    
-    let keychain = KeychainSwift()
     
     func login(req: PostLoginRequest) {
         let url = "http://ec2-3-36-172-10.ap-northeast-2.compute.amazonaws.com/auth/login"
@@ -99,5 +98,12 @@ class AuthViewModel: ObservableObject {
             }
         
         self.isRegenerated = true
+    }
+    
+    func logout() {
+        keychain.delete("accessToken")
+        keychain.delete("accessToken")
+        
+        isLoggedIn = false
     }
 }
