@@ -72,8 +72,13 @@ struct FastChargeCompletionView: View {
             Text("내일도 고속충전하러 오세요")
                 .font(.ssBlackBody1)
             
-            GifImage("FastCharge")
-                .frame(width: 300)
+            HStack {
+                Spacer()
+                GifImage("FastCharge")
+                    .frame(width: 300)
+                Spacer()
+            }
+            
             
             HStack {
                 Spacer()
