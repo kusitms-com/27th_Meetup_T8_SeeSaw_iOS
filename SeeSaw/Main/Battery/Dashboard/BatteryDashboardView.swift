@@ -13,89 +13,108 @@ struct BatteryDashboardView: View {
     
     @State var battery: Int = 0
     
-    @State var isFastChargeExist: Bool = false
+    @State var isFastChargeExist: Bool = true
     @State var fastChargeTitle: String = "홍제천 산책하기"
     @State var fastChargeValue: String = "여유"
+    @State var showFastChargeExistPopUp: Bool = false
     
-    @State var isEnergyGoalExist: Bool = false
-    var energyGoal: Int = 250
-    var todayEnergy: Int = 160
-    var energyRatio: Double {
-        let ratio = Double(todayEnergy) / Double(energyGoal)
-        return ratio < 1.0 ? ratio : 1.0
-    }
+    @State var isEnergyGoalExist: Bool = true
+    @State var energyGoal: Int = 250
+    @State var todayEnergy: Int = 160
     
-    @State var isSleepGoalExist: Bool = false
-    @State var todaySleepAmount: Int = 6
+    @State var isSleepGoalExist: Bool = true
+    @State var todaySleepAmount: Int = 8
     @State var isTodaySleepAmountExist: Bool = false
-    @State var sleepCondition: String = "Bad"
-    enum SleepDescription {
-        static let GoodIcon = "😙"
-        static let GoodDescription = "알맞게 잤어요"
-        static let BadIcon = "😑"
-        static let BadDescription = "적게 잤어요"
-        static let TerribleIcon = "🤯"
-        static let TerribleDescription = "너무 적게 잤어요"
-    }
+    @State var sleepCondition: String = "Good"
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                toolBar
-                
-                GeometryReader { geometry in
-                    ScrollView {
-                        VStack(alignment: .center, spacing: 0) {
-                            title
-                                .padding(.top, 10)
-                                .padding(.horizontal, 20)
-                            
-                            // 배터리
-                            ZStack(alignment: .topLeading) {
-                                // 배터리 원형 그래프
-                                NavigationLink {
-                                    BatteryHistoryView()
-                                } label: {
-                                    BatteryProgressCircleView(geometry: geometry, battery: $battery)
+            ZStack {
+                VStack(spacing: 0) {
+                    toolBar
+                    
+                    GeometryReader { geometry in
+                        ScrollView(showsIndicators: false) {
+                            VStack(alignment: .center, spacing: 0) {
+                                title
+                                    .padding(.top, 10)
+                                    .padding(.horizontal, 20)
+                                
+                                HStack {
+                                    Button {
+                                        isFastChargeExist.toggle()
+                                    } label: {
+                                        Text("고속충전 toggle")
+                                    }
+                                    
+                                    Button {
+                                        isEnergyGoalExist.toggle()
+                                    } label: {
+                                        Text("활동량 toggle")
+                                    }
+                                    
+                                    Button {
+                                        isSleepGoalExist.toggle()
+                                    } label: {
+                                        Text("수면 toggle")
+                                    }
                                 }
                                 
-                                // 배터리 정보 버튼
-                                batteryInfoButton
-                            }
-                            .padding(.top, 12)
-                            
-                            // 고속충전
-                            fastCharge
-                            
-                            // 활동량, 수면
-                            VStack {
-                                HStack {
-                                    energy
-                                    sleep
+                                // 배터리
+                                ZStack(alignment: .topLeading) {
+                                    // 배터리 원형 그래프
+                                    NavigationLink {
+                                        BatteryHistoryView()
+                                    } label: {
+                                        BatteryProgressCircleView(geometry: geometry, battery: $battery)
+                                    }
+                                    
+                                    // 배터리 정보 버튼
+                                    batteryInfoButton
                                 }
-                                .padding(12)
-                                .padding(.bottom, 32)
+                                .padding(.top, 12)
+                                
+                                // 고속충전
+                                BatteryDashboardFastChargeView(isFastChargeExist: $isFastChargeExist, fastChargeTitle: $fastChargeTitle, fastChargeValue: $fastChargeValue, showFastChargeExistPopUp: $showFastChargeExistPopUp)
+                                
+                                // 활동량, 수면
+                                VStack {
+                                    HStack {
+                                        BatteryDashboardEnergyView(isEnergyGoalExist: $isEnergyGoalExist, energyGoal: $energyGoal, todayEnergy: $todayEnergy)
+                                        
+                                        BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
+                                    }
+                                    .padding(12)
+                                    .padding(.bottom, 8)
+                                }
+                                .background(Color.Gray100)
+                                .padding(.bottom, 72)
                             }
-                            .background(Color.Gray100)
-                        }
-                    } // ScrollView
-                } // GeometryReder
-                .background(Color.Gray200)
+                        } // ScrollView
+                    } // GeometryReder
+                    .background(Color.Gray200)
+                }
+                
+                if $showFastChargeExistPopUp.wrappedValue {
+                    FastChargeExistPopUpView(showFastChargeExistPopUp: $showFastChargeExistPopUp)
+                }
             }
             .navigationTitle("")
         }
-        .halfSheet(showSheet: $showBatteryInformation) {
-            BatteryInformationView()
-        } onEnd: {
-            print("battery info half sheet dismiss")
-        }
+        .sheet(isPresented: $showBatteryInformation, content: {
+            if #available(iOS 16.0, *) {
+                BatteryInformationView()
+                    .presentationDetents([.fraction(0.6)])
+            } else {
+                BatteryInformationView()
+            }
+        })
         .onAppear {
             print("onappear")
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 battery = 80
             }
         }
-        
     }
 
     // "라이프로그", 마이페이지 버튼
@@ -138,269 +157,6 @@ struct BatteryDashboardView: View {
                 .font(.system(size: 28))
                 .foregroundColor(.Gray400)
                 .padding(.leading, 20)
-        }
-    }
-    
-    // 고속충전 현황
-    var fastCharge: some View {
-        ZStack {
-            ZStack(alignment: .top) {
-                HalfCircle()
-                    .fill()
-                    .aspectRatio(2.0, contentMode: .fit)
-                    .foregroundColor(.Gray100)
-                
-                HStack {
-                    Text("고속충전")
-                        .font(.ssHeading2)
-                        .foregroundColor(.Gray900)
-                        .padding(.leading, 20)
-                        .padding(.top, 28)
-                    
-                    Spacer()
-                }
-            }
-            
-            if isFastChargeExist {
-                fastChargeStatus
-            } else {
-                fastChargeButton
-            }
-        }
-    }
-    
-    var fastChargeStatus: some View {
-        VStack(spacing: 12) {
-            Image("FastChargeCheck")
-            Text(fastChargeTitle)
-                .font(.ssWhiteBody2)
-                .foregroundColor(.Gray600)
-            HStack {
-                Text(fastChargeValue)
-                    .foregroundColor(.SeeSawBlue)
-                Text("가득한 하루!")
-                    .foregroundColor(.Gray900)
-            }
-            .font(.ssWhiteSubTitle)
-        }
-    }
-    
-    // 고속충전 추가 버튼
-    var fastChargeButton: some View {
-        VStack {
-            VStack {
-                Text("오늘 고속충전을 하지 않았어요")
-                Text("지금 하러 가볼까요?")
-            }
-            .font(.ssBlackBody2)
-            
-            NavigationLink {
-                FastChargeView()
-            } label: {
-                CapsuleButtonView(color: .Gray900,
-                                  text: "고속충전하기",
-                                  size: .small)
-            }
-        }
-    }
-    
-    // 활동량
-    var energy: some View {
-        VStack(alignment: .leading) {
-            Text("활동량")
-                .font(.ssHeading2)
-            ZStack(alignment: .bottom) {
-                Rectangle()
-                    .cornerRadius(10)
-                    .foregroundColor(.Gray200)
-                    .frame(height: 260)
-                if isEnergyGoalExist {
-                    energyStatus
-                } else {
-                    setEnergyGoal
-                }
-            }
-        }
-        .padding(.horizontal, 8)
-    }
-    
-    var energyStatus: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("얼마나 움직이셨나요?")
-                .font(.ssBlackBody1)
-                .foregroundColor(.Gray500)
-                .padding(.leading, 8)
-            
-            ZStack {
-                RightHalfCircle(plusRatio: 1.0)
-                    .stroke(Color.BatteryLow, lineWidth: 32)
-                RightHalfCircle(plusRatio: energyRatio)
-                    .stroke(Color.BatteryHigh, lineWidth: 32)
-            }
-            
-            HStack {
-                Spacer()
-                Text("\(todayEnergy) / \(energyGoal) kcal")
-                    .font(.ssWhiteBody1)
-                    .foregroundColor(.GrayBlack)
-                    .padding(.trailing, 8)
-            }
-        }
-        .padding(.vertical, 16)
-    }
-    
-    var setEnergyGoal: some View {
-        ZStack(alignment: .bottom) {
-            Image("SetGoalImage")
-            VStack {
-                Text("활동량 목표")
-                    .font(.ssBlackBody1)
-                    .foregroundColor(.Gray500)
-                
-                NavigationLink {
-                    ProvisioningEnergyView()
-                } label: {
-                    CapsuleButtonView(color: .Gray900,
-                                      text: "설정하기",
-                                      size: .small)
-                }
-            }
-            .padding(.bottom, 12)
-        }
-    }
-    
-    // 수면
-    var sleep: some View {
-        VStack(alignment: .leading) {
-            Text("수면")
-                .font(.ssHeading2)
-            ZStack(alignment: .bottom) {
-                Rectangle()
-                    .cornerRadius(10)
-                    .foregroundColor(.Gray200)
-                    .frame(height: 260)
-                if isTodaySleepAmountExist {
-                    sleepStatus
-                } else if isSleepGoalExist {
-                    setTodaySleepAmount
-                } else {
-                    setSleepGoal
-                }
-            }
-        }
-        .padding(.horizontal, 8)
-    }
-    
-    var sleepStatus: some View {
-        VStack(alignment: .center, spacing: 12) {
-            HStack {
-                Text("얼마나 주무셨나요?")
-                Spacer()
-            }
-            .font(.ssBlackBody1)
-            .foregroundColor(.Gray500)
-            .padding(.leading, 8)
-            
-            Spacer()
-            
-            Text("\(todaySleepAmount)시간")
-                .font(.ssHeading1)
-                .foregroundColor(.Gray900)
-            if sleepCondition == "Good" {
-                Text("\(SleepDescription.GoodIcon)")
-                    .font(.system(size: 60))
-                
-                Spacer()
-                
-                Text(SleepDescription.GoodDescription)
-                    .font(.ssWhiteBody1)
-                    .foregroundColor(.GrayBlack)
-                    .padding(.trailing, 8)
-            } else if sleepCondition == "Bad" {
-                Text("\(SleepDescription.BadIcon)")
-                    .font(.system(size: 60))
-                
-                Spacer()
-                
-                Text(SleepDescription.BadDescription)
-                    .font(.ssWhiteBody1)
-                    .foregroundColor(.GrayBlack)
-                    .padding(.trailing, 8)
-            } else {
-                Text("\(SleepDescription.TerribleIcon)")
-                    .font(.system(size: 60))
-                
-                Spacer()
-                
-                Text(SleepDescription.TerribleDescription)
-                    .font(.ssWhiteBody1)
-                    .foregroundColor(.GrayBlack)
-                    .padding(.trailing, 8)
-            }
-        }
-        .padding(.vertical, 16)
-    }
-    
-    var setTodaySleepAmount: some View {
-        VStack(alignment: .center, spacing: 12) {
-            HStack {
-                Text("얼마나 주무셨나요?")
-                Spacer()
-            }
-            .font(.ssBlackBody1)
-            .foregroundColor(.Gray500)
-            .padding(.leading, 8)
-            
-            Spacer()
-            
-            Text("\(todaySleepAmount)시간")
-                .font(.ssHeading1)
-                .foregroundColor(.Gray400)
-                
-            HStack {
-                Button {
-                    todaySleepAmount -= 1
-                } label: {
-                    Image(systemName: "minus.circle.fill")
-                        .font(.system(size: 48))
-                        .foregroundColor(.SeeSawRed)
-                }
-                Button {
-                    todaySleepAmount += 1
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 48))
-                        .foregroundColor(.SeeSawGreen)
-                }
-            }
-            
-            Spacer()
-            Button {
-                isTodaySleepAmountExist = true
-            } label: {
-                CapsuleButtonView(color: .Gray900, text: "입력 완료", size: .large)
-                    .padding(.horizontal, 12)
-            }
-        }
-        .padding(.vertical, 16)
-    }
-    
-    var setSleepGoal: some View {
-        ZStack(alignment: .bottom) {
-            Image("SetSleepGoalImage")
-            VStack {
-                Text("수면시간 목표")
-                    .font(.ssBlackBody1)
-                    .foregroundColor(.Gray500)
-                NavigationLink {
-                    SetSleepGoalView()
-                } label: {
-                    CapsuleButtonView(color: .Gray900,
-                                      text: "설정하기",
-                                      size: .small)
-                }
-            }
-            .padding(.bottom, 12)
         }
     }
 }

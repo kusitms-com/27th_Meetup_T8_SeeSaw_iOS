@@ -10,8 +10,7 @@ import SwiftUI
 enum SetSleepGoalDescription {
     static let title = "하루 목표 수면 시간을 설정해볼까요?"
     static let message = """
-평소의 수면시간 또는
-원하는 수준의 수면시간을 기준으로
+평소의 수면시간 또는 원하는 수준의 수면시간을 기준으로
 하루 목표를 설정해보세요
 """
 }

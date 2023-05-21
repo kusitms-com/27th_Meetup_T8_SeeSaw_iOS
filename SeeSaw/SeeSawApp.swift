@@ -19,6 +19,7 @@ struct SeeSawApp: App {
     }
     
     @StateObject var authVM = AuthViewModel(isLoggedIn: false)
+    @StateObject var dateHolder = DateHolder()
     
     var body: some Scene {
         WindowGroup {
@@ -30,6 +31,7 @@ struct SeeSawApp: App {
                     }
                 }
                 .environmentObject(authVM)
+                .environmentObject(dateHolder)
         }
     }
 }

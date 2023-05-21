@@ -51,7 +51,7 @@ struct SmallPopUpView: View {
     }
     
     var context: some View {
-        VStack(spacing: 0) {
+        VStack(alignment: .center, spacing: 0) {
             Spacer()
             
             if isImageExist && isImageGIF {
@@ -61,15 +61,15 @@ struct SmallPopUpView: View {
                 Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 92)
+                    .frame(width: 116, height: 116)
             }
                 
             Text(text)
                 .font(.ssBlackTitle2)
+                .multilineTextAlignment(.center)
             
             Spacer()
         }
-        .padding(36)
     }
     
     var buttonsView: some View {
@@ -79,7 +79,7 @@ struct SmallPopUpView: View {
             CapsuleButtonView(color: buttonColor,
                               text: buttonContext,
                               size: .large)
-            .padding([.bottom, .horizontal], 24)
+            .padding([.bottom, .horizontal], 32)
         }
     }
 }
