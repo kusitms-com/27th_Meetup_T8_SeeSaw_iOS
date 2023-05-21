@@ -11,31 +11,7 @@ struct DateScrollerView: View {
     @EnvironmentObject var dateHolder: DateHolder
     
     var body: some View {
-        HStack {
-            Spacer()
-            
-            Button {
-                previousMonth()
-            } label: {
-                Image(systemName: "chevron.left")
-                    .foregroundColor(.SeeSawGreen)
-                    .font(.system(size: 16))
-            }
-            
-            Text(CalendarHelper().monthYearString(dateHolder.date))
-                .font(Font.title3.weight(.bold))
-                .animation(.none)
-            
-            Button {
-                nextMonth()
-            } label: {
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.SeeSawGreen)
-                    .font(.system(size: 16))
-            }
-            
-            Spacer()
-            
+        ZStack(alignment: .trailing) {
             Button {
                 today()
             } label: {
@@ -43,6 +19,32 @@ struct DateScrollerView: View {
                     .foregroundColor(.Gray300)
                     .font(.system(size: 20))
                     .padding(.trailing, 16)
+            }
+            
+            HStack {
+                Spacer()
+                
+                Button {
+                    previousMonth()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.SeeSawGreen)
+                        .font(.system(size: 16))
+                }
+                
+                Text(CalendarHelper().monthYearString(dateHolder.date))
+                    .font(Font.title3.weight(.bold))
+                    .animation(.none)
+                
+                Button {
+                    nextMonth()
+                } label: {
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.SeeSawGreen)
+                        .font(.system(size: 16))
+                }
+                
+                Spacer()
             }
         }
     }
