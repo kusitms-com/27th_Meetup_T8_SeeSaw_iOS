@@ -114,7 +114,6 @@ struct BatteryDashboardView: View {
                 battery = 80
             }
         }
-        
     }
 
     // "라이프로그", 마이페이지 버튼

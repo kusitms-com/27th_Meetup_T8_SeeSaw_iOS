@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ActivityHistoryView: View {
     @EnvironmentObject var dateHolder: DateHolder
+    @State var showEditActivityGoal: Bool = false
+    @State var activityGoal: Int = 220
     
     var body: some View {
         GeometryReader { geometry in
@@ -19,8 +21,8 @@ struct ActivityHistoryView: View {
                             .font(.ssHeading2)
                             .foregroundColor(.Gray900)
                         Spacer()
-                        NavigationLink {
-                            
+                        Button {
+                            showEditActivityGoal = true
                         } label: {
                             Text("목표수정")
                                 .font(.ssWhiteBody2)
@@ -49,6 +51,16 @@ struct ActivityHistoryView: View {
                         .padding(.bottom, 52)
                 }
             }
+            .sheet(isPresented: $showEditActivityGoal) {
+                if #available(iOS 16.0, *) {
+                    EditEnergyGoalView(activityGoal: $activityGoal,
+                                       showEditActivityGoal: $showEditActivityGoal)
+                        .presentationDetents([.height(400)])
+                } else {
+                    EditEnergyGoalView(activityGoal: $activityGoal,
+                                       showEditActivityGoal: $showEditActivityGoal)
+                }
+            }
         }
         .padding(20)
         .background(Color.Gray200)
@@ -57,8 +69,73 @@ struct ActivityHistoryView: View {
     }
 }
 
-struct ActivityHistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActivityHistoryView()
+struct EditEnergyGoalView: View {
+    @Binding var activityGoal: Int
+    @Binding var showEditActivityGoal: Bool
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 0) {
+            Rectangle()
+                .cornerRadius(30, corners: .allCorners)
+                .frame(width: 72, height: 6)
+                .foregroundColor(.Gray300)
+            
+            Text("목표 활동량 수정")
+                .font(.ssBlackTitle2)
+                .foregroundColor(.Gray500)
+                .padding(.top, 28)
+            
+            Divider()
+                .padding(.top, 16)
+            
+            Spacer()
+            buttonRow
+            Spacer()
+            
+            Button {
+                showEditActivityGoal = false
+                // TODO: 에너지 목표 설정
+            } label: {
+                CapsuleButtonView(color: Color.Gray900, text: "설정 완료", size: .large)
+            }
+        }
+        .padding(20)
+    }
+    
+    var buttonRow: some View {
+        HStack {
+            Spacer()
+            
+            Button {
+                activityGoal -= 10
+            } label: {
+                ZStack {
+                    Image(systemName: "minus.circle.fill")
+                        .foregroundColor(.SeeSawRed)
+                        .font(.system(size: 48))
+                }
+            }
+            
+            HStack(alignment: .top, spacing: 0) {
+                Text(String(activityGoal))
+                    .font(.system(size: 64))
+                    .fontWeight(.bold)
+                Text("kcal")
+                    .font(.ssHeading2)
+            }
+            .foregroundColor(.Gray900)
+            
+            Button {
+                activityGoal += 10
+            } label: {
+                ZStack {
+                    Image(systemName: "plus.circle.fill")
+                        .foregroundColor(.SeeSawGreen)
+                        .font(.system(size: 48))
+                }
+            }
+            
+            Spacer()
+        }
     }
 }
