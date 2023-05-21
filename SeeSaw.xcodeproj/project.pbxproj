@@ -22,6 +22,7 @@
 		510B32E32A1AA23600026E07 /* BatteryDashboardSleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */; };
 		510B32E52A1AABA800026E07 /* EditEnergyGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */; };
 		510B32E82A1AAE3900026E07 /* SleepHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */; };
+		510B32EA2A1AB51400026E07 /* EditSleepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -128,6 +129,7 @@
 		510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardSleepView.swift; sourceTree = "<group>"; };
 		510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEnergyGoalView.swift; sourceTree = "<group>"; };
 		510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryView.swift; sourceTree = "<group>"; };
+		510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSleepGoalView.swift; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */,
+				510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */,
 			);
 			path = SleepHistory;
 			sourceTree = "<group>";
@@ -806,6 +809,7 @@
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
 				51348A0C2A125FAD005F9163 /* PostGoal.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
+				510B32EA2A1AB51400026E07 /* EditSleepGoalView.swift in Sources */,
 				51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */,
 				51C656742A137BC200610369 /* SelectValuesView.swift in Sources */,
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
