@@ -34,7 +34,7 @@ struct BatteryDashboardView: View {
                     toolBar
                     
                     GeometryReader { geometry in
-                        ScrollView {
+                        ScrollView(showsIndicators: false) {
                             VStack(alignment: .center, spacing: 0) {
                                 title
                                     .padding(.top, 10)
@@ -85,9 +85,10 @@ struct BatteryDashboardView: View {
                                         BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
                                     }
                                     .padding(12)
-                                    .padding(.bottom, 32)
+                                    .padding(.bottom, 8)
                                 }
                                 .background(Color.Gray100)
+                                .padding(.bottom, 72)
                             }
                         } // ScrollView
                     } // GeometryReder

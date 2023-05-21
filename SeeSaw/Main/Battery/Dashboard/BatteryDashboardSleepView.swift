@@ -25,17 +25,31 @@ struct BatteryDashboardSleepView: View {
         VStack(alignment: .leading) {
             Text("수면")
                 .font(.ssHeading2)
-            ZStack(alignment: .bottom) {
-                Rectangle()
-                    .cornerRadius(10)
-                    .foregroundColor(.Gray200)
-                    .frame(height: 260)
-                if isTodaySleepAmountExist {
-                    sleepStatus
-                } else if isSleepGoalExist {
-                    setTodaySleepAmount
-                } else {
-                    setSleepGoal
+            
+            if isTodaySleepAmountExist {
+                NavigationLink {
+                    SleepHistoryView()
+                } label: {
+                    ZStack(alignment: .bottom) {
+                        Rectangle()
+                            .cornerRadius(10)
+                            .foregroundColor(.Gray200)
+                            .frame(height: 260)
+                        
+                        sleepStatus
+                    }
+                }
+            } else {
+                ZStack(alignment: .bottom) {
+                    Rectangle()
+                        .cornerRadius(10)
+                        .foregroundColor(.Gray200)
+                        .frame(height: 260)
+                    if isSleepGoalExist {
+                        setTodaySleepAmount
+                    } else {
+                        setSleepGoal
+                    }
                 }
             }
         }

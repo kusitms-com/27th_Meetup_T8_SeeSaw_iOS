@@ -35,6 +35,7 @@ struct BatteryDashboardEnergyView: View {
                     }
                 }
             }
+            .disabled(isEnergyGoalExist == false)
         }
         .padding(.horizontal, 8)
     }
