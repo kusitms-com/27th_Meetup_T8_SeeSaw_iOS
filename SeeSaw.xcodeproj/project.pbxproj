@@ -79,7 +79,6 @@
 		BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */; };
 		BE7C06FE2A16558100C7D647 /* ProjectRetrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */; };
 		BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */; };
-		BE7C07022A172A9300C7D647 /* ValueImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE7C07012A172A9300C7D647 /* ValueImage.gif */; };
 		BE7C07042A1855C800C7D647 /* ProjectRegularRetrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C07032A1855C800C7D647 /* ProjectRegularRetrospectionView.swift */; };
 		BE7C07062A187CDB00C7D647 /* AddRegularRetrospectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C07052A187CDB00C7D647 /* AddRegularRetrospectionView.swift */; };
 		BE7C07082A1889CA00C7D647 /* TodayQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C07072A1889CA00C7D647 /* TodayQuestionView.swift */; };
@@ -107,6 +106,7 @@
 		BE7C073C2A1B26E600C7D647 /* FinalReviewMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073B2A1B26E600C7D647 /* FinalReviewMainView.swift */; };
 		BE7C073E2A1B26F700C7D647 /* FinalReviewQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073D2A1B26F700C7D647 /* FinalReviewQuestionView.swift */; };
 		BE7C07402A1B270E00C7D647 /* WriteFinalReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */; };
+		BE7C07442A1B3DEE00C7D647 /* ValueImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */; };
 		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
 		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -185,7 +185,6 @@
 		BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeleteModalView.swift; sourceTree = "<group>"; };
 		BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRetrospectionView.swift; sourceTree = "<group>"; };
 		BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRectangleVIew.swift; sourceTree = "<group>"; };
-		BE7C07012A172A9300C7D647 /* ValueImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueImage.gif; sourceTree = "<group>"; };
 		BE7C07032A1855C800C7D647 /* ProjectRegularRetrospectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRegularRetrospectionView.swift; sourceTree = "<group>"; };
 		BE7C07052A187CDB00C7D647 /* AddRegularRetrospectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegularRetrospectionView.swift; sourceTree = "<group>"; };
 		BE7C07072A1889CA00C7D647 /* TodayQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayQuestionView.swift; sourceTree = "<group>"; };
@@ -213,6 +212,7 @@
 		BE7C073B2A1B26E600C7D647 /* FinalReviewMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReviewMainView.swift; sourceTree = "<group>"; };
 		BE7C073D2A1B26F700C7D647 /* FinalReviewQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReviewQuestionView.swift; sourceTree = "<group>"; };
 		BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFinalReviewView.swift; sourceTree = "<group>"; };
+		BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueImage.gif; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -404,7 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				517AE93A2A07987E0028D670 /* LoginImage.gif */,
-				BE7C07012A172A9300C7D647 /* ValueImage.gif */,
+				BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */,
 			);
 			path = GifAssets;
 			sourceTree = "<group>";
@@ -698,7 +698,7 @@
 				51F878DC29F2689C0077A6C7 /* .gitignore in Resources */,
 				51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */,
 				51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */,
-				BE7C07022A172A9300C7D647 /* ValueImage.gif in Resources */,
+				BE7C07442A1B3DEE00C7D647 /* ValueImage.gif in Resources */,
 				51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
