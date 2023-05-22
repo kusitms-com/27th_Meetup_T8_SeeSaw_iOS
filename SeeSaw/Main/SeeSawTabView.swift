@@ -30,10 +30,10 @@ struct SeeSawTabView: View {
                     TabItem(imageName: "battery.100", title: "에너지")
                 }
             
-            MyPageView()
-                .tabItem {
-                    TabItem(imageName: "person", title: "마이페이지")
-                }
+//            AgreeTermsView()
+//                .tabItem {
+//                    TabItem(imageName: "person", title: "마이페이지")
+//                }
         }
     }
 }

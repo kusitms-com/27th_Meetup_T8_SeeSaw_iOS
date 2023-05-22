@@ -49,7 +49,7 @@ struct AgreeTermsView: View {
                 Spacer()
                 
                 NavigationLink {
-                    UserInfoView()
+                    UserInfoView(agreeMarketing: $isFourthTermAgree)
                 } label: {
                     CapsuleButtonView(color: isAllTermsAgree ? Color.Gray900 : Color.Gray400,
                                       text: "다음",

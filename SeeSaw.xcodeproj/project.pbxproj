@@ -26,9 +26,20 @@
 		514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F62A03ADF400351A9D /* UserInfoView.swift */; };
 		514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */; };
 		514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514853002A04002E00351A9D /* ExplainValuesView.swift */; };
+		515617122A14714900743B5F /* ProgressProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617112A14714900743B5F /* ProgressProjectView.swift */; };
+		5156171A2A14716900743B5F /* ProjectNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617132A14716900743B5F /* ProjectNameView.swift */; };
+		5156171B2A14716900743B5F /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617142A14716900743B5F /* AddProjectView.swift */; };
+		5156171C2A14716900743B5F /* ProjectValueSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617152A14716900743B5F /* ProjectValueSelectView.swift */; };
+		5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617162A14716900743B5F /* CompleteProjectView.swift */; };
+		5156171E2A14716900743B5F /* ProjectGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617172A14716900743B5F /* ProjectGoalView.swift */; };
+		5156171F2A14716900743B5F /* ProjectStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617182A14716900743B5F /* ProjectStrengthView.swift */; };
+		515617202A14716900743B5F /* ProjectTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617192A14716900743B5F /* ProjectTermView.swift */; };
+		515617222A14891000743B5F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617212A14891000743B5F /* SignUpViewModel.swift */; };
+		515617242A148A8000743B5F /* PostSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617232A148A8000743B5F /* PostSignUp.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
 		515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */; };
 		515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263F2A015957006C3FE5 /* RoundedCorner.swift */; };
+		51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */; };
 		517532202A094D2400BF107D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5175321F2A094D2400BF107D /* KeychainSwift */; };
 		517532222A094DA400BF107D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517532212A094DA400BF107D /* AuthViewModel.swift */; };
 		5175EAC729F274E70092FE9D /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 5175EAC629F274E70092FE9D /* KakaoSDK */; };
@@ -131,9 +142,20 @@
 		514852F62A03ADF400351A9D /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletionView.swift; sourceTree = "<group>"; };
 		514853002A04002E00351A9D /* ExplainValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainValuesView.swift; sourceTree = "<group>"; };
+		515617112A14714900743B5F /* ProgressProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProgressProjectView.swift"; sourceTree = "<group>"; };
+		515617132A14716900743B5F /* ProjectNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectNameView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectNameView.swift"; sourceTree = "<group>"; };
+		515617142A14716900743B5F /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/AddProjectView.swift"; sourceTree = "<group>"; };
+		515617152A14716900743B5F /* ProjectValueSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectValueSelectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectValueSelectView.swift"; sourceTree = "<group>"; };
+		515617162A14716900743B5F /* CompleteProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompleteProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/CompleteProjectView.swift"; sourceTree = "<group>"; };
+		515617172A14716900743B5F /* ProjectGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectGoalView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectGoalView.swift"; sourceTree = "<group>"; };
+		515617182A14716900743B5F /* ProjectStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectStrengthView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectStrengthView.swift"; sourceTree = "<group>"; };
+		515617192A14716900743B5F /* ProjectTermView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTermView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectTermView.swift"; sourceTree = "<group>"; };
+		515617212A14891000743B5F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		515617232A148A8000743B5F /* PostSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSignUp.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameView.swift; sourceTree = "<group>"; };
 		515E263F2A015957006C3FE5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSelectedValues.swift; sourceTree = "<group>"; };
 		517532212A094DA400BF107D /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		5175EAC829F277040092FE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5175EACA29F27B490092FE9D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -435,6 +457,8 @@
 				511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */,
 				51348A062A121C4D005F9163 /* GetValues.swift */,
 				51348A0B2A125FAD005F9163 /* PostGoal.swift */,
+				515617232A148A8000743B5F /* PostSignUp.swift */,
+				51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -540,6 +564,7 @@
 			isa = PBXGroup;
 			children = (
 				51C656712A1359D200610369 /* LaunchScreenView.swift */,
+				515617212A14891000743B5F /* SignUpViewModel.swift */,
 				514852FA2A03FF4900351A9D /* Login */,
 				514852FB2A03FF5D00351A9D /* SignUpOnBoarding */,
 				514852FC2A03FF6900351A9D /* SelectValuesOnBoarding */,
@@ -751,6 +776,7 @@
 				51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */,
 				BE7C06E22A0BAD7B00C7D647 /* ProgressProjectView.swift in Sources */,
 				BE7C06EC2A0BAD9300C7D647 /* ProjectValueSelectView.swift in Sources */,
+				515617242A148A8000743B5F /* PostSignUp.swift in Sources */,
 				5121894729F95667005DD6C2 /* MyPageView.swift in Sources */,
 				BE7C07252A1B013500C7D647 /* ProjectSorryVIew.swift in Sources */,
 				BE7C073C2A1B26E600C7D647 /* FinalReviewMainView.swift in Sources */,
@@ -758,17 +784,22 @@
 				5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */,
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
+				515617122A14714900743B5F /* ProgressProjectView.swift in Sources */,
+				5156171B2A14716900743B5F /* AddProjectView.swift in Sources */,
 				51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */,
 				51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */,
+				5156171F2A14716900743B5F /* ProjectStrengthView.swift in Sources */,
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
+				51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */,
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
 				BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */,
 				BE7C07082A1889CA00C7D647 /* TodayQuestionView.swift in Sources */,
 				BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */,
+				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
 				51348A0C2A125FAD005F9163 /* PostGoal.swift in Sources */,
@@ -781,7 +812,9 @@
 				511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
+				5156171A2A14716900743B5F /* ProjectNameView.swift in Sources */,
 				51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */,
+				5156171E2A14716900743B5F /* ProjectGoalView.swift in Sources */,
 				51C656782A13A60800610369 /* HalfSheetExtension.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				BE7C07162A1AED3200C7D647 /* ArrowUpRightView.swift in Sources */,
@@ -795,6 +828,7 @@
 				BE7C073E2A1B26F700C7D647 /* FinalReviewQuestionView.swift in Sources */,
 				BE7C07312A1B182800C7D647 /* ProjectFastChargeView.swift in Sources */,
 				BE7C06E42A0BAD8000C7D647 /* ProjectGoalView.swift in Sources */,
+				5156171C2A14716900743B5F /* ProjectValueSelectView.swift in Sources */,
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,
 				BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */,
 				BE7C07122A18B5C700C7D647 /* InterimReviewQuestionView.swift in Sources */,
@@ -808,9 +842,11 @@
 				51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				BE7C072F2A1B157C00C7D647 /* ProjectBatteryView.swift in Sources */,
+				5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
 				BE7C071D2A1AF4E600C7D647 /* ProjectEmotionView.swift in Sources */,
 				51348A072A121C4D005F9163 /* GetValues.swift in Sources */,
+				515617202A14716900743B5F /* ProjectTermView.swift in Sources */,
 				51C6567A2A13A71600610369 /* SaveValuesSheetView.swift in Sources */,
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
 				BE7C07332A1B21F900C7D647 /* ProjectCalorieView.swift in Sources */,
