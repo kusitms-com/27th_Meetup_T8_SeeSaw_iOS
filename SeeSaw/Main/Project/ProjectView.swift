@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProjectView: View {
+    @AppStorage("nickname") var nickname: String = ""
+    
     @State var isProgress = true
     @State var progressNum: Int = 0
     @State var completeNum: Int = 0
@@ -19,7 +21,7 @@ struct ProjectView: View {
                 
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
-                        Text("에몽님의")
+                        Text("\(nickname)님의")
                             .font(.ssHeading1)
                             .foregroundColor(.GrayBlack)
                             .padding(.top, 10)
