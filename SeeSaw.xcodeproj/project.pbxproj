@@ -56,6 +56,7 @@
 		515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */; };
 		515E26402A015957006C3FE5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E263F2A015957006C3FE5 /* RoundedCorner.swift */; };
 		517100962A1B6471009D057B /* ProvisioningEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */; };
+		517100982A1B6A51009D057B /* MainToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517100972A1B6A51009D057B /* MainToolBar.swift */; };
 		51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */; };
 		517532202A094D2400BF107D /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5175321F2A094D2400BF107D /* KeychainSwift */; };
 		517532222A094DA400BF107D /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517532212A094DA400BF107D /* AuthViewModel.swift */; };
@@ -198,6 +199,7 @@
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		515E263D2A014526006C3FE5 /* ChangeNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNicknameView.swift; sourceTree = "<group>"; };
 		515E263F2A015957006C3FE5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		517100972A1B6A51009D057B /* MainToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolBar.swift; sourceTree = "<group>"; };
 		51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSelectedValues.swift; sourceTree = "<group>"; };
 		517532212A094DA400BF107D /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		5175EAC829F277040092FE9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -669,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */,
+				517100972A1B6A51009D057B /* MainToolBar.swift */,
 				51810DA92A0361E300AF3289 /* Components */,
 				5121894129F9562F005DD6C2 /* Battery */,
 				5121894029F95622005DD6C2 /* Value */,
@@ -1007,6 +1010,7 @@
 				BE7C072F2A1B157C00C7D647 /* ProjectBatteryView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
 				BE7C071D2A1AF4E600C7D647 /* ProjectEmotionView.swift in Sources */,
+				517100982A1B6A51009D057B /* MainToolBar.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
 				51AA9A6F2A17BFB5005C14FC /* BatteryHistoryCardView.swift in Sources */,
 				51348A072A121C4D005F9163 /* GetValues.swift in Sources */,
