@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProvisioningEnergyView: View {
     private var healthStore: HealthStore?
+    @State var isSuccessHealth: Bool = false
     
     init() {
         healthStore = HealthStore()
@@ -26,39 +27,25 @@ struct ProvisioningEnergyView: View {
             
             Spacer()
             
-            Button {
-                if let healthStore = healthStore {
-                    healthStore.requestAuthorization { success in
-                        if success {
-                            print("success healthkit")
+            if isSuccessHealth == false {
+                Button {
+                    if let healthStore = healthStore {
+                        healthStore.requestAuthorization { success in
+                            if success {
+                                print("success healthkit")
+                                healthStore.getActivityEnergyBurned { energy in
+                                    print(energy)
+                                    isSuccessHealth = true
+                                }
+                            }
                         }
                     }
+                } label: {
+                    CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.allowButtonMessage, size: .large)
                 }
-            } label: {
-                CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.allowButtonMessage, size: .large)
+            } else {
+                NavigationLink(destination: SetActivityGoalView(), isActive: $isSuccessHealth, label: {})
             }
-//            NavigationLink {
-//                SetActivityGoalView()
-//            } label: {
-//                CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.allowButtonMessage, size: .large)
-//            }
-            /*
-             if let healthStore = healthStore {
-                 healthStore.requestAuthorization { success in
-                     if success {
-                         healthStore.calculateSteps { statisticsCollection in
-                             if let statisticsCollection {
-                                 // update UI
-                                 updateUIFromStatistics(statisticsCollection)
-                             }
-                         }
-                         healthStore.getActivityEnergyBurned { um in
-                             print(um)
-                         }
-                     }
-                 }
-             }
-             */
         }
         .navigationTitle("접근 허용")
         .navigationBarTitleDisplayMode(.inline)
