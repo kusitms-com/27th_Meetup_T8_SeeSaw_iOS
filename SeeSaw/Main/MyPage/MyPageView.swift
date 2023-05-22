@@ -8,80 +8,78 @@
 import SwiftUI
 
 struct MyPageView: View {
-    @AppStorage("nickname") var nickname: String = "이오링"
+    @AppStorage("nickname") var nickname: String = ""
     @State private var showChangeNicknameView = false
     @State private var showLogoutView = false
     
     var body: some View {
-//        NavigationView {
-            ZStack {
+        ZStack {
+            VStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
+                    greenRectangle
+                        .padding(.top, 40)
+                        .padding(.bottom, 16)
+                    userNicknameRow
+                }
+                .padding(.bottom, 36)
+                
                 VStack(spacing: 0) {
-                    VStack(alignment: .leading, spacing: 0) {
-                        greenRectangle
-                            .padding(.top, 40)
-                            .padding(.bottom, 16)
-                        userNicknameRow
-                    }
-                    .padding(.bottom, 36)
-                    
-                    VStack(spacing: 0) {
-                        NavigationLink {
-                            notiView
-                        } label: {
-                            MyPageRow(isRowTop: true,
-                                      title: "알림",
-                                      isChevronExist: true)
-                        }
-                        
-                        Divider()
-                        
-                        NavigationLink {
-                            announceView
-                        } label: {
-                            MyPageRow(isRowTop: false,
-                                      title: "공지사항",
-                                      isChevronExist: true)
-                        }
-                    }
-                    .padding(.bottom, 16)
-                    
-                    VStack(spacing: 0) {
-                        provisioningViewRow
-                        
-                        Divider()
-                        
-                        NavigationLink {
-                            
-                        } label: {
-                            MyPageRow(isRowTop: false,
-                                      title: "문의하기",
-                                      isChevronExist: true)
-                        }
-                    }
-                    .padding(.bottom, 16)
-                    
-                    VStack(spacing: 0) {
-                        logoutViewRow
-                        Divider()
-                        signOutViewRow
+                    NavigationLink {
+                        notiView
+                    } label: {
+                        MyPageRow(isRowTop: true,
+                                  title: "알림",
+                                  isChevronExist: true)
                     }
                     
-                    Spacer()
+                    Divider()
+                    
+                    NavigationLink {
+                        announceView
+                    } label: {
+                        MyPageRow(isRowTop: false,
+                                  title: "공지사항",
+                                  isChevronExist: true)
+                    }
                 }
-                .padding(.horizontal, 20)
-                .background(Color.Gray200)
+                .padding(.bottom, 16)
                 
-            if $showChangeNicknameView.wrappedValue {                        ChangeNicknameView(nickname: self.nickname,
-                                       showChangeNicknameView: self.$showChangeNicknameView)
+                VStack(spacing: 0) {
+                    provisioningViewRow
+                    
+                    Divider()
+                    
+                    NavigationLink {
+                        
+                    } label: {
+                        MyPageRow(isRowTop: false,
+                                  title: "문의하기",
+                                  isChevronExist: true)
+                    }
+                }
+                .padding(.bottom, 16)
+                
+                VStack(spacing: 0) {
+                    logoutViewRow
+                    Divider()
+                    signOutViewRow
                 }
                 
-                if $showLogoutView.wrappedValue {
-                    LogoutView(showLogoutView: self.$showLogoutView)
-                }
+                Spacer()
             }
-            .navigationTitle("마이페이지")
-            .navigationBarTitleDisplayMode(.inline)
-//        }
+            .padding(.horizontal, 20)
+            .background(Color.Gray200)
+            
+        if $showChangeNicknameView.wrappedValue {                        ChangeNicknameView(nickname: self.nickname,
+                                   showChangeNicknameView: self.$showChangeNicknameView)
+            }
+            
+            if $showLogoutView.wrappedValue {
+                LogoutView(showLogoutView: self.$showLogoutView)
+            }
+        }
+        .navigationTitle("마이페이지")
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     var greenRectangle: some View {

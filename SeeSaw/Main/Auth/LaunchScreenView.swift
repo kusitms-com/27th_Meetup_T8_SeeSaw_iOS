@@ -10,7 +10,7 @@ import SwiftUI
 struct LaunchScreenView: View {
     var body: some View {
         ZStack {
-            Color.SeeSawGreen
+            Color.Gray200
             Image("LaunchScreenImage")
         }
         .ignoresSafeArea()
