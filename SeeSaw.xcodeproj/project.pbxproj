@@ -51,6 +51,7 @@
 		514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */; };
 		514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514853002A04002E00351A9D /* ExplainValuesView.swift */; };
 		514E4D3A2A1BC2600040FC88 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E4D392A1BC2600040FC88 /* HealthStore.swift */; };
+		514E4D3C2A1BD0FC0040FC88 /* BatteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E4D3B2A1BD0FC0040FC88 /* BatteryViewModel.swift */; };
 		515617222A14891000743B5F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617212A14891000743B5F /* SignUpViewModel.swift */; };
 		515617242A148A8000743B5F /* PostSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617232A148A8000743B5F /* PostSignUp.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
@@ -197,6 +198,7 @@
 		514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletionView.swift; sourceTree = "<group>"; };
 		514853002A04002E00351A9D /* ExplainValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainValuesView.swift; sourceTree = "<group>"; };
 		514E4D392A1BC2600040FC88 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		514E4D3B2A1BD0FC0040FC88 /* BatteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewModel.swift; sourceTree = "<group>"; };
 		515617212A14891000743B5F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		515617232A148A8000743B5F /* PostSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSignUp.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				510B32B42A17F38C00026E07 /* ActivityHistory */,
 				510B32E62A1AAE2100026E07 /* SleepHistory */,
 				510B32BB2A17FF3000026E07 /* Calendar */,
+				514E4D3B2A1BD0FC0040FC88 /* BatteryViewModel.swift */,
 			);
 			path = Battery;
 			sourceTree = "<group>";
@@ -960,6 +963,7 @@
 				51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */,
 				51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */,
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
+				514E4D3C2A1BD0FC0040FC88 /* BatteryViewModel.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
 				51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */,

@@ -10,6 +10,7 @@ import SwiftUI
 struct ProvisioningEnergyView: View {
     private var healthStore: HealthStore?
     @State var isSuccessHealth: Bool = false
+    @StateObject var batteryVM = BatteryViewModel()
     
     init() {
         healthStore = HealthStore()
@@ -35,6 +36,7 @@ struct ProvisioningEnergyView: View {
                                 print("success healthkit")
                                 healthStore.getActivityEnergyBurned { energy in
                                     print(energy)
+                                    batteryVM.postEnergy(todayEnergy: Int(energy))
                                     isSuccessHealth = true
                                 }
                             }

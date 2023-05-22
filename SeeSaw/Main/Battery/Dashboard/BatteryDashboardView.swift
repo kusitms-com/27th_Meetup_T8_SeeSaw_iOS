@@ -27,6 +27,13 @@ struct BatteryDashboardView: View {
     @State var isTodaySleepAmountExist: Bool = false
     @State var sleepCondition: String = "Good"
     
+    private var healthStore: HealthStore?
+    @StateObject var batteryVM = BatteryViewModel()
+    
+    init() {
+        healthStore = HealthStore()
+    }
+    
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
@@ -109,6 +116,17 @@ struct BatteryDashboardView: View {
         })
         .onAppear {
             print("DEBUG BatteryDashoboard: onAppear")
+            if let healthStore = healthStore {
+                healthStore.requestAuthorization { success in
+                    if success {
+                        print("success healthkit")
+                        healthStore.getActivityEnergyBurned { energy in
+                            print(energy)
+                            batteryVM.postEnergy(todayEnergy: Int(energy))
+                        }
+                    }
+                }
+            }
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 battery = 80
             }
