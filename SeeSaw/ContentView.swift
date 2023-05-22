@@ -11,13 +11,14 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var authVM: AuthViewModel
     let keychain = KeychainSwift()
-    @AppStorage("onboarding") var isOnboardingCompleted: Bool = false
+    
+    @AppStorage("nickname") var nickname: String = ""
     
     var body: some View {
         VStack {
             if authVM.isLoggedIn ?? false {
                 // 토큰 재생성 및 로그인 완료
-                if isOnboardingCompleted {
+                if authVM.isOnboardingCompleted ?? false {
                     // 온보딩 완료
                     SeeSawTabView()
                 } else {
@@ -33,8 +34,10 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            print("실행")
-            authVM.regenerateToken()
+            print("DEBUG ContentView: onappear")
+            authVM.regenerateToken { serverNickname in
+                nickname = serverNickname
+            }
         }
     }
 }

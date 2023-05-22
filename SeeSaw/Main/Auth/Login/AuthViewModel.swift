@@ -10,17 +10,21 @@ import Foundation
 import KeychainSwift
 
 class AuthViewModel: ObservableObject {
+    let baseUrl = "http://\(Bundle.main.infoDictionary?["BASE_URL"] ?? "nil baseUrl")"
+    let keychain = KeychainSwift()
+    
     @Published var isLoggedIn: Bool?
     @Published var isRegenerated: Bool?
-    let keychain = KeychainSwift()
+    @Published var isOnboardingCompleted: Bool?
     
     init(isLoggedIn: Bool) {
         self.isLoggedIn = false
         self.isRegenerated = false
+        self.isOnboardingCompleted = false
     }
     
     func login(req: PostLoginRequest) {
-        let url = "http://ec2-3-36-172-10.ap-northeast-2.compute.amazonaws.com/auth/login"
+        let url = "\(baseUrl)/auth/login"
         let parameters: [String: Any] = [
             "id_token": req.idToken,
             "access_token": req.accessToken,
@@ -59,7 +63,7 @@ class AuthViewModel: ObservableObject {
                         guard let errorRes = try? decoder.decode(PostLogin409Response.self, from: data) else { return }
                         print(errorRes.message)
                     default:
-                        print("DEBUG: not 200 \(data)")
+                        print("DEBUG authVM login: not 200 \(data)")
                     }
                 case .failure(let error):
                     print(error)
@@ -67,8 +71,8 @@ class AuthViewModel: ObservableObject {
             }
     }
     
-    func regenerateToken() {
-        let url = "http://ec2-3-36-172-10.ap-northeast-2.compute.amazonaws.com/auth/regenerate-token"
+    func regenerateToken(completion: @escaping (String) -> Void) {
+        let url = "\(baseUrl)/auth/regenerate-token"
         let parameters: [String: Any] = [
             "refresh_token": keychain.get("refreshToken") ?? ""
         ]
@@ -91,6 +95,9 @@ class AuthViewModel: ObservableObject {
                                       forKey: "refreshToken")
                     print("accessToken \(response.accessToken)")
                     print("refreshToken \(response.refreshToken)")
+                    self.getNickname { serverNickname in
+                        completion(serverNickname)
+                    }
                 case .failure(let error):
                     print(error)
                     self.isLoggedIn = false
@@ -98,6 +105,24 @@ class AuthViewModel: ObservableObject {
             }
         
         self.isRegenerated = true
+    }
+    
+    func getNickname(completion: @escaping (String) -> Void) {
+        let url = "\(baseUrl)/api/user"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: GetNicknameResponse.self) { response in
+                switch response.result {
+                case .success(let res):
+                    self.isOnboardingCompleted = true
+                    completion(res.result)
+                case .failure(let error):
+                    print("DEBUG getNickname: \(error)")
+                }
+            }
     }
     
     func logout() {

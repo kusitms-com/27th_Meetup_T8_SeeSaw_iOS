@@ -95,6 +95,7 @@
 		51C656742A137BC200610369 /* SelectValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C656732A137BC200610369 /* SelectValuesView.swift */; };
 		51C656782A13A60800610369 /* HalfSheetExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C656772A13A60800610369 /* HalfSheetExtension.swift */; };
 		51C6567A2A13A71600610369 /* SaveValuesSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C656792A13A71600610369 /* SaveValuesSheetView.swift */; };
+		51DD38F42A1B76910058E2E4 /* GetNickname.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD38F32A1B76910058E2E4 /* GetNickname.swift */; };
 		51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */; };
 		51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B62A0A065600F1F73B /* LargePopUpView.swift */; };
 		51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */; };
@@ -240,6 +241,7 @@
 		51C656732A137BC200610369 /* SelectValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectValuesView.swift; sourceTree = "<group>"; };
 		51C656772A13A60800610369 /* HalfSheetExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfSheetExtension.swift; sourceTree = "<group>"; };
 		51C656792A13A71600610369 /* SaveValuesSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveValuesSheetView.swift; sourceTree = "<group>"; };
+		51DD38F32A1B76910058E2E4 /* GetNickname.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNickname.swift; sourceTree = "<group>"; };
 		51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBlockView.swift; sourceTree = "<group>"; };
 		51DD74B62A0A065600F1F73B /* LargePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargePopUpView.swift; sourceTree = "<group>"; };
 		51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPopUpView.swift; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 				51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */,
 				510B32D82A19492900026E07 /* PutNicknameResponse.swift */,
 				510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */,
+				51DD38F32A1B76910058E2E4 /* GetNickname.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -1005,6 +1008,7 @@
 				BE7C07102A18AF4F00C7D647 /* InterimReviewMainView.swift in Sources */,
 				BE7C06DC2A0BA88E00C7D647 /* ValueYearView.swift in Sources */,
 				5122C59B2A12016200DAD9A8 /* ShowValuesView.swift in Sources */,
+				51DD38F42A1B76910058E2E4 /* GetNickname.swift in Sources */,
 				51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				BE7C072F2A1B157C00C7D647 /* ProjectBatteryView.swift in Sources */,
