@@ -15,7 +15,7 @@ struct ValueButtonView: View {
         ZStack {
             Rectangle()
                 .cornerRadius(27, corners: [.bottomRight, .topRight])
-                .frame(width: 184, height: 54)
+                .frame(width: 232, height: 54)
                 .foregroundColor(valueColor)
                 .onTapGesture {
                     self.showModal = true
@@ -37,7 +37,7 @@ struct ValueButtonView: View {
                 Spacer()
                     .frame(width: 20)
             }
-            .frame(width: 184)
+            .frame(width: 232)
         }
     }
 }

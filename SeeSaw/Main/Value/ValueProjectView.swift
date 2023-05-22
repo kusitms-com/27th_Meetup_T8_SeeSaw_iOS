@@ -15,7 +15,7 @@ struct ValueProjectView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 12)
                             .frame(width: 350, height: 35)
-                            .foregroundColor(.white)
+                            .foregroundColor(.Gray200)
                         HStack {
                             Text(dataItem.title)
                             Spacer()
