@@ -9,16 +9,25 @@ import SwiftUI
 
 struct ProvisioningView: View {
     @State private var allowActiveData: Bool = true
+    @State private var showTermSheet: Bool = false
     var body: some View {
         VStack(spacing: 0) {
             allowActiveDataRow
                 .padding(.top, 36)
             
-            MyPageRow(isRowTop: false,
-                      title: "개인정보 정책",
-                      isChevronExist: true)
+            Button {
+                showTermSheet = true
+            } label: {
+                MyPageRow(isRowTop: false,
+                          title: "개인정보 처리 방침",
+                          isChevronExist: true)
+            }
             
             Spacer()
+        }
+        .sheet(isPresented: $showTermSheet) {
+            SafariView(url: URL(string: "https://www.notion.so/0f6f88cfcc70415c8cbe7f5bedb99ba5")!)
+                .ignoresSafeArea()
         }
         .navigationTitle("권한 설정")
         .navigationBarTitleDisplayMode(.inline)

@@ -34,5 +34,11 @@ extension Color {
 }
 
 extension Color {
+    static let BatteryHigh = Color("BatteryHigh")
+    static let BatteryMedium = Color("BatteryMedium")
+    static let BatteryLow = Color("BatteryLow")
+}
+
+extension Color {
     static let KakaoColor = Color("KakaoColor")
 }

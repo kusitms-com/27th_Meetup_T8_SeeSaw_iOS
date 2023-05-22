@@ -7,6 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510B32B62A17F3AC00026E07 /* ActivityHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B52A17F3AC00026E07 /* ActivityHistoryView.swift */; };
+		510B32B82A17FD4800026E07 /* ActivityProgressHalfCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B72A17FD4800026E07 /* ActivityProgressHalfCircleView.swift */; };
+		510B32BA2A17FD5F00026E07 /* TopHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32B92A17FD5F00026E07 /* TopHalfCircle.swift */; };
+		510B32BD2A17FFAA00026E07 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32BC2A17FFAA00026E07 /* CalendarView.swift */; };
+		510B32BF2A18000100026E07 /* DateHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32BE2A18000100026E07 /* DateHolder.swift */; };
+		510B32C12A18002C00026E07 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C02A18002C00026E07 /* CalendarHelper.swift */; };
+		510B32C32A18005B00026E07 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C22A18005B00026E07 /* CalendarCell.swift */; };
+		510B32C52A18007F00026E07 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C42A18007F00026E07 /* MonthStruct.swift */; };
+		510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C62A1800AF00026E07 /* DateScrollerView.swift */; };
+		510B32DD2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */; };
+		510B32DF2A1A918500026E07 /* BatteryDashboardEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */; };
+		510B32E12A1A9B9300026E07 /* FastChargeExistPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E02A1A9B9300026E07 /* FastChargeExistPopUpView.swift */; };
+		510B32E32A1AA23600026E07 /* BatteryDashboardSleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */; };
+		510B32E52A1AABA800026E07 /* EditEnergyGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */; };
+		510B32E82A1AAE3900026E07 /* SleepHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */; };
+		510B32EA2A1AB51400026E07 /* EditSleepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */; };
+		510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */; };
+		510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */; };
+		510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */; };
+		510B32D12A19311100026E07 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D02A19311100026E07 /* SafariView.swift */; };
+		510B32D32A193E4800026E07 /* SignUpCompletion.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32D22A193E4800026E07 /* SignUpCompletion.gif */; };
+		510B32D72A1947E900026E07 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D62A1947E900026E07 /* MyPageViewModel.swift */; };
+		510B32D92A19492900026E07 /* PutNicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D82A19492900026E07 /* PutNicknameResponse.swift */; };
+		510B32DB2A1950EB00026E07 /* GetUserHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -26,14 +50,6 @@
 		514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F62A03ADF400351A9D /* UserInfoView.swift */; };
 		514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */; };
 		514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514853002A04002E00351A9D /* ExplainValuesView.swift */; };
-		515617122A14714900743B5F /* ProgressProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617112A14714900743B5F /* ProgressProjectView.swift */; };
-		5156171A2A14716900743B5F /* ProjectNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617132A14716900743B5F /* ProjectNameView.swift */; };
-		5156171B2A14716900743B5F /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617142A14716900743B5F /* AddProjectView.swift */; };
-		5156171C2A14716900743B5F /* ProjectValueSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617152A14716900743B5F /* ProjectValueSelectView.swift */; };
-		5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617162A14716900743B5F /* CompleteProjectView.swift */; };
-		5156171E2A14716900743B5F /* ProjectGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617172A14716900743B5F /* ProjectGoalView.swift */; };
-		5156171F2A14716900743B5F /* ProjectStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617182A14716900743B5F /* ProjectStrengthView.swift */; };
-		515617202A14716900743B5F /* ProjectTermView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617192A14716900743B5F /* ProjectTermView.swift */; };
 		515617222A14891000743B5F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617212A14891000743B5F /* SignUpViewModel.swift */; };
 		515617242A148A8000743B5F /* PostSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617232A148A8000743B5F /* PostSignUp.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
@@ -50,12 +66,23 @@
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */; };
+		5195D40C2A16A98C004CE657 /* BatteryProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */; };
+		5195D40E2A16B89B004CE657 /* HalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195D40D2A16B89B004CE657 /* HalfCircle.swift */; };
 		51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */; };
 		51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */; };
 		51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */; };
 		51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C32A0EABC300404E11 /* FastChargeView.swift */; };
 		51A1E5C62A0F580A00404E11 /* BatteryHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */; };
 		51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9ECB42A00DD71000E6784 /* ColorExtension.swift */; };
+		51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */; };
+		51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */; };
+		51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */ = {isa = PBXBuildFile; fileRef = 51AA9A632A1743EA005C14FC /* FastCharge.gif */; };
+		51AA9A682A1786C9005C14FC /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A672A1786C9005C14FC /* Line.swift */; };
+		51AA9A6B2A178EA6005C14FC /* BatteryChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A6A2A178EA6005C14FC /* BatteryChartView.swift */; };
+		51AA9A6D2A17BF8E005C14FC /* BatteryHistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A6C2A17BF8E005C14FC /* BatteryHistoryDetailView.swift */; };
+		51AA9A6F2A17BFB5005C14FC /* BatteryHistoryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A6E2A17BFB5005C14FC /* BatteryHistoryCardView.swift */; };
+		51AA9A712A17BFE6005C14FC /* BatteryHistoryCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A702A17BFE6005C14FC /* BatteryHistoryCardRow.swift */; };
+		51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */; };
 		51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */; };
 		51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BA2A6029EA8C5500071264 /* ContentView.swift */; };
 		51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BA2A6229EA8C5600071264 /* Assets.xcassets */; };
@@ -123,6 +150,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		510B32B52A17F3AC00026E07 /* ActivityHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHistoryView.swift; sourceTree = "<group>"; };
+		510B32B72A17FD4800026E07 /* ActivityProgressHalfCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProgressHalfCircleView.swift; sourceTree = "<group>"; };
+		510B32B92A17FD5F00026E07 /* TopHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHalfCircle.swift; sourceTree = "<group>"; };
+		510B32BC2A17FFAA00026E07 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		510B32BE2A18000100026E07 /* DateHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHolder.swift; sourceTree = "<group>"; };
+		510B32C02A18002C00026E07 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		510B32C22A18005B00026E07 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		510B32C42A18007F00026E07 /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
+		510B32C62A1800AF00026E07 /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
+		510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardFastChargeView.swift; sourceTree = "<group>"; };
+		510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardEnergyView.swift; sourceTree = "<group>"; };
+		510B32E02A1A9B9300026E07 /* FastChargeExistPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeExistPopUpView.swift; sourceTree = "<group>"; };
+		510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardSleepView.swift; sourceTree = "<group>"; };
+		510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEnergyGoalView.swift; sourceTree = "<group>"; };
+		510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryView.swift; sourceTree = "<group>"; };
+		510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSleepGoalView.swift; sourceTree = "<group>"; };
+		510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainThird.gif; sourceTree = "<group>"; };
+		510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainSecond.gif; sourceTree = "<group>"; };
+		510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainFirst.gif; sourceTree = "<group>"; };
+		510B32D02A19311100026E07 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		510B32D22A193E4800026E07 /* SignUpCompletion.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SignUpCompletion.gif; sourceTree = "<group>"; };
+		510B32D62A1947E900026E07 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		510B32D82A19492900026E07 /* PutNicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutNicknameResponse.swift; sourceTree = "<group>"; };
+		510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserHistoryResponse.swift; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -142,14 +193,14 @@
 		514852F62A03ADF400351A9D /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletionView.swift; sourceTree = "<group>"; };
 		514853002A04002E00351A9D /* ExplainValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainValuesView.swift; sourceTree = "<group>"; };
-		515617112A14714900743B5F /* ProgressProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProgressProjectView.swift"; sourceTree = "<group>"; };
-		515617132A14716900743B5F /* ProjectNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectNameView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectNameView.swift"; sourceTree = "<group>"; };
-		515617142A14716900743B5F /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/AddProjectView.swift"; sourceTree = "<group>"; };
-		515617152A14716900743B5F /* ProjectValueSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectValueSelectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectValueSelectView.swift"; sourceTree = "<group>"; };
-		515617162A14716900743B5F /* CompleteProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompleteProjectView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/CompleteProjectView.swift"; sourceTree = "<group>"; };
-		515617172A14716900743B5F /* ProjectGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectGoalView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectGoalView.swift"; sourceTree = "<group>"; };
-		515617182A14716900743B5F /* ProjectStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectStrengthView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectStrengthView.swift"; sourceTree = "<group>"; };
-		515617192A14716900743B5F /* ProjectTermView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTermView.swift; path = "../../../../../../Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectTermView.swift"; sourceTree = "<group>"; };
+		515617112A14714900743B5F /* ProgressProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressProjectView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProgressProjectView.swift"; sourceTree = "<absolute>"; };
+		515617132A14716900743B5F /* ProjectNameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectNameView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectNameView.swift"; sourceTree = "<absolute>"; };
+		515617142A14716900743B5F /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddProjectView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/AddProjectView.swift"; sourceTree = "<absolute>"; };
+		515617152A14716900743B5F /* ProjectValueSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectValueSelectView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectValueSelectView.swift"; sourceTree = "<absolute>"; };
+		515617162A14716900743B5F /* CompleteProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompleteProjectView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/CompleteProjectView.swift"; sourceTree = "<absolute>"; };
+		515617172A14716900743B5F /* ProjectGoalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectGoalView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectGoalView.swift"; sourceTree = "<absolute>"; };
+		515617182A14716900743B5F /* ProjectStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectStrengthView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectStrengthView.swift"; sourceTree = "<absolute>"; };
+		515617192A14716900743B5F /* ProjectTermView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectTermView.swift; path = "/Downloads/SeeSaw-iOS-develop/SeeSaw/Main/Project/ProjectTermView.swift"; sourceTree = "<absolute>"; };
 		515617212A14891000743B5F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		515617232A148A8000743B5F /* PostSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSignUp.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -166,12 +217,23 @@
 		51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
 		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeleteAccountView.swift; sourceTree = "<group>"; };
+		5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryProgressCircleView.swift; sourceTree = "<group>"; };
+		5195D40D2A16B89B004CE657 /* HalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfCircle.swift; sourceTree = "<group>"; };
 		51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInformationView.swift; sourceTree = "<group>"; };
 		51A1E5BE2A0E9E4400404E11 /* ProvisioningEnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvisioningEnergyView.swift; sourceTree = "<group>"; };
 		51A1E5C12A0EA84E00404E11 /* SetSleepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSleepGoalView.swift; sourceTree = "<group>"; };
 		51A1E5C32A0EABC300404E11 /* FastChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeView.swift; sourceTree = "<group>"; };
 		51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryView.swift; sourceTree = "<group>"; };
 		51A9ECB42A00DD71000E6784 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightHalfCircle.swift; sourceTree = "<group>"; };
+		51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeCompletionView.swift; sourceTree = "<group>"; };
+		51AA9A632A1743EA005C14FC /* FastCharge.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = FastCharge.gif; sourceTree = "<group>"; };
+		51AA9A672A1786C9005C14FC /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		51AA9A6A2A178EA6005C14FC /* BatteryChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryChartView.swift; sourceTree = "<group>"; };
+		51AA9A6C2A17BF8E005C14FC /* BatteryHistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryDetailView.swift; sourceTree = "<group>"; };
+		51AA9A6E2A17BFB5005C14FC /* BatteryHistoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryCardView.swift; sourceTree = "<group>"; };
+		51AA9A702A17BFE6005C14FC /* BatteryHistoryCardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryCardRow.swift; sourceTree = "<group>"; };
+		51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBatteryVariation.swift; sourceTree = "<group>"; };
 		51BA2A5B29EA8C5500071264 /* SeeSaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeSaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51BA2A5E29EA8C5500071264 /* SeeSawApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawApp.swift; sourceTree = "<group>"; };
 		51BA2A6029EA8C5500071264 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -252,6 +314,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		510B32B12A17C8F800026E07 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				515617112A14714900743B5F /* ProgressProjectView.swift */,
+				515617142A14716900743B5F /* AddProjectView.swift */,
+				515617182A14716900743B5F /* ProjectStrengthView.swift */,
+				515617132A14716900743B5F /* ProjectNameView.swift */,
+				515617172A14716900743B5F /* ProjectGoalView.swift */,
+				515617152A14716900743B5F /* ProjectValueSelectView.swift */,
+				515617162A14716900743B5F /* CompleteProjectView.swift */,
+				515617192A14716900743B5F /* ProjectTermView.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		510B32B42A17F38C00026E07 /* ActivityHistory */ = {
+			isa = PBXGroup;
+			children = (
+				510B32B52A17F3AC00026E07 /* ActivityHistoryView.swift */,
+				510B32B72A17FD4800026E07 /* ActivityProgressHalfCircleView.swift */,
+				510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */,
+			);
+			path = ActivityHistory;
+			sourceTree = "<group>";
+		};
+		510B32BB2A17FF3000026E07 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				510B32BC2A17FFAA00026E07 /* CalendarView.swift */,
+				510B32C62A1800AF00026E07 /* DateScrollerView.swift */,
+				510B32C22A18005B00026E07 /* CalendarCell.swift */,
+				510B32BE2A18000100026E07 /* DateHolder.swift */,
+				510B32C02A18002C00026E07 /* CalendarHelper.swift */,
+				510B32C42A18007F00026E07 /* MonthStruct.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		510B32E62A1AAE2100026E07 /* SleepHistory */ = {
+			isa = PBXGroup;
+			children = (
+				510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */,
+				510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */,
+			);
+			path = SleepHistory;
+			sourceTree = "<group>";
+		};
 		5121894029F95622005DD6C2 /* Value */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,9 +378,13 @@
 		5121894129F9562F005DD6C2 /* Battery */ = {
 			isa = PBXGroup;
 			children = (
-				5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */,
+				51A1E5C02A0EA82600404E11 /* Dashboard */,
+				51AA9A602A174025005C14FC /* FastCharge */,
 				51348A082A124F9D005F9163 /* SetGoal */,
-				51A1E5C02A0EA82600404E11 /* Views */,
+				51AA9A692A178E87005C14FC /* BatteryHistory */,
+				510B32B42A17F38C00026E07 /* ActivityHistory */,
+				510B32E62A1AAE2100026E07 /* SleepHistory */,
+				510B32BB2A17FF3000026E07 /* Calendar */,
 			);
 			path = Battery;
 			sourceTree = "<group>";
@@ -301,6 +414,7 @@
 				5139CCAC2A0BF91000181B55 /* Provisioning */,
 				5139CCAB2A0BF8F500181B55 /* Logout */,
 				5139CCAA2A0BF8C900181B55 /* SignOut */,
+				510B32D62A1947E900026E07 /* MyPageViewModel.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -425,8 +539,13 @@
 		517AE9392A07982A0028D670 /* GifAssets */ = {
 			isa = PBXGroup;
 			children = (
+				510B32D22A193E4800026E07 /* SignUpCompletion.gif */,
+				51AA9A632A1743EA005C14FC /* FastCharge.gif */,
 				517AE93A2A07987E0028D670 /* LoginImage.gif */,
 				BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */,
+				510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */,
+				510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */,
+				510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */,
 			);
 			path = GifAssets;
 			sourceTree = "<group>";
@@ -459,18 +578,57 @@
 				51348A0B2A125FAD005F9163 /* PostGoal.swift */,
 				515617232A148A8000743B5F /* PostSignUp.swift */,
 				51720C8E2A15D8A2002E05AD /* PostSelectedValues.swift */,
+				51AA9A722A17C01F005C14FC /* PostBatteryVariation.swift */,
+				510B32D82A19492900026E07 /* PutNicknameResponse.swift */,
+				510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
 		};
-		51A1E5C02A0EA82600404E11 /* Views */ = {
+		51A1E5C02A0EA82600404E11 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				5139CCB02A0C9F1200181B55 /* BatteryDashboardView.swift */,
 				51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */,
-				51A1E5C32A0EABC300404E11 /* FastChargeView.swift */,
-				51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */,
+				5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */,
+				510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */,
+				510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */,
+				510B32E02A1A9B9300026E07 /* FastChargeExistPopUpView.swift */,
+				510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */,
 			);
-			path = Views;
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		51AA9A5D2A16C270005C14FC /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				5195D40D2A16B89B004CE657 /* HalfCircle.swift */,
+				51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */,
+				51AA9A672A1786C9005C14FC /* Line.swift */,
+				510B32B92A17FD5F00026E07 /* TopHalfCircle.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
+		51AA9A602A174025005C14FC /* FastCharge */ = {
+			isa = PBXGroup;
+			children = (
+				51A1E5C32A0EABC300404E11 /* FastChargeView.swift */,
+				51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */,
+			);
+			path = FastCharge;
+			sourceTree = "<group>";
+		};
+		51AA9A692A178E87005C14FC /* BatteryHistory */ = {
+			isa = PBXGroup;
+			children = (
+				51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */,
+				51AA9A6A2A178EA6005C14FC /* BatteryChartView.swift */,
+				51AA9A6C2A17BF8E005C14FC /* BatteryHistoryDetailView.swift */,
+				51AA9A6E2A17BFB5005C14FC /* BatteryHistoryCardView.swift */,
+				51AA9A702A17BFE6005C14FC /* BatteryHistoryCardRow.swift */,
+			);
+			path = BatteryHistory;
 			sourceTree = "<group>";
 		};
 		51BA2A5229EA8C5400071264 = {
@@ -480,6 +638,7 @@
 				51BA2A6D29EA8DEC00071264 /* .swiftlint.yml */,
 				51F878DB29F2689C0077A6C7 /* .gitignore */,
 				51BA2A5C29EA8C5500071264 /* Products */,
+				510B32B12A17C8F800026E07 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -521,6 +680,7 @@
 		51CECB7629EE5708001C7832 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				51AA9A5D2A16C270005C14FC /* Shape */,
 				51A9ECB42A00DD71000E6784 /* ColorExtension.swift */,
 				515E261A2A00E31B006C3FE5 /* FontExtension.swift */,
 				515E263F2A015957006C3FE5 /* RoundedCorner.swift */,
@@ -556,6 +716,7 @@
 			children = (
 				517AE93C2A079F780028D670 /* ApiClient */,
 				517AE9362A0797D70028D670 /* GifImage */,
+				510B32D02A19311100026E07 /* SafariView.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -719,11 +880,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */,
+				510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */,
 				517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */,
 				51F878DC29F2689C0077A6C7 /* .gitignore in Resources */,
 				51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */,
+				510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */,
+				510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */,
 				51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */,
 				BE7C07442A1B3DEE00C7D647 /* ValueImage.gif in Resources */,
+				510B32D32A193E4800026E07 /* SignUpCompletion.gif in Resources */,
 				51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,8 +928,16 @@
 				51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */,
 				51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */,
 				BE7C070E2A1895F800C7D647 /* InterimReviewView.swift in Sources */,
+				51AA9A6D2A17BF8E005C14FC /* BatteryHistoryDetailView.swift in Sources */,
+				51A1E5BF2A0E9E4400404E11 /* ProvisioningEnergyView.swift in Sources */,
+				51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */,
+				510B32E32A1AA23600026E07 /* BatteryDashboardSleepView.swift in Sources */,
 				51F878DF29F269FE0077A6C7 /* (null) in Sources */,
+				510B32DF2A1A918500026E07 /* BatteryDashboardEnergyView.swift in Sources */,
+				510B32E52A1AABA800026E07 /* EditEnergyGoalView.swift in Sources */,
+				510B32BA2A17FD5F00026E07 /* TopHalfCircle.swift in Sources */,
 				BE7C06EA2A0BAD8E00C7D647 /* ProjectTermView.swift in Sources */,
+				510B32C12A18002C00026E07 /* CalendarHelper.swift in Sources */,
 				517AE9382A0797E70028D670 /* GifImage.swift in Sources */,
 				51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */,
 				BE7C07352A1B233600C7D647 /* ProjectSleepView.swift in Sources */,
@@ -773,6 +947,11 @@
 				BE7C06E82A0BAD8C00C7D647 /* ProjectStrengthView.swift in Sources */,
 				BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */,
 				BE7C071B2A1AF00900C7D647 /* ProjectInfoView.swift in Sources */,
+				510B32B82A17FD4800026E07 /* ActivityProgressHalfCircleView.swift in Sources */,
+				BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */,
+				BE7C06E82A0BAD8C00C7D647 /* ProjectStrengthView.swift in Sources */,
+				BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */,
+				510B32C52A18007F00026E07 /* MonthStruct.swift in Sources */,
 				51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */,
 				BE7C06E22A0BAD7B00C7D647 /* ProgressProjectView.swift in Sources */,
 				BE7C06EC2A0BAD9300C7D647 /* ProjectValueSelectView.swift in Sources */,
@@ -784,20 +963,24 @@
 				5139CCAE2A0BF97F00181B55 /* ProvisioningView.swift in Sources */,
 				51BA2A6129EA8C5500071264 /* ContentView.swift in Sources */,
 				51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */,
-				515617122A14714900743B5F /* ProgressProjectView.swift in Sources */,
-				5156171B2A14716900743B5F /* AddProjectView.swift in Sources */,
+				51AA9A682A1786C9005C14FC /* Line.swift in Sources */,
+				510B32D72A1947E900026E07 /* MyPageViewModel.swift in Sources */,
 				51A1E5C22A0EA84E00404E11 /* SetSleepGoalView.swift in Sources */,
 				51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */,
-				5156171F2A14716900743B5F /* ProjectStrengthView.swift in Sources */,
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
 				51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */,
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
+				510B32D12A19311100026E07 /* SafariView.swift in Sources */,
 				51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */,
+				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
+				510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
+				51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
 				BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */,
 				BE7C07082A1889CA00C7D647 /* TodayQuestionView.swift in Sources */,
+				510B32D92A19492900026E07 /* PutNicknameResponse.swift in Sources */,
 				BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */,
 				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
@@ -805,16 +988,18 @@
 				51348A0C2A125FAD005F9163 /* PostGoal.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
 				BE7C07142A18FCB600C7D647 /* WriteInterimReviewView.swift in Sources */,
+				510B32EA2A1AB51400026E07 /* EditSleepGoalView.swift in Sources */,
+				51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */,
 				51C656742A137BC200610369 /* SelectValuesView.swift in Sources */,
 				BE7C07292A1B05A100C7D647 /* ProjectPersonView.swift in Sources */,
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
 				511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */,
 				511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */,
+				51AA9A712A17BFE6005C14FC /* BatteryHistoryCardRow.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
-				5156171A2A14716900743B5F /* ProjectNameView.swift in Sources */,
 				51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */,
-				5156171E2A14716900743B5F /* ProjectGoalView.swift in Sources */,
+				510B32BD2A17FFAA00026E07 /* CalendarView.swift in Sources */,
 				51C656782A13A60800610369 /* HalfSheetExtension.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				BE7C07162A1AED3200C7D647 /* ArrowUpRightView.swift in Sources */,
@@ -827,13 +1012,16 @@
 				515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */,
 				BE7C073E2A1B26F700C7D647 /* FinalReviewQuestionView.swift in Sources */,
 				BE7C07312A1B182800C7D647 /* ProjectFastChargeView.swift in Sources */,
+				510B32E12A1A9B9300026E07 /* FastChargeExistPopUpView.swift in Sources */,
 				BE7C06E42A0BAD8000C7D647 /* ProjectGoalView.swift in Sources */,
-				5156171C2A14716900743B5F /* ProjectValueSelectView.swift in Sources */,
+				5195D40C2A16A98C004CE657 /* BatteryProgressCircleView.swift in Sources */,
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,
 				BE7C07002A16F07A00C7D647 /* ProjectRectangleVIew.swift in Sources */,
 				BE7C07122A18B5C700C7D647 /* InterimReviewQuestionView.swift in Sources */,
 				5139CCB12A0C9F1200181B55 /* BatteryDashboardView.swift in Sources */,
 				BE7C07192A1AEEC300C7D647 /* ProjectReportVIew.swift in Sources */,
+				510B32BF2A18000100026E07 /* DateHolder.swift in Sources */,
+				510B32C32A18005B00026E07 /* CalendarCell.swift in Sources */,
 				514852F22A039C8000351A9D /* LoginView.swift in Sources */,
 				51348A0A2A1252E6005F9163 /* SetGoalViewModel.swift in Sources */,
 				BE7C07102A18AF4F00C7D647 /* InterimReviewMainView.swift in Sources */,
@@ -845,13 +1033,18 @@
 				5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
 				BE7C071D2A1AF4E600C7D647 /* ProjectEmotionView.swift in Sources */,
+				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
+				51AA9A6F2A17BFB5005C14FC /* BatteryHistoryCardView.swift in Sources */,
 				51348A072A121C4D005F9163 /* GetValues.swift in Sources */,
-				515617202A14716900743B5F /* ProjectTermView.swift in Sources */,
+				5195D40E2A16B89B004CE657 /* HalfCircle.swift in Sources */,
+				51AA9A6B2A178EA6005C14FC /* BatteryChartView.swift in Sources */,
 				51C6567A2A13A71600610369 /* SaveValuesSheetView.swift in Sources */,
 				517532222A094DA400BF107D /* AuthViewModel.swift in Sources */,
 				BE7C07332A1B21F900C7D647 /* ProjectCalorieView.swift in Sources */,
 				51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */,
+				510B32B62A17F3AC00026E07 /* ActivityHistoryView.swift in Sources */,
 				514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */,
+				510B32DD2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift in Sources */,
 				BE7C06FE2A16558100C7D647 /* ProjectRetrospectionView.swift in Sources */,
 				514852F52A03A61100351A9D /* AgreeTermsView.swift in Sources */,
 				BE7C07232A1AFE9500C7D647 /* ProjectLearnView.swift in Sources */,
@@ -862,6 +1055,11 @@
 				BE7C06F22A13A06C00C7D647 /* ProjectDetailView.swift in Sources */,
 				BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */,
 				BE7C072D2A1B06C800C7D647 /* ProjectWantPersonView.swift in Sources */,
+				510B32E82A1AAE3900026E07 /* SleepHistoryView.swift in Sources */,
+				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
+				BE7C06F22A13A06C00C7D647 /* ProjectDetailView.swift in Sources */,
+				BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */,
+				510B32DB2A1950EB00026E07 /* GetUserHistoryResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

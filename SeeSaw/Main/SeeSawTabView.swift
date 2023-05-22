@@ -7,45 +7,53 @@
 
 import SwiftUI
 
-struct SeeSawTabView: View {
-    
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
-    }
-    
-    var body: some View {
-        TabView {
-            ValueView()
-                .tabItem {
-                    TabItem(imageName: "heart", title: "가치 설계")
-                }
-            
-            ProjectView()
-                .tabItem {
-                    TabItem(imageName: "book.closed.fill", title: "프로젝트")
-                }
-            
-            BatteryDashboardView()
-                .tabItem {
-                    TabItem(imageName: "battery.100", title: "에너지")
-                }
-            
-//            AgreeTermsView()
-//                .tabItem {
-//                    TabItem(imageName: "person", title: "마이페이지")
-//                }
-        }
-    }
+enum TabIndex {
+    case battery, value, project
 }
 
-struct TabItem: View {
-    let imageName: String
-    let title: String
+struct SeeSawTabView: View {
+    @State var tabIndex: TabIndex = .battery
+    private let tabButtonRate: CGFloat = 2 / 9
     
     var body: some View {
-        VStack {
-            Image(systemName: imageName)
-            Text(title)
+        GeometryReader { geometry in
+            ZStack(alignment: .bottom) {
+                if tabIndex == .battery {
+                    BatteryDashboardView()
+                } else if tabIndex == .value {
+                    ValueView()
+                } else {
+                    ProjectView()
+                }
+                
+                HStack(spacing: 0) {
+                    Button {
+                        tabIndex = .battery
+                    } label: {
+                        Image(tabIndex == .battery ? "SelectedBattery" : "UnselectedBattery")
+                            .frame(width: geometry.size.width * tabButtonRate, height: 60)
+                    }
+                    
+                    Button {
+                        tabIndex = .value
+                    } label: {
+                        Image(tabIndex == .value ? "SelectedValue" : "UnselectedValue")
+                            .frame(width: geometry.size.width * tabButtonRate)
+                    }
+                    
+                    Button {
+                        tabIndex = .project
+                    } label: {
+                        Image(tabIndex == .project ? "SelectedProject" : "UnselectedProject")
+                            .frame(width: geometry.size.width * tabButtonRate)
+                    }
+                }
+                .background(
+                    Rectangle().cornerRadius(60, corners: .allCorners)
+                        .frame(width: geometry.size.width * (2 / 3), height: 60)
+                        .foregroundColor(.Gray100)
+                        .shadow(radius: 60))
+            }
         }
     }
 }

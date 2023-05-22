@@ -58,8 +58,8 @@ struct SaveValuesSheetView: View {
             }
             
             Button {
-                signUpVM.postSelectedValues(selectedValues: values)
                 isModalPresented = false
+                signUpVM.postSelectedValues(selectedValues: values)
                 isOnboardingCompleted = true
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "저장할래요", size: .large)
