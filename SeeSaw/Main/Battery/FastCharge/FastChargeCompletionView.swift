@@ -79,7 +79,6 @@ struct FastChargeCompletionView: View {
                 Spacer()
             }
             
-            
             HStack {
                 Spacer()
             }

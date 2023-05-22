@@ -31,7 +31,7 @@ struct BatteryDashboardView: View {
         NavigationView {
             ZStack {
                 VStack(spacing: 0) {
-                    toolBar
+                    MainToolBar(feature: .lifeLog)
                     
                     GeometryReader { geometry in
                         ScrollView(showsIndicators: false) {
@@ -115,24 +115,6 @@ struct BatteryDashboardView: View {
                 battery = 80
             }
         }
-    }
-
-    // "라이프로그", 마이페이지 버튼
-    var toolBar: some View {
-        HStack {
-            Image("LifeLog")
-            Spacer()
-            NavigationLink {
-                MyPageView()
-            } label: {
-                Image(systemName: "person.crop.circle")
-                    .font(.system(size: 28))
-                    .foregroundColor(.Gray400)
-            }
-        }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 8)
-        .background(Color.Gray100)
     }
     
     // ##님의 에너지 배터리
