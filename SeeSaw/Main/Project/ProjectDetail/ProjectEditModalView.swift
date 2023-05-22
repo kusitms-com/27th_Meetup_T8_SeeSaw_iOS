@@ -14,7 +14,6 @@ struct ProjectEditModalView: View {
     @State var showDeleteModal: Bool = false
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        NavigationView {
             VStack(spacing: 12) {
                 Color.white.ignoresSafeArea()
                 Text("프로젝트 편집")
@@ -34,7 +33,7 @@ struct ProjectEditModalView: View {
                     showModal.toggle()
                     presentationMode.wrappedValue.dismiss()
                 } label: {
-                    CapsuleButtonView(color: .Gray400, text: "수정", size: .large)
+                    CapsuleButtonView(color: .Gray900, text: "수정", size: .large)
                 }
                 Button {
                     showDeleteModal.toggle()
@@ -42,15 +41,14 @@ struct ProjectEditModalView: View {
                 } label: {
                     CapsuleButtonView(color: .Gray400, text: "삭제", size: .large)
                 }
-                .halfSheet(showSheet: $showModal) {
-                    ProjectDeleteModalView(projectTitle: self.projectTitle, showModal: self.$showModal)
+                .halfSheet(showSheet: $showDeleteModal) {
+                    ProjectDeleteModalView(projectTitle: self.projectTitle, showDeleteModal: self.$showDeleteModal)
                         .background(.white)
                 } onEnd: {
                     print("close")
                 }
             }
             .padding(20)
-        }
     }
 }
 

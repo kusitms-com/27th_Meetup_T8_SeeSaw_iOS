@@ -29,7 +29,8 @@ struct ProjectRectangleVIew: View {
                         print("close")
                     }
                     if isEdit {
-                        NavigationLink(" ", destination: AddProjectView(isEdit: isEdit), isActive: $isEdit)
+                        NavigationLink(" ", destination:
+                                        AddProjectView(isEdit: true), isActive: $isEdit)
                     }
                     Spacer()
                         .frame(height: 3)

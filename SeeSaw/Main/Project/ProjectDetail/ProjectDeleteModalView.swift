@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProjectDeleteModalView: View {
     var projectTitle: String
-    @Binding var showModal: Bool
+    @Binding var showDeleteModal: Bool
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(spacing: 12) {
@@ -35,7 +35,7 @@ struct ProjectDeleteModalView: View {
                 CapsuleButtonView(color: .Gray900, text: "삭제", size: .large)
             }
             Button {
-                showModal.toggle()
+                showDeleteModal.toggle()
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 CapsuleButtonView(color: .Gray400, text: "취소", size: .large)
@@ -47,6 +47,6 @@ struct ProjectDeleteModalView: View {
 
 struct ProjectDeleteModalView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectDeleteModalView(projectTitle: "큐시즘 기업프로젝트", showModal: .constant(true))
+        ProjectDeleteModalView(projectTitle: "큐시즘 기업프로젝트", showDeleteModal: .constant(true))
     }
 }

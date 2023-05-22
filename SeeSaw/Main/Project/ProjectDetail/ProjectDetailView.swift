@@ -33,20 +33,18 @@ struct ProjectDetailView: View {
     var words: [String] {
         projectTitle.split(separator: " ").map { String($0) }
     }
-    var halfIndex: Int {
-        words.count / 2
-    }
     var firstHalf: String {
-        words.prefix(halfIndex).joined(separator: " ")
+        words.prefix(words.count / 2).joined(separator: " ")
     }
     var secondHalf: String {
-        words.suffix(from: halfIndex).joined(separator: " ")
+        words.suffix(from: words.count / 2).joined(separator: " ")
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("\(firstHalf)\n\(secondHalf)")
                 .font(.ssHeading1)
                 .foregroundColor(.Gray900)
+                .padding(.horizontal, 20)
             HStack {
                 Text("\(projectStrength)")
                     .foregroundColor(.Gray100)
@@ -58,6 +56,7 @@ struct ProjectDetailView: View {
                     .font(.ssBlackBody1)
                     .foregroundColor(.Gray900)
             }
+            .padding(.horizontal, 20)
             ZStack {
                 ValueProgressView(value: Double(projectProgress) / 100, backColor: .Gray300, foreColor: .Gray900)
                     .frame(height: 20)
@@ -70,21 +69,21 @@ struct ProjectDetailView: View {
                         .font(.ssBlackBody3)
                         .foregroundColor(.Gray900)
                 }
-                .padding(.horizontal, 12)
+                .padding(.horizontal, 10)
             }
+            .padding(.horizontal, 20)
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.Gray300)
             ProjectRetrospectionView()
         }
-        .padding(20)
     }
     func formatDate(date: Date) -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yy.MM.dd"
-            let formattedDate = dateFormatter.string(from: date)
-            return formattedDate
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yy.MM.dd"
+        let formattedDate = dateFormatter.string(from: date)
+        return formattedDate
+    }
 }
 
 struct ProjectDetailView_Previews: PreviewProvider {
