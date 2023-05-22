@@ -72,7 +72,6 @@ struct ProjectRectangleVIew: View {
     }
 }
 
-
 struct ProjectRectangleView_Previews: PreviewProvider {
     static var previews: some View {
         ProjectRectangleVIew(dataItem: MyModel.DataArray[0])
