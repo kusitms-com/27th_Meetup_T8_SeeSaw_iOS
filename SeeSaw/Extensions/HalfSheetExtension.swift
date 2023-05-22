@@ -60,7 +60,7 @@ class CustomHostingController<Content: View>: UIHostingController<Content> {
         view.backgroundColor = .clear
         if let presentationController = presentationController as? UISheetPresentationController {
             presentationController.detents = [.medium()]
-            presentationController.prefersGrabberVisible = true
+            presentationController.prefersGrabberVisible = false
         }
     }
 }

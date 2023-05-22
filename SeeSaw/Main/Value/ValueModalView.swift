@@ -15,13 +15,6 @@ struct ValueModalView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .top) {
-                if valueColor == .SeeSawYellow {
-                        Image("ValueModalTopYellow")
-                } else if valueColor == .SeeSawBlue {
-                    Image("ValueModalTopBlue")
-                } else {
-                    Image("ValueModalTopRed")
-                }
                 VStack {
                     Spacer()
                         .frame(height: 20)
@@ -37,7 +30,7 @@ struct ValueModalView: View {
                                 .foregroundColor(valueColor == .SeeSawYellow ? .GrayBlack : .Gray100)
                             Text(valueTitle + "과 관련된 프로젝트와 루틴들이에요")
                                 .font(.system(size: 12))
-                                .foregroundColor(valueColor == .SeeSawYellow ? .Gray700 : .Gray300)
+                                .foregroundColor(valueColor == .SeeSawYellow ? .Gray700 : .Gray100)
                         }
                         Spacer()
                             .frame(height: 24)
@@ -81,7 +74,7 @@ struct ValueModalView: View {
                 }
             }
         }
-        .background(.white)
+        .background((valueColor == .SeeSawYellow) ? Color.SeeSawYellow : (valueColor == .SeeSawBlue ? Color.SeeSawBlue : Color.SeeSawRed))
     }
 }
 

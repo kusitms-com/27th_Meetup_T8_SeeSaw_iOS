@@ -19,6 +19,7 @@ struct ValueQuickChargeView: View {
                     .foregroundColor(valueColor == .SeeSawYellow ? .Gray700 : .Gray300)
                     Spacer()
             }
+            .padding(.horizontal, 20)
             Spacer()
                 .frame(height: 40)
             HStack(spacing: 1) {
