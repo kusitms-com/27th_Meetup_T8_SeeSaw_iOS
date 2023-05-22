@@ -34,7 +34,7 @@ struct ProjectView: View {
                     Text("에몽님의")
                         .font(.ssHeading1)
                         .foregroundColor(.GrayBlack)
-                    Text("프로젝트 기록")
+                    Text("프로젝트 회고")
                         .font(.ssHeading1)
                         .foregroundColor(.GrayBlack)
                 }
@@ -54,15 +54,17 @@ struct ProjectView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("오늘의 회고 질문")
-                                .font(.ssBlackBody3)
+                                .font(.ssBlackBody2)
                                 .foregroundColor(.Gray600)
+                                .padding(.bottom, 4)
+                                
                             Text("팀원들과의 협업은")
                                 .font(.ssBlackTitle2)
                                 .foregroundColor(.Gray800)
                             Text("잘 진행되고 있으신가요?")
                                 .font(.ssBlackTitle2)
                                 .foregroundColor(.Gray800)
-                        }
+                        }                        .padding(.horizontal, 10)
                         Spacer()
                     }
                     .padding(.leading, 20)
