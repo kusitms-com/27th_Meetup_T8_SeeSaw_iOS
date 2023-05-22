@@ -20,10 +20,12 @@ struct ProjectTermView: View {
                 Spacer()
                 DatePicker("", selection: $startDate, displayedComponents: [.date])
                     .labelsHidden()
-                Text("-")
+                Text("부터   ")
                     .font(.ssBlackBody1)
                 DatePicker("", selection: $endDate, displayedComponents: [.date])
                     .labelsHidden()
+                Text("까지")
+                    .font(.ssBlackBody1)
                 Spacer()
             }
         }

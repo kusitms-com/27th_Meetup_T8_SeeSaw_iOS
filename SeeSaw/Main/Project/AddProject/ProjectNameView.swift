@@ -9,23 +9,27 @@ import SwiftUI
 
 struct ProjectNameView: View {
     @State var projectName: String = ""
-    var maxLength: Int = 10
+    @Binding var isName: Bool
+    var maxLength: Int = 15
     var body: some View {
         VStack(alignment: .leading) {
             Text("프로젝트 명을 입력해주세요")
                 .font(.ssBlackTitle2)
                 .foregroundColor(.Gray900)
             HStack {
-                TextField("프로젝트 명", text: Binding(
+                TextField("", text: Binding(
                     get: { self.projectName },
                     set: { newValue in
                         if newValue.count <= maxLength {
                             self.projectName = newValue
                         }
+                        if newValue.count > 0 {
+                            self.isName = true
+                        }
                     }
                 ))
                 Spacer()
-                Text("\(projectName.count)/10")
+                Text("\(projectName.count)/15")
                     .font(.ssBlackBody3)
                     .foregroundColor(.Gray600)
             }
@@ -38,6 +42,6 @@ struct ProjectNameView: View {
 
 struct ProjectNameView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectNameView()
+        ProjectNameView(isName: .constant(false))
     }
 }

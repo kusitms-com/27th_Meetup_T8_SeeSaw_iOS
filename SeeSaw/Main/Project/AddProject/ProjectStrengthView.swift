@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProjectStrengthView: View {
-    @State var valueStrength = 0.0
+    @State var valueStrength: Double = 0.0
+    @Binding var isStrength: Bool
     var strengthKorean: [String] = [" ", "낮아요", "보통이에요", "높아요"]
     var body: some View {
         VStack(alignment: .leading) {
@@ -23,7 +24,11 @@ struct ProjectStrengthView: View {
                 .padding(.bottom, 6)
             HStack(spacing: 140) {
                 Slider(value: $valueStrength, in: 1...3, step: 1)
+                    .onChange(of: valueStrength) { newValue in
+                    isStrength = true
+                }
                     .frame(width: 300, height: 12)
+                    .accentColor(.SeeSawGreen)
            }
             .frame(maxWidth: .infinity, alignment: .center)
             HStack(spacing: 90) {
@@ -44,6 +49,6 @@ struct ProjectStrengthView: View {
 
 struct ProjectStrengthView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectStrengthView()
+        ProjectStrengthView(isStrength: .constant(false))
     }
 }

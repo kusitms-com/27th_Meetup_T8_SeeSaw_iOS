@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProjectGoalView: View {
     @State var projectGoal: String = ""
-    var maxLength: Int = 15
+    var maxLength: Int = 20
+    @Binding var isGoal: Bool
     var body: some View {
         VStack(alignment: .leading) {
             Text("프로젝트 목표를 적어주세요")
@@ -22,9 +23,12 @@ struct ProjectGoalView: View {
                         if newValue.count <= maxLength {
                             self.projectGoal = newValue
                         }
+                        if newValue.count > 0 {
+                            isGoal = true
+                        }
                     }
                 ))
-                Text("\(projectGoal.count)/15")
+                Text("\(projectGoal.count)/20")
                     .font(.ssBlackBody3)
                     .foregroundColor(.Gray600)
             }
@@ -38,6 +42,6 @@ struct ProjectGoalView: View {
 
 struct ProjectGoalView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectGoalView()
+        ProjectGoalView(isGoal: .constant(false))
     }
 }

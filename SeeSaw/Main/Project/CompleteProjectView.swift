@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct CompleteProjectView: View {
     var body: some View {
         VStack {
