@@ -24,11 +24,11 @@ class HealthStore {
         let startDate = Calendar.current.startOfDay(for: now)
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: now, options: .strictStartDate)
         
-        let query = HKStatisticsQuery(quantityType: activeEnergyType, quantitySamplePredicate: predicate) { _, result, error in
+        let query = HKStatisticsQuery(quantityType: activeEnergyType, quantitySamplePredicate: predicate) { _, result, _ in
             var cal: Double = 0
             
             guard let result = result, let sum = result.sumQuantity() else {
-                print("result fail")
+                completion(0.0)
                 return
             }
             

@@ -29,6 +29,7 @@ struct BatteryDashboardView: View {
     
     private var healthStore: HealthStore?
     @StateObject var batteryVM = BatteryViewModel()
+    @AppStorage("healthAuth") var healthAuth: Bool = false
     
     init() {
         healthStore = HealthStore()
@@ -116,16 +117,10 @@ struct BatteryDashboardView: View {
         })
         .onAppear {
             print("DEBUG BatteryDashoboard: onAppear")
-            if let healthStore = healthStore {
-                healthStore.requestAuthorization { success in
-                    if success {
-                        print("success healthkit")
-                        healthStore.getActivityEnergyBurned { energy in
-                            print(energy)
-                            batteryVM.postEnergy(todayEnergy: Int(energy))
-                        }
-                    }
-                }
+            if healthAuth {
+                healthStore?.getActivityEnergyBurned(completion: { energy in
+                    batteryVM.postEnergy(todayEnergy: Int(energy))
+                })
             }
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 battery = 80

@@ -12,6 +12,8 @@ struct ProvisioningEnergyView: View {
     @State var isSuccessHealth: Bool = false
     @StateObject var batteryVM = BatteryViewModel()
     
+    @AppStorage("healthAuth") var healthAuth: Bool = false
+    
     init() {
         healthStore = HealthStore()
     }
@@ -34,6 +36,7 @@ struct ProvisioningEnergyView: View {
                         healthStore.requestAuthorization { success in
                             if success {
                                 print("success healthkit")
+                                healthAuth = true
                                 healthStore.getActivityEnergyBurned { energy in
                                     print(energy)
                                     batteryVM.postEnergy(todayEnergy: Int(energy))
