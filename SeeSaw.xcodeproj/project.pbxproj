@@ -50,6 +50,7 @@
 		514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F62A03ADF400351A9D /* UserInfoView.swift */; };
 		514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */; };
 		514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514853002A04002E00351A9D /* ExplainValuesView.swift */; };
+		514E4D3A2A1BC2600040FC88 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E4D392A1BC2600040FC88 /* HealthStore.swift */; };
 		515617222A14891000743B5F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617212A14891000743B5F /* SignUpViewModel.swift */; };
 		515617242A148A8000743B5F /* PostSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617232A148A8000743B5F /* PostSignUp.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
@@ -195,6 +196,7 @@
 		514852F62A03ADF400351A9D /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		514852F82A03FBEE00351A9D /* SignUpCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletionView.swift; sourceTree = "<group>"; };
 		514853002A04002E00351A9D /* ExplainValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainValuesView.swift; sourceTree = "<group>"; };
+		514E4D392A1BC2600040FC88 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		515617212A14891000743B5F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		515617232A148A8000743B5F /* PostSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSignUp.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -508,6 +510,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		514E4D382A1BC24B0040FC88 /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				514E4D392A1BC2600040FC88 /* HealthStore.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
 		517AE9362A0797D70028D670 /* GifImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +706,7 @@
 		51F878D829F268250077A6C7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				514E4D382A1BC24B0040FC88 /* Health */,
 				517AE93C2A079F780028D670 /* ApiClient */,
 				517AE9362A0797D70028D670 /* GifImage */,
 				510B32D02A19311100026E07 /* SafariView.swift */,
@@ -972,6 +983,7 @@
 				510B32EA2A1AB51400026E07 /* EditSleepGoalView.swift in Sources */,
 				51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */,
 				51C656742A137BC200610369 /* SelectValuesView.swift in Sources */,
+				514E4D3A2A1BC2600040FC88 /* HealthStore.swift in Sources */,
 				BE7C07292A1B05A100C7D647 /* ProjectPersonView.swift in Sources */,
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
 				511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */,
