@@ -20,22 +20,29 @@ struct BatteryDashboardEnergyView: View {
         VStack(alignment: .leading) {
             Text("활동량")
                 .font(.ssHeading2)
-            NavigationLink {
-                ActivityHistoryView()
-            } label: {
+            if isEnergyGoalExist {
+                NavigationLink {
+                    ActivityHistoryView()
+                } label: {
+                    ZStack(alignment: .bottom) {
+                        Rectangle()
+                            .cornerRadius(10)
+                            .foregroundColor(.Gray200)
+                            .frame(height: 260)
+                        
+                        energyStatus
+                    }
+                }
+            } else {
                 ZStack(alignment: .bottom) {
                     Rectangle()
                         .cornerRadius(10)
                         .foregroundColor(.Gray200)
                         .frame(height: 260)
-                    if isEnergyGoalExist {
-                        energyStatus
-                    } else {
-                        setEnergyGoal
-                    }
+
+                    setEnergyGoal
                 }
             }
-            .disabled(isEnergyGoalExist == false)
         }
         .padding(.horizontal, 8)
     }

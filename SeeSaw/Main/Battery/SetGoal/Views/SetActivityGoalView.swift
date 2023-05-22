@@ -10,7 +10,7 @@ import SwiftUI
 struct SetActivityGoalView: View {
     @StateObject var setGoalVM = SetGoalViewModel()
     @State var activityGoal = 200
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(ProvisioningEnergyDescription.setGoalTitle)
