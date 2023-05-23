@@ -98,7 +98,7 @@ struct FastChargeView: View {
                           todayFastCharge = String($0.prefix(20))
                         })
                 
-                Text("0/20")
+                Text("\(todayFastCharge.count)/20")
                     .font(.ssBlackBody3)
                     .foregroundColor(.Gray600)
             }
