@@ -23,7 +23,7 @@ struct ProjectRectangleVIew: View {
                             .foregroundColor(.white)
                     }
                     .halfSheet(showSheet: $showModal) {
-                        ProjectEditModalView(projectTitle: dataItem.title, isEdit: $isEdit, showModal: $showModal)
+                        ProjectEditModalView(projectTitle: dataItem.title, isEdit: $isEdit, showModal: $showModal, showDeleteModal: .constant(false))
                             .background(.white)
                     } onEnd: {
                         print("close")
@@ -71,7 +71,6 @@ struct ProjectRectangleVIew: View {
         }
     }
 }
-
 
 struct ProjectRectangleView_Previews: PreviewProvider {
     static var previews: some View {

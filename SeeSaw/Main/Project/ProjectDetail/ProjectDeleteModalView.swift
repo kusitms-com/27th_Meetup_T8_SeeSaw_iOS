@@ -29,9 +29,7 @@ struct ProjectDeleteModalView: View {
                 .font(.ssBlackTitle2)
             Spacer()
                 .frame(height: 40)
-            Button {
-                
-            } label: {
+            NavigationLink(destination: ProjectDeletePopUpView(showFastChargeExistPopUp: .constant(false))) {
                 CapsuleButtonView(color: .Gray900, text: "삭제", size: .large)
             }
             Button {

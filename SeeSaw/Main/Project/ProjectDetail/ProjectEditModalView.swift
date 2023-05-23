@@ -11,7 +11,7 @@ struct ProjectEditModalView: View {
     var projectTitle: String
     @Binding var isEdit: Bool
     @Binding var showModal: Bool
-    @State var showDeleteModal: Bool = false
+    @Binding var showDeleteModal: Bool
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
             VStack(spacing: 12) {
@@ -54,6 +54,6 @@ struct ProjectEditModalView: View {
 
 struct ProjectEditModalView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectEditModalView(projectTitle: "큐시즘 기업프로젝트", isEdit: .constant(true), showModal: .constant(true))
+        ProjectEditModalView(projectTitle: "큐시즘 기업프로젝트", isEdit: .constant(true), showModal: .constant(true), showDeleteModal: .constant(false))
     }
 }
