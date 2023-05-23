@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ProjectEnergyView: View {
-    var userName: String = "에몽"
+    @AppStorage("nickname") var nickname: String = ""
     var averageProgress: Int = 71
     var maxProgress: Int = 86
     var minProgress: Int = 37
     var body: some View {
         VStack(spacing: 16) {
             HStack {
-                Text("프로젝트를 진행하는 동안의\n\(userName)님 에너지 분석입니다")
+                Text("프로젝트를 진행하는 동안의\n\(nickname)님 에너지 분석입니다")
                     .font(.system(size: 20))
                     .fontWeight(.heavy)
                     .foregroundColor(.Gray900)

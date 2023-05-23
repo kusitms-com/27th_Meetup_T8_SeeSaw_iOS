@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProjectView: View {
+    @AppStorage("nickname") var nickname: String = ""
     @State var isProgress = true
     @State var progressNum: Int = 0
     @State var completeNum: Int = 0
@@ -31,7 +32,7 @@ struct ProjectView: View {
                 Spacer()
                     .frame(height: 30)
                 VStack(alignment: .leading) {
-                    Text("에몽님의")
+                    Text("\(nickname)님의")
                         .font(.ssHeading1)
                         .foregroundColor(.GrayBlack)
                     Text("프로젝트 회고")
@@ -49,7 +50,6 @@ struct ProjectView: View {
                                 .scaledToFit()
                                 .frame(width: 150, height: 250)
                                 .offset(x: 100, y: -30)
-                                .rotationEffect(Angle(degrees: -10))
                         )
                     HStack {
                         VStack(alignment: .leading) {
@@ -124,6 +124,7 @@ struct ProjectView: View {
                 }
             }
         }
+        .background(Color.Gray200)
     }
 }
 
