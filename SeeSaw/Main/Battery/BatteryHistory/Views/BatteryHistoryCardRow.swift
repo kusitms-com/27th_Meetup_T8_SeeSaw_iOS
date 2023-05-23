@@ -38,7 +38,7 @@ struct BatteryHistoryCardRow: View {
             
             Spacer()
             
-            Text("\(isVariationPositive ? "+" : "")\(variation)%")
+            Text("\(isVariationPositive ? "+" : "")\(variation)%p")
                 .font(.ssBlackTitle2)
                 .foregroundColor(isVariationPositive ? .SeeSawGreen : .SeeSawRed)
         }
