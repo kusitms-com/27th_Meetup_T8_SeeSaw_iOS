@@ -9,11 +9,12 @@ import Foundation
 
 struct BatteryHistoryResponse: Codable {
     let date: String
-    let activityHistory: ActivityHistory
-    let sleepHistory: SleepHistory
-    let fastChargeHistory: FastChargeHistory
+    let activityHistory: ActivityHistory?
+    let sleepHistory: SleepHistory?
+    let fastChargeHistory: FastChargeHistory?
     
     private enum CodingKeys: String, CodingKey {
+        case date = "date"
         case activityHistory = "activity"
         case sleepHistory = "sleep"
         case fastChargeHistory = "charge"
@@ -62,7 +63,7 @@ struct ActivityHistory: Codable {
     let activityBatteryVariation: Int?
     
     private enum CodingKeys: String, CodingKey {
-        case activityAmount = "curAvtivity"
+        case activityAmount = "curActivity"
         case activityGoal = "goalActivity"
         case activityBatteryVariation = "activityVariation"
     }

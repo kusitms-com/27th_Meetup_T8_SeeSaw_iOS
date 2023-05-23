@@ -30,14 +30,14 @@ class BatteryHistoryViewModel: ObservableObject {
             }
     }
     
-    func getThirtyDaysBatteryHistory(completion: @escaping ([BatteryHistory]) -> Void) {
+    func getThirtyDaysBatteryHistory(completion: @escaping ([BatteryHistoryResponse]) -> Void) {
         let url = "\(baseUrl)/api/battery/variation"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
         ]
         
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers)
-            .responseDecodable(of: GetSevenDaysBatteryHistoryResponse.self) { response in
+            .responseDecodable(of: GetThirtyDaysBatteryHistoryResponse.self) { response in
                 switch response.result {
                 case .success(let res):
                     completion(res.result)

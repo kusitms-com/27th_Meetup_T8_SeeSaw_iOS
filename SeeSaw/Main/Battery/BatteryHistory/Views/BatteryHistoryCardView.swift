@@ -8,46 +8,35 @@
 import SwiftUI
 
 struct BatteryHistoryCardView: View {
-    let date: String
-    
-    let isActivityExist: Bool
-    let activityValue: String
-    let activityDescription: String
-    let activityVariation: Int
-    
-    let isSleepExist: Bool
-    let sleepValue: String
-    let sleepDescription: String
-    let sleepVariation: Int
-    
-    let isFastChargeExist: Bool
-    let fastChargeValue: String
-    let fastChargeTitle: String
-    let fastChargeVariation: Int
+    let data: BatteryHistoryResponse
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text(date)
+            Text(data.date)
             
-            if isActivityExist {
+            if let activity = data.activityHistory, let variation = activity.activityBatteryVariation {
+                let value = "\(activity.activityAmount ?? 9999)kcal / \(activity.activityGoal ?? 9998)kcal"
+                
                 BatteryHistoryCardRow(title: "활동량",
-                                      value: activityValue,
-                                      description: activityDescription,
-                                      variation: activityVariation)
+                                      value: value,
+                                      description: activity.activityDescription ?? "값이 없어여",
+                                      variation: variation)
             }
             
-            if isSleepExist {
+            if let sleep = data.sleepHistory, let variation = sleep.sleepBatteryVariation {
+                let value = "\(sleep.sleepAmount ?? 8888)시간 / \(sleep.sleepGoal ?? 8887)시간"
+                
                 BatteryHistoryCardRow(title: "수면",
-                                      value: sleepValue,
-                                      description: sleepDescription,
-                                      variation: sleepVariation)
+                                      value: value,
+                                      description: sleep.sleepDescription ?? "값이 어여",
+                                      variation: variation)
             }
             
-            if isFastChargeExist {
+            if let charge = data.fastChargeHistory {
                 BatteryHistoryCardRow(title: "고속충전",
-                                      value: fastChargeValue,
-                                      description: fastChargeTitle,
-                                      variation: fastChargeVariation)
+                                      value: charge.fastChargeValue ?? "7777",
+                                      description: charge.fastChargeTitle ?? "7776",
+                                      variation: charge.fastChargeVariation ?? 7766)
             }
         }
         .padding(.horizontal, 16)
