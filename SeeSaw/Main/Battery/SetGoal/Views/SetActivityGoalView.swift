@@ -10,7 +10,7 @@ import SwiftUI
 struct SetActivityGoalView: View {
     @StateObject var setGoalVM = SetGoalViewModel()
     @State var activityGoal = 200
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(ProvisioningEnergyDescription.setGoalTitle)
@@ -27,7 +27,9 @@ struct SetActivityGoalView: View {
                 Spacer()
                 
                 Button {
-                    activityGoal -= 10
+                    if activityGoal > 10 {
+                        activityGoal -= 10
+                    }
                 } label: {
                     ZStack {
                         Image(systemName: "minus.circle.fill")
@@ -46,7 +48,9 @@ struct SetActivityGoalView: View {
                 .foregroundColor(.Gray900)
                 
                 Button {
-                    activityGoal += 10
+                    if activityGoal < 3000 {
+                        activityGoal += 10
+                    }
                 } label: {
                     ZStack {
                         Image(systemName: "plus.circle.fill")
@@ -62,8 +66,8 @@ struct SetActivityGoalView: View {
             Spacer()
             
             NavigationLink {
-                BatteryDashboardView()
-                    .navigationBarBackButtonHidden()
+                SeeSawTabView(tabIndex: .battery)
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.setGoalButtonMessage, size: .large)
             }

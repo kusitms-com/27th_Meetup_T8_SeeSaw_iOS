@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "ValueLog1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "ValueLog2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "LaunchScreen.png",
+      "filename" : "ValueLog3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

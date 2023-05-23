@@ -30,7 +30,7 @@ struct FastChargeCompletionView: View {
                 }
             } else {
                 NavigationLink {
-                    BatteryDashboardView()
+                    SeeSawTabView(tabIndex: .battery)
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     CapsuleButtonView(color: .Gray900, text: "완료", size: .large)
@@ -78,7 +78,6 @@ struct FastChargeCompletionView: View {
                     .frame(width: 300)
                 Spacer()
             }
-            
             
             HStack {
                 Spacer()

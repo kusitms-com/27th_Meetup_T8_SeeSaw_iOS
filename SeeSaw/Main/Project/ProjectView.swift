@@ -12,29 +12,17 @@ struct ProjectView: View {
     @State var isProgress = true
     @State var progressNum: Int = 0
     @State var completeNum: Int = 0
+    
     var body: some View {
-        NavigationView {
+        VStack(spacing: 0) {
+            MainToolBar(feature: .projectLog)
+            
             VStack(alignment: .leading) {
-                HStack {
-                    Image("SeeSawLogoImage")
-                    Spacer()
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "person.crop.circle")
-                            .resizable()
-                            .frame(width: 28, height: 28)
-                            .foregroundColor(.Gray400)
-                    }
-                }
-                .padding(.leading, 20)
-                .padding(.trailing, 28)
-                Spacer()
-                    .frame(height: 30)
                 VStack(alignment: .leading) {
                     Text("\(nickname)님의")
                         .font(.ssHeading1)
                         .foregroundColor(.GrayBlack)
+                        .padding(.top, 10)
                     Text("프로젝트 회고")
                         .font(.ssHeading1)
                         .foregroundColor(.GrayBlack)
@@ -57,7 +45,7 @@ struct ProjectView: View {
                                 .font(.ssBlackBody2)
                                 .foregroundColor(.Gray600)
                                 .padding(.bottom, 4)
-                                
+                            
                             Text("팀원들과의 협업은")
                                 .font(.ssBlackTitle2)
                                 .foregroundColor(.Gray800)
@@ -123,6 +111,7 @@ struct ProjectView: View {
                     }
                 }
             }
+            .background(Color.Gray200)
         }
         .background(Color.Gray200)
     }

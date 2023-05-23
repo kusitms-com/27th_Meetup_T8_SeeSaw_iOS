@@ -36,7 +36,7 @@ struct SleepHistoryView: View {
                 }
                 .padding(.bottom, 16)
                 
-                VStack {
+                VStack(spacing: 0) {
                     Image("SleepGood")
                         .resizable()
                         .scaledToFill()

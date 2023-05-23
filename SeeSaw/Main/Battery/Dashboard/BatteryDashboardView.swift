@@ -27,112 +27,105 @@ struct BatteryDashboardView: View {
     @State var isTodaySleepAmountExist: Bool = false
     @State var sleepCondition: String = "Good"
     
+    private var healthStore: HealthStore?
+    @StateObject var batteryVM = BatteryViewModel()
+    @AppStorage("healthAuth") var healthAuth: Bool = false
+    
+    init() {
+        healthStore = HealthStore()
+    }
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                VStack(spacing: 0) {
-                    toolBar
-                    
-                    GeometryReader { geometry in
-                        ScrollView(showsIndicators: false) {
-                            VStack(alignment: .center, spacing: 0) {
-                                title
-                                    .padding(.top, 10)
-                                    .padding(.horizontal, 20)
-                                
-                                HStack {
-                                    Button {
-                                        isFastChargeExist.toggle()
-                                    } label: {
-                                        Text("고속충전 toggle")
-                                    }
-                                    
-                                    Button {
-                                        isEnergyGoalExist.toggle()
-                                    } label: {
-                                        Text("활동량 toggle")
-                                    }
-                                    
-                                    Button {
-                                        isSleepGoalExist.toggle()
-                                    } label: {
-                                        Text("수면 toggle")
-                                    }
-                                }
-                                
-                                // 배터리
-                                ZStack(alignment: .topLeading) {
-                                    // 배터리 원형 그래프
-                                    NavigationLink {
-                                        BatteryHistoryView()
-                                    } label: {
-                                        BatteryProgressCircleView(geometry: geometry, battery: $battery)
-                                    }
-                                    
-                                    // 배터리 정보 버튼
-                                    batteryInfoButton
-                                }
-                                .padding(.top, 12)
-                                
-                                // 고속충전
-                                BatteryDashboardFastChargeView(isFastChargeExist: $isFastChargeExist, fastChargeTitle: $fastChargeTitle, fastChargeValue: $fastChargeValue, showFastChargeExistPopUp: $showFastChargeExistPopUp)
-                                
-                                // 활동량, 수면
-                                VStack {
-                                    HStack {
-                                        BatteryDashboardEnergyView(isEnergyGoalExist: $isEnergyGoalExist, energyGoal: $energyGoal, todayEnergy: $todayEnergy)
-                                        
-                                        BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
-                                    }
-                                    .padding(12)
-                                    .padding(.bottom, 8)
-                                }
-                                .background(Color.Gray100)
-                                .padding(.bottom, 72)
-                            }
-                        } // ScrollView
-                    } // GeometryReder
-                    .background(Color.Gray200)
-                }
+        ZStack {
+            VStack(spacing: 0) {
+                MainToolBar(feature: .lifeLog)
                 
-                if $showFastChargeExistPopUp.wrappedValue {
-                    FastChargeExistPopUpView(showFastChargeExistPopUp: $showFastChargeExistPopUp)
-                }
+                GeometryReader { geometry in
+                    ScrollView(showsIndicators: false) {
+                        VStack(alignment: .center, spacing: 0) {
+                            title
+                                .padding(.top, 10)
+                                .padding(.horizontal, 20)
+                            
+                            HStack {
+                                Button {
+                                    isFastChargeExist.toggle()
+                                } label: {
+                                    Text("고속충전 toggle")
+                                }
+                                
+                                Button {
+                                    isEnergyGoalExist.toggle()
+                                } label: {
+                                    Text("활동량 toggle")
+                                }
+                                
+                                Button {
+                                    isSleepGoalExist.toggle()
+                                } label: {
+                                    Text("수면 toggle")
+                                }
+                            }
+                            
+                            // 배터리
+                            ZStack(alignment: .topLeading) {
+                                // 배터리 원형 그래프
+                                BatteryProgressCircleView(geometry: geometry, battery: $battery)
+                                
+                                // 배터리 정보 버튼
+                                batteryInfoButton
+                            }
+                            .padding(.top, 12)
+                            
+                            // 고속충전
+                            BatteryDashboardFastChargeView(isFastChargeExist: $isFastChargeExist, fastChargeTitle: $fastChargeTitle, fastChargeValue: $fastChargeValue, showFastChargeExistPopUp: $showFastChargeExistPopUp)
+                            
+                            // 활동량, 수면
+                            VStack {
+                                HStack {
+                                    BatteryDashboardEnergyView(isEnergyGoalExist: $isEnergyGoalExist, energyGoal: $energyGoal, todayEnergy: $todayEnergy)
+                                    
+                                    BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
+                                }
+                                .padding(12)
+                                .padding(.bottom, 8)
+                            }
+                            .background(Color.Gray100)
+                            .padding(.bottom, 72)
+                        }
+                    } // ScrollView
+                } // GeometryReder
+                .background(Color.Gray200)
             }
-            .navigationTitle("")
+            
+            if $showFastChargeExistPopUp.wrappedValue {
+                FastChargeExistPopUpView(showFastChargeExistPopUp: $showFastChargeExistPopUp)
+            }
         }
+        .navigationTitle("")
         .sheet(isPresented: $showBatteryInformation, content: {
             if #available(iOS 16.0, *) {
                 BatteryInformationView()
-                    .presentationDetents([.fraction(0.6)])
+                    .presentationDetents([.fraction(0.60)])
+                    .presentationDragIndicator(.visible)
             } else {
                 BatteryInformationView()
             }
         })
         .onAppear {
-            print("onappear")
+            print("DEBUG BatteryDashoboard: onAppear")
+            if healthAuth {
+                healthStore?.getActivityEnergyBurned(completion: { energy in
+                    batteryVM.postEnergy(todayEnergy: Int(energy))
+                })
+            }
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 battery = 80
             }
         }
-    }
-
-    // "라이프로그", 마이페이지 버튼
-    var toolBar: some View {
-        HStack {
-            Image("LifeLog")
-            Spacer()
-            NavigationLink {
-                MyPageView()
-            } label: {
-                Image(systemName: "person.crop.circle")
-                    .font(.system(size: 28))
-                    .foregroundColor(.Gray400)
-            }
+        .refreshable {
+            
         }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 8)
-        .background(Color.Gray100)
     }
     
     // ##님의 에너지 배터리

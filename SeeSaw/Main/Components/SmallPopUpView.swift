@@ -65,7 +65,8 @@ struct SmallPopUpView: View {
             }
                 
             Text(text)
-                .font(.ssBlackTitle2)
+                .font(.ssBlackBody1)
+                .lineSpacing(4)
                 .multilineTextAlignment(.center)
             
             Spacer()

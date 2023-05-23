@@ -19,7 +19,11 @@ enum FastChargeDescription {
 struct FastChargeView: View {
     @AppStorage("nickname") var nickname: String = "이오링"
     @State private var todayFastCharge = ""
-    let values = ["사랑", "우정", "행복"]
+    
+    @StateObject var api = ApiClient()
+    @StateObject var batteryVM = BatteryViewModel()
+    @State private var values: [Int: String] = [:]
+    
     @State var selectedFastChargeValue = ""
     var isFastChargeButtonAvailable: Bool {
         return todayFastCharge.isEmpty == false && selectedFastChargeValue.isEmpty == false
@@ -40,7 +44,7 @@ struct FastChargeView: View {
                         .padding(.bottom, 16)
                     
                     HStack(spacing: 8) {
-                        ForEach(values, id: \.self) { value in
+                        ForEach(Array(values.values), id: \.self) { value in
                             Button {
                                 selectedFastChargeValue = value
                             } label: {
@@ -58,6 +62,7 @@ struct FastChargeView: View {
                     }
                     .padding(.bottom, 20)
                 }
+                
                 NavigationLink {
                     FastChargeCompletionView(selectedFastChargeValue: $selectedFastChargeValue)
                         .navigationBarBackButtonHidden(true)
@@ -66,7 +71,19 @@ struct FastChargeView: View {
                                       text: "고속충전 완료",
                                       size: .large)
                 }
+                .simultaneousGesture(TapGesture().onEnded {
+                    guard let valueId = values.getKey(forValue: selectedFastChargeValue) else { return }
+                    batteryVM.postFastCharge(valuId: valueId, todayFastCharge: todayFastCharge)
+                })
                 .disabled(!isFastChargeButtonAvailable)
+            }
+        }
+        .onAppear {
+            let currentDate = Date()
+            let calendar = Calendar.current
+            let year = calendar.component(.year, from: currentDate)
+            api.getValuesWithValueId(year: year) { thisYearValues in
+                values = thisYearValues
             }
         }
         .navigationTitle("고속충전")
@@ -98,7 +115,7 @@ struct FastChargeView: View {
                           todayFastCharge = String($0.prefix(20))
                         })
                 
-                Text("0/20")
+                Text("\(todayFastCharge.count)/20")
                     .font(.ssBlackBody3)
                     .foregroundColor(.Gray600)
             }
@@ -123,5 +140,11 @@ struct FastChargeView: View {
 struct FastChargeView_Previews: PreviewProvider {
     static var previews: some View {
         FastChargeView()
+    }
+}
+
+extension Dictionary where Value: Equatable {
+    func getKey(forValue val: Value) -> Key? {
+        return first(where: { $1 == val })?.key
     }
 }

@@ -14,7 +14,8 @@ struct AgreeTermsView: View {
     var requiredTermsAllAgree: Bool {
         return dataTermAgree && usingTermAgree
     }
-    @State var show = false
+    @State var showPersonalSheet = false
+    @State var showUsingSheet = false
     
     var body: some View {
         NavigationView {
@@ -29,18 +30,18 @@ struct AgreeTermsView: View {
                 
                 VStack {
                     Button {
-                        show = true
+                        showPersonalSheet = true
                     } label: {
                         TermView(isNecessary: true,
-                                 title: "개인정보 수집 이용 동의",
+                                 title: "개인정보 수집 및 이용 동의",
                                  isTermAgree: $dataTermAgree)
                     }
                     
                     Button {
-                        show = true
+                        showUsingSheet = true
                     } label: {
                         TermView(isNecessary: true,
-                                 title: "이용약관",
+                                 title: "이용약관 동의",
                                  isTermAgree: $usingTermAgree)
                     }
                     
@@ -67,8 +68,12 @@ struct AgreeTermsView: View {
             }
             .padding(20)
             .background(Color.Gray200)
-            .sheet(isPresented: $show) {
-                SafariView(url: URL(string: "https://www.notion.so/0f6f88cfcc70415c8cbe7f5bedb99ba5")!)
+            .sheet(isPresented: $showPersonalSheet) {
+                SafariView(url: URL(string: "https://www.notion.so/f15a8e252dbd4a1eaf441c089b8495d4?pvs=4")!)
+                    .ignoresSafeArea()
+            }
+            .sheet(isPresented: $showUsingSheet) {
+                SafariView(url: URL(string: "https://www.notion.so/82bb4ba23d4f4d859745945556da5281?pvs=4")!)
                     .ignoresSafeArea()
             }
         }
