@@ -110,7 +110,8 @@ struct BatteryDashboardView: View {
         .sheet(isPresented: $showBatteryInformation, content: {
             if #available(iOS 16.0, *) {
                 BatteryInformationView()
-                    .presentationDetents([.fraction(0.6)])
+                    .presentationDetents([.fraction(0.60)])
+                    .presentationDragIndicator(.visible)
             } else {
                 BatteryInformationView()
             }
