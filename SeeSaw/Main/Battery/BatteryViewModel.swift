@@ -71,19 +71,6 @@ class BatteryViewModel: ObservableObject {
     }
 }
 
-/*
- {
-     "isSuccess": true,
-     "code": 1000,
-     "message": "요청에 성공하였습니다.",
-     "result": {
-         "valueId": 7,
-         "chargeName": "낮잠",
-         "createdAt": "2023-05-18T16:34:30.388"
-     }
- }
- */
-
 struct PostFastChargeResponse: Codable {
     let isSuccess: Bool
     let code: Int
