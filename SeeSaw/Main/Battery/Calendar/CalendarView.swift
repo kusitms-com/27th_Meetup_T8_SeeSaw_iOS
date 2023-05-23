@@ -30,7 +30,7 @@ struct CalendarView: View {
                         Text("너무 많이 움직였어요")
                             .font(.ssBlackBody3)
                     }
-                    HStack {
+                    HStack(spacing: 4) {
                         Rectangle()
                             .cornerRadius(4, corners: .allCorners)
                             .foregroundColor(.BatteryMedium)
@@ -38,7 +38,7 @@ struct CalendarView: View {
                         Text("알맞게 움직였어요")
                             .font(.ssBlackBody3)
                     }
-                    HStack {
+                    HStack(spacing: 4) {
                         Rectangle()
                             .cornerRadius(4, corners: .allCorners)
                             .foregroundColor(.BatteryLow)

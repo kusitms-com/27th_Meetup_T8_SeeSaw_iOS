@@ -23,7 +23,7 @@ class AuthViewModel: ObservableObject {
         self.isOnboardingCompleted = false
     }
     
-    func login(req: PostLoginRequest) {
+    func login(req: PostLoginRequest, completion: @escaping (String) -> Void) {
         let url = "\(baseUrl)/auth/login"
         let parameters: [String: Any] = [
             "id_token": req.idToken,
@@ -59,6 +59,9 @@ class AuthViewModel: ObservableObject {
                         print("DEBUG refreshToken: \(loginRes.refreshToken)")
                         print("keychain \(self.keychain.get("refreshToken") ?? "keychain에 없음")")
                         self.isLoggedIn = true
+                        self.getNickname { serverNickname in
+                            completion(serverNickname)
+                        }
                     case 409:
                         guard let errorRes = try? decoder.decode(PostLogin409Response.self, from: data) else { return }
                         print(errorRes.message)

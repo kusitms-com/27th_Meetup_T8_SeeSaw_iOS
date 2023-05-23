@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct ProvisioningEnergyView: View {
+    private var healthStore: HealthStore?
+    @State var isSuccessHealth: Bool = false
+    @StateObject var batteryVM = BatteryViewModel()
+    
+    @AppStorage("healthAuth") var healthAuth: Bool = false
+    
+    init() {
+        healthStore = HealthStore()
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(ProvisioningEnergyDescription.allowTitle)
@@ -20,10 +30,26 @@ struct ProvisioningEnergyView: View {
             
             Spacer()
             
-            NavigationLink {
-                SetActivityGoalView()
-            } label: {
-                CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.allowButtonMessage, size: .large)
+            if isSuccessHealth == false {
+                Button {
+                    if let healthStore = healthStore {
+                        healthStore.requestAuthorization { success in
+                            if success {
+                                print("success healthkit")
+                                healthAuth = true
+                                healthStore.getActivityEnergyBurned { energy in
+                                    print(energy)
+                                    batteryVM.postEnergy(todayEnergy: Int(energy))
+                                    isSuccessHealth = true
+                                }
+                            }
+                        }
+                    }
+                } label: {
+                    CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.allowButtonMessage, size: .large)
+                }
+            } else {
+                NavigationLink(destination: SetActivityGoalView(), isActive: $isSuccessHealth, label: {})
             }
         }
         .navigationTitle("접근 허용")

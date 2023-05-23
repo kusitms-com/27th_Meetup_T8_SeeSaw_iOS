@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum SetSleepGoalDescription {
-    static let title = "하루 목표 수면 시간을 설정해볼까요?"
+    static let title = "하루 목표 수면시간을 설정해볼까요?"
     static let message = """
 평소의 수면시간 또는 원하는 수준의 수면시간을 기준으로
 하루 목표를 설정해보세요
@@ -46,8 +46,8 @@ struct SetSleepGoalView: View {
             Spacer()
             
             NavigationLink {
-                BatteryDashboardView()
-                    .navigationBarBackButtonHidden()
+                SeeSawTabView(tabIndex: .battery)
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "설정 완료", size: .large)
             }
@@ -63,7 +63,9 @@ struct SetSleepGoalView: View {
     
     var minusOneHourButton: some View {
         Button {
-            sleepGoal -= 1
+            if sleepGoal > 4 {
+                sleepGoal -= 1
+            }
         } label: {
             ZStack {
                 Image(systemName: "minus.circle.fill")
@@ -75,7 +77,9 @@ struct SetSleepGoalView: View {
     
     var plusOneHourButton: some View {
         Button {
-            sleepGoal += 1
+            if sleepGoal < 12 {
+                sleepGoal += 1
+            }
         } label: {
             ZStack {
                 Image(systemName: "plus.circle.fill")

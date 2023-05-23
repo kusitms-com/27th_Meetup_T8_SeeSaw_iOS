@@ -8,19 +8,22 @@
 import SwiftUI
 
 enum BatteryInformation {
-    static let battery = """
+    static let batteryFirst = """
 일상에서 가치를 실천하면 충전돼요
 수면시간이 알맞으면 충전돼요
-
-수면시간이 적으면 소모돼요
-너무 많이 움직이면 배터리가 소모돼요
 """
-    static let recommend = """
+    static let batterySecond = """
+수면시간이 적으면 소모돼요
+너무 많이 움직이면 소모돼요
+"""
+    static let recommendFirst = """
 매일매일 사소한 것이라도 좋아요!
 자신의 가치를 실현해보세요
-
+"""
+    static let recommendSecond = """
 푹 자면서 피로를 회복해보세요
-
+"""
+    static let recommendThird = """
 많이 움직인 다음 날은 조금 쉬어볼까요?
 """
 }
@@ -36,8 +39,12 @@ struct BatteryInformationView: View {
                 }
                 .font(.ssHeading2)
                 .foregroundColor(.Gray700)
-                    
-                Text(BatteryInformation.battery)
+                
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(BatteryInformation.batteryFirst)
+                    Text(BatteryInformation.batterySecond)
+                }
+                    .lineSpacing(4)
                     .font(.ssBlackBody1)
                     .foregroundColor(.Gray900)
             }
@@ -52,7 +59,13 @@ struct BatteryInformationView: View {
                 }
                     .font(.ssHeading2)
                     .foregroundColor(.Gray700)
-                Text(BatteryInformation.recommend)
+                
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(BatteryInformation.recommendFirst)
+                    Text(BatteryInformation.recommendSecond)
+                    Text(BatteryInformation.recommendThird)
+                }
+                    .lineSpacing(4)
                     .font(.ssBlackBody1)
                     .foregroundColor(.Gray900)
             }

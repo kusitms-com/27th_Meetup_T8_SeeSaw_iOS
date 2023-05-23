@@ -27,6 +27,14 @@ struct BatteryDashboardView: View {
     @State var isTodaySleepAmountExist: Bool = false
     @State var sleepCondition: String = "Good"
     
+    private var healthStore: HealthStore?
+    @StateObject var batteryVM = BatteryViewModel()
+    @AppStorage("healthAuth") var healthAuth: Bool = false
+    
+    init() {
+        healthStore = HealthStore()
+    }
+    
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
@@ -62,11 +70,7 @@ struct BatteryDashboardView: View {
                             // 배터리
                             ZStack(alignment: .topLeading) {
                                 // 배터리 원형 그래프
-                                NavigationLink {
-                                    BatteryHistoryView()
-                                } label: {
-                                    BatteryProgressCircleView(geometry: geometry, battery: $battery)
-                                }
+                                BatteryProgressCircleView(geometry: geometry, battery: $battery)
                                 
                                 // 배터리 정보 버튼
                                 batteryInfoButton
@@ -102,16 +106,25 @@ struct BatteryDashboardView: View {
         .sheet(isPresented: $showBatteryInformation, content: {
             if #available(iOS 16.0, *) {
                 BatteryInformationView()
-                    .presentationDetents([.fraction(0.6)])
+                    .presentationDetents([.fraction(0.60)])
+                    .presentationDragIndicator(.visible)
             } else {
                 BatteryInformationView()
             }
         })
         .onAppear {
             print("DEBUG BatteryDashoboard: onAppear")
+            if healthAuth {
+                healthStore?.getActivityEnergyBurned(completion: { energy in
+                    batteryVM.postEnergy(todayEnergy: Int(energy))
+                })
+            }
             DispatchQueue.main.asyncAfter(deadline: .now()) {
                 battery = 80
             }
+        }
+        .refreshable {
+            
         }
     }
     

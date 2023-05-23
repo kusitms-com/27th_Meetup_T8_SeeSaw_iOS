@@ -13,6 +13,8 @@ struct LoginView: View {
     @StateObject var kakaoAuthVM = KakaoAuthViewModel(isLoggedIn: false)
     @State private var idTokenString = ""
     
+    @AppStorage("nickname") var nickname: String = ""
+    
     var body: some View {
         ZStack {
             Image("LoginBackground")
@@ -32,7 +34,9 @@ struct LoginView: View {
                         authVM.login(req: PostLoginRequest(provider: "kakao",
                                                            idToken: idToken,
                                                            accessToken: "",
-                                                           refreshToken: ""))
+                                                           refreshToken: "")) { serverNickname in
+                            nickname = serverNickname
+                        }
                     }
                 } label: {
                     kakaoLoginButton
@@ -54,7 +58,9 @@ struct LoginView: View {
                             authVM.login(req: PostLoginRequest(provider: "apple",
                                                                idToken: idTokenString,
                                                                accessToken: "",
-                                                               refreshToken: ""))
+                                                               refreshToken: "")) { serverNickname in
+                                nickname = serverNickname
+                            }
                         default:
                             print("DEBUG: sign success but credetial is nil")
                         }
