@@ -33,4 +33,25 @@ class ApiClient: ObservableObject {
                 }
             }
     }
+    
+    func getValuesWithValueId(year: Int, completion: @escaping ([Int: String]) -> Void) {
+        let url = "\(baseUrl)/api/value?year=\(year)"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: GetValuesResponse.self) { response in
+                switch response.result {
+                case .success(let res):
+                    var values: [Int: String] = [Int: String]()
+                    for value in res.result {
+                        values[value.valueId] = value.valueName
+                    }
+                    completion(values)
+                case .failure(let error):
+                    print("DEBUG Api-getValues: \(error)")
+                }
+            }
+    }
 }

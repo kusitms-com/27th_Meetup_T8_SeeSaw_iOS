@@ -21,7 +21,8 @@ struct FastChargeView: View {
     @State private var todayFastCharge = ""
     
     @StateObject var api = ApiClient()
-    @State private var values: [String] = []
+    @StateObject var batteryVM = BatteryViewModel()
+    @State private var values: [Int: String] = [:]
     
     @State var selectedFastChargeValue = ""
     var isFastChargeButtonAvailable: Bool {
@@ -43,7 +44,7 @@ struct FastChargeView: View {
                         .padding(.bottom, 16)
                     
                     HStack(spacing: 8) {
-                        ForEach(values, id: \.self) { value in
+                        ForEach(Array(values.values), id: \.self) { value in
                             Button {
                                 selectedFastChargeValue = value
                             } label: {
@@ -61,6 +62,7 @@ struct FastChargeView: View {
                     }
                     .padding(.bottom, 20)
                 }
+                
                 NavigationLink {
                     FastChargeCompletionView(selectedFastChargeValue: $selectedFastChargeValue)
                         .navigationBarBackButtonHidden(true)
@@ -69,6 +71,10 @@ struct FastChargeView: View {
                                       text: "고속충전 완료",
                                       size: .large)
                 }
+                .simultaneousGesture(TapGesture().onEnded {
+                    guard let valueId = values.getKey(forValue: selectedFastChargeValue) else { return }
+                    batteryVM.postFastCharge(valuId: valueId, todayFastCharge: todayFastCharge)
+                })
                 .disabled(!isFastChargeButtonAvailable)
             }
         }
@@ -76,7 +82,7 @@ struct FastChargeView: View {
             let currentDate = Date()
             let calendar = Calendar.current
             let year = calendar.component(.year, from: currentDate)
-            api.getValues(year: year) { thisYearValues in
+            api.getValuesWithValueId(year: year) { thisYearValues in
                 values = thisYearValues
             }
         }
@@ -134,5 +140,11 @@ struct FastChargeView: View {
 struct FastChargeView_Previews: PreviewProvider {
     static var previews: some View {
         FastChargeView()
+    }
+}
+
+extension Dictionary where Value: Equatable {
+    func getKey(forValue val: Value) -> Key? {
+        return first(where: { $1 == val })?.key
     }
 }
