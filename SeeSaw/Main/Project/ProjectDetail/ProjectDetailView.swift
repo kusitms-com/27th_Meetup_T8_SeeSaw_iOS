@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProjectDetailView: View {
+    @Environment(\.presentationMode) var presentationMode
     var projectTitle: String = ""
     var projectStrength: String
     var projectGoal: String
@@ -77,6 +78,20 @@ struct ProjectDetailView: View {
                 .foregroundColor(.Gray300)
             ProjectRetrospectionView()
         }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        .padding(20)
+        .navigationBarTitle("프로젝트 리포트", displayMode: .inline)
+        .foregroundColor(.Gray500)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Image(systemName: "chevron.left")
+                    .foregroundColor(.black)
+            }
+        )
+        .background(Color.Gray200)
     }
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()

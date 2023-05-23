@@ -12,7 +12,6 @@ struct ValueView: View {
     
     var valuesExistingYear: [String] = ["2023", "2022", "2021", "2020"]
     @State var valueYear: Int = 0
-    
     var body: some View {
         VStack(spacing: 0) {
             MainToolBar(feature: .valueLog)

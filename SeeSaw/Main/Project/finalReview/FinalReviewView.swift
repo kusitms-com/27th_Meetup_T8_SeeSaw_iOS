@@ -10,13 +10,13 @@ import SwiftUI
 struct FinalReviewView: View {
     @State var show: Bool = false
     @State var showNext: Bool = false
-    var userName: String = "에몽"
+    @AppStorage("nickname") var nickname: String = ""
     var projectTitle: String = "큐시즘 밋업데이"
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(alignment: .leading) {
             if showNext == false {
-                Text("\(userName)님 벌써")
+                Text("\(nickname)님 벌써")
                     .font(.ssHeading2)
                     .foregroundColor(.Gray900)
                 HStack(spacing: 0) {
@@ -47,7 +47,7 @@ struct FinalReviewView: View {
                     .animation(.easeInOut(duration: 1.0).delay(2.0), value: show)
                 Spacer()
             } else {
-                InterimReviewMainView(userName: self.userName, projectTitle: self.projectTitle)
+                FinalReviewMainView(projectTitle: self.projectTitle)
             }
         }
         .onAppear {
@@ -68,6 +68,7 @@ struct FinalReviewView: View {
                     .foregroundColor(.black)
             }
         )
+        .background(Color.Gray200)
     }
 }
 

@@ -149,6 +149,7 @@
 		BE7C073E2A1B26F700C7D647 /* FinalReviewQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073D2A1B26F700C7D647 /* FinalReviewQuestionView.swift */; };
 		BE7C07402A1B270E00C7D647 /* WriteFinalReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */; };
 		BE7C07442A1B3DEE00C7D647 /* ValueImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */; };
+		BE7C07472A1B540E00C7D647 /* ProjectDeletePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */; };
 		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
 		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -297,6 +298,7 @@
 		BE7C073D2A1B26F700C7D647 /* FinalReviewQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReviewQuestionView.swift; sourceTree = "<group>"; };
 		BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFinalReviewView.swift; sourceTree = "<group>"; };
 		BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueImage.gif; sourceTree = "<group>"; };
+		BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeletePopUpView.swift; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -751,6 +753,7 @@
 				BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */,
 				BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */,
 				BE7C07152A1AED3200C7D647 /* ArrowUpRightView.swift */,
+				BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */,
 			);
 			path = ProjectDetail;
 			sourceTree = "<group>";
@@ -993,6 +996,7 @@
 				511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */,
 				511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */,
 				51AA9A712A17BFE6005C14FC /* BatteryHistoryCardRow.swift in Sources */,
+				BE7C07472A1B540E00C7D647 /* ProjectDeletePopUpView.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
 				51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */,

@@ -33,9 +33,7 @@ struct ProjectRegularRetrospectionView: View {
                         .cornerRadius(30)
                 }
             }
-            Button {
-                
-            } label: {
+            NavigationLink(destination: AddRegularReotrspectionView()) {
                 CapsuleButtonView(color: .Gray300, text: "+", size: .large)
             }
             ScrollView {
@@ -78,6 +76,7 @@ struct ProjectRegularRetrospectionView: View {
                     .foregroundColor(.black)
             }
         )
+        .background(Color.Gray200)
     }
 }
 

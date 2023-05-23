@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProjectView: View {
     @AppStorage("nickname") var nickname: String = ""
-    
     @State var isProgress = true
     @State var progressNum: Int = 0
     @State var completeNum: Int = 0
@@ -39,7 +38,6 @@ struct ProjectView: View {
                                 .scaledToFit()
                                 .frame(width: 150, height: 250)
                                 .offset(x: 100, y: -30)
-                                .rotationEffect(Angle(degrees: -10))
                         )
                     HStack {
                         VStack(alignment: .leading) {
@@ -115,6 +113,7 @@ struct ProjectView: View {
             }
             .background(Color.Gray200)
         }
+        .background(Color.Gray200)
     }
 }
 

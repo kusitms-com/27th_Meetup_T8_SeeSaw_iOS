@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct InterimReviewMainView: View {
-    var userName: String
+    @AppStorage("nickname") var nickname: String = ""
     var projectTitle: String
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(alignment: .leading) {
                 Text(
-                    "\(userName)님의")
+                    "\(nickname)님의")
                 .font(.ssHeading2)
                 .foregroundColor(.Gray700)
                 Text(projectTitle)
@@ -40,6 +40,6 @@ struct InterimReviewMainView: View {
 
 struct InterimReviewMainView_Previews: PreviewProvider {
     static var previews: some View {
-        InterimReviewMainView(userName: "에몽", projectTitle: "큐시즘 밋업데이")
+        InterimReviewMainView(nickname: "에몽", projectTitle: "큐시즘 밋업데이")
     }
 }
