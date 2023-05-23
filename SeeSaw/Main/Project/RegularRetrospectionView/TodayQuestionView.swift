@@ -41,10 +41,12 @@ struct TodayQuestionView: View {
                                 .frame(width: 200)
                                 .multilineTextAlignment(.leading)
                         }
+                        Spacer()
                     }
                 }
             }
         }
+        .background(Color.Gray200)
     }
 }
 

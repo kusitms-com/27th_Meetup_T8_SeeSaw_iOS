@@ -44,13 +44,6 @@ struct AddRegularReotrspectionView: View {
             Button {
                 
             } label: {
-                CapsuleButtonView(color: (todayRetrospection.count == 0 ? .Gray400 : .Gray900), text: "임시 보관", size: .large)
-                    
-            }
-            .disabled(todayRetrospection.count == 0)
-            Button {
-                
-            } label: {
                 CapsuleButtonView(color: (todayRetrospection.count == 0 ? .Gray400 : .SeeSawGreen), text: "회고 완료", size: .large)
             }
             .disabled(todayRetrospection.count == 0)
