@@ -16,13 +16,6 @@
 		510B32C32A18005B00026E07 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C22A18005B00026E07 /* CalendarCell.swift */; };
 		510B32C52A18007F00026E07 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C42A18007F00026E07 /* MonthStruct.swift */; };
 		510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C62A1800AF00026E07 /* DateScrollerView.swift */; };
-		510B32DD2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */; };
-		510B32DF2A1A918500026E07 /* BatteryDashboardEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */; };
-		510B32E12A1A9B9300026E07 /* FastChargeExistPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E02A1A9B9300026E07 /* FastChargeExistPopUpView.swift */; };
-		510B32E32A1AA23600026E07 /* BatteryDashboardSleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */; };
-		510B32E52A1AABA800026E07 /* EditEnergyGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */; };
-		510B32E82A1AAE3900026E07 /* SleepHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */; };
-		510B32EA2A1AB51400026E07 /* EditSleepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */; };
 		510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */; };
 		510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */; };
 		510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */; };
@@ -31,6 +24,13 @@
 		510B32D72A1947E900026E07 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D62A1947E900026E07 /* MyPageViewModel.swift */; };
 		510B32D92A19492900026E07 /* PutNicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D82A19492900026E07 /* PutNicknameResponse.swift */; };
 		510B32DB2A1950EB00026E07 /* GetUserHistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */; };
+		510B32DD2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */; };
+		510B32DF2A1A918500026E07 /* BatteryDashboardEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */; };
+		510B32E12A1A9B9300026E07 /* FastChargeExistPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E02A1A9B9300026E07 /* FastChargeExistPopUpView.swift */; };
+		510B32E32A1AA23600026E07 /* BatteryDashboardSleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */; };
+		510B32E52A1AABA800026E07 /* EditEnergyGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */; };
+		510B32E82A1AAE3900026E07 /* SleepHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */; };
+		510B32EA2A1AB51400026E07 /* EditSleepGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */; };
 		511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1D82A100A4700DAF26A /* PostLogin.swift */; };
 		511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */; };
 		5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */; };
@@ -145,6 +145,7 @@
 		BE7C073E2A1B26F700C7D647 /* FinalReviewQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073D2A1B26F700C7D647 /* FinalReviewQuestionView.swift */; };
 		BE7C07402A1B270E00C7D647 /* WriteFinalReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */; };
 		BE7C07442A1B3DEE00C7D647 /* ValueImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */; };
+		BE7C07472A1B540E00C7D647 /* ProjectDeletePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */; };
 		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
 		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -159,13 +160,6 @@
 		510B32C22A18005B00026E07 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		510B32C42A18007F00026E07 /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
 		510B32C62A1800AF00026E07 /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
-		510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardFastChargeView.swift; sourceTree = "<group>"; };
-		510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardEnergyView.swift; sourceTree = "<group>"; };
-		510B32E02A1A9B9300026E07 /* FastChargeExistPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeExistPopUpView.swift; sourceTree = "<group>"; };
-		510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardSleepView.swift; sourceTree = "<group>"; };
-		510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEnergyGoalView.swift; sourceTree = "<group>"; };
-		510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryView.swift; sourceTree = "<group>"; };
-		510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSleepGoalView.swift; sourceTree = "<group>"; };
 		510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainThird.gif; sourceTree = "<group>"; };
 		510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainSecond.gif; sourceTree = "<group>"; };
 		510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainFirst.gif; sourceTree = "<group>"; };
@@ -174,6 +168,13 @@
 		510B32D62A1947E900026E07 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		510B32D82A19492900026E07 /* PutNicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutNicknameResponse.swift; sourceTree = "<group>"; };
 		510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserHistoryResponse.swift; sourceTree = "<group>"; };
+		510B32DC2A1A8FD700026E07 /* BatteryDashboardFastChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardFastChargeView.swift; sourceTree = "<group>"; };
+		510B32DE2A1A918500026E07 /* BatteryDashboardEnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardEnergyView.swift; sourceTree = "<group>"; };
+		510B32E02A1A9B9300026E07 /* FastChargeExistPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeExistPopUpView.swift; sourceTree = "<group>"; };
+		510B32E22A1AA23600026E07 /* BatteryDashboardSleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDashboardSleepView.swift; sourceTree = "<group>"; };
+		510B32E42A1AABA800026E07 /* EditEnergyGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEnergyGoalView.swift; sourceTree = "<group>"; };
+		510B32E72A1AAE3900026E07 /* SleepHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryView.swift; sourceTree = "<group>"; };
+		510B32E92A1AB51400026E07 /* EditSleepGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSleepGoalView.swift; sourceTree = "<group>"; };
 		511AA1D82A100A4700DAF26A /* PostLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogin.swift; sourceTree = "<group>"; };
 		511AA1DA2A100A9400DAF26A /* PostRegenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRegenerate.swift; sourceTree = "<group>"; };
 		5121893E29F955A6005DD6C2 /* SeeSawTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeSawTabView.swift; sourceTree = "<group>"; };
@@ -297,6 +298,7 @@
 		BE7C073D2A1B26F700C7D647 /* FinalReviewQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalReviewQuestionView.swift; sourceTree = "<group>"; };
 		BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFinalReviewView.swift; sourceTree = "<group>"; };
 		BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueImage.gif; sourceTree = "<group>"; };
+		BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeletePopUpView.swift; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -755,6 +757,7 @@
 				BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */,
 				BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */,
 				BE7C07152A1AED3200C7D647 /* ArrowUpRightView.swift */,
+				BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */,
 			);
 			path = ProjectDetail;
 			sourceTree = "<group>";
@@ -996,6 +999,7 @@
 				511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */,
 				511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */,
 				51AA9A712A17BFE6005C14FC /* BatteryHistoryCardRow.swift in Sources */,
+				BE7C07472A1B540E00C7D647 /* ProjectDeletePopUpView.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
 				51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */,
@@ -1030,7 +1034,6 @@
 				51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */,
 				514852F92A03FBEE00351A9D /* SignUpCompletionView.swift in Sources */,
 				BE7C072F2A1B157C00C7D647 /* ProjectBatteryView.swift in Sources */,
-				5156171D2A14716900743B5F /* CompleteProjectView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
 				BE7C071D2A1AF4E600C7D647 /* ProjectEmotionView.swift in Sources */,
 				5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */,
