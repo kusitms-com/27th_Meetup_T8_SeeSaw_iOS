@@ -12,6 +12,9 @@ struct BatteryDashboardSleepView: View {
     @Binding var todaySleepAmount: Int
     @Binding var isTodaySleepAmountExist: Bool
     @Binding var sleepCondition: String
+    
+    @StateObject private var batteryVM = BatteryViewModel()
+    
     enum SleepDescription {
         static let GoodIcon = "SleepGood"
         static let GoodDescription = "알맞게 잤어요"
@@ -151,6 +154,7 @@ struct BatteryDashboardSleepView: View {
             
             Button {
                 isTodaySleepAmountExist = true
+                batteryVM.postSleep(todaySleep: todaySleepAmount)
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "입력 완료", size: .large)
                     .padding(.horizontal, 12)

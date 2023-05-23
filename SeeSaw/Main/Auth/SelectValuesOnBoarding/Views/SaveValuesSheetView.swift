@@ -14,7 +14,8 @@ struct SaveValuesSheetView: View {
     let selectedValueColors: [Color] = [.SeeSawYellow, .SeeSawBlue, .SeeSawRed]
     
     @StateObject var signUpVM = SignUpViewModel()
-    @EnvironmentObject var authVM: AuthViewModel
+    @Binding var isPostValues: Bool
+//    @EnvironmentObject var authVM: AuthViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -61,7 +62,7 @@ struct SaveValuesSheetView: View {
             Button {
                 isModalPresented = false
                 signUpVM.postSelectedValues(selectedValues: values)
-                authVM.isOnboardingCompleted = true
+                isPostValues = true
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "저장할래요", size: .large)
             }

@@ -21,9 +21,11 @@ struct ContentView: View {
                 if authVM.isOnboardingCompleted ?? false {
                     // 온보딩 완료
                     SeeSawTabView()
+                        .environmentObject(authVM)
                 } else {
                     // 온보딩 미완료
                     AgreeTermsView()
+                        .environmentObject(authVM)
                 }
             } else if authVM.isRegenerated ?? false {
                 // 토큰 재생성 완료으나 로그인되지 않음 (토큰 유효기간 만료 혹은 유저 아님)

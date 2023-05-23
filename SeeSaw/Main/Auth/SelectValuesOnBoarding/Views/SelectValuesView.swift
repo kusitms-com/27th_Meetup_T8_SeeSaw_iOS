@@ -29,8 +29,14 @@ struct SelectValuesView: View {
     @State private var newValue = ""
     @State private var showNewValue = false
     
+    @State private var isPostValues = false
+    
     var body: some View {
         VStack(spacing: 0) {
+            NavigationLink(destination: SeeSawTabView().navigationBarBackButtonHidden(true),
+                           isActive: $isPostValues,
+                           label: {})
+            
             VStack(spacing: 16) {
                 askValue
                 showSelecteValueRow
@@ -88,7 +94,8 @@ struct SelectValuesView: View {
         .background(Color.Gray200)
         .halfSheet(showSheet: $isModalPresented) {
             SaveValuesSheetView(isModalPresented: $isModalPresented,
-                                values: $selectedValues)
+                                values: $selectedValues,
+                                isPostValues: $isPostValues)
         } onEnd: {
             print("set value halfSheet dismiss")
         }
