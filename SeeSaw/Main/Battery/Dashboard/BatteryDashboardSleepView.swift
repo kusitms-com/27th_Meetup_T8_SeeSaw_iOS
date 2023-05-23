@@ -111,7 +111,7 @@ struct BatteryDashboardSleepView: View {
     }
     
     var setTodaySleepAmount: some View {
-        VStack(alignment: .center, spacing: 12) {
+        VStack(alignment: .center, spacing: 10) {
             HStack {
                 Text("얼마나 주무셨나요?")
                 Spacer()
@@ -148,6 +148,7 @@ struct BatteryDashboardSleepView: View {
             }
             
             Spacer()
+            
             Button {
                 isTodaySleepAmountExist = true
             } label: {

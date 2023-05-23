@@ -66,8 +66,8 @@ struct SetActivityGoalView: View {
             Spacer()
             
             NavigationLink {
-                BatteryDashboardView()
-                    .navigationBarBackButtonHidden()
+                SeeSawTabView(tabIndex: .battery)
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 CapsuleButtonView(color: .Gray900, text: ProvisioningEnergyDescription.setGoalButtonMessage, size: .large)
             }

@@ -46,8 +46,8 @@ struct SetSleepGoalView: View {
             Spacer()
             
             NavigationLink {
-                BatteryDashboardView()
-                    .navigationBarBackButtonHidden()
+                SeeSawTabView(tabIndex: .battery)
+                    .navigationBarBackButtonHidden(true)
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "설정 완료", size: .large)
             }

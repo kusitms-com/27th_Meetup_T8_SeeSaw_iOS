@@ -62,11 +62,3 @@ struct SeeSawTabView: View {
         }
     }
 }
-
-class MainViewCheck: ObservableObject {
-    @Published var isMainView: Bool
-    
-    init(isMainView: Bool) {
-        self.isMainView = false
-    }
-}
