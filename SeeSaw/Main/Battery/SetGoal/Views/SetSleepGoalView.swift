@@ -63,7 +63,9 @@ struct SetSleepGoalView: View {
     
     var minusOneHourButton: some View {
         Button {
-            sleepGoal -= 1
+            if sleepGoal > 4 {
+                sleepGoal -= 1
+            }
         } label: {
             ZStack {
                 Image(systemName: "minus.circle.fill")
@@ -75,7 +77,9 @@ struct SetSleepGoalView: View {
     
     var plusOneHourButton: some View {
         Button {
-            sleepGoal += 1
+            if sleepGoal < 12 {
+                sleepGoal += 1
+            }
         } label: {
             ZStack {
                 Image(systemName: "plus.circle.fill")

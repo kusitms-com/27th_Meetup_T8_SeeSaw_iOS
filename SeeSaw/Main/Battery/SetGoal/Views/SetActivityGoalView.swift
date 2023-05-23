@@ -27,7 +27,9 @@ struct SetActivityGoalView: View {
                 Spacer()
                 
                 Button {
-                    activityGoal -= 10
+                    if activityGoal > 10 {
+                        activityGoal -= 10
+                    }
                 } label: {
                     ZStack {
                         Image(systemName: "minus.circle.fill")
@@ -46,7 +48,9 @@ struct SetActivityGoalView: View {
                 .foregroundColor(.Gray900)
                 
                 Button {
-                    activityGoal += 10
+                    if activityGoal < 3000 {
+                        activityGoal += 10
+                    }
                 } label: {
                     ZStack {
                         Image(systemName: "plus.circle.fill")
