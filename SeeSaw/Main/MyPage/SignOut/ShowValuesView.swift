@@ -12,7 +12,6 @@ struct ShowValuesView: View {
     @State private var usedSeeSawDays = 365
     @State private var showSignOutView = false
     
-    @StateObject var api = ApiClient()
     @StateObject var myPageVM = MyPageViewModel()
     
     @State var values: [String] = []

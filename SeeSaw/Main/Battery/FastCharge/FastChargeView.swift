@@ -19,7 +19,10 @@ enum FastChargeDescription {
 struct FastChargeView: View {
     @AppStorage("nickname") var nickname: String = "이오링"
     @State private var todayFastCharge = ""
-    let values = ["사랑", "우정", "행복"]
+    
+    @StateObject var api = ApiClient()
+    @State private var values: [String] = []
+    
     @State var selectedFastChargeValue = ""
     var isFastChargeButtonAvailable: Bool {
         return todayFastCharge.isEmpty == false && selectedFastChargeValue.isEmpty == false
@@ -67,6 +70,14 @@ struct FastChargeView: View {
                                       size: .large)
                 }
                 .disabled(!isFastChargeButtonAvailable)
+            }
+        }
+        .onAppear {
+            let currentDate = Date()
+            let calendar = Calendar.current
+            let year = calendar.component(.year, from: currentDate)
+            api.getValues(year: year) { thisYearValues in
+                values = thisYearValues
             }
         }
         .navigationTitle("고속충전")

@@ -70,11 +70,7 @@ struct BatteryDashboardView: View {
                             // 배터리
                             ZStack(alignment: .topLeading) {
                                 // 배터리 원형 그래프
-                                NavigationLink {
-                                    BatteryHistoryView()
-                                } label: {
-                                    BatteryProgressCircleView(geometry: geometry, battery: $battery)
-                                }
+                                BatteryProgressCircleView(geometry: geometry, battery: $battery)
                                 
                                 // 배터리 정보 버튼
                                 batteryInfoButton

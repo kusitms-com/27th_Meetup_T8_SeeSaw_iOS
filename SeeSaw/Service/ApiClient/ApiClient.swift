@@ -13,8 +13,8 @@ class ApiClient: ObservableObject {
     let keychain = KeychainSwift()
     let baseUrl = "http://ec2-3-36-172-10.ap-northeast-2.compute.amazonaws.com"
 
-    func getValues(completion: @escaping ([String]) -> Void) {
-        let url = "\(baseUrl)/api/value"
+    func getValues(year: Int, completion: @escaping ([String]) -> Void) {
+        let url = "\(baseUrl)/api/value?year=\(year)"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
         ]
