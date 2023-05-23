@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct InterimReviewQuestionView: View {
-    var userName: String = "에몽"
+    @AppStorage("nickname") var nickname: String = ""
     var projectTitle: String = "KUSITMS"
-    var interimQuestionArray: [String] = ["프로젝트를 진행하면서 배운 점은 무엇인가요?", "프로젝트를 진행하면서 아쉬웠던 점은 무엇이며, 어떻게 나아가고 싶은가요?", "에몽님은 현재까지 놀라운 감정을 가장 많이 느끼셨어요. 그 이유는 무엇일까요?", "에몽님의 KUSITMS 목표와 가치는 다음과 같습니다. 이에 얼마나 다가갔나요?", "프로젝트 안에서 에몽님은 어떤 사람이었나요?", "에몽님은 KUSITMS 프로젝트를 통해 어떤 사람으로 성장하고 싶으신가요?"]
+    var userName: String = ""
+    var interimQuestionArray: [String] = ["", "", "", "", "", "", ""]
     @State var interimAnswerArray: [String] = ["", "", "", "", "", "", ""]
+    init() {
+        interimQuestionArray = ["프로젝트를 진행하면서 배운 점은 무엇인가요?", "프로젝트를 진행하면서 아쉬웠던 점은 무엇이며, 어떻게 나아가고 싶은가요?", "\(nickname)님은 현재까지 놀라운 감정을 가장 많이 느끼셨어요. 그 이유는 무엇일까요?", "\(nickname)님의 KUSITMS 목표와 가치는 다음과 같습니다. 이에 얼마나 다가갔나요?", "프로젝트 안에서 \(nickname)님은 어떤 사람이었나요?", "\(nickname)님은 KUSITMS 프로젝트를 통해 어떤 사람으로 성장하고 싶으신가요?"]
+    }
     var body: some View {
         VStack {
             ScrollView {
@@ -40,6 +44,7 @@ struct InterimReviewQuestionView: View {
                 }
             }
         }
+        .background(Color.Gray200)
     }
 }
 

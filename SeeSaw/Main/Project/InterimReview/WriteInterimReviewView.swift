@@ -49,6 +49,7 @@ struct WriteInterimReviewView: View {
                     CapsuleButtonView(color: (answerText.count == 0 ? .Gray400 : .SeeSawGreen), text: "답변 저장", size: .large)
                         .frame(width: 350)
                 }
+                .disabled(answerText.count == 0)
             }
             .padding(20)
             .background(Color.Gray200)

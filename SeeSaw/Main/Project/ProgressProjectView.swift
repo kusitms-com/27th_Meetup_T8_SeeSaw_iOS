@@ -69,6 +69,22 @@ struct ProgressProjectView: View {
                     })
                 })
             }
+            if MyModel.DataArray.count == 0 {
+                VStack {
+                    Spacer()
+                        .frame(height: 85)
+                    Text("피드가 텅 비어있어요")
+                        .font(.ssBlackTitle1)
+                        .foregroundColor(.Gray600)
+                        .padding(.bottom, 5)
+                    Text("프로젝트를 추가하고")
+                        .font(.ssBlackBody3)
+                        .foregroundColor(.Gray600)
+                    Text("일과 삶의 균형을 찾아보세요")
+                        .font(.ssBlackBody3)
+                        .foregroundColor(.Gray600)
+                }
+            }
         }
     }
 }
