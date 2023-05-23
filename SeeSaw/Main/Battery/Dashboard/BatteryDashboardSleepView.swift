@@ -128,14 +128,18 @@ struct BatteryDashboardSleepView: View {
                 
             HStack {
                 Button {
-                    todaySleepAmount -= 1
+                    if todaySleepAmount > 0 {
+                        todaySleepAmount -= 1
+                    }
                 } label: {
                     Image(systemName: "minus.circle.fill")
                         .font(.system(size: 48))
                         .foregroundColor(.SeeSawRed)
                 }
                 Button {
-                    todaySleepAmount += 1
+                    if todaySleepAmount < 18 {
+                        todaySleepAmount += 1
+                    }
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .font(.system(size: 48))

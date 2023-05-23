@@ -126,6 +126,9 @@ struct BatteryDashboardView: View {
                 battery = 80
             }
         }
+        .refreshable {
+            
+        }
     }
     
     // ##님의 에너지 배터리
