@@ -11,7 +11,7 @@ import KeychainSwift
 
 class ApiClient: ObservableObject {
     let keychain = KeychainSwift()
-    let baseUrl = "http://ec2-3-36-172-10.ap-northeast-2.compute.amazonaws.com"
+    let baseUrl = "http://\(Bundle.main.infoDictionary?["BASE_URL"] ?? "nil baseUrl")"
 
     func getValues(year: Int, completion: @escaping ([String]) -> Void) {
         let url = "\(baseUrl)/api/value?year=\(year)"

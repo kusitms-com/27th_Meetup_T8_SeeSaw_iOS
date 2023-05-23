@@ -38,6 +38,31 @@ class BatteryViewModel: ObservableObject {
             }
     }
     
+    func postSleep(todaySleep: Int) {
+        let url = "\(baseUrl)/api/battery/sleep"
+        let parameters: [String: Any] = [
+            "value": todaySleep
+        ]
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url,
+                   method: .post,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+            .responseDecodable(of: PostSleepResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print(response)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
     func postFastCharge(valuId: Int, todayFastCharge chargeName: String) {
         let url = "\(baseUrl)/api/battery/charge"
         
@@ -71,19 +96,6 @@ class BatteryViewModel: ObservableObject {
     }
 }
 
-/*
- {
-     "isSuccess": true,
-     "code": 1000,
-     "message": "요청에 성공하였습니다.",
-     "result": {
-         "valueId": 7,
-         "chargeName": "낮잠",
-         "createdAt": "2023-05-18T16:34:30.388"
-     }
- }
- */
-
 struct PostFastChargeResponse: Codable {
     let isSuccess: Bool
     let code: Int
@@ -98,6 +110,13 @@ struct FastChargeResult: Codable {
 }
 
 struct PostEnergyResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: Int
+}
+
+struct PostSleepResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String

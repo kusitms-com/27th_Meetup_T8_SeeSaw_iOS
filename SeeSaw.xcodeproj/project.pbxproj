@@ -52,6 +52,7 @@
 		514853012A04002E00351A9D /* ExplainValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514853002A04002E00351A9D /* ExplainValuesView.swift */; };
 		514E4D3A2A1BC2600040FC88 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E4D392A1BC2600040FC88 /* HealthStore.swift */; };
 		514E4D3C2A1BD0FC0040FC88 /* BatteryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E4D3B2A1BD0FC0040FC88 /* BatteryViewModel.swift */; };
+		514E4D3F2A1CB9950040FC88 /* BatteryHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514E4D3E2A1CB9950040FC88 /* BatteryHistoryViewModel.swift */; };
 		515617222A14891000743B5F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617212A14891000743B5F /* SignUpViewModel.swift */; };
 		515617242A148A8000743B5F /* PostSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515617232A148A8000743B5F /* PostSignUp.swift */; };
 		515E261B2A00E31B006C3FE5 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515E261A2A00E31B006C3FE5 /* FontExtension.swift */; };
@@ -200,6 +201,7 @@
 		514853002A04002E00351A9D /* ExplainValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainValuesView.swift; sourceTree = "<group>"; };
 		514E4D392A1BC2600040FC88 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 		514E4D3B2A1BD0FC0040FC88 /* BatteryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryViewModel.swift; sourceTree = "<group>"; };
+		514E4D3E2A1CB9950040FC88 /* BatteryHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryViewModel.swift; sourceTree = "<group>"; };
 		515617212A14891000743B5F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		515617232A148A8000743B5F /* PostSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSignUp.swift; sourceTree = "<group>"; };
 		515E261A2A00E31B006C3FE5 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -523,6 +525,18 @@
 			path = Health;
 			sourceTree = "<group>";
 		};
+		514E4D3D2A1CB9750040FC88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */,
+				51AA9A6A2A178EA6005C14FC /* BatteryChartView.swift */,
+				51AA9A6C2A17BF8E005C14FC /* BatteryHistoryDetailView.swift */,
+				51AA9A6E2A17BFB5005C14FC /* BatteryHistoryCardView.swift */,
+				51AA9A702A17BFE6005C14FC /* BatteryHistoryCardRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		517AE9362A0797D70028D670 /* GifImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,11 +633,8 @@
 		51AA9A692A178E87005C14FC /* BatteryHistory */ = {
 			isa = PBXGroup;
 			children = (
-				51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */,
-				51AA9A6A2A178EA6005C14FC /* BatteryChartView.swift */,
-				51AA9A6C2A17BF8E005C14FC /* BatteryHistoryDetailView.swift */,
-				51AA9A6E2A17BFB5005C14FC /* BatteryHistoryCardView.swift */,
-				51AA9A702A17BFE6005C14FC /* BatteryHistoryCardRow.swift */,
+				514E4D3D2A1CB9750040FC88 /* Views */,
+				514E4D3E2A1CB9950040FC88 /* BatteryHistoryViewModel.swift */,
 			);
 			path = BatteryHistory;
 			sourceTree = "<group>";
@@ -1004,6 +1015,7 @@
 				51C656782A13A60800610369 /* HalfSheetExtension.swift in Sources */,
 				51F878D729F268220077A6C7 /* Model.swift in Sources */,
 				BE7C07162A1AED3200C7D647 /* ArrowUpRightView.swift in Sources */,
+				514E4D3F2A1CB9950040FC88 /* BatteryHistoryViewModel.swift in Sources */,
 				BE7C07042A1855C800C7D647 /* ProjectRegularRetrospectionView.swift in Sources */,
 				BE7C072B2A1B067100C7D647 /* ProjectEnergyView.swift in Sources */,
 				BE7C07212A1AFD7800C7D647 /* ProjectRegularAnswerTimeView.swift in Sources */,

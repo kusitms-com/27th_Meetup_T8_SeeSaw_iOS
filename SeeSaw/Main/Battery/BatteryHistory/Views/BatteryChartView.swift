@@ -8,14 +8,8 @@
 import SwiftUI
 
 struct BatteryChartView: View {
-    let data: [BatteryHistory] = [
-        BatteryHistory(date: "2023-05-16", batteryPercentage: 80),
-        BatteryHistory(date: "2023-05-15", batteryPercentage: 30),
-        BatteryHistory(date: "2023-05-14", batteryPercentage: 95),
-        BatteryHistory(date: "2023-05-13", batteryPercentage: 85),
-        BatteryHistory(date: "2023-05-12", batteryPercentage: 40),
-        BatteryHistory(date: "2023-05-11", batteryPercentage: 90),
-        BatteryHistory(date: "2023-05-10", batteryPercentage: 65)]
+    @State private var sevenDaysBatteryHistory: [BatteryHistory] = []
+    @StateObject private var batteryHistoryVM = BatteryHistoryViewModel()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -26,16 +20,30 @@ struct BatteryChartView: View {
             
             ZStack(alignment: .bottom) {
                 VStack(spacing: 0) {
-                    dashedLine
-                    dashedLine
+                    HStack {
+                        Text("100")
+                            .font(.ssBlackBody3)
+                            .foregroundColor(.Gray400)
+                        dashedLine
+                    }
+                    HStack {
+                        Text("50")
+                            .font(.ssBlackBody3)
+                            .foregroundColor(.Gray400)
+                        dashedLine
+                    }
                         .padding(.vertical, 72)
-                    dashedLine
+                    HStack {
+                        Text("0")
+                            .font(.ssBlackBody3)
+                            .foregroundColor(.Gray400)
+                        dashedLine
+                    }
                 }
                 
                 HStack(alignment: .bottom, spacing: 16) {
-                    ForEach(data.indices, id: \.self) { index in
-                        let rev = 6 - index
-                        let height = CGFloat((148 * data[rev].batteryPercentage)) / 100
+                    ForEach(sevenDaysBatteryHistory.indices, id: \.self) { index in
+                        let height = CGFloat((148 * sevenDaysBatteryHistory[index].batteryPercentage)) / 100
                         
                         VStack {
                             Rectangle()
@@ -43,16 +51,21 @@ struct BatteryChartView: View {
                                 .foregroundColor(.SeeSawYellow)
                                 .frame(width: 20, height: height)
                             
-                            Text(data[rev].date.suffix(5))
+                            Text(sevenDaysBatteryHistory[index].date.suffix(5))
                                 .font(.ssBlackBody4)
                                 .foregroundColor(.Gray400)
                         }
-                        .offset(y: 18)
+                        .offset(y: 10) // y축 지표 없으면 18
                     }
                 }
             }
         }
         .padding(20)
+        .onAppear {
+            batteryHistoryVM.getSevenDaysBatteryHistory { batteryHistory in
+                sevenDaysBatteryHistory = batteryHistory.reversed()
+            }
+        }
     }
     
     var dashedLine: some View {
@@ -61,11 +74,6 @@ struct BatteryChartView: View {
             .frame(height: 1)
             .foregroundColor(.Gray300)
     }
-}
-
-struct BatteryHistory {
-    let date: String
-    let batteryPercentage: Int
 }
 
 struct BatteryChartView_Previews: PreviewProvider {

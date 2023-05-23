@@ -7,18 +7,34 @@
 
 import Foundation
 
-struct BatteryHistoryResponse {
+struct BatteryHistoryResponse: Codable {
     let date: String
     let activityHistory: ActivityHistory?
     let sleepHistory: SleepHistory?
     let fastChargeHistory: FastChargeHistory?
+    
+    private enum CodingKeys: String, CodingKey {
+        case date = "date"
+        case activityHistory = "activity"
+        case sleepHistory = "sleep"
+        case fastChargeHistory = "charge"
+    }
 }
 
-struct SleepHistory {
-    let sleepAmount: Int
-    let sleepGoal: Int
-    let sleepBatteryVariation: Int
-    var sleepDescription: String {
+struct SleepHistory: Codable {
+    let sleepAmount: Int?
+    let sleepGoal: Int?
+    let sleepBatteryVariation: Int?
+    
+    private enum CodingKeys: String, CodingKey {
+        case sleepAmount = "curSleep"
+        case sleepGoal = "goalSleep"
+        case sleepBatteryVariation = "sleepVariation"
+    }
+    
+    var sleepDescription: String? {
+        guard let sleepAmount = sleepAmount else { return "" }
+        guard let sleepGoal = sleepGoal else { return "" }
         if sleepAmount >= sleepGoal {
             return "알맞게 잤어요"
         } else if sleepAmount >= (sleepGoal / 2) {
@@ -29,17 +45,33 @@ struct SleepHistory {
     }
 }
 
-struct FastChargeHistory {
-    let fastChargeTitle: String
-    let fastChargeValue: String
-    let fastChargeVariation: Int
+struct FastChargeHistory: Codable {
+    let fastChargeTitle: String?
+    let fastChargeValue: String?
+    let fastChargeVariation: Int?
+    
+    private enum CodingKeys: String, CodingKey {
+        case fastChargeTitle = "chargeName"
+        case fastChargeValue = "valueName"
+        case fastChargeVariation = "chargeVariation"
+    }
 }
 
-struct ActivityHistory {
-    let activityAmount: Int
-    let activityGoal: Int
-    let activityBatteryVariation: Int
-    var activityDescription: String {
+struct ActivityHistory: Codable {
+    let activityAmount: Int?
+    let activityGoal: Int?
+    let activityBatteryVariation: Int?
+    
+    private enum CodingKeys: String, CodingKey {
+        case activityAmount = "curActivity"
+        case activityGoal = "goalActivity"
+        case activityBatteryVariation = "activityVariation"
+    }
+    
+    var activityDescription: String? {
+        guard let activityAmount = activityAmount else { return "" }
+        guard let activityGoal = activityGoal else { return "" }
+        
         if activityAmount > activityGoal + 50 {
             return "너무 많이 움직였어요"
         } else if activityAmount >= activityGoal {
