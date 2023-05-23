@@ -24,7 +24,23 @@ class BatteryHistoryViewModel: ObservableObject {
                 switch response.result {
                 case .success(let res):
                     completion(res.result)
-                    print(res.result)
+                case .failure(let error):
+                    print("DEBUG Api-getValues: \(error)")
+                }
+            }
+    }
+    
+    func getThirtyDaysBatteryHistory(completion: @escaping ([BatteryHistory]) -> Void) {
+        let url = "\(baseUrl)/api/battery/variation"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: GetSevenDaysBatteryHistoryResponse.self) { response in
+                switch response.result {
+                case .success(let res):
+                    completion(res.result)
                 case .failure(let error):
                     print("DEBUG Api-getValues: \(error)")
                 }
@@ -37,6 +53,13 @@ struct GetSevenDaysBatteryHistoryResponse: Codable {
     let code: Int
     let message: String
     let result: [BatteryHistory]
+}
+
+struct GetThirtyDaysBatteryHistoryResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [BatteryHistoryResponse]
 }
 
 struct BatteryHistory: Codable {
