@@ -14,6 +14,9 @@ struct AgreeTermsView: View {
     var requiredTermsAllAgree: Bool {
         return dataTermAgree && usingTermAgree
     }
+    var allTermsAllAgree: Bool {
+        return dataTermAgree && usingTermAgree && marketingTermAgree
+    }
     @State var showPersonalSheet = false
     @State var showUsingSheet = false
     
@@ -107,14 +110,20 @@ struct AgreeTermsView: View {
     
     var allTermsAgreeView: some View {
         Button {
-            dataTermAgree = true
-            usingTermAgree = true
-            marketingTermAgree = true
+            if allTermsAllAgree {
+                dataTermAgree = false
+                usingTermAgree = false
+                marketingTermAgree = false
+            } else {
+                dataTermAgree = true
+                usingTermAgree = true
+                marketingTermAgree = true
+            }
         } label: {
             HStack(alignment: .center) {
                 Image(systemName: "checkmark.square")
                     .font(.system(size: 28))
-                    .foregroundColor(requiredTermsAllAgree ? .black : .Gray600)
+                    .foregroundColor(allTermsAllAgree ? .black : .Gray600)
                 Text("모두 동의할게요")
                     .font(.ssBlackTitle2)
                     .foregroundColor(.black)
