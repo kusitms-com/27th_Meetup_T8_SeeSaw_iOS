@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct UserInfoView: View {
+    @StateObject var signUpVM = SignUpViewModel()
+    
     @State var email: String = ""
     @AppStorage("nickname") var nickname: String = ""
     @Binding var agreeMarketing: Bool
-    @StateObject var signUpVM = SignUpViewModel()
+    
     var isNotVaildEmail: Bool {
         return !email.isEmpty && !isValidEmail(email)
     }
@@ -21,6 +23,7 @@ struct UserInfoView: View {
     var allValidate: Bool {
         return isValidEmail(email) && isValidNickname(nickname)
     }
+    
     @State private var isEmailChecked: Bool = false
     
     var body: some View {
@@ -56,6 +59,11 @@ struct UserInfoView: View {
         }
         .padding(20)
         .background(Color.Gray200)
+        .onAppear {
+            signUpVM.getEmail { socialEmail in
+                email = socialEmail
+            }
+        }
     }
     
     var progressBar: some View {
