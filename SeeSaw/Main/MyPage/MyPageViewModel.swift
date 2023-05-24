@@ -60,4 +60,24 @@ class MyPageViewModel: ObservableObject {
                 }
             }
     }
+    
+    func deleteUser() {
+        let url = "\(baseUrl)/api/user"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url,
+                   method: .delete,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+        .responseDecodable(of: Int.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print("delete user: \(response)")
+                case .failure(let error):
+                    print("delete user: \(error)")
+                }
+            }
+    }
 }

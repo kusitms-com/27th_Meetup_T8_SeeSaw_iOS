@@ -25,7 +25,7 @@ class BatteryHistoryViewModel: ObservableObject {
                 case .success(let res):
                     completion(res.result)
                 case .failure(let error):
-                    print("DEBUG Api-getValues: \(error)")
+                    print("DEBUG get 7: \(error)")
                 }
             }
     }

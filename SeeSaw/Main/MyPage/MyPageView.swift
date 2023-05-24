@@ -5,12 +5,16 @@
 //  Created by 이안진 on 2023/04/26.
 //
 
+import MessageUI
 import SwiftUI
 
 struct MyPageView: View {
     @AppStorage("nickname") var nickname: String = ""
     @State private var showChangeNicknameView = false
     @State private var showLogoutView = false
+    
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
     
     var body: some View {
         ZStack {
@@ -49,12 +53,22 @@ struct MyPageView: View {
                     
                     Divider()
                     
-                    NavigationLink {
-                        
-                    } label: {
-                        MyPageRow(isRowTop: false,
-                                  title: "문의하기",
-                                  isChevronExist: true)
+                    if MFMailComposeViewController.canSendMail() {
+                        Button {
+                            self.isShowingMailView.toggle()
+                        } label: {
+                            MyPageRow(isRowTop: false,
+                                      title: "문의하기",
+                                      isChevronExist: true)
+                        }
+                    } else {
+                        NavigationLink {
+                            Text("seesaw.8attery@gmail.com 로 문의주시기 바랍니다.")
+                        } label: {
+                            MyPageRow(isRowTop: false,
+                                      title: "문의하기",
+                                      isChevronExist: true)
+                        }
                     }
                 }
                 .padding(.bottom, 16)
@@ -69,6 +83,9 @@ struct MyPageView: View {
             }
             .padding(.horizontal, 20)
             .background(Color.Gray200)
+            .sheet(isPresented: $isShowingMailView) {
+                MailView(isShowing: self.$isShowingMailView, result: self.$result)
+            }
             
         if $showChangeNicknameView.wrappedValue {                        ChangeNicknameView(nickname: self.nickname,
                                    showChangeNicknameView: self.$showChangeNicknameView)

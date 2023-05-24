@@ -94,6 +94,54 @@ class BatteryViewModel: ObservableObject {
                 }
             }
     }
+    
+    func getMonthActivityHistory(year: Int, month: Int, completion: @escaping ([ActivityDayInfo]) -> Void) {
+        let url = "\(baseUrl)/api/battery/history/activity?year=\(year)&month=\(month)"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: GetMonthActivityHistory.self) { response in
+                switch response.result {
+                case .success(let res):
+                    var histories: [ActivityDayInfo] = []
+                    for data in res.result {
+                        let day = data.day
+                        let activity = data.activity
+                        let color = data.color
+                        histories.append(ActivityDayInfo(day: day, activity: activity, color: color))
+                    }
+                    completion(histories)
+                case .failure(let error):
+                    print("DEBUG get month activity: \(error)")
+                }
+            }
+    }
+    
+    func getMonthSleepHistory(year: Int, month: Int, completion: @escaping ([SleepDayInfo]) -> Void) {
+        let url = "\(baseUrl)/api/battery/history/sleep?year=\(year)&month=\(month)"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: GetMonthSleepHistory.self) { response in
+                switch response.result {
+                case .success(let res):
+                    var histories: [SleepDayInfo] = []
+                    for data in res.result {
+                        let day = data.day
+                        let sleep = data.sleep
+                        let color = data.color
+                        histories.append(SleepDayInfo(day: day, sleep: sleep, color: color))
+                    }
+                    completion(histories)
+                case .failure(let error):
+                    print("DEBUG get month sleep: \(error)")
+                }
+            }
+    }
 }
 
 struct PostFastChargeResponse: Codable {
@@ -121,4 +169,30 @@ struct PostSleepResponse: Codable {
     let code: Int
     let message: String
     let result: Int
+}
+
+struct GetMonthActivityHistory: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [ActivityDayInfo]
+}
+
+struct ActivityDayInfo: Codable {
+    let day: Int
+    let activity: Int?
+    let color: Int?
+}
+
+struct GetMonthSleepHistory: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [SleepDayInfo]
+}
+
+struct SleepDayInfo: Codable {
+    let day: Int
+    let sleep: Int?
+    let color: Int?
 }
