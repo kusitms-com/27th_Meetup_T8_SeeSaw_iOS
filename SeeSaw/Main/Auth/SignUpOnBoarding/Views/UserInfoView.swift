@@ -19,10 +19,10 @@ struct UserInfoView: View {
         return !email.isEmpty && !isValidEmail(email)
     }
     var isNotVaildNickname: Bool {
-        return newNickname.isEmpty == false && !isValidEmail(nickname)
+        return !newNickname.isEmpty && !isValidNickname(newNickname)
     }
     var allValidate: Bool {
-        return isNotVaildEmail == false && isNotVaildNickname == false
+        return isNotVaildEmail == false && isNotVaildNickname == false && newNickname.isEmpty == false && email.isEmpty == false
     }
     
     @State private var isEmailChecked: Bool = false
