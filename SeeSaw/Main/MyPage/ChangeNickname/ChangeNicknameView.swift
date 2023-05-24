@@ -114,7 +114,7 @@ struct ChangeNicknameView: View {
                               text: "저장하기",
                               size: .large)
         }
-        .disabled(newNickname.isEmpty)
+        .disabled(isNotVaildNickname == false)
     }
     
     func isValidNickname(_ nickname: String) -> Bool {
