@@ -26,7 +26,7 @@ struct BatteryDashboardSleepView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("수면")
+            Text("수면량")
                 .font(.ssHeading2)
             
             if isTodaySleepAmountExist {
