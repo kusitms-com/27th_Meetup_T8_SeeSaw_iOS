@@ -16,7 +16,6 @@
 		510B32C32A18005B00026E07 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C22A18005B00026E07 /* CalendarCell.swift */; };
 		510B32C52A18007F00026E07 /* MonthStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C42A18007F00026E07 /* MonthStruct.swift */; };
 		510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32C62A1800AF00026E07 /* DateScrollerView.swift */; };
-		510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */; };
 		510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */; };
 		510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */ = {isa = PBXBuildFile; fileRef = 510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */; };
 		510B32D12A19311100026E07 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510B32D02A19311100026E07 /* SafariView.swift */; };
@@ -105,6 +104,7 @@
 		51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */; };
 		51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B62A0A065600F1F73B /* LargePopUpView.swift */; };
 		51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */; };
+		51EABAE42A1E56E900548399 /* ValueExplainThird.gif in Resources */ = {isa = PBXBuildFile; fileRef = 51EABAE32A1E56E900548399 /* ValueExplainThird.gif */; };
 		51F878D729F268220077A6C7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D629F268220077A6C7 /* Model.swift */; };
 		51F878DC29F2689C0077A6C7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 51F878DB29F2689C0077A6C7 /* .gitignore */; };
 		51F878DF29F269FE0077A6C7 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -168,7 +168,6 @@
 		510B32C22A18005B00026E07 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		510B32C42A18007F00026E07 /* MonthStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthStruct.swift; sourceTree = "<group>"; };
 		510B32C62A1800AF00026E07 /* DateScrollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateScrollerView.swift; sourceTree = "<group>"; };
-		510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainThird.gif; sourceTree = "<group>"; };
 		510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainSecond.gif; sourceTree = "<group>"; };
 		510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainFirst.gif; sourceTree = "<group>"; };
 		510B32D02A19311100026E07 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -258,6 +257,7 @@
 		51DD74B42A09F1A500F1F73B /* ValueBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueBlockView.swift; sourceTree = "<group>"; };
 		51DD74B62A0A065600F1F73B /* LargePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargePopUpView.swift; sourceTree = "<group>"; };
 		51DD74B82A0A0C6E00F1F73B /* SmallPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPopUpView.swift; sourceTree = "<group>"; };
+		51EABAE32A1E56E900548399 /* ValueExplainThird.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueExplainThird.gif; sourceTree = "<group>"; };
 		51F878D629F268220077A6C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		51F878DB29F2689C0077A6C7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		51F878E029F26D600077A6C7 /* SeeSaw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeeSaw.entitlements; sourceTree = "<group>"; };
@@ -564,7 +564,7 @@
 				BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */,
 				510B32CC2A1925EC00026E07 /* ValueExplainFirst.gif */,
 				510B32CB2A1925EC00026E07 /* ValueExplainSecond.gif */,
-				510B32CA2A1925EC00026E07 /* ValueExplainThird.gif */,
+				51EABAE32A1E56E900548399 /* ValueExplainThird.gif */,
 			);
 			path = GifAssets;
 			sourceTree = "<group>";
@@ -907,11 +907,11 @@
 				51A246CA2A1DEEDA006E46E3 /* SignOut.gif in Resources */,
 				51BA2A6E29EA8DEC00071264 /* .swiftlint.yml in Resources */,
 				510B32CE2A1925EC00026E07 /* ValueExplainSecond.gif in Resources */,
-				510B32CD2A1925EC00026E07 /* ValueExplainThird.gif in Resources */,
 				51BA2A6629EA8C5600071264 /* Preview Assets.xcassets in Resources */,
 				BE7C07442A1B3DEE00C7D647 /* ValueImage.gif in Resources */,
 				510B32D32A193E4800026E07 /* SignUpCompletion.gif in Resources */,
 				51BA2A6329EA8C5600071264 /* Assets.xcassets in Resources */,
+				51EABAE42A1E56E900548399 /* ValueExplainThird.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
