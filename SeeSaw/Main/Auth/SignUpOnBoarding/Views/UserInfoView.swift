@@ -21,6 +21,7 @@ struct UserInfoView: View {
     var allValidate: Bool {
         return isValidEmail(email) && isValidNickname(nickname)
     }
+    @State private var isEmailChecked: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -79,11 +80,27 @@ struct UserInfoView: View {
             ZStack(alignment: .trailing) {
                 TextField("이메일을 입력해주세요", text: $email)
                     .font(.ssBlackBody1)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 10)
                     .textInputAutocapitalization(.never)
                     .keyboardType(.emailAddress)
-                Image(systemName: "checkmark")
-                    .foregroundColor(email.isEmpty ? .Gray400 : (isNotVaildEmail ? .SeeSawRed : .SeeSawGreen))
+                if isEmailChecked {
+                    Image(systemName: "checkmark")
+                        .foregroundColor(email.isEmpty ? .Gray400 : (isNotVaildEmail ? .SeeSawRed : .SeeSawGreen))
+                } else {
+                    Button {
+                        
+                    } label: {
+                        Text("중복 확인")
+                            .font(.ssBlackBody1)
+                            .foregroundColor(.Gray700)
+                            .padding(.vertical, 6)
+                            .padding(.horizontal, 12)
+                            .background(
+                                Rectangle()
+                                    .cornerRadius(90, corners: .allCorners)
+                                    .foregroundColor(.Gray300))
+                    }
+                }
             }
             
             Rectangle()
@@ -93,7 +110,7 @@ struct UserInfoView: View {
             
             if isNotVaildEmail {
                 Text("올바른 이메일 형식이 아니에요")
-                    .font(.ssBlackBody4)
+                    .font(.ssWhiteBody3)
                     .foregroundColor(.SeeSawRed)
             }
         }
@@ -107,7 +124,7 @@ struct UserInfoView: View {
             ZStack(alignment: .trailing) {
                 TextField("한글, 영문, 숫자를 10글자 내로 입력해주세요", text: $nickname)
                     .font(.ssBlackBody1)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 10)
                     .textInputAutocapitalization(.never)
                     .onChange(of: nickname, perform: {
                               nickname = String($0.prefix(10))
@@ -123,7 +140,7 @@ struct UserInfoView: View {
             
             if isNotVaildNickname {
                 Text("한글, 영문, 숫자만 입력할 수 있어요")
-                    .font(.ssBlackBody4)
+                    .font(.ssWhiteBody3)
                     .foregroundColor(.SeeSawRed)
             }
         }
