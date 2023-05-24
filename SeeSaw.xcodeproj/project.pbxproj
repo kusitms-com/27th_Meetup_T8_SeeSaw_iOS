@@ -78,6 +78,7 @@
 		51A1E5C42A0EABC300404E11 /* FastChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C32A0EABC300404E11 /* FastChargeView.swift */; };
 		51A1E5C62A0F580A00404E11 /* BatteryHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */; };
 		51A246CA2A1DEEDA006E46E3 /* SignOut.gif in Resources */ = {isa = PBXBuildFile; fileRef = 51A246C92A1DEEDA006E46E3 /* SignOut.gif */; };
+		51A246CC2A1DEFC5006E46E3 /* Logout.gif in Resources */ = {isa = PBXBuildFile; fileRef = 51A246CB2A1DEFC5006E46E3 /* Logout.gif */; };
 		51A9ECB52A00DD71000E6784 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9ECB42A00DD71000E6784 /* ColorExtension.swift */; };
 		51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */; };
 		51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */; };
@@ -228,6 +229,7 @@
 		51A1E5C32A0EABC300404E11 /* FastChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeView.swift; sourceTree = "<group>"; };
 		51A1E5C52A0F580A00404E11 /* BatteryHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryHistoryView.swift; sourceTree = "<group>"; };
 		51A246C92A1DEEDA006E46E3 /* SignOut.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = SignOut.gif; sourceTree = "<group>"; };
+		51A246CB2A1DEFC5006E46E3 /* Logout.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Logout.gif; sourceTree = "<group>"; };
 		51A9ECB42A00DD71000E6784 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		51AA9A5E2A16C286005C14FC /* RightHalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightHalfCircle.swift; sourceTree = "<group>"; };
 		51AA9A612A174101005C14FC /* FastChargeCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastChargeCompletionView.swift; sourceTree = "<group>"; };
@@ -553,6 +555,7 @@
 			children = (
 				510B32D22A193E4800026E07 /* SignUpCompletion.gif */,
 				51A246C92A1DEEDA006E46E3 /* SignOut.gif */,
+				51A246CB2A1DEFC5006E46E3 /* Logout.gif */,
 				51AA9A632A1743EA005C14FC /* FastCharge.gif */,
 				517AE93A2A07987E0028D670 /* LoginImage.gif */,
 				BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */,
@@ -893,6 +896,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51A246CC2A1DEFC5006E46E3 /* Logout.gif in Resources */,
 				51AA9A642A1743EA005C14FC /* FastCharge.gif in Resources */,
 				510B32CF2A1925EC00026E07 /* ValueExplainFirst.gif in Resources */,
 				517AE93B2A07987E0028D670 /* LoginImage.gif in Resources */,
