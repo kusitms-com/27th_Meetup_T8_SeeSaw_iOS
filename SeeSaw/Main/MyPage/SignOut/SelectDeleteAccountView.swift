@@ -10,7 +10,7 @@ import SwiftUI
 struct SelectDeleteAccountView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var authVM: AuthViewModel
-    @StateObject private var kakaoVM = KakaoAuthViewModel()
+    @StateObject private var kakaoVM = KakaoAuthViewModel(isLoggedIn: true)
     @StateObject private var myPageVM = MyPageViewModel()
     
     @AppStorage("nickname") var nickname: String = "이오링"
