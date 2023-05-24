@@ -29,11 +29,21 @@ struct SelectDeleteAccountView: View {
             
             Spacer()
             
+            HStack {
+                Spacer()
+                GifImage("SignOut")
+                    .frame(width: 260)
+                Spacer()
+            }
+            
+            Spacer()
+            
             VStack {
                 Button {
                     nickname = ""
                     isOnboardingCompleted = false
                     myPageVM.deleteUser()
+                    authVM.logout()
                 } label: {
                     CapsuleButtonView(color: Color.Gray400, text: "탈퇴할래요", size: .large)
                         .padding(.bottom, 12)
