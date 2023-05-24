@@ -95,7 +95,7 @@ struct CalendarView: View {
                                              startingSpaces: startingSpaces,
                                              daysInMonth: daysInMonth,
                                              daysInPrevMonth: daysInPrevMonth,
-                                             activityAmount: infoArray[index].activity ?? 999,
+                                             activityAmount: infoArray[index].activity ?? 0,
                                              colorType: infoArray[index].color ?? 4)
                                 .environmentObject(dateHolder)
                             } else {

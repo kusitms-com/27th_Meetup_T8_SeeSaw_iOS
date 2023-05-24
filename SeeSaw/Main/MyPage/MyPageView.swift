@@ -70,11 +70,6 @@ struct MyPageView: View {
                                       isChevronExist: true)
                         }
                     }
-                    
-                    if result != nil {
-                        Text("Result: \(String(describing: result))")
-                            .lineLimit(nil)
-                    }
                 }
                 .padding(.bottom, 16)
                 

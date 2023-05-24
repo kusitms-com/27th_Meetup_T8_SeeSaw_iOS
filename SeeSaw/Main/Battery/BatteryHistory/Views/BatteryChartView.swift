@@ -55,7 +55,7 @@ struct BatteryChartView: View {
                                 .font(.ssBlackBody4)
                                 .foregroundColor(.Gray400)
                         }
-                        .offset(y: 10) // y축 지표 없으면 18
+                        .offset(y: 11) // y축 지표 없으면 18
                     }
                 }
             }
