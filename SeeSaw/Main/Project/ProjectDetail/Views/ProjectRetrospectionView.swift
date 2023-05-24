@@ -11,6 +11,7 @@ struct ProjectRetrospectionView: View {
     @State var emojiNum: [Int] = [0, 0, 0, 0, 0]
     @State var isMiddle: Bool = false
     var isFinal: Bool = false
+    var projectId: Int = 0
     var isProjectReport: Bool = false
     var emojiList: [String] = ["LIKE", "NICE", "IDK", "ANGRY", "SAD"]
     let numbers = 0...4

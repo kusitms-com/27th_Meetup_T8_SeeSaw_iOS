@@ -12,6 +12,7 @@ struct ValueModalView: View {
     var valueColor: Color
     var chargeNum: Int = 0
     @State var isProject: Bool = true
+    var valueId: Int = 0
     var body: some View {
         VStack(alignment: .leading) {
             ZStack(alignment: .top) {
@@ -67,9 +68,9 @@ struct ValueModalView: View {
                     }
                     .padding(.bottom, 12)
                     if isProject {
-                        ValueProjectView()
+                        ValueProjectView(valueId: self.valueId)
                     } else {
-                        ValueQuickChargeView(valueTitle: self.valueTitle, valueColor: self.valueColor, chargeNum: self.chargeNum)
+                        ValueQuickChargeView(valueTitle: self.valueTitle, valueColor: self.valueColor, valueId: self.valueId, chargeNum: self.chargeNum)
                     }
                 }
             }

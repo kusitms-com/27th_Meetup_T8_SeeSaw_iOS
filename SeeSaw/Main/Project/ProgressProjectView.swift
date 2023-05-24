@@ -28,6 +28,18 @@ struct ProgressProjectView: View {
     @State private var showModal = false
     @State private var isEdit = false
     @State private var isDetail = false
+    @State var colorIndex: Int = 0
+    @StateObject var projectVM = ProjectViewModel()
+    @State var progressProject: [ProgressCompleteProject] = []
+    @State var colorArray: [Color] = [.SeeSawYellow, .SeeSawBlue, .SeeSawRed, .Gray300]
+    @StateObject var api = ApiClient()
+    @State var valueName: [String] = []
+    @Binding var progressNum: Int
+    var year: Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year], from: Date())
+        return components.year!
+    }
     var body: some View {
         VStack {
             ScrollView {
@@ -35,7 +47,7 @@ struct ProgressProjectView: View {
                     GridItem(.fixed(180)),
                     GridItem(.fixed(180))
                 ], spacing: 10, content: {
-                    NavigationLink(destination: AddProjectView()) {
+                    NavigationLink(destination: AddProjectView(valueName: valueName)) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 12)
                                 .frame(width: UIScreen.main.bounds.size.width / 2 - 20, height: 200)
@@ -59,38 +71,54 @@ struct ProgressProjectView: View {
                             }
                         }
                     }
-                    ForEach(MyModel.DataArray, content: { (dataItem: MyModel) in
+                    ForEach(progressProject, id: \.self, content: { (project: ProgressCompleteProject) in
                         ZStack {
                             RoundedRectangle(cornerRadius: 12)
                                 .frame(width: UIScreen.main.bounds.size.width / 2 - 20, height: 200)
-                                .foregroundColor(.Gray300)
-                            ProjectRectangleVIew(dataItem: dataItem)
+                                .foregroundColor(colorArray[getColorIndex(value: project.valueName)])
+                            ProjectRectangleVIew(progressProject: project, projectId: project.projectId, valueName: valueName)
                         }
                     })
                 })
-            }
-            if MyModel.DataArray.count == 0 {
-                VStack {
-                    Spacer()
-                        .frame(height: 85)
-                    Text("피드가 텅 비어있어요")
-                        .font(.ssBlackTitle1)
-                        .foregroundColor(.Gray600)
-                        .padding(.bottom, 5)
-                    Text("프로젝트를 추가하고")
-                        .font(.ssBlackBody3)
-                        .foregroundColor(.Gray600)
-                    Text("일과 삶의 균형을 찾아보세요")
-                        .font(.ssBlackBody3)
-                        .foregroundColor(.Gray600)
+                
+                if progressProject.count == 0 {
+                    VStack {
+                        Spacer()
+                            .frame(height: 85)
+                        Text("피드가 텅 비어있어요")
+                            .font(.ssBlackTitle1)
+                            .foregroundColor(.Gray600)
+                            .padding(.bottom, 5)
+                        Text("프로젝트를 추가하고")
+                            .font(.ssBlackBody3)
+                            .foregroundColor(.Gray600)
+                        Text("일과 삶의 균형을 찾아보세요")
+                            .font(.ssBlackBody3)
+                            .foregroundColor(.Gray600)
+                    }
                 }
             }
         }
+        .onAppear {
+            projectVM.getProgressProject { progress in
+                progressProject = progress
+                progressNum = progress.count
+            }
+            print("ㅁ나엏;미ㅏㄴ어;미ㅏㄴㅇ럼;ㅣㅏㄴㅇ럼;ㅣㅇ나러\(progressProject)")
+            api.getValues(year: year) { value in
+                self.valueName = value
+            }
+        }
+    }
+    
+    func getColorIndex(value: String) -> Int {
+        let index = valueName.firstIndex(of: value)
+        return index ?? 3
     }
 }
 
 struct ProgressProjectView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressProjectView()
+        ProgressProjectView(progressNum: .constant(0))
     }
 }

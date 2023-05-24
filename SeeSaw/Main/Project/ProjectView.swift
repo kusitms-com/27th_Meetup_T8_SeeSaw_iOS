@@ -9,10 +9,21 @@ import SwiftUI
 
 struct ProjectView: View {
     @AppStorage("nickname") var nickname: String = ""
+    @State private var currentTime: Date = Date()
     @State var isProgress = true
     @State var progressNum: Int = 0
     @State var completeNum: Int = 0
-    
+    @StateObject var projectVM = ProjectViewModel()
+    @State var todayQuestion: String = ""
+    var words: [String] {
+        todayQuestion.split(separator: " ").map { String($0) }
+    }
+    var firstHalf: String {
+        words.prefix(words.count / 2).joined(separator: " ")
+    }
+    var secondHalf: String {
+        words.suffix(from: words.count / 2).joined(separator: " ")
+    }
     var body: some View {
         VStack(spacing: 0) {
             MainToolBar(feature: .projectLog)
@@ -45,11 +56,10 @@ struct ProjectView: View {
                                 .font(.ssBlackBody2)
                                 .foregroundColor(.Gray600)
                                 .padding(.bottom, 4)
-                            
-                            Text("팀원들과의 협업은")
+                            Text(firstHalf)
                                 .font(.ssBlackTitle2)
                                 .foregroundColor(.Gray800)
-                            Text("잘 진행되고 있으신가요?")
+                            Text(secondHalf)
                                 .font(.ssBlackTitle2)
                                 .foregroundColor(.Gray800)
                         }                        .padding(.horizontal, 10)
@@ -105,15 +115,20 @@ struct ProjectView: View {
                         }
                     }
                     if isProgress {
-                        ProgressProjectView()
+                        ProgressProjectView(progressNum: $progressNum)
                     } else {
-                        CompleteProjectView()
+                        CompleteProjectView(completeNum: $completeNum)
                     }
                 }
             }
             .background(Color.Gray200)
         }
         .background(Color.Gray200)
+        .onAppear {
+            projectVM.getTodayReviewQuestion { contents in
+                todayQuestion = contents
+            }
+        }
     }
 }
 

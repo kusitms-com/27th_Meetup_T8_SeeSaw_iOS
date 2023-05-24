@@ -8,16 +8,12 @@
 import SwiftUI
 
 struct ProjectRegularRetrospectionView: View {
-    let dataArray: [MyModel]
-    var arraySize: Int
     var colorArray: [Color] = [.SeeSawRed, .SeeSawYellow, .SeeSawBlue]
-    @State var isShowText: [Bool]
+    var projectId: Int = 0
+    @State var isShowText: [Bool] =  Array(repeating: false, count: 100)
+    @StateObject var regularReviewVM = RegularReviewViewModel()
+    @State var regularReview: [RegularReview] = []
     @Environment(\.presentationMode) var presentationMode
-    init() {
-        dataArray = MyModel.DataArray
-        arraySize = dataArray.count
-        _isShowText = State(initialValue: Array(repeating: false, count: dataArray.count))
-    }
     var body: some View {
         VStack(spacing: 24) {
             HStack {
@@ -37,11 +33,11 @@ struct ProjectRegularRetrospectionView: View {
                 CapsuleButtonView(color: .Gray300, text: "+", size: .large)
             }
             ScrollView {
-                ForEach(Array(dataArray.enumerated()), id: \.element.value) { index, dataItem in
+                ForEach(Array(regularReview.enumerated()), id: \.element.recordId) { index, review in
                     ZStack {
                         VStack {
                             HStack {
-                                Text("\(dataItem.title)")
+                                Text("\(review.createdAt)")
                                     .foregroundColor(.Gray900)
                                 Spacer()
                                 Button {
@@ -53,7 +49,7 @@ struct ProjectRegularRetrospectionView: View {
                                         .foregroundColor(.Gray900)
                                 }
                             }
-                            Text("여기다가 상시회고 적는건데 일단 뭐라고 적어야할지 모르겠어서 그냥 노래가사 적을게요 Baby (baby), got me looking so crazy (crazy) 빠져버리는 daydream (daydream) Got me feeling you 너도 말해줄래? 누가 내게 뭐래던 남들과는 달라 넌 Maybe you could be the one ")
+                            Text(review.contents)
                                 .lineLimit(isShowText[index] ? 100 : 1)
                                 .foregroundColor(isShowText[index] ? .black : .Gray800)
                         }
@@ -77,6 +73,11 @@ struct ProjectRegularRetrospectionView: View {
             }
         )
         .background(Color.Gray200)
+        .onAppear {
+            regularReviewVM.getRegularReview(projectId: projectId) { review in
+                regularReview = review
+            }
+        }
     }
 }
 

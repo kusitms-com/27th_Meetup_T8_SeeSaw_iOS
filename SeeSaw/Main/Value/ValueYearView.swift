@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct ValueYearView: View {
-    var valueYear: Int = 0
-    
+    var valueYear: [String: Int] = [:]
+    let colors: [Color] = [Color.SeeSawYellow, Color.SeeSawBlue, Color.SeeSawRed]
     var body: some View {
-        VStack(alignment: .leading) {
-            ValueButtonView(valueTitle: "도전", valueColor: .SeeSawRed)
-            ValueButtonView(valueTitle: "사랑", valueColor: .SeeSawYellow)
-            ValueButtonView(valueTitle: "여유", valueColor: .SeeSawBlue)
-            
+        VStack(alignment: .leading, spacing: 16) {
+            ForEach(Array(valueYear.values).indices, id: \.self) { index in
+                ValueButtonView(valueTitle: Array(valueYear.keys)[index], valueColor: colors[index], valueId: Array(valueYear.values)[index])
+            }
         }
     }
 }
 
-struct ValueYearView_Previews: PreviewProvider {
-    static var previews: some View {
-        ValueYearView(valueYear: 0)
-    }
-}
+//struct ValueYearView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ValueYearView(valueYear: [0: "도전", 1: "여유", 2: "균형"])
+//    }
+//}

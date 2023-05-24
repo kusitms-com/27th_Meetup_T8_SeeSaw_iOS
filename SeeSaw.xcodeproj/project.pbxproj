@@ -108,6 +108,8 @@
 		51F878D729F268220077A6C7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F878D629F268220077A6C7 /* Model.swift */; };
 		51F878DC29F2689C0077A6C7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 51F878DB29F2689C0077A6C7 /* .gitignore */; };
 		51F878DF29F269FE0077A6C7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		BE2D57012A1D09EC007F0884 /* ValueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D57002A1D09EC007F0884 /* ValueViewModel.swift */; };
+		BE2D57032A1D1CFA007F0884 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2D57022A1D1CFA007F0884 /* ProjectViewModel.swift */; };
 		BE7C06DC2A0BA88E00C7D647 /* ValueYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06DB2A0BA88E00C7D647 /* ValueYearView.swift */; };
 		BE7C06DE2A0BAD7200C7D647 /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06DD2A0BAD7200C7D647 /* AddProjectView.swift */; };
 		BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C06DF2A0BAD7700C7D647 /* CompleteProjectView.swift */; };
@@ -154,6 +156,12 @@
 		BE7C07402A1B270E00C7D647 /* WriteFinalReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */; };
 		BE7C07442A1B3DEE00C7D647 /* ValueImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */; };
 		BE7C07472A1B540E00C7D647 /* ProjectDeletePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */; };
+		BEC54BBE2A1DA91600C455DF /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BBD2A1DA91600C455DF /* ProjectDetailViewModel.swift */; };
+		BEC54BC02A1DAA1C00C455DF /* RegularReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BBF2A1DAA1C00C455DF /* RegularReviewViewModel.swift */; };
+		BEC54BC32A1E18F900C455DF /* GetCompleteProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BC22A1E18F900C455DF /* GetCompleteProjectResponse.swift */; };
+		BEC54BC52A1E196E00C455DF /* GetRegularReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BC42A1E196E00C455DF /* GetRegularReviewResponse.swift */; };
+		BEC54BC72A1E1A2700C455DF /* GetProjectDetailInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BC62A1E1A2700C455DF /* GetProjectDetailInfoResponse.swift */; };
+		BEC54BCA2A1E28B100C455DF /* AddProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BC92A1E28B100C455DF /* AddProjectViewModel.swift */; };
 		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
 		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -261,6 +269,8 @@
 		51F878D629F268220077A6C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		51F878DB29F2689C0077A6C7 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		51F878E029F26D600077A6C7 /* SeeSaw.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeeSaw.entitlements; sourceTree = "<group>"; };
+		BE2D57002A1D09EC007F0884 /* ValueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueViewModel.swift; sourceTree = "<group>"; };
+		BE2D57022A1D1CFA007F0884 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		BE7C06DB2A0BA88E00C7D647 /* ValueYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueYearView.swift; sourceTree = "<group>"; };
 		BE7C06DD2A0BAD7200C7D647 /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 		BE7C06DF2A0BAD7700C7D647 /* CompleteProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteProjectView.swift; sourceTree = "<group>"; };
@@ -307,6 +317,12 @@
 		BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFinalReviewView.swift; sourceTree = "<group>"; };
 		BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueImage.gif; sourceTree = "<group>"; };
 		BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeletePopUpView.swift; sourceTree = "<group>"; };
+		BEC54BBD2A1DA91600C455DF /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
+		BEC54BBF2A1DAA1C00C455DF /* RegularReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularReviewViewModel.swift; sourceTree = "<group>"; };
+		BEC54BC22A1E18F900C455DF /* GetCompleteProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCompleteProjectResponse.swift; sourceTree = "<group>"; };
+		BEC54BC42A1E196E00C455DF /* GetRegularReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRegularReviewResponse.swift; sourceTree = "<group>"; };
+		BEC54BC62A1E1A2700C455DF /* GetProjectDetailInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProjectDetailInfoResponse.swift; sourceTree = "<group>"; };
+		BEC54BC92A1E28B100C455DF /* AddProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewModel.swift; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +382,7 @@
 				BE7C06F32A14A51300C7D647 /* ValueProjectView.swift */,
 				BE7C06F52A14A60100C7D647 /* ValueProgressView.swift */,
 				BE7C06F72A14AA1200C7D647 /* ValueQuickChargeView.swift */,
+				BE2D57002A1D09EC007F0884 /* ValueViewModel.swift */,
 			);
 			path = Value;
 			sourceTree = "<group>";
@@ -397,6 +414,7 @@
 				BE7C06E12A0BAD7B00C7D647 /* ProgressProjectView.swift */,
 				BE7C06DF2A0BAD7700C7D647 /* CompleteProjectView.swift */,
 				5121894829F9566F005DD6C2 /* ProjectView.swift */,
+				BE2D57022A1D1CFA007F0884 /* ProjectViewModel.swift */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -601,6 +619,9 @@
 				510B32D82A19492900026E07 /* PutNicknameResponse.swift */,
 				510B32DA2A1950EB00026E07 /* GetUserHistoryResponse.swift */,
 				51DD38F32A1B76910058E2E4 /* GetNickname.swift */,
+				BEC54BC22A1E18F900C455DF /* GetCompleteProjectResponse.swift */,
+				BEC54BC42A1E196E00C455DF /* GetRegularReviewResponse.swift */,
+				BEC54BC62A1E1A2700C455DF /* GetProjectDetailInfoResponse.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -754,12 +775,8 @@
 		BE7C07092A1894FA00C7D647 /* AddProject */ = {
 			isa = PBXGroup;
 			children = (
-				BE7C06DD2A0BAD7200C7D647 /* AddProjectView.swift */,
-				BE7C06E52A0BAD8600C7D647 /* ProjectNameView.swift */,
-				BE7C06E92A0BAD8E00C7D647 /* ProjectTermView.swift */,
-				BE7C06E72A0BAD8B00C7D647 /* ProjectStrengthView.swift */,
-				BE7C06EB2A0BAD9300C7D647 /* ProjectValueSelectView.swift */,
-				BE7C06E32A0BAD7F00C7D647 /* ProjectGoalView.swift */,
+				BEC54BC82A1E289000C455DF /* Views */,
+				BEC54BC92A1E28B100C455DF /* AddProjectViewModel.swift */,
 			);
 			path = AddProject;
 			sourceTree = "<group>";
@@ -767,13 +784,8 @@
 		BE7C070A2A18956000C7D647 /* ProjectDetail */ = {
 			isa = PBXGroup;
 			children = (
-				BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */,
-				BE7C06F12A13A06C00C7D647 /* ProjectDetailView.swift */,
-				BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */,
-				BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */,
-				BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */,
-				BE7C07152A1AED3200C7D647 /* ArrowUpRightView.swift */,
-				BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */,
+				BEC54BBC2A1DA8F500C455DF /* Views */,
+				BEC54BBD2A1DA91600C455DF /* ProjectDetailViewModel.swift */,
 			);
 			path = ProjectDetail;
 			sourceTree = "<group>";
@@ -781,9 +793,8 @@
 		BE7C070B2A18958400C7D647 /* RegularRetrospectionView */ = {
 			isa = PBXGroup;
 			children = (
-				BE7C07052A187CDB00C7D647 /* AddRegularRetrospectionView.swift */,
-				BE7C07032A1855C800C7D647 /* ProjectRegularRetrospectionView.swift */,
-				BE7C07072A1889CA00C7D647 /* TodayQuestionView.swift */,
+				BEC54BC12A1DAA2300C455DF /* VIews */,
+				BEC54BBF2A1DAA1C00C455DF /* RegularReviewViewModel.swift */,
 			);
 			path = RegularRetrospectionView;
 			sourceTree = "<group>";
@@ -830,6 +841,43 @@
 				BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */,
 			);
 			path = finalReview;
+			sourceTree = "<group>";
+		};
+		BEC54BBC2A1DA8F500C455DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE7C06FF2A16F07A00C7D647 /* ProjectRectangleVIew.swift */,
+				BE7C06F12A13A06C00C7D647 /* ProjectDetailView.swift */,
+				BE7C06FD2A16558100C7D647 /* ProjectRetrospectionView.swift */,
+				BE7C06F92A14C59D00C7D647 /* ProjectEditModalView.swift */,
+				BE7C06FB2A14CB0000C7D647 /* ProjectDeleteModalView.swift */,
+				BE7C07152A1AED3200C7D647 /* ArrowUpRightView.swift */,
+				BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEC54BC12A1DAA2300C455DF /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				BE7C07052A187CDB00C7D647 /* AddRegularRetrospectionView.swift */,
+				BE7C07032A1855C800C7D647 /* ProjectRegularRetrospectionView.swift */,
+				BE7C07072A1889CA00C7D647 /* TodayQuestionView.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		BEC54BC82A1E289000C455DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE7C06DD2A0BAD7200C7D647 /* AddProjectView.swift */,
+				BE7C06E52A0BAD8600C7D647 /* ProjectNameView.swift */,
+				BE7C06E92A0BAD8E00C7D647 /* ProjectTermView.swift */,
+				BE7C06E72A0BAD8B00C7D647 /* ProjectStrengthView.swift */,
+				BE7C06EB2A0BAD9300C7D647 /* ProjectValueSelectView.swift */,
+				BE7C06E32A0BAD7F00C7D647 /* ProjectGoalView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -946,6 +994,7 @@
 			files = (
 				517100962A1B6471009D057B /* ProvisioningEnergyView.swift in Sources */,
 				5121894D29F9567D005DD6C2 /* ValueView.swift in Sources */,
+				BEC54BC72A1E1A2700C455DF /* GetProjectDetailInfoResponse.swift in Sources */,
 				BE7C07402A1B270E00C7D647 /* WriteFinalReviewView.swift in Sources */,
 				51C656722A1359D200610369 /* LaunchScreenView.swift in Sources */,
 				BE7C070E2A1895F800C7D647 /* InterimReviewView.swift in Sources */,
@@ -961,6 +1010,7 @@
 				517AE9382A0797E70028D670 /* GifImage.swift in Sources */,
 				51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */,
 				BE7C07352A1B233600C7D647 /* ProjectSleepView.swift in Sources */,
+				BEC54BC52A1E196E00C455DF /* GetRegularReviewResponse.swift in Sources */,
 				BE7C06DE2A0BAD7200C7D647 /* AddProjectView.swift in Sources */,
 				BE7C07062A187CDB00C7D647 /* AddRegularRetrospectionView.swift in Sources */,
 				BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */,
@@ -990,6 +1040,7 @@
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				514E4D3C2A1BD0FC0040FC88 /* BatteryViewModel.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
+				BEC54BC32A1E18F900C455DF /* GetCompleteProjectResponse.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
 				51720C8F2A15D8A2002E05AD /* PostSelectedValues.swift in Sources */,
 				514852F72A03ADF400351A9D /* UserInfoView.swift in Sources */,
@@ -998,13 +1049,16 @@
 				51AA9A5F2A16C286005C14FC /* RightHalfCircle.swift in Sources */,
 				510B32C72A1800AF00026E07 /* DateScrollerView.swift in Sources */,
 				5121893F29F955A6005DD6C2 /* SeeSawTabView.swift in Sources */,
+				BE2D57032A1D1CFA007F0884 /* ProjectViewModel.swift in Sources */,
 				51AA9A732A17C01F005C14FC /* PostBatteryVariation.swift in Sources */,
 				BE7C06E62A0BAD8700C7D647 /* ProjectNameView.swift in Sources */,
 				BE7C07082A1889CA00C7D647 /* TodayQuestionView.swift in Sources */,
 				510B32D92A19492900026E07 /* PutNicknameResponse.swift in Sources */,
 				BE7C06F82A14AA1200C7D647 /* ValueQuickChargeView.swift in Sources */,
 				515617222A14891000743B5F /* SignUpViewModel.swift in Sources */,
+				BEC54BBE2A1DA91600C455DF /* ProjectDetailViewModel.swift in Sources */,
 				517AE93E2A079F930028D670 /* ApiClient.swift in Sources */,
+				BEC54BCA2A1E28B100C455DF /* AddProjectViewModel.swift in Sources */,
 				5139CCA92A0BD05800181B55 /* MyPageRow.swift in Sources */,
 				51348A0C2A125FAD005F9163 /* PostGoal.swift in Sources */,
 				5121894929F9566F005DD6C2 /* ProjectView.swift in Sources */,
@@ -1019,6 +1073,7 @@
 				511AA1DB2A100A9400DAF26A /* PostRegenerate.swift in Sources */,
 				51AA9A712A17BFE6005C14FC /* BatteryHistoryCardRow.swift in Sources */,
 				BE7C07472A1B540E00C7D647 /* ProjectDeletePopUpView.swift in Sources */,
+				BEC54BC02A1DAA1C00C455DF /* RegularReviewViewModel.swift in Sources */,
 				5175EACC29F289200092FE9D /* KakaoAuthViewModel.swift in Sources */,
 				515E263E2A014526006C3FE5 /* ChangeNicknameView.swift in Sources */,
 				51C6566E2A1344A000610369 /* SetActivityGoalView.swift in Sources */,
@@ -1078,6 +1133,7 @@
 				BE7C07272A1B01A700C7D647 /* ProjectReachGoalView.swift in Sources */,
 				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
 				BE7C06F22A13A06C00C7D647 /* ProjectDetailView.swift in Sources */,
+				BE2D57012A1D09EC007F0884 /* ValueViewModel.swift in Sources */,
 				BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */,
 				51A246CE2A1DF455006E46E3 /* EmailSender.swift in Sources */,
 				BE7C072D2A1B06C800C7D647 /* ProjectWantPersonView.swift in Sources */,

@@ -10,7 +10,9 @@ import SwiftUI
 struct ValueQuickChargeView: View {
     var valueTitle: String
     var valueColor: Color
-    var chargeNum: Int
+    var valueId: Int = 0
+    @StateObject var valueVM = ValueViewModel()
+    @State var chargeNum: Int
     var body: some View {
         VStack {
             HStack {
@@ -32,6 +34,11 @@ struct ValueQuickChargeView: View {
                     .foregroundColor(.Gray800)
             }
             Spacer()
+        }
+        .onAppear {
+            valueVM.getFast(valueId: valueId) { fastCount in
+                chargeNum = fastCount
+            }
         }
     }
 }
