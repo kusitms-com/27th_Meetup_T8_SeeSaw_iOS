@@ -10,6 +10,7 @@ import SwiftUI
 struct SelectDeleteAccountView: View {
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var authVM: AuthViewModel
+    @StateObject private var kakaoVM = KakaoAuthViewModel()
     @StateObject private var myPageVM = MyPageViewModel()
     
     @AppStorage("nickname") var nickname: String = "이오링"
@@ -43,6 +44,7 @@ struct SelectDeleteAccountView: View {
                     nickname = ""
                     isOnboardingCompleted = false
                     myPageVM.deleteUser()
+                    kakaoVM.handleKakaoUnlink()
                     authVM.logout()
                 } label: {
                     CapsuleButtonView(color: Color.Gray400, text: "탈퇴할래요", size: .large)
