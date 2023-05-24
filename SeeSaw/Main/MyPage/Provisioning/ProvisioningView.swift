@@ -26,7 +26,7 @@ struct ProvisioningView: View {
             Spacer()
         }
         .sheet(isPresented: $showTermSheet) {
-            SafariView(url: URL(string: "https://www.notion.so/0f6f88cfcc70415c8cbe7f5bedb99ba5")!)
+            SafariView(url: URL(string: "https://www.notion.so/f15a8e252dbd4a1eaf441c089b8495d4?pvs=4")!)
                 .ignoresSafeArea()
         }
         .navigationTitle("권한 설정")

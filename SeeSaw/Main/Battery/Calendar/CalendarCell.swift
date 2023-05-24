@@ -28,9 +28,9 @@ struct CalendarCell: View {
     let colorType: Int
     
     let colorArray: [Int: Color] = [0: Color.Gray300,
-                                    1: Color.BatteryLow,
+                                    1: Color.BatteryHigh,
                                     2: Color.BatteryMedium,
-                                    3: Color.BatteryHigh,
+                                    3: Color.BatteryLow,
                                     4: Color.Gray200]
     
     var body: some View {
