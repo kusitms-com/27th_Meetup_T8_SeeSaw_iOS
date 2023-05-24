@@ -40,7 +40,7 @@ struct ActivityHistoryView: View {
                     ActivityProgressHalfCircleView(geometry: geometry)
                         .padding(.bottom, 20)
                    
-                    CalendarView()
+                    CalendarView(context: HistoryContext.activity)
                         .environmentObject(dateHolder)
                         .padding(.horizontal, 8)
                         .padding(.bottom, 60)

@@ -20,7 +20,7 @@ struct FastChargeExistPopUpView: View {
                            isImageExist: true,
                            isImageGIF: false,
                            imageName: "FastChargeAlreadyExist",
-                           text: "오늘 이미 고속충전을 완료했어요.\n내일 다시 충전해보세요!",
+                           text: "오늘 이미 고속충전을 완료했어요\n내일 다시 충전해보세요!",
                            buttonContext: "확인",
                            buttonColor: Color.Gray900,
                            buttonAction: closePopUp)

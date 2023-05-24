@@ -46,7 +46,9 @@ struct EditSleepGoalView: View {
             Spacer()
             
             Button {
-                sleepGoal -= 1
+                if sleepGoal > 4 {
+                    sleepGoal -= 1
+                }
             } label: {
                 ZStack {
                     Image(systemName: "minus.circle.fill")
@@ -65,7 +67,9 @@ struct EditSleepGoalView: View {
             .foregroundColor(.Gray900)
             
             Button {
-                sleepGoal += 1
+                if sleepGoal < 12 {
+                    sleepGoal += 1
+                }
             } label: {
                 ZStack {
                     Image(systemName: "plus.circle.fill")
