@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProjectNameView: View {
-    @State var projectName: String = ""
+    @Binding var projectName: String
     @Binding var isName: Bool
     var maxLength: Int = 15
     var body: some View {
@@ -40,8 +40,8 @@ struct ProjectNameView: View {
     }
 }
 
-struct ProjectNameView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectNameView(isName: .constant(false))
-    }
-}
+//struct ProjectNameView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProjectNameView(isName: .constant(false))
+//    }
+//}

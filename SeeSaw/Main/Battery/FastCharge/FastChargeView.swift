@@ -22,7 +22,7 @@ struct FastChargeView: View {
     
     @StateObject var api = ApiClient()
     @StateObject var batteryVM = BatteryViewModel()
-    @State private var values: [Int: String] = [:]
+    @State private var values: [String: Int] = [:]
     
     @State var selectedFastChargeValue = ""
     var isFastChargeButtonAvailable: Bool {
@@ -44,7 +44,7 @@ struct FastChargeView: View {
                         .padding(.bottom, 16)
                     
                     HStack(spacing: 8) {
-                        ForEach(Array(values.values), id: \.self) { value in
+                        ForEach(Array(values.keys), id: \.self) { value in
                             Button {
                                 selectedFastChargeValue = value
                             } label: {
@@ -72,7 +72,7 @@ struct FastChargeView: View {
                                       size: .large)
                 }
                 .simultaneousGesture(TapGesture().onEnded {
-                    guard let valueId = values.getKey(forValue: selectedFastChargeValue) else { return }
+                    guard let valueId = values[selectedFastChargeValue] else { return }
                     batteryVM.postFastCharge(valuId: valueId, todayFastCharge: todayFastCharge)
                 })
                 .disabled(!isFastChargeButtonAvailable)

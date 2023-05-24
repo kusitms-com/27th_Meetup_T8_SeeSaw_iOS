@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ProjectEditModalView: View {
     var projectTitle: String
+    var projectId: Int = 0
     @Binding var isEdit: Bool
     @Binding var showModal: Bool
     @Binding var showDeleteModal: Bool
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
             VStack(spacing: 12) {
-                Color.white.ignoresSafeArea()
+                Color.Gray200.ignoresSafeArea()
                 Text("프로젝트 편집")
                     .font(.ssBlackTitle2)
                     .foregroundColor(.Gray500)
@@ -29,23 +30,18 @@ struct ProjectEditModalView: View {
                 Spacer()
                     .frame(height: 40)
                 Button {
-                    isEdit.toggle()
-                    showModal.toggle()
+                    isEdit = true
+                    showModal = false
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     CapsuleButtonView(color: .Gray900, text: "수정", size: .large)
                 }
                 Button {
-                    showDeleteModal.toggle()
+                    showDeleteModal = true
+                    showModal = false
                     presentationMode.wrappedValue.dismiss()
                 } label: {
                     CapsuleButtonView(color: .Gray400, text: "삭제", size: .large)
-                }
-                .halfSheet(showSheet: $showDeleteModal) {
-                    ProjectDeleteModalView(projectTitle: self.projectTitle, showDeleteModal: self.$showDeleteModal)
-                        .background(.white)
-                } onEnd: {
-                    print("close")
                 }
             }
             .padding(20)

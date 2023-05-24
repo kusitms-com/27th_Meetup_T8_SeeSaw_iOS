@@ -34,7 +34,7 @@ class ApiClient: ObservableObject {
             }
     }
     
-    func getValuesWithValueId(year: Int, completion: @escaping ([Int: String]) -> Void) {
+    func getValuesWithValueId(year: Int, completion: @escaping ([String: Int]) -> Void) {
         let url = "\(baseUrl)/api/value?year=\(year)"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
@@ -44,9 +44,9 @@ class ApiClient: ObservableObject {
             .responseDecodable(of: GetValuesResponse.self) { response in
                 switch response.result {
                 case .success(let res):
-                    var values: [Int: String] = [Int: String]()
+                    var values: [String: Int] = [String: Int]()
                     for value in res.result {
-                        values[value.valueId] = value.valueName
+                        values[value.valueName] = value.valueId
                     }
                     completion(values)
                 case .failure(let error):

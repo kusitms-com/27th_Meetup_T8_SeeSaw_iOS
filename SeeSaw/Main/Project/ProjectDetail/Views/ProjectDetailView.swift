@@ -9,30 +9,11 @@ import SwiftUI
 
 struct ProjectDetailView: View {
     @Environment(\.presentationMode) var presentationMode
-    var projectTitle: String = ""
-    var projectStrength: String
-    var projectGoal: String
-    var projectProgress: Int
-    var projectStartDate: Date {
-        var components = DateComponents()
-        components.year = 2023
-        components.month = 3
-        components.day = 13
-
-        let calendar = Calendar.current
-        return calendar.date(from: components)!
-    }
-    var projectEndDate: Date {
-        var components = DateComponents()
-        components.year = 2023
-        components.month = 5
-        components.day = 23
-
-        let calendar = Calendar.current
-        return calendar.date(from: components)!
-    }
+    @StateObject var projectDetailVM = ProjectDetailViewModel()
+    @State var projectDetailInfo: ProjectDetailInfo = ProjectDetailInfo()
+    var projectId: Int = 0
     var words: [String] {
-        projectTitle.split(separator: " ").map { String($0) }
+        projectDetailInfo.projectName.split(separator: " ").map { String($0) }
     }
     var firstHalf: String {
         words.prefix(words.count / 2).joined(separator: " ")
@@ -47,26 +28,26 @@ struct ProjectDetailView: View {
                 .foregroundColor(.Gray900)
                 .padding(.horizontal, 20)
             HStack {
-                Text("\(projectStrength)")
+                Text("\(projectDetailInfo.intensity)")
                     .foregroundColor(.Gray100)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 2)
                     .background(Color.Gray900)
                     .cornerRadius(90)
-                Text("\(projectGoal)")
+                Text("\(projectDetailInfo.goal)")
                     .font(.ssBlackBody1)
                     .foregroundColor(.Gray900)
             }
             .padding(.horizontal, 20)
             ZStack {
-                ValueProgressView(value: Double(projectProgress) / 100, backColor: .Gray300, foreColor: .Gray900)
+                ValueProgressView(value: Double(projectDetailInfo.projectId) / 100, backColor: .Gray300, foreColor: .Gray900)
                     .frame(height: 20)
                 HStack {
-                    Text("\(formatDate(date: projectStartDate))")
+                    Text("\(projectDetailInfo.startedAt)")
                         .font(.ssBlackBody3)
                         .foregroundColor(.white)
                     Spacer()
-                    Text("\(formatDate(date: projectEndDate))")
+                    Text("\(projectDetailInfo.endedAt)")
                         .font(.ssBlackBody3)
                         .foregroundColor(.Gray900)
                 }
@@ -76,7 +57,7 @@ struct ProjectDetailView: View {
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.Gray300)
-            ProjectRetrospectionView()
+            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], projectId: projectId)
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .padding(20)
@@ -92,6 +73,12 @@ struct ProjectDetailView: View {
             }
         )
         .background(Color.Gray200)
+        .onAppear {
+            projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
+                    projectDetailInfo = project
+                print(projectDetailInfo)
+            }
+        }
     }
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -101,8 +88,8 @@ struct ProjectDetailView: View {
     }
 }
 
-struct ProjectDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectDetailView(projectTitle: "큐시즘 밋업데이", projectStrength: "high", projectGoal: "서비스 기획 뽀개기", projectProgress: 30)
-    }
-}
+//struct ProjectDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProjectDetailView(projectId: 1, projectDetailInfo: <#ProjectDetailInfo#>)
+//    }
+//}

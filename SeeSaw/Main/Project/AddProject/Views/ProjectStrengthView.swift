@@ -11,6 +11,7 @@ struct ProjectStrengthView: View {
     @State var valueStrength: Double = 0.0
     @Binding var isStrength: Bool
     var strengthKorean: [String] = [" ", "낮아요", "보통이에요", "높아요"]
+    @Binding var strength: String
     var body: some View {
         VStack(alignment: .leading) {
             Text("프로젝트 강도는 어떻게 되나요?")
@@ -25,7 +26,14 @@ struct ProjectStrengthView: View {
             HStack(spacing: 140) {
                 Slider(value: $valueStrength, in: 1...3, step: 1)
                     .onChange(of: valueStrength) { newValue in
-                    isStrength = true
+                        isStrength = true
+                        if valueStrength == 0.0 {
+                            strength = "LOW"
+                        } else if valueStrength == 1.0 {
+                            strength = "MEDIUM"
+                        } else {
+                            strength = "HIGH"
+                        }
                 }
                     .frame(width: 300, height: 12)
                     .accentColor(.SeeSawGreen)
@@ -44,11 +52,14 @@ struct ProjectStrengthView: View {
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
+        .onAppear {
+            strength = strengthKorean[Int(valueStrength)]
+        }
     }
 }
 
-struct ProjectStrengthView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectStrengthView(isStrength: .constant(false))
-    }
-}
+//struct ProjectStrengthView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProjectStrengthView()
+//    }
+//}

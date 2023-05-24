@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ValueView: View {
-    @AppStorage("nickname") var nickname: String = ""
-    
-    var valuesExistingYear: [String] = ["2023", "2022", "2021", "2020"]
+    @AppStorage("nickname") var nickname: String = "에몽"
+    @State var valuesExistingYear: [Int] = [2020, 2021]
     @State var valueYear: Int = 0
+    @StateObject var api = ApiClient()
+    @StateObject var valueVM = ValueViewModel()
+    @State private var values: [String: Int] = [:]
     var body: some View {
         VStack(spacing: 0) {
             MainToolBar(feature: .valueLog)
@@ -38,17 +40,20 @@ struct ValueView: View {
                 
                 Text("\(nickname)님의")
                     .font(.ssHeading1)
-                Text(valuesExistingYear[valueYear] + "년의 가치는")
+                Text("\(formattedNumber(valuesExistingYear[valueYear]))년의 가치는")
                     .font(.ssHeading1)
-                ValueYearView(valueYear: self.valueYear)
+                ValueYearView(valueYear: self.values)
                 
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(valuesExistingYear, id: \.self, content: {(dataItem: String) in
+                        ForEach(valuesExistingYear, id: \.self, content: {(dataItem: Int) in
                             Button {
                                 valueYear = valuesExistingYear.firstIndex(of: dataItem) ?? 0
+                                api.getValuesWithValueId(year: valuesExistingYear[valueYear]) { thisYearValues in
+                                    values = thisYearValues
+                                }
                             } label: {
-                                Text("\(dataItem)")
+                                Text("\(formattedNumber(dataItem))")
                                     .foregroundColor(valuesExistingYear[valueYear] == dataItem ? .white : .Gray400)
                                     .padding(.horizontal, 12)
                                     .padding(.vertical, 4)
@@ -66,7 +71,20 @@ struct ValueView: View {
             .background(Color.Gray200)
         }
         .navigationTitle("")
-        
+        .onAppear {
+            valueVM.getValueYear { years in
+                valuesExistingYear = years.reversed()
+                api.getValuesWithValueId(year: valuesExistingYear[valueYear]) { thisYearValues in
+                    values = thisYearValues
+                }
+            }
+        }
+    }
+    func formattedNumber(_ number: Int) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.groupingSeparator = ""
+        return numberFormatter.string(from: NSNumber(value: number)) ?? ""
     }
 }
 

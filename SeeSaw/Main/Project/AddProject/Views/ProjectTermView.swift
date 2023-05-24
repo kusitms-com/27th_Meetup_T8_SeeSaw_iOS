@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ProjectTermView: View {
     @State private var showingDatePicker = false
-    @State var startDate = Date()
-    @State var endDate = Date()
+    @Binding var startDate: Date
+    @Binding var endDate: Date
     var body: some View {
         VStack(alignment: .leading) {
             Text("프로젝트 기간을 설정해주세요")
@@ -31,8 +31,8 @@ struct ProjectTermView: View {
         }
     }
 }
-struct ProjectTermView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectTermView()
-    }
-}
+//struct ProjectTermView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProjectTermView()
+//    }
+//}

@@ -11,6 +11,7 @@ struct ValueButtonView: View {
     var valueTitle: String
     var valueColor: Color
     @State private var showModal = false
+    var valueId: Int = 0
     var body: some View {
         ZStack {
             Rectangle()
@@ -21,7 +22,7 @@ struct ValueButtonView: View {
                     self.showModal = true
                 }
                 .halfSheet(showSheet: self.$showModal) {
-                    ValueModalView(valueTitle: self.valueTitle, valueColor: self.valueColor)
+                    ValueModalView(valueTitle: self.valueTitle, valueColor: self.valueColor, valueId: self.valueId)
                 } onEnd: {
                     print("onend")
                 }

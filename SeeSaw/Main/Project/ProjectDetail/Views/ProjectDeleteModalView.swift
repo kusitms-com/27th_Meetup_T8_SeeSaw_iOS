@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ProjectDeleteModalView: View {
     var projectTitle: String
+    var projectId: Int
     @Binding var showDeleteModal: Bool
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(spacing: 12) {
-            Color.white.ignoresSafeArea()
+            Color.Gray200.ignoresSafeArea()
             Text("프로젝트 편집")
                 .font(.ssBlackTitle2)
                 .foregroundColor(.Gray500)
@@ -43,8 +44,8 @@ struct ProjectDeleteModalView: View {
     }
 }
 
-struct ProjectDeleteModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectDeleteModalView(projectTitle: "큐시즘 기업프로젝트", showDeleteModal: .constant(true))
-    }
-}
+//struct ProjectDeleteModalView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProjectDeleteModalView(projectTitle: "큐시즘 기업프로젝트", showDeleteModal: .constant(true))
+//    }
+//}

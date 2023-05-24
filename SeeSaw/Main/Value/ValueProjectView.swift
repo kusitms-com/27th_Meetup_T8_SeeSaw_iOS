@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct ValueProjectView: View {
+    var valueId: Int = 0
+    @StateObject var valueVM = ValueViewModel()
+    @State var projectList: [ProjectNameRate] = []
     var body: some View {
         ScrollView {
             VStack(spacing: 12) {
-                ForEach(MyModel.DataArray, content: { (dataItem: MyModel) in
+                ForEach(projectList, id: \.self, content: { (dataItem: ProjectNameRate) in
                     ZStack {
                         RoundedRectangle(cornerRadius: 12)
                             .frame(width: 350, height: 35)
                             .foregroundColor(.Gray200)
                         HStack {
-                            Text(dataItem.title)
+                            Text(dataItem.projectName)
                             Spacer()
-                            ValueProgressView(value: Double(dataItem.progress), backColor: .Gray300, foreColor: .black)
+                            ValueProgressView(value: Double(dataItem.progressRate), backColor: .Gray300, foreColor: .black)
                                 .frame(width: 160, height: 12)
                         }
                         .padding(.leading, 30)
@@ -30,11 +33,16 @@ struct ValueProjectView: View {
                 })
             }
         }
+        .onAppear {
+            valueVM.getProject(valueId: valueId) { projects in
+                projectList = projects
+            }
+        }
     }
 }
 
-struct ValueProjectView_Previews: PreviewProvider {
-    static var previews: some View {
-        ValueProjectView()
-    }
-}
+//struct ValueProjectView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ValueProjectView(projectList: [{projectName: "큐시즘 기업 프로젝트", progressRate: 100.0]})
+//    }
+//}

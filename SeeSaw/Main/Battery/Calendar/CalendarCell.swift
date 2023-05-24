@@ -18,7 +18,8 @@ struct CalendarCell: View {
     let colorArray: [Int: Color] = [0: Color.Gray300,
                                     1: Color.BatteryLow,
                                     2: Color.BatteryMedium,
-                                    3: Color.BatteryHigh]
+                                    3: Color.BatteryHigh,
+                                    4: Color.Gray300]
     
     var body: some View {
         ZStack {

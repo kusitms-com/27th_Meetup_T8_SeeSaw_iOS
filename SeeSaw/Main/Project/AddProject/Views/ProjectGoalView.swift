@@ -10,7 +10,9 @@ import SwiftUI
 struct ProjectGoalView: View {
     @State var projectGoal: String = ""
     var maxLength: Int = 20
+    @State var valueName: [String] = []
     @Binding var isGoal: Bool
+    @Binding var goal: String
     var body: some View {
         VStack(alignment: .leading) {
             Text("프로젝트 목표를 적어주세요")
@@ -22,6 +24,7 @@ struct ProjectGoalView: View {
                     set: { newValue in
                         if newValue.count <= maxLength {
                             self.projectGoal = newValue
+                            self.goal = newValue
                         }
                         if newValue.count > 0 {
                             isGoal = true
@@ -40,8 +43,8 @@ struct ProjectGoalView: View {
     }
 }
 
-struct ProjectGoalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectGoalView(isGoal: .constant(false))
-    }
-}
+//struct ProjectGoalView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProjectGoalView(isGoal: .constant(false))
+//    }
+//}
