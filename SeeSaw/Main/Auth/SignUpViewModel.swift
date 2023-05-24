@@ -42,7 +42,7 @@ class SignUpViewModel: ObservableObject {
     
     func postEmailCheck(_ email: String, completion: @escaping (Bool) -> Void) {
         let url = "\(baseUrl)/auth/check-email"
-        let parameters: [String: Any] = ["values": email]
+        let parameters: [String: Any] = ["email": email]
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"

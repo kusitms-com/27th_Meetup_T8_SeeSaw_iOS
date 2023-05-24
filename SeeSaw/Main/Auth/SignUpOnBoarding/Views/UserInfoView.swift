@@ -12,13 +12,14 @@ struct UserInfoView: View {
     
     @State var email: String = ""
     @AppStorage("nickname") var nickname: String = ""
+    @State var newNickname: String = ""
     @Binding var agreeMarketing: Bool
     
     var isNotVaildEmail: Bool {
         return !email.isEmpty && !isValidEmail(email)
     }
     var isNotVaildNickname: Bool {
-        return !nickname.isEmpty && !isValidNickname(nickname)
+        return newNickname.isEmpty == false && !isValidEmail(nickname)
     }
     var allValidate: Bool {
         return isNotVaildEmail == false && isNotVaildNickname == false
@@ -55,7 +56,8 @@ struct UserInfoView: View {
             }
             .disabled(allValidate == false)
             .simultaneousGesture(TapGesture().onEnded {
-                signUpVM.postUserInfo(agreeMarketing: agreeMarketing, email: email, nickname: nickname)
+                nickname = newNickname
+                signUpVM.postUserInfo(agreeMarketing: agreeMarketing, email: email, nickname: newNickname)
             })
         }
         .padding(20)
@@ -87,7 +89,9 @@ struct UserInfoView: View {
                 .font(.ssWhiteSubTitle)
             
             ZStack(alignment: .trailing) {
-                TextField("이메일을 입력해주세요", text: $email)
+                TextField("이메일을 입력해주세요", text: $email, onEditingChanged: { _ in
+                    isEmailChecked = false
+                })
                     .font(.ssBlackBody1)
                     .padding(.vertical, 10)
                     .textInputAutocapitalization(.never)
@@ -121,7 +125,11 @@ struct UserInfoView: View {
                 .padding(.bottom, 8)
             
             if isNotVaildEmail {
-                Text(isEmailChecked && isEmailAvailable == false ? "중복된 이메일이에요" : "올바른 이메일 형식이 아니에요")
+                Text("올바른 이메일 형식이 아니에요")
+                    .font(.ssWhiteBody3)
+                    .foregroundColor(.SeeSawRed)
+            } else if isEmailChecked && isEmailAvailable == false {
+                Text("중복된 이메일이에요")
                     .font(.ssWhiteBody3)
                     .foregroundColor(.SeeSawRed)
             }
@@ -134,19 +142,15 @@ struct UserInfoView: View {
                 .font(.ssWhiteSubTitle)
             
             ZStack(alignment: .trailing) {
-                TextField("한글, 영문, 숫자를 10글자 내로 입력해주세요", text: $nickname, onEditingChanged: { isEditing in
-                    if !isEditing {
-                        nickname = nickname.filter { !$0.isWhitespace }
-                    }
-                })
+                TextField("한글, 영문, 숫자를 10글자 내로 입력해주세요", text: $newNickname)
                     .font(.ssBlackBody1)
                     .padding(.vertical, 10)
                     .textInputAutocapitalization(.never)
-                    .onChange(of: nickname, perform: {
-                              nickname = String($0.prefix(10))
+                    .onChange(of: newNickname, perform: {
+                              newNickname = String($0.prefix(10))
                             })
                 Image(systemName: "checkmark")
-                    .foregroundColor(nickname.isEmpty ? .Gray400 : (isNotVaildNickname ? .SeeSawRed : .SeeSawGreen))
+                    .foregroundColor(newNickname.isEmpty ? .Gray400 : (isNotVaildNickname ? .SeeSawRed : .SeeSawGreen))
             }
             
             Rectangle()
