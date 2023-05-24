@@ -21,10 +21,11 @@ struct UserInfoView: View {
         return !nickname.isEmpty && !isValidNickname(nickname)
     }
     var allValidate: Bool {
-        return isValidEmail(email) && isValidNickname(nickname)
+        return isNotVaildEmail == false && isNotVaildNickname == false
     }
     
     @State private var isEmailChecked: Bool = false
+    @State private var isEmailAvailable: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -91,12 +92,15 @@ struct UserInfoView: View {
                     .padding(.vertical, 10)
                     .textInputAutocapitalization(.never)
                     .keyboardType(.emailAddress)
-                if isEmailChecked {
+                if isEmailAvailable {
                     Image(systemName: "checkmark")
                         .foregroundColor(email.isEmpty ? .Gray400 : (isNotVaildEmail ? .SeeSawRed : .SeeSawGreen))
                 } else {
                     Button {
-                        
+                        signUpVM.postEmailCheck(email) { isAvailable in
+                            isEmailAvailable = isAvailable
+                            isEmailChecked = true
+                        }
                     } label: {
                         Text("중복 확인")
                             .font(.ssBlackBody1)
@@ -117,7 +121,7 @@ struct UserInfoView: View {
                 .padding(.bottom, 8)
             
             if isNotVaildEmail {
-                Text("올바른 이메일 형식이 아니에요")
+                Text(isEmailChecked && isEmailAvailable == false ? "중복된 이메일이에요" : "올바른 이메일 형식이 아니에요")
                     .font(.ssWhiteBody3)
                     .foregroundColor(.SeeSawRed)
             }
@@ -130,7 +134,11 @@ struct UserInfoView: View {
                 .font(.ssWhiteSubTitle)
             
             ZStack(alignment: .trailing) {
-                TextField("한글, 영문, 숫자를 10글자 내로 입력해주세요", text: $nickname)
+                TextField("한글, 영문, 숫자를 10글자 내로 입력해주세요", text: $nickname, onEditingChanged: { isEditing in
+                    if !isEditing {
+                        nickname = nickname.filter { !$0.isWhitespace }
+                    }
+                })
                     .font(.ssBlackBody1)
                     .padding(.vertical, 10)
                     .textInputAutocapitalization(.never)

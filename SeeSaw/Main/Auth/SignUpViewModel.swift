@@ -40,7 +40,7 @@ class SignUpViewModel: ObservableObject {
             }
     }
     
-    func postEmailCheck(_ email: String, completion: @escaping (String) -> Void) {
+    func postEmailCheck(_ email: String, completion: @escaping (Bool) -> Void) {
         let url = "\(baseUrl)/auth/check-email"
         let parameters: [String: Any] = ["values": email]
         let headers: HTTPHeaders = [
@@ -53,9 +53,11 @@ class SignUpViewModel: ObservableObject {
                    parameters: parameters,
                    encoding: JSONEncoding.default,
                    headers: headers)
-            .responseDecodable(of: String.self) { response in
+            .responseDecodable(of: Bool.self) { response in
                 switch response.result {
                 case .success(let response):
+                    print(email)
+                    print(response)
                     completion(response)
                 case .failure(let error):
                     print("DEBUG postSelectedValues: \(error)")
