@@ -156,6 +156,8 @@
 		BE7C07402A1B270E00C7D647 /* WriteFinalReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */; };
 		BE7C07442A1B3DEE00C7D647 /* ValueImage.gif in Resources */ = {isa = PBXBuildFile; fileRef = BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */; };
 		BE7C07472A1B540E00C7D647 /* ProjectDeletePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */; };
+		BE92F93C2A1F0F3500EC75F7 /* PostProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92F93B2A1F0F3500EC75F7 /* PostProject.swift */; };
+		BE92F93E2A1F0F4300EC75F7 /* PostProjectEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92F93D2A1F0F4300EC75F7 /* PostProjectEmotion.swift */; };
 		BEC54BBE2A1DA91600C455DF /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BBD2A1DA91600C455DF /* ProjectDetailViewModel.swift */; };
 		BEC54BC02A1DAA1C00C455DF /* RegularReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BBF2A1DAA1C00C455DF /* RegularReviewViewModel.swift */; };
 		BEC54BC32A1E18F900C455DF /* GetCompleteProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BC22A1E18F900C455DF /* GetCompleteProjectResponse.swift */; };
@@ -164,6 +166,7 @@
 		BEC54BCA2A1E28B100C455DF /* AddProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC54BC92A1E28B100C455DF /* AddProjectViewModel.swift */; };
 		BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC936F2A03D8900099BA79 /* ValueModalView.swift */; };
 		BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECC93712A03D8950099BA79 /* ValueButtonView.swift */; };
+		BEFF5B9C2A1F5645009612AA /* MiddleFinalReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFF5B9B2A1F5645009612AA /* MiddleFinalReviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -317,6 +320,8 @@
 		BE7C073F2A1B270E00C7D647 /* WriteFinalReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteFinalReviewView.swift; sourceTree = "<group>"; };
 		BE7C07432A1B3DEE00C7D647 /* ValueImage.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ValueImage.gif; sourceTree = "<group>"; };
 		BE7C07462A1B540E00C7D647 /* ProjectDeletePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDeletePopUpView.swift; sourceTree = "<group>"; };
+		BE92F93B2A1F0F3500EC75F7 /* PostProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProject.swift; sourceTree = "<group>"; };
+		BE92F93D2A1F0F4300EC75F7 /* PostProjectEmotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProjectEmotion.swift; sourceTree = "<group>"; };
 		BEC54BBD2A1DA91600C455DF /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
 		BEC54BBF2A1DAA1C00C455DF /* RegularReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularReviewViewModel.swift; sourceTree = "<group>"; };
 		BEC54BC22A1E18F900C455DF /* GetCompleteProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCompleteProjectResponse.swift; sourceTree = "<group>"; };
@@ -325,6 +330,7 @@
 		BEC54BC92A1E28B100C455DF /* AddProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectViewModel.swift; sourceTree = "<group>"; };
 		BECC936F2A03D8900099BA79 /* ValueModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueModalView.swift; sourceTree = "<group>"; };
 		BECC93712A03D8950099BA79 /* ValueButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueButtonView.swift; sourceTree = "<group>"; };
+		BEFF5B9B2A1F5645009612AA /* MiddleFinalReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleFinalReviewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,6 +628,8 @@
 				BEC54BC22A1E18F900C455DF /* GetCompleteProjectResponse.swift */,
 				BEC54BC42A1E196E00C455DF /* GetRegularReviewResponse.swift */,
 				BEC54BC62A1E1A2700C455DF /* GetProjectDetailInfoResponse.swift */,
+				BE92F93B2A1F0F3500EC75F7 /* PostProject.swift */,
+				BE92F93D2A1F0F4300EC75F7 /* PostProjectEmotion.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -806,6 +814,7 @@
 				BE7C070F2A18AF4F00C7D647 /* InterimReviewMainView.swift */,
 				BE7C07112A18B5C700C7D647 /* InterimReviewQuestionView.swift */,
 				BE7C07132A18FCB600C7D647 /* WriteInterimReviewView.swift */,
+				BEFF5B9B2A1F5645009612AA /* MiddleFinalReviewViewModel.swift */,
 			);
 			path = InterimReview;
 			sourceTree = "<group>";
@@ -1020,6 +1029,7 @@
 				510B32B82A17FD4800026E07 /* ActivityProgressHalfCircleView.swift in Sources */,
 				BE7C06E02A0BAD7700C7D647 /* CompleteProjectView.swift in Sources */,
 				BE7C06E82A0BAD8C00C7D647 /* ProjectStrengthView.swift in Sources */,
+				BEFF5B9C2A1F5645009612AA /* MiddleFinalReviewViewModel.swift in Sources */,
 				BE7C06FC2A14CB0000C7D647 /* ProjectDeleteModalView.swift in Sources */,
 				510B32C52A18007F00026E07 /* MonthStruct.swift in Sources */,
 				51DD74B52A09F1A500F1F73B /* ValueBlockView.swift in Sources */,
@@ -1067,6 +1077,7 @@
 				51AA9A622A174101005C14FC /* FastChargeCompletionView.swift in Sources */,
 				51C656742A137BC200610369 /* SelectValuesView.swift in Sources */,
 				514E4D3A2A1BC2600040FC88 /* HealthStore.swift in Sources */,
+				BE92F93C2A1F0F3500EC75F7 /* PostProject.swift in Sources */,
 				BE7C07292A1B05A100C7D647 /* ProjectPersonView.swift in Sources */,
 				BECC93702A03D8900099BA79 /* ValueModalView.swift in Sources */,
 				511AA1D92A100A4700DAF26A /* PostLogin.swift in Sources */,
@@ -1137,6 +1148,7 @@
 				BE7C06F62A14A60100C7D647 /* ValueProgressView.swift in Sources */,
 				51A246CE2A1DF455006E46E3 /* EmailSender.swift in Sources */,
 				BE7C072D2A1B06C800C7D647 /* ProjectWantPersonView.swift in Sources */,
+				BE92F93E2A1F0F4300EC75F7 /* PostProjectEmotion.swift in Sources */,
 				510B32E82A1AAE3900026E07 /* SleepHistoryView.swift in Sources */,
 				BECC93722A03D8950099BA79 /* ValueButtonView.swift in Sources */,
 				BE7C06F22A13A06C00C7D647 /* ProjectDetailView.swift in Sources */,

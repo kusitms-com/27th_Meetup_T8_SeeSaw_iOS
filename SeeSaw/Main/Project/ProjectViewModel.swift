@@ -47,7 +47,7 @@ class ProjectViewModel: ObservableObject {
                 }
             }
     }
-    func getTodayReviewQuestion(completion: @escaping(String) -> Void) {
+    func getTodayReviewQuestion(completion: @escaping(Int, String) -> Void) {
         let url = "\(baseUrl)/api/project/question"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
@@ -58,7 +58,25 @@ class ProjectViewModel: ObservableObject {
                 switch response.result {
                 case .success(let res):
                     let contents = res.contents
-                    completion(contents)
+                    let questionId = res.id
+                    completion(questionId, contents)
+                case .failure(let error):
+                    print("DEBUG Api-getValues: \(error)")
+                }
+            }
+    }
+    func getProgressCompleteCount(completion: @escaping(Int, Int) -> Void) {
+        let url = "\(baseUrl)/api/project/count"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: GetProgressCompleteCountResponse.self) { response in
+                switch response.result {
+                case .success(let res):
+                    let progress = res.result.progressCount
+                    let complete = res.result.completeCount
+                    completion(progress, complete)
                 case .failure(let error):
                     print("DEBUG Api-getValues: \(error)")
                 }
@@ -74,5 +92,18 @@ struct GetProgressProjectResponse: Codable {
 }
 
 struct GetTodayReviewQuestionResponse: Codable {
+    let id: Int
     let contents: String
+}
+
+struct GetProgressCompleteCountResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: ProgressCompleteCount
+}
+
+struct ProgressCompleteCount: Codable {
+    let progressCount: Int
+    let completeCount: Int
 }

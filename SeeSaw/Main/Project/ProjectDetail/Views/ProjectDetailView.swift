@@ -57,7 +57,12 @@ struct ProjectDetailView: View {
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.Gray300)
-            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], projectId: projectId)
+            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], isMiddle:  projectDetailInfo.isHalfProgressed, isFinal: projectDetailInfo.isFinished, projectId: projectDetailInfo.projectId, halfDate: projectDetailInfo.halfDate, endedAt: projectDetailInfo.endedAt, middleRemembranceId: projectDetailInfo.middleRemembranceId ?? 0)
+        }
+        .onAppear {
+            projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
+                    projectDetailInfo = project
+            }
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .padding(20)
@@ -73,12 +78,6 @@ struct ProjectDetailView: View {
             }
         )
         .background(Color.Gray200)
-        .onAppear {
-            projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
-                    projectDetailInfo = project
-                print(projectDetailInfo)
-            }
-        }
     }
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -87,9 +86,3 @@ struct ProjectDetailView: View {
         return formattedDate
     }
 }
-
-//struct ProjectDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectDetailView(projectId: 1, projectDetailInfo: <#ProjectDetailInfo#>)
-//    }
-//}

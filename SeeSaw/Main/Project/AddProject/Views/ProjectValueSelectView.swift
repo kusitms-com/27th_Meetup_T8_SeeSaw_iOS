@@ -88,9 +88,3 @@ struct ProjectValueSelectView: View {
         }
     }
 }
-
-//struct ProjectValueSelectView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectValueSelectView(valueSelect: ["도전", "여유", "사랑"], valueIndex: 0, isValue: .constant(false))
-//    }
-//}

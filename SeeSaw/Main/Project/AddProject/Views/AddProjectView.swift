@@ -12,6 +12,7 @@ struct AddProjectView: View {
     @StateObject var api = ApiClient()
     @StateObject var addProjectVM = AddProjectViewModel()
     var isEdit: Bool = false
+    var projectId: Int = 0
     @State var projectName: String = ""
     @State var strength: String = ""
     @State var startedAt: Date = Date()
@@ -40,14 +41,21 @@ struct AddProjectView: View {
                 Spacer()
                     .frame(height: 36)
                 ProjectGoalView(isGoal: self.$isGoal, goal: self.$goal)
-                Button {
-                    addProjectVM.postProject(valueId: valueId ?? nil, projectName: projectName, startedAt: startedAt, endedAt: endedAt, intensity: strength, goal: goal)
-                    presentationMode.wrappedValue.dismiss()
+                NavigationLink {
+                    SeeSawTabView(tabIndex: .project)
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     CapsuleButtonView(color: (isName && isStrength && isValue && isGoal) ? .SeeSawGreen : .Gray400, text: (isEdit ? "수정하기" : "추가하기"), size: .large)
-                    
                 }
+                .simultaneousGesture(TapGesture().onEnded {
+                    if isEdit {
+                        addProjectVM.putProject(projectId: projectId, valueId: valueId, projectName: projectName, startedAt: startedAt, endedAt: endedAt, intensity: strength, goal: goal)
+                    } else {
+                        addProjectVM.postProject(valueId: valueId ?? nil, projectName: projectName, startedAt: startedAt, endedAt: endedAt, intensity: strength, goal: goal)
+                    }
+                })
                 .disabled(!(isName && isStrength && isValue && isGoal))
+                
             }
             .padding(20)
             .navigationBarTitle(isEdit ? "프로젝트 수정" : "새로운 프로젝트 추가", displayMode: .inline)

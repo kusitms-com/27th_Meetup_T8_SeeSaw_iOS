@@ -9,11 +9,16 @@ import SwiftUI
 
 struct AddRegularReotrspectionView: View {
     var todayDate: Date = Date()
+    @State var todayQuestion: String = ""
     @State var todayRetrospection: String = ""
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var regularReviewVM = RegularReviewViewModel()
+    @State var questionId: Int?
+    var projectId: Int = 0
+    @State var isQuestion: Bool = false
     var body: some View {
         VStack {
-            TodayQuestionView()
+            TodayQuestionView(todayQuestion: $todayQuestion, questionId: $questionId, isQuestion: $isQuestion)
             ZStack {
                 TextEditor(text: $todayRetrospection)
                     .padding(10)
@@ -42,12 +47,15 @@ struct AddRegularReotrspectionView: View {
                 .font(.ssBlackBody2)
                 .foregroundColor(.Gray500)
             Button {
-                
+                if !isQuestion {
+                    questionId = nil
+                }
+                regularReviewVM.postRegularReview(projectId: projectId, questionId: questionId, contents: todayRetrospection)
+                presentationMode.wrappedValue.dismiss()
             } label: {
                 CapsuleButtonView(color: (todayRetrospection.count == 0 ? .Gray400 : .SeeSawGreen), text: "회고 완료", size: .large)
             }
             .disabled(todayRetrospection.count == 0)
-
         }
         .padding(20)
         .navigationBarTitle("\(formatDate(date: todayDate))회고", displayMode: .inline)
@@ -68,11 +76,5 @@ struct AddRegularReotrspectionView: View {
         dateFormatter.dateFormat = "M월 d일"
         let formattedDate = dateFormatter.string(from: date)
         return formattedDate
-    }
-}
-
-struct AddRegularReotrspectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddRegularReotrspectionView()
     }
 }

@@ -18,9 +18,3 @@ struct ValueYearView: View {
         }
     }
 }
-
-//struct ValueYearView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ValueYearView(valueYear: [0: "도전", 1: "여유", 2: "균형"])
-//    }
-//}

@@ -60,7 +60,6 @@ class MyPageViewModel: ObservableObject {
                 }
             }
     }
-    
     func deleteUser() {
         let url = "\(baseUrl)/api/user"
         let headers: HTTPHeaders = [

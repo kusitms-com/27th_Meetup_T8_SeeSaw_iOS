@@ -15,6 +15,10 @@ struct ProjectRetrospectionView: View {
     var isProjectReport: Bool = false
     var emojiList: [String] = ["LIKE", "NICE", "IDK", "ANGRY", "SAD"]
     let numbers = 0...4
+    var halfDate: String = ""
+    var endedAt: String = ""
+    @StateObject var projectDetailVM = ProjectDetailViewModel()
+    var middleRemembranceId: Int = 0
     var body: some View {
         VStack(alignment: .leading) {
             Text("프로젝트에서 느낀 감정을 자유롭게 눌러주세요")
@@ -23,6 +27,8 @@ struct ProjectRetrospectionView: View {
                     VStack {
                         Button {
                             emojiNum[number] += 1
+                            projectDetailVM.postProjectEmotion(projectId: projectId, emotion: emojiList[number])
+                            print(projectId)
                         } label: {
                             Image(emojiList[number])
                         }
@@ -35,7 +41,7 @@ struct ProjectRetrospectionView: View {
             .padding(.horizontal, 20)
             VStack(spacing: 0) {
                 HStack(spacing: 0) {
-                    NavigationLink(destination: ProjectRegularRetrospectionView()) {
+                    NavigationLink(destination: ProjectRegularRetrospectionView(projectId: projectId)) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 70)
                                 .frame(width: 180, height: 180)
@@ -59,14 +65,14 @@ struct ProjectRetrospectionView: View {
                                         .font(.ssBlackTitle2)
                                         .foregroundColor(.Gray700)
                                     if !isMiddle {
-                                        Text("열려요")
+                                        Text("\(halfDate)에 열려요")
                                             .font(.ssBlackBody3)
                                             .foregroundColor(.Gray700)
                                     }
                                 }
                             )
                         if isMiddle {
-                            NavigationLink(destination: InterimReviewView()) {
+                            NavigationLink(destination: InterimReviewView(middleRemembranceId: middleRemembranceId)) {
                                 EmptyView()
                             }
                             .frame(width: 180, height: 180)
@@ -86,14 +92,14 @@ struct ProjectRetrospectionView: View {
                                         .font(.ssBlackTitle2)
                                         .foregroundColor(.Gray700)
                                     if !isFinal {
-                                        Text("열려요")
+                                        Text("\(endedAt)에 열려요")
                                             .font(.ssBlackBody3)
                                             .foregroundColor(.Gray700)
                                     }
                                 }
                             )
                         if isFinal {
-                            NavigationLink(destination: InterimReviewView()) {
+                            NavigationLink(destination: InterimReviewView(middleRemembranceId: middleRemembranceId)) {
                                 ArrowUpRightView()
                                     .offset(x: 40, y: -40)
                             }

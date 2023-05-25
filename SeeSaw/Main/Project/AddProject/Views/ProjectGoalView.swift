@@ -42,9 +42,3 @@ struct ProjectGoalView: View {
         }
     }
 }
-
-//struct ProjectGoalView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectGoalView(isGoal: .constant(false))
-//    }
-//}

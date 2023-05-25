@@ -40,9 +40,3 @@ struct ValueProjectView: View {
         }
     }
 }
-
-//struct ValueProjectView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ValueProjectView(projectList: [{projectName: "큐시즘 기업 프로젝트", progressRate: 100.0]})
-//    }
-//}

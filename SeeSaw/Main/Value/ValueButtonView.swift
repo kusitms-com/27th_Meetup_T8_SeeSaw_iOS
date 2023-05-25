@@ -14,18 +14,15 @@ struct ValueButtonView: View {
     var valueId: Int = 0
     var body: some View {
         ZStack {
-            Rectangle()
-                .cornerRadius(27, corners: [.bottomRight, .topRight])
-                .frame(width: 232, height: 54)
-                .foregroundColor(valueColor)
-                .onTapGesture {
-                    self.showModal = true
-                }
-                .halfSheet(showSheet: self.$showModal) {
-                    ValueModalView(valueTitle: self.valueTitle, valueColor: self.valueColor, valueId: self.valueId)
-                } onEnd: {
-                    print("onend")
-                }
+            Button {
+                self.showModal = true
+            } label: {
+                Rectangle()
+                    .cornerRadius(27, corners: [.bottomRight, .topRight])
+                    .frame(width: 232, height: 54)
+                    .foregroundColor(valueColor)
+            }
+                
             HStack {
                 Spacer()
                     .frame(width: 8)
@@ -39,6 +36,11 @@ struct ValueButtonView: View {
                     .frame(width: 20)
             }
             .frame(width: 232)
+        }
+        .halfSheet(showSheet: self.$showModal) {
+            ValueModalView(valueTitle: self.valueTitle, valueColor: self.valueColor, valueId: self.valueId)
+        } onEnd: {
+            print("onend")
         }
     }
 }

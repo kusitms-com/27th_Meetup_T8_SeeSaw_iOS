@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProjectDeletePopUpView: View {
-    @Binding var showFastChargeExistPopUp: Bool
+    @Binding var showDeletePopUp: Bool
     
     var body: some View {
         ZStack {
@@ -26,14 +26,8 @@ struct ProjectDeletePopUpView: View {
                            buttonAction: closePopUp)
         }
     }
-    
     func closePopUp() {
-        showFastChargeExistPopUp = false
+        showDeletePopUp = false
     }
 }
 
-struct ProjectDeletePopUpView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectDeletePopUpView(showFastChargeExistPopUp: .constant(true))
-    }
-}

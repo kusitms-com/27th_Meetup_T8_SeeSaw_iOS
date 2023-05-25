@@ -31,8 +31,3 @@ struct ProjectTermView: View {
         }
     }
 }
-//struct ProjectTermView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectTermView()
-//    }
-//}
