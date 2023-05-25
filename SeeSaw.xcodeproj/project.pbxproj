@@ -71,6 +71,7 @@
 		51810DAB2A03621300AF3289 /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */; };
 		51810DAD2A03684500AF3289 /* LogoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DAC2A03684500AF3289 /* LogoutView.swift */; };
 		51810DB12A03782400AF3289 /* SelectDeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */; };
+		5183DF2A2A1FB8780090A306 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5183DF292A1FB8780090A306 /* ContactView.swift */; };
 		5195D40C2A16A98C004CE657 /* BatteryProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */; };
 		5195D40E2A16B89B004CE657 /* HalfCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5195D40D2A16B89B004CE657 /* HalfCircle.swift */; };
 		51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */; };
@@ -234,6 +235,7 @@
 		51810DAA2A03621300AF3289 /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
 		51810DAC2A03684500AF3289 /* LogoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutView.swift; sourceTree = "<group>"; };
 		51810DB02A03782400AF3289 /* SelectDeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeleteAccountView.swift; sourceTree = "<group>"; };
+		5183DF292A1FB8780090A306 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		5195D40B2A16A98C004CE657 /* BatteryProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryProgressCircleView.swift; sourceTree = "<group>"; };
 		5195D40D2A16B89B004CE657 /* HalfCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfCircle.swift; sourceTree = "<group>"; };
 		51A1E5BC2A0E252000404E11 /* BatteryInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInformationView.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				5139CCAA2A0BF8C900181B55 /* SignOut */,
 				510B32D62A1947E900026E07 /* MyPageViewModel.swift */,
 				51A246CD2A1DF455006E46E3 /* EmailSender.swift */,
+				5183DF292A1FB8780090A306 /* ContactView.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -1107,6 +1110,7 @@
 				BE7C073E2A1B26F700C7D647 /* FinalReviewQuestionView.swift in Sources */,
 				BE7C07312A1B182800C7D647 /* ProjectFastChargeView.swift in Sources */,
 				510B32E12A1A9B9300026E07 /* FastChargeExistPopUpView.swift in Sources */,
+				5183DF2A2A1FB8780090A306 /* ContactView.swift in Sources */,
 				BE7C06E42A0BAD8000C7D647 /* ProjectGoalView.swift in Sources */,
 				5195D40C2A16A98C004CE657 /* BatteryProgressCircleView.swift in Sources */,
 				51DD74B92A0A0C6E00F1F73B /* SmallPopUpView.swift in Sources */,

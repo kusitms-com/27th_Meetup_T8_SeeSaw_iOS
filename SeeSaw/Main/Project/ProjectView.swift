@@ -41,6 +41,7 @@ struct ProjectView: View {
                             .foregroundColor(.GrayBlack)
                     }
                     .padding(.leading, 20)
+                    
                     ZStack {
                         RoundedRectangle(cornerRadius: 12)
                             .foregroundColor(.Gray100)
@@ -53,25 +54,31 @@ struct ProjectView: View {
                                     .offset(x: 100, y: -30)
                             )
                         HStack {
-                            VStack(alignment: .leading) {
+                            VStack(alignment: .leading, spacing: 0) {
                                 Text("오늘의 회고 질문")
                                     .font(.ssBlackBody2)
                                     .foregroundColor(.Gray600)
-                                    .padding(.bottom, 4)
+                                    .padding(.bottom, 8)
                                 Text(firstHalf)
                                     .font(.ssBlackTitle2)
                                     .foregroundColor(.Gray800)
+                                    .padding(.bottom, 2)
                                 Text(secondHalf)
                                     .font(.ssBlackTitle2)
                                     .foregroundColor(.Gray800)
-                            }                        .padding(.horizontal, 10)
+                            }
+                            .padding(.horizontal, 20)
+                            
                             Spacer()
                         }
                         .padding(.leading, 20)
                     }
+                    
                     VStack {
                         Spacer()
                             .frame(height: 30)
+                        
+                        // 진행 중, 완료 탭
                         HStack(spacing: 30) {
                             Button {
                                 withAnimation {
@@ -82,8 +89,10 @@ struct ProjectView: View {
                                     .font(.ssWhiteBody1)
                                     .foregroundColor(isProgress ? .Gray900 : .Gray500)
                             }
+                            
                             Spacer()
                                 .frame(width: 50)
+                            
                             Button {
                                 withAnimation {
                                     isProgress = false
@@ -94,6 +103,7 @@ struct ProjectView: View {
                                     .foregroundColor(isProgress ? .Gray500 : .Gray900)
                             }
                         }
+                        
                         ZStack {
                             Rectangle()
                                 .frame(height: 1)
@@ -116,10 +126,13 @@ struct ProjectView: View {
                                 }
                             }
                         }
+                        
                         if isProgress {
-                            ProgressProjectView(progressNum: $progressNum, showDeletePopUp: $showDeletePopUp)
+                            ProgressProjectView(progressNum: $progressNum,
+                                                showDeletePopUp: $showDeletePopUp)
                         } else {
-                            CompleteProjectView(completeNum: $completeNum, showDeletePopUp: $showDeletePopUp)
+                            CompleteProjectView(completeNum: $completeNum,
+                                                showDeletePopUp: $showDeletePopUp)
                         }
                     }
                 }

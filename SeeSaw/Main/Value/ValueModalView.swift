@@ -29,7 +29,7 @@ struct ValueModalView: View {
                             Text(valueTitle)
                                 .font(.ssHeading3)
                                 .foregroundColor(valueColor == .SeeSawYellow ? .GrayBlack : .Gray100)
-                            Text(valueTitle + "과 관련된 프로젝트와 루틴들이에요")
+                            Text(valueTitle + "의 가치를 찾은 프로젝트와 고속충전 내역이에요")
                                 .font(.system(size: 12))
                                 .foregroundColor(valueColor == .SeeSawYellow ? .Gray700 : .Gray100)
                         }

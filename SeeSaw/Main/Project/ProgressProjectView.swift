@@ -42,12 +42,12 @@ struct ProgressProjectView: View {
         return components.year!
     }
     var body: some View {
-        VStack {
-            ScrollView {
+        ScrollView {
+            VStack(spacing: 0) {
                 LazyVGrid(columns: [
-                    GridItem(.fixed(180)),
-                    GridItem(.fixed(180))
-                ], spacing: 10, content: {
+                    GridItem(.adaptive(minimum: 140), spacing: 12, alignment: .center),
+                    GridItem(.adaptive(minimum: 140), spacing: 12, alignment: .center)
+                ], spacing: 4, content: {
                     NavigationLink(destination: AddProjectView(valueName: valueName)) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 12)
@@ -59,19 +59,25 @@ struct ProgressProjectView: View {
                                     .foregroundColor(.white)
                                     .frame(width: 28, height: 28)
                                 Spacer()
-                                    .frame(width: 120, height: 61)
-                                Text("새로운")
-                                    .font(.ssWhiteBody1)
-                                    .foregroundColor(.white)
-                                Text("프로젝트를")
-                                    .font(.ssWhiteBody1)
-                                    .foregroundColor(.white)
-                                Text("추가해보세요")
-                                    .font(.ssWhiteBody1)
-                                    .foregroundColor(.white)
+                                HStack {
+                                    VStack(alignment: .leading, spacing: 0) {
+                                        Text("새로운")
+                                            .font(.ssWhiteBody1)
+                                            .foregroundColor(.white)
+                                        Text("프로젝트를")
+                                            .font(.ssWhiteBody1)
+                                            .foregroundColor(.white)
+                                        Text("추가해보세요")
+                                            .font(.ssWhiteBody1)
+                                            .foregroundColor(.white)
+                                    }
+                                    Spacer()
+                                }
                             }
+                            .padding(20)
                         }
                     }
+                    
                     ForEach(progressProject, id: \.self, content: { (project: ProgressCompleteProject) in
                         ZStack {
                             RoundedRectangle(cornerRadius: 12)
@@ -98,7 +104,13 @@ struct ProgressProjectView: View {
                             .foregroundColor(.Gray600)
                     }
                 }
+                
+                Rectangle()
+                    .frame(height: 80)
+                    .foregroundColor(.Gray200)
             }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
         }
         .onAppear {
             projectVM.getProgressProject { progress in

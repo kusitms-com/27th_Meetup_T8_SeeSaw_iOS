@@ -21,8 +21,8 @@ struct ActivityProgressHalfCircleView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             TopHalfCircle(plusRatio: 1.0)
-                .stroke(Color.BatteryLow, style: StrokeStyle(lineWidth: 32, lineCap: .round))
-            TopHalfCircle(plusRatio: 0.6)
+                .stroke(Color.BatteryMedium, style: StrokeStyle(lineWidth: 32, lineCap: .round))
+            TopHalfCircle(plusRatio: activityRatio)
                 .stroke(Color.BatteryHigh, style: StrokeStyle(lineWidth: 32, lineCap: .round))
             
             Text("\(todayActivity)")
