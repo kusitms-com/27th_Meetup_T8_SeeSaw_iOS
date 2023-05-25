@@ -9,13 +9,18 @@ import SwiftUI
 
 struct WriteInterimReviewView: View {
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
     var questionNum: Int
     var questionTitle: String
     @Binding var interimAnswerArray: [String]
+    @Binding var isFullQuestion: [Int]
+    @Binding var isFull: Bool
     @State var answerText: String = ""
+    var disabledButton: Bool = true
+    var qnaId: Int = 0
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
+            HStack(alignment: .top) {
                 Text("Q\(questionNum)")
                     .foregroundColor(.SeeSawBlue)
                     .font(.ssWhiteBody1)
@@ -44,12 +49,18 @@ struct WriteInterimReviewView: View {
                     .frame(height: 38)
                 Button {
                     interimAnswerArray[questionNum - 1] = answerText
+                    isFullQuestion[questionNum - 1] = 1
+                    if isFullQuestion[0] == 1 && isFullQuestion[1] == 1 && isFullQuestion[2] == 1 && isFullQuestion[3] == 1 && isFullQuestion[4] == 1 && isFullQuestion[5] == 1 {
+                        isFull = true
+                    }
+                    middleFinalReviewVM.postRemeberanceAnswer(projectQnaId: qnaId, answerContent: answerText) { response in
+                    }
                     presentationMode.wrappedValue.dismiss()
                 } label: {
-                    CapsuleButtonView(color: (answerText.count == 0 ? .Gray400 : .SeeSawGreen), text: "답변 저장", size: .large)
+                    CapsuleButtonView(color: ((answerText.count == 0 || disabledButton) ? .Gray400 : .SeeSawGreen), text: "답변 저장", size: .large)
                         .frame(width: 350)
                 }
-                .disabled(answerText.count == 0)
+                .disabled(answerText.count == 0 || disabledButton)
             }
             .padding(20)
             .background(Color.Gray200)
@@ -71,11 +82,5 @@ struct WriteInterimReviewView: View {
         .onAppear {
             answerText = interimAnswerArray[questionNum - 1]
         }
-    }
-}
-
-struct WriteInterimReviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteInterimReviewView(questionNum: 1, questionTitle: "안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요", interimAnswerArray: .constant(["", "", "", "", "", "", ""]))
     }
 }
