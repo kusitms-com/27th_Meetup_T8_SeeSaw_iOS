@@ -73,6 +73,7 @@ struct ExplainValuesView: View {
             .disabled(selectedView != 3)
         }
         .padding(20)
+        .background(Color.Gray200)
     }
     
     var skipButton: some View {
@@ -105,6 +106,9 @@ struct ExplainValue: View {
             
             HStack {
                 Text(text)
+                    .font(.ssBlackTitle2)
+                    .lineSpacing(6)
+                    .foregroundColor(.Gray900)
                 Spacer()
             }
             

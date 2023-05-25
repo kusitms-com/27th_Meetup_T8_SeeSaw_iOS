@@ -34,10 +34,11 @@ struct TodayQuestionView: View {
                                 .resizable()
                                 .frame(width: 24, height: 24)
                         }
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 0) {
                             Text("오늘의 회고 질문")
                                 .font(.ssBlackBody1)
                                 .foregroundColor(isQuestion ? .Gray700 : .Gray400)
+                                .padding(.bottom, 4)
                             
                             Text(todayQuestion)
                                 .font(.ssWhiteBody1)
@@ -46,6 +47,7 @@ struct TodayQuestionView: View {
                         }
                         Spacer()
                     }
+                    .padding(.leading, 4)
                 }
             }
         }

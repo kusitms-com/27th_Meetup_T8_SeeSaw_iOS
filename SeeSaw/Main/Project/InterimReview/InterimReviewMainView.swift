@@ -35,9 +35,11 @@ struct InterimReviewMainView: View {
                     .frame(height: 30)
             }
             .padding(.leading, 40)
+            
             Rectangle()
                 .frame(width: UIScreen.main.bounds.size.width, height: 1)
                 .foregroundColor(.Gray300)
+            
             InterimReviewQuestionView(isFull: $isFull, interimQuestionArray: interimQuestionArray, interimAnswerArray: interimAnswerArray, questionArray: questionArray, isFullQuestion: $isFullQuestion)
                 .frame(width: UIScreen.main.bounds.width)
                 .padding(20)

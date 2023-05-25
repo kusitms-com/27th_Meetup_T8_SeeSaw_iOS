@@ -23,12 +23,12 @@ struct CompleteProjectView: View {
         return components.year!
     }
     var body: some View {
-        VStack {
-            ScrollView {
+        ScrollView {
+            VStack(spacing: 0) {
                 LazyVGrid(columns: [
-                    GridItem(.fixed(180)),
-                    GridItem(.fixed(180))
-                ], spacing: 10, content: {
+                    GridItem(.adaptive(minimum: 140), spacing: 12, alignment: .center),
+                    GridItem(.adaptive(minimum: 140), spacing: 12, alignment: .center)
+                ], spacing: 4, content: {
                     ForEach(completeProject, id: \.self, content: { (project: ProgressCompleteProject) in
                         ZStack {
                             RoundedRectangle(cornerRadius: 12)
@@ -38,7 +38,13 @@ struct CompleteProjectView: View {
                         }
                     })
                 })
+                
+                Rectangle()
+                    .frame(height: 80)
+                    .foregroundColor(.Gray200)
             }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 10)
         }
         .onAppear {
             projectVM.getCompleteProject { complete in

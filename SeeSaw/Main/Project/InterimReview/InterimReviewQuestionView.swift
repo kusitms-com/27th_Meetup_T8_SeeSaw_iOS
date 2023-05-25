@@ -21,31 +21,37 @@ struct InterimReviewQuestionView: View {
                 ForEach(Array(interimQuestionArray.enumerated()), id: \.element) { index, dataItem in
                     if !questionArray.isEmpty {
                         NavigationLink(destination: WriteInterimReviewView(questionNum: index + 1, questionTitle: dataItem, interimAnswerArray: self.$interimAnswerArray, isFullQuestion: $isFullQuestion, isFull: $isFull, disabledButton: !(interimAnswerArray[index] == ""), qnaId: questionArray[index].qnaId)) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 12)
-                                    .foregroundColor(.white)
-                                VStack(alignment: .leading) {
-                                    HStack(alignment: .top) {
-                                        Text("Q\(index + 1)")
-                                            .foregroundColor(.SeeSawBlue)
-                                            .font(.ssWhiteBody1)
+                            
+                            ZStack(alignment: .topLeading) {
+                                Rectangle()
+                                    .frame(height: 180)
+                                    .foregroundColor(.Gray100)
+                                    .cornerRadius(12, corners: .allCorners)
+                                
+                                HStack(alignment: .top) {
+                                    Text("Q\(index + 1)")
+                                        .foregroundColor(.SeeSawBlue)
+                                        .font(.ssWhiteBody1)
+                                        .padding(.trailing, 4)
+                                    
+                                    VStack(alignment: .leading, spacing: 0) {
                                         Text(dataItem)
-                                            .font(.system(size: 16))
-                                            .fontWeight(.heavy)
+                                            .font(.ssWhiteBody1)
                                             .foregroundColor(.Gray900)
                                             .lineLimit(nil)
                                             .multilineTextAlignment(.leading)
-                                        Spacer()
+                                            .padding(.bottom, 12)
+                                        
+                                        Text(interimAnswerArray[index])
+                                            .font(.ssBlackBody1)
+                                            .foregroundColor(.Gray500)
                                     }
-                                    .padding(.horizontal, 4)
-                                    Text(interimAnswerArray[index])
-                                        .frame(height: 100)
-                                        .padding(.horizontal, 4)
-                                    Spacer()
                                 }
-                                .padding(8)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 20)
                             }
-                            .frame(width: 350, height: 180)
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 6)
                         }
                     }
                 }

@@ -23,12 +23,16 @@ struct ProjectDetailView: View {
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
+            // 타이틀
             Text("\(firstHalf)\n\(secondHalf)")
                 .font(.ssHeading1)
                 .foregroundColor(.Gray900)
                 .padding(.horizontal, 20)
+            
+            // 강도, 목표
             HStack {
                 Text("\(projectDetailInfo.intensity)")
+                    .font(.ssWhiteBody3)
                     .foregroundColor(.Gray100)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 2)
@@ -39,6 +43,8 @@ struct ProjectDetailView: View {
                     .foregroundColor(.Gray900)
             }
             .padding(.horizontal, 20)
+            
+            // 진행률
             ZStack {
                 ValueProgressView(value: Double(projectDetailInfo.projectId) / 100, backColor: .Gray300, foreColor: .Gray900)
                     .frame(height: 20)
@@ -54,10 +60,15 @@ struct ProjectDetailView: View {
                 .padding(.horizontal, 10)
             }
             .padding(.horizontal, 20)
+            
+            // 구분선
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.Gray300)
-            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], isMiddle:  projectDetailInfo.isHalfProgressed, isFinal: projectDetailInfo.isFinished, projectTitle: projectDetailInfo.projectName, projectId: projectDetailInfo.projectId, halfDate: projectDetailInfo.halfDate, endedAt: projectDetailInfo.endedAt, middleRemembranceId: projectDetailInfo.middleRemembranceId ?? 0, finalRemembranceId: projectDetailInfo.finalRemembranceId ?? 0, isMiddleRemembrance: projectDetailInfo.middleRemembranceId != nil, isFinalRemembrance: projectDetailInfo.finalRemembranceId != nil)
+                .padding(.vertical, 12)
+            
+            //
+            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], isMiddle: projectDetailInfo.isHalfProgressed, isFinal: projectDetailInfo.isFinished, projectTitle: projectDetailInfo.projectName, projectId: projectDetailInfo.projectId, halfDate: projectDetailInfo.halfDate, endedAt: projectDetailInfo.endedAt, middleRemembranceId: projectDetailInfo.middleRemembranceId ?? 0, finalRemembranceId: projectDetailInfo.finalRemembranceId ?? 0, isMiddleRemembrance: projectDetailInfo.middleRemembranceId != nil, isFinalRemembrance: projectDetailInfo.finalRemembranceId != nil)
         }
         .onAppear {
             projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
@@ -79,6 +90,7 @@ struct ProjectDetailView: View {
         )
         .background(Color.Gray200)
     }
+    
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yy.MM.dd"

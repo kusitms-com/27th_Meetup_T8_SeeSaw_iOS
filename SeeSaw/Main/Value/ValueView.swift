@@ -19,7 +19,7 @@ struct ValueView: View {
             MainToolBar(feature: .valueLog)
             
             VStack(alignment: .leading, spacing: 8) {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 0) {
                     HStack {
                         Spacer()
                     }
@@ -30,6 +30,7 @@ struct ValueView: View {
                         .fontWeight(.medium)
                         .font(.system(size: 14))
                         .foregroundColor(.Gray600)
+                        .padding(.bottom, 4)
                     Text("일상과 프로젝트에서 이 가치를 찾아보아요")
                         .fontWeight(.medium)
                         .font(.system(size: 14))
@@ -48,8 +49,10 @@ struct ValueView: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text("\(nickname)님의")
                     .font(.ssHeading1)
+                
                 Text("\(formattedNumber(valuesExistingYear[valueYear]))년의 가치는")
                     .font(.ssHeading1)
+                    .padding(.bottom, 4)
                 
                 ValueYearView(valueYear: self.values)
                     .padding(.bottom, 16)
