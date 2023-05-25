@@ -29,13 +29,13 @@ struct ProjectRegularRetrospectionView: View {
                         .cornerRadius(30)
                 }
             }
-            NavigationLink(destination: AddRegularReotrspectionView()) {
+            NavigationLink(destination: AddRegularReotrspectionView(projectId: projectId)) {
                 CapsuleButtonView(color: .Gray300, text: "+", size: .large)
             }
             ScrollView {
                 ForEach(Array(regularReview.enumerated()), id: \.element.recordId) { index, review in
                     ZStack {
-                        VStack {
+                        VStack(alignment: .leading) {
                             HStack {
                                 Text("\(review.createdAt)")
                                     .foregroundColor(.Gray900)
@@ -48,6 +48,10 @@ struct ProjectRegularRetrospectionView: View {
                                     Image(systemName: "chevron.down")
                                         .foregroundColor(.Gray900)
                                 }
+                            }
+                            if review.question != nil {
+                                Text("|\(review.question ?? "")")
+                                    .foregroundColor(.black)
                             }
                             Text(review.contents)
                                 .lineLimit(isShowText[index] ? 100 : 1)
@@ -77,6 +81,7 @@ struct ProjectRegularRetrospectionView: View {
             regularReviewVM.getRegularReview(projectId: projectId) { review in
                 regularReview = review
             }
+            
         }
     }
 }

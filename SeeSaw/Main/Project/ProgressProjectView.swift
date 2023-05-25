@@ -35,6 +35,7 @@ struct ProgressProjectView: View {
     @StateObject var api = ApiClient()
     @State var valueName: [String] = []
     @Binding var progressNum: Int
+    @Binding var showDeletePopUp: Bool
     var year: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year], from: Date())
@@ -76,7 +77,7 @@ struct ProgressProjectView: View {
                             RoundedRectangle(cornerRadius: 12)
                                 .frame(width: UIScreen.main.bounds.size.width / 2 - 20, height: 200)
                                 .foregroundColor(colorArray[getColorIndex(value: project.valueName)])
-                            ProjectRectangleVIew(progressProject: project, projectId: project.projectId, valueName: valueName)
+                            ProjectRectangleVIew(showDeletePopUp: $showDeletePopUp, progressProject: project, projectId: project.projectId, valueName: valueName)
                         }
                     })
                 })
@@ -104,7 +105,6 @@ struct ProgressProjectView: View {
                 progressProject = progress
                 progressNum = progress.count
             }
-            print("ㅁ나엏;미ㅏㄴ어;미ㅏㄴㅇ럼;ㅣㅏㄴㅇ럼;ㅣㅇ나러\(progressProject)")
             api.getValues(year: year) { value in
                 self.valueName = value
             }
@@ -114,11 +114,5 @@ struct ProgressProjectView: View {
     func getColorIndex(value: String) -> Int {
         let index = valueName.firstIndex(of: value)
         return index ?? 3
-    }
-}
-
-struct ProgressProjectView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProgressProjectView(progressNum: .constant(0))
     }
 }

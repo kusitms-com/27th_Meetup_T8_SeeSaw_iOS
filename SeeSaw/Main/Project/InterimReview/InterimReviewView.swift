@@ -13,6 +13,7 @@ struct InterimReviewView: View {
     @AppStorage("nickname") var nickname: String = ""
     var projectTitle: String = "큐시즘 밋업데이"
     @Environment(\.presentationMode) var presentationMode
+    @State var middleRemembranceId: Int
     var body: some View {
         VStack(alignment: .leading) {
             if showNext == false {
@@ -72,8 +73,3 @@ struct InterimReviewView: View {
     }
 }
 
-struct InterimReviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        InterimReviewView()
-    }
-}

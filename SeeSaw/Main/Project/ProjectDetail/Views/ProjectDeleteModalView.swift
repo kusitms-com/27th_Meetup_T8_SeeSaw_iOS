@@ -11,6 +11,8 @@ struct ProjectDeleteModalView: View {
     var projectTitle: String
     var projectId: Int
     @Binding var showDeleteModal: Bool
+    @Binding var showDeletePopUp: Bool
+    @StateObject var projectDetailVM = ProjectDetailViewModel()
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack(spacing: 12) {
@@ -30,11 +32,16 @@ struct ProjectDeleteModalView: View {
                 .font(.ssBlackTitle2)
             Spacer()
                 .frame(height: 40)
-            NavigationLink(destination: ProjectDeletePopUpView(showFastChargeExistPopUp: .constant(false))) {
+            Button {
+                showDeletePopUp = true
+                projectDetailVM.deleteProject(projectId: projectId)
+                showDeleteModal = false
+                presentationMode.wrappedValue.dismiss()
+            } label: {
                 CapsuleButtonView(color: .Gray900, text: "삭제", size: .large)
             }
             Button {
-                showDeleteModal.toggle()
+                showDeleteModal = false
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 CapsuleButtonView(color: .Gray400, text: "취소", size: .large)
@@ -43,9 +50,3 @@ struct ProjectDeleteModalView: View {
         .padding(20)
     }
 }
-
-//struct ProjectDeleteModalView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectDeleteModalView(projectTitle: "큐시즘 기업프로젝트", showDeleteModal: .constant(true))
-//    }
-//}

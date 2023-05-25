@@ -25,7 +25,7 @@ struct ProjectStrengthView: View {
                 .padding(.bottom, 6)
             HStack(spacing: 140) {
                 Slider(value: $valueStrength, in: 1...3, step: 1)
-                    .onChange(of: valueStrength) { newValue in
+                    .onChange(of: valueStrength) { _ in
                         isStrength = true
                         if valueStrength == 0.0 {
                             strength = "LOW"
@@ -54,12 +54,13 @@ struct ProjectStrengthView: View {
         }
         .onAppear {
             strength = strengthKorean[Int(valueStrength)]
+            if strength == "HIGH" {
+                valueStrength = 3.0
+            } else if strength == "MEDIUM" {
+                valueStrength = 2.0
+            } else if strength == "LOW" {
+                valueStrength = 1.0
+            }
         }
     }
 }
-
-//struct ProjectStrengthView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectStrengthView()
-//    }
-//}

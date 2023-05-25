@@ -39,9 +39,3 @@ struct ProjectNameView: View {
         }
     }
 }
-
-//struct ProjectNameView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectNameView(isName: .constant(false))
-//    }
-//}

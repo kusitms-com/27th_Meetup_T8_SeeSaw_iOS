@@ -20,12 +20,13 @@ struct ProjectDetailInfo: Codable, Hashable {
     var intensity: String = ""
     var goal: String = ""
     var startedAt: String = ""
+    var halfDate: String = ""
     var endedAt: String = ""
     var progressRate: Double = 0.0
     var isHalfProgressed: Bool = false
-    var middleRemembranceId: Int = 0
+    var middleRemembranceId: Int? = nil
     var isFinished: Bool = false
-    var finalRemembranceId: Int = 0
+    var finalRemembranceId: Int? = nil
     var valueId: Int = 0
     var valueName: String = ""
     var likeCnt: Int = 0

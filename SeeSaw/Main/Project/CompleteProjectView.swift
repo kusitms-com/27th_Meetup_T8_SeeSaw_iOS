@@ -16,6 +16,7 @@ struct CompleteProjectView: View {
     @StateObject var api = ApiClient()
     @State var valueName: [String] = []
     @Binding var completeNum: Int
+    @Binding var showDeletePopUp: Bool
     var year: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year], from: Date())
@@ -33,7 +34,7 @@ struct CompleteProjectView: View {
                             RoundedRectangle(cornerRadius: 12)
                                 .frame(width: UIScreen.main.bounds.size.width / 2 - 20, height: 200)
                                 .foregroundColor(.Gray300)
-                            ProjectRectangleVIew(progressProject: project, isProgress: false, valueName: valueName)
+                            ProjectRectangleVIew(showDeletePopUp: $showDeletePopUp, progressProject: project, isProgress: false, valueName: valueName)
                         }
                     })
                 })
@@ -45,11 +46,5 @@ struct CompleteProjectView: View {
                 completeNum = complete.count
             }
         }
-    }
-}
-
-struct CompleteProjectView_Previews: PreviewProvider {
-    static var previews: some View {
-        CompleteProjectView(completeNum: .constant(0))
     }
 }

@@ -11,11 +11,14 @@ struct ProjectRectangleVIew: View {
     @State private var showModal = false
     @State private var isEdit = false
     @State var showDeleteModal = false
+    @Binding var showDeletePopUp: Bool
     @StateObject var api = ApiClient()
+    @StateObject var projectDetailVM = ProjectDetailViewModel()
     var progressProject: ProgressCompleteProject
     var projectId: Int = 0
     var isProgress: Bool = true
-    @State var valueName: [String]
+    @State var valueName: [String] = []
+    @State var projectDetailInfo: ProjectDetailInfo = ProjectDetailInfo()
     var year: Int {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year], from: Date())
@@ -39,7 +42,7 @@ struct ProjectRectangleVIew: View {
                             print("close")
                         }
                         .halfSheet(showSheet: $showDeleteModal) {
-                            ProjectDeleteModalView(projectTitle: progressProject.projectName, projectId: projectId, showDeleteModal: $showDeleteModal)
+                            ProjectDeleteModalView(projectTitle: progressProject.projectName, projectId: projectId, showDeleteModal: $showDeleteModal, showDeletePopUp: $showDeletePopUp)
                                 .background(Color.Gray200)
                         } onEnd: {
                             print("close")
@@ -47,7 +50,7 @@ struct ProjectRectangleVIew: View {
                     }
                     if isEdit {
                         NavigationLink(" ", destination:
-                                        AddProjectView(isEdit: true, valueName: valueName), isActive: $isEdit)
+                                        AddProjectView(isEdit: true, projectId: projectId, projectName: projectDetailInfo.projectName, strength: projectDetailInfo.intensity, valueId: projectDetailInfo.valueId, valueName: valueName), isActive: $isEdit)
                     }
                     Spacer()
                         .frame(height: 3)
@@ -57,7 +60,7 @@ struct ProjectRectangleVIew: View {
                 }
                 Spacer()
                     .frame(width: 100)
-                NavigationLink(destination: ProjectDetailView(projectId: projectId)) {
+                NavigationLink(destination: ProjectDetailView(projectDetailInfo: projectDetailInfo, projectId: progressProject.projectId)) {
                         Image(systemName: "arrow.up.right")
                             .frame(width: 28, height: 28)
                             .foregroundColor(.Gray900)
@@ -77,7 +80,7 @@ struct ProjectRectangleVIew: View {
                 .frame(width: 70, height: 18)
                 .background(.white)
                 .cornerRadius(30)
-            ProgressView(value: progressProject.progressRate)
+            ProgressView(value: progressProject.progressRate / 100)
                 .frame(width: 150)
                 .progressViewStyle(LinearProgressViewStyle(tint: .Gray900))
                 .background(.white)
@@ -86,12 +89,9 @@ struct ProjectRectangleVIew: View {
             api.getValues(year: year) { value in
                 self.valueName = value
             }
+            projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
+                    projectDetailInfo = project
+            }
         }
     }
 }
-
-//struct ProjectRectangleView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProjectRectangleVIew(progressProject: <#ProgressCompleteProject#>)
-//    }
-//}
