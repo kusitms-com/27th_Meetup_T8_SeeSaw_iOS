@@ -38,6 +38,7 @@
 		5121894D29F9567D005DD6C2 /* ValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5121894C29F9567D005DD6C2 /* ValueView.swift */; };
 		5122C5992A11F8FC00DAD9A8 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122C5982A11F8FC00DAD9A8 /* SignOutView.swift */; };
 		5122C59B2A12016200DAD9A8 /* ShowValuesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122C59A2A12016200DAD9A8 /* ShowValuesView.swift */; };
+		513297C42A1F58D5003F6852 /* ProjectReportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513297C32A1F58D5003F6852 /* ProjectReportViewModel.swift */; };
 		51348A072A121C4D005F9163 /* GetValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51348A062A121C4D005F9163 /* GetValues.swift */; };
 		51348A0A2A1252E6005F9163 /* SetGoalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51348A092A1252E6005F9163 /* SetGoalViewModel.swift */; };
 		51348A0C2A125FAD005F9163 /* PostGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51348A0B2A125FAD005F9163 /* PostGoal.swift */; };
@@ -201,6 +202,7 @@
 		5121894C29F9567D005DD6C2 /* ValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueView.swift; sourceTree = "<group>"; };
 		5122C5982A11F8FC00DAD9A8 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		5122C59A2A12016200DAD9A8 /* ShowValuesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowValuesView.swift; sourceTree = "<group>"; };
+		513297C32A1F58D5003F6852 /* ProjectReportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectReportViewModel.swift; sourceTree = "<group>"; };
 		51348A062A121C4D005F9163 /* GetValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetValues.swift; sourceTree = "<group>"; };
 		51348A092A1252E6005F9163 /* SetGoalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalViewModel.swift; sourceTree = "<group>"; };
 		51348A0B2A125FAD005F9163 /* PostGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGoal.swift; sourceTree = "<group>"; };
@@ -837,6 +839,7 @@
 				BE7C07322A1B21F900C7D647 /* ProjectCalorieView.swift */,
 				BE7C072E2A1B157C00C7D647 /* ProjectBatteryView.swift */,
 				BE7C07342A1B233600C7D647 /* ProjectSleepView.swift */,
+				513297C32A1F58D5003F6852 /* ProjectReportViewModel.swift */,
 			);
 			path = ProjectReport;
 			sourceTree = "<group>";
@@ -1049,6 +1052,7 @@
 				51C656702A13474600610369 /* ProvisioningEnergyDescription.swift in Sources */,
 				51DD74B72A0A065600F1F73B /* LargePopUpView.swift in Sources */,
 				514E4D3C2A1BD0FC0040FC88 /* BatteryViewModel.swift in Sources */,
+				513297C42A1F58D5003F6852 /* ProjectReportViewModel.swift in Sources */,
 				51BA2A5F29EA8C5500071264 /* SeeSawApp.swift in Sources */,
 				BEC54BC32A1E18F900C455DF /* GetCompleteProjectResponse.swift in Sources */,
 				51A1E5BD2A0E252000404E11 /* BatteryInformationView.swift in Sources */,
