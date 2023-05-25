@@ -42,7 +42,7 @@ struct ActivityHistoryView: View {
                     CalendarView(context: HistoryContext.activity)
                         .environmentObject(dateHolder)
                         .padding(.horizontal, 8)
-                        .padding(.bottom, 40)
+                        .padding(.bottom, 0)
                         .background(
                             Rectangle()
                                 .cornerRadius(12, corners: .allCorners)

@@ -18,11 +18,11 @@ struct ProjectTermView: View {
                 .foregroundColor(.Gray900)
             HStack {
                 Spacer()
-                DatePicker("", selection: $startDate, displayedComponents: [.date])
+                DatePicker("", selection: $startDate, in: ...Date(), displayedComponents: [.date])
                     .labelsHidden()
                 Text("부터   ")
                     .font(.ssBlackBody1)
-                DatePicker("", selection: $endDate, displayedComponents: [.date])
+                DatePicker("", selection: $endDate, in: startDate..., displayedComponents: [.date])
                     .labelsHidden()
                 Text("까지")
                     .font(.ssBlackBody1)

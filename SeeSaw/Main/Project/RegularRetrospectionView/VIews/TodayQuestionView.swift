@@ -12,6 +12,7 @@ struct TodayQuestionView: View {
     @StateObject var projectVM = ProjectViewModel()
     @Binding var questionId: Int?
     @Binding var isQuestion: Bool
+    
     var body: some View {
         VStack {
             Button {
