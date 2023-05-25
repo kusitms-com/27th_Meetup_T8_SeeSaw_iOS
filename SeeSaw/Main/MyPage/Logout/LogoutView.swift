@@ -19,8 +19,8 @@ struct LogoutView: View {
             
             LargePopUpView(title: "로그아웃",
                            isXmarkExist: false,
-                           isImageGIF: false,
-                           imageName: "LogoutImage",
+                           isImageGIF: true,
+                           imageName: "Logout",
                            popUpMessage: "로그아웃하시겠어요?",
                            firstButtonContext: "네",
                            secondButtonContext: "아니오",

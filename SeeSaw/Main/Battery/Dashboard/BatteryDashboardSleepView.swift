@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BatteryDashboardSleepView: View {
     @Binding var isSleepGoalExist: Bool
+    @Binding var sleepGoal: Int
+    @State private var setTodaySleep: Int = 0
     @Binding var todaySleepAmount: Int
     @Binding var isTodaySleepAmountExist: Bool
     @Binding var sleepCondition: String
@@ -26,7 +28,7 @@ struct BatteryDashboardSleepView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("수면")
+            Text("수면량")
                 .font(.ssHeading2)
             
             if isTodaySleepAmountExist {
@@ -57,6 +59,9 @@ struct BatteryDashboardSleepView: View {
             }
         }
         .padding(.horizontal, 8)
+        .onAppear {
+            fetchData()
+        }
     }
     
     var sleepStatus: some View {
@@ -125,14 +130,14 @@ struct BatteryDashboardSleepView: View {
             
             Spacer()
             
-            Text("\(todaySleepAmount)시간")
+            Text("\(setTodaySleep)시간")
                 .font(.ssHeading1)
                 .foregroundColor(.Gray400)
                 
             HStack {
                 Button {
-                    if todaySleepAmount > 0 {
-                        todaySleepAmount -= 1
+                    if setTodaySleep > 0 {
+                        setTodaySleep -= 1
                     }
                 } label: {
                     Image(systemName: "minus.circle.fill")
@@ -140,8 +145,8 @@ struct BatteryDashboardSleepView: View {
                         .foregroundColor(.SeeSawRed)
                 }
                 Button {
-                    if todaySleepAmount < 18 {
-                        todaySleepAmount += 1
+                    if setTodaySleep < 18 {
+                        setTodaySleep += 1
                     }
                 } label: {
                     Image(systemName: "plus.circle.fill")
@@ -154,7 +159,15 @@ struct BatteryDashboardSleepView: View {
             
             Button {
                 isTodaySleepAmountExist = true
-                batteryVM.postSleep(todaySleep: todaySleepAmount)
+                todaySleepAmount = setTodaySleep
+                batteryVM.postSleep(todaySleep: setTodaySleep)
+                if todaySleepAmount >= sleepGoal {
+                    sleepCondition = "Good"
+                } else if todaySleepAmount >= sleepGoal / 2 {
+                    sleepCondition = "Bad"
+                } else {
+                    sleepCondition = "Terrible"
+                }
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "입력 완료", size: .large)
                     .padding(.horizontal, 12)
@@ -181,6 +194,29 @@ struct BatteryDashboardSleepView: View {
                 }
             }
             .padding(.bottom, 12)
+        }
+    }
+    
+    func fetchData() {
+        batteryVM.getBattery { batteryInfo in
+            if let goal = batteryInfo.sleepGoal {
+                isSleepGoalExist = true
+                sleepGoal = goal
+                setTodaySleep = goal
+                if let sleep = batteryInfo.todaySleep {
+                    isTodaySleepAmountExist = true
+                    todaySleepAmount = sleep
+                    if sleep >= goal {
+                        sleepCondition = "Good"
+                    } else if sleep >= goal / 2 {
+                        sleepCondition = "Bad"
+                    } else {
+                        sleepCondition = "Terrible"
+                    }
+                }
+            } else {
+                isSleepGoalExist = false
+            }
         }
     }
 }

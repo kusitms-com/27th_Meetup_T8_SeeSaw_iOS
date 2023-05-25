@@ -9,9 +9,61 @@ import Alamofire
 import Foundation
 import KeychainSwift
 
+struct GetEmailResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: String
+}
+
 class SignUpViewModel: ObservableObject {
     let keychain = KeychainSwift()
     let baseUrl = "http://\(Bundle.main.infoDictionary?["BASE_URL"] ?? "nil baseUrl")"
+    
+    func getEmail(completion: @escaping (String) -> Void) {
+        let url = "\(baseUrl)/api/user/email"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url,
+                   method: .get,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+            .responseDecodable(of: GetEmailResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    completion(response.result)
+                case .failure(let error):
+                    print("DEBUG postSelectedValues: \(error)")
+                }
+            }
+    }
+    
+    func postEmailCheck(_ email: String, completion: @escaping (Bool) -> Void) {
+        let url = "\(baseUrl)/auth/check-email"
+        let parameters: [String: Any] = ["email": email]
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url,
+                   method: .post,
+                   parameters: parameters,
+                   encoding: JSONEncoding.default,
+                   headers: headers)
+            .responseDecodable(of: Bool.self) { response in
+                switch response.result {
+                case .success(let response):
+                    print(email)
+                    print(response)
+                    completion(response)
+                case .failure(let error):
+                    print("DEBUG postSelectedValues: \(error)")
+                }
+            }
+    }
     
     func postUserInfo(agreeMarketing: Bool, email: String, nickname: String) {
         let url = "\(baseUrl)/auth/signup"

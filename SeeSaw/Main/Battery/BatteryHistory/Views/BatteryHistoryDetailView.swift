@@ -14,10 +14,13 @@ struct BatteryHistoryDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                Text("배터리 내역")
-                    .font(.ssHeading2)
-                    .foregroundColor(.Gray900)
-                    .padding(.bottom, 12)
+                HStack {
+                    Text("배터리 내역")
+                        .font(.ssHeading2)
+                        .foregroundColor(.Gray900)
+                        .padding(.bottom, 12)
+                    Spacer()
+                }
                 
                 ForEach(thirtyDaysBatteryHistory.indices, id: \.self) { index in
                     let activityHistory = thirtyDaysBatteryHistory[index].activityHistory

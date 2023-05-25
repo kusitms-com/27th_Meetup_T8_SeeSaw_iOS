@@ -76,4 +76,15 @@ class KakaoAuthViewModel: ObservableObject {
             self.isLoggedIn = false
         }
     }
+    
+    func handleKakaoUnlink() {
+        UserApi.shared.unlink {(error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("unlink() success.")
+            }
+        }
+    }
 }
