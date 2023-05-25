@@ -89,34 +89,15 @@ struct UserInfoView: View {
                 .font(.ssWhiteSubTitle)
             
             ZStack(alignment: .trailing) {
-                TextField("이메일을 입력해주세요", text: $email, onEditingChanged: { _ in
-                    isEmailChecked = false
-                })
+                TextField("이메일을 입력해주세요", text: $email)
+                    .disabled(true)
                     .font(.ssBlackBody1)
                     .padding(.vertical, 10)
                     .textInputAutocapitalization(.never)
                     .keyboardType(.emailAddress)
-                if isEmailAvailable {
-                    Image(systemName: "checkmark")
-                        .foregroundColor(email.isEmpty ? .Gray400 : (isNotVaildEmail ? .SeeSawRed : .SeeSawGreen))
-                } else {
-                    Button {
-                        signUpVM.postEmailCheck(email) { isAvailable in
-                            isEmailAvailable = isAvailable
-                            isEmailChecked = true
-                        }
-                    } label: {
-                        Text("중복 확인")
-                            .font(.ssBlackBody1)
-                            .foregroundColor(.Gray700)
-                            .padding(.vertical, 6)
-                            .padding(.horizontal, 12)
-                            .background(
-                                Rectangle()
-                                    .cornerRadius(90, corners: .allCorners)
-                                    .foregroundColor(.Gray300))
-                    }
-                }
+                
+                Image(systemName: "checkmark")
+                    .foregroundColor(email.isEmpty ? .Gray400 : (isNotVaildEmail ? .SeeSawRed : .SeeSawGreen))
             }
             
             Rectangle()
