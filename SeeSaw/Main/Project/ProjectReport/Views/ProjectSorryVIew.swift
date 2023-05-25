@@ -36,9 +36,10 @@ struct ProjectSorryVIew: View {
                 .font(.ssBlackBody3)
                 .foregroundColor(.Gray700)
             Spacer()
+                .frame(width: 250)
         }
         .padding(24)
-        .frame(height: 550)
+        .frame(width: 350, height: 550)
         .background(Color.Gray100)
     }
 }

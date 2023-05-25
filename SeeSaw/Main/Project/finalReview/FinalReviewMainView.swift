@@ -14,7 +14,7 @@ struct FinalReviewMainView: View {
     @State var finalQuestionArray: [String] = ["", "", "", "", "", "", "", ""]
     @State var finalAnswerArray: [String] = ["", "", "", "", "", "", "", ""]
     @State var isFull: Bool = false
-    @State var isFullQuestion: [Int] = [0, 0, 0, 0, 0, 0]
+    @State var isFullQuestion: [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
     @State var questionArray: [QnaQuestion] = []
     @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
     var rememberanceId: Int = 0
@@ -43,15 +43,6 @@ struct FinalReviewMainView: View {
                 .padding(20)
                 .background(Color.Gray200)
         }
-        .navigationBarItems(trailing:
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text("회고 완료")
-                    .foregroundColor(.SeeSawGreen)
-            }
-            .disabled(!isFull)
-        )
     }
 }
 

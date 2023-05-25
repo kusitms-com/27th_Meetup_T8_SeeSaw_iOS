@@ -38,7 +38,9 @@ struct ProjectRegularRetrospectionView: View {
                         VStack(alignment: .leading) {
                             HStack {
                                 Text("\(review.createdAt)")
+                                    .font(.ssWhiteTitle1)
                                     .foregroundColor(.Gray900)
+                                    .padding(.bottom, 8)
                                 Spacer()
                                 Button {
                                     withAnimation {
@@ -50,12 +52,14 @@ struct ProjectRegularRetrospectionView: View {
                                 }
                             }
                             if review.question != nil {
-                                Text("|\(review.question ?? "")")
+                                Text("| \(review.question ?? "")")
+                                    .font(.ssWhiteBody1)
                                     .foregroundColor(.black)
                             }
                             Text(review.contents)
                                 .lineLimit(isShowText[index] ? 100 : 1)
                                 .foregroundColor(isShowText[index] ? .black : .Gray800)
+                                .padding(.top, 4)
                         }
                         .padding(20)
                         .background(colorArray[index % 3].opacity(0.32))
