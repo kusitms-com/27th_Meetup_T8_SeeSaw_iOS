@@ -23,6 +23,7 @@ struct BatteryDashboardView: View {
     @State var todayEnergy: Int = 160
     
     @State var isSleepGoalExist: Bool = true
+    @State var sleepGoal: Int = 0
     @State var todaySleepAmount: Int = 8
     @State var isTodaySleepAmountExist: Bool = false
     @State var sleepCondition: String = "Good"
@@ -85,7 +86,7 @@ struct BatteryDashboardView: View {
                                 HStack {
                                     BatteryDashboardEnergyView(isEnergyGoalExist: $isEnergyGoalExist, energyGoal: $energyGoal, todayEnergy: $todayEnergy)
                                     
-                                    BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
+                                    BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, sleepGoal: $sleepGoal, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
                                 }
                                 .padding(12)
                                 .padding(.bottom, 8)
@@ -114,47 +115,11 @@ struct BatteryDashboardView: View {
         })
         .onAppear {
             print("DEBUG BatteryDashoboard: onAppear")
-            batteryVM.getBattery { batteryInfo in
-                print(batteryInfo)
-                battery = batteryInfo.battery
-                
-                if let chargeTitle = batteryInfo.fastChargeTitle, let value = batteryInfo.fastChargeValue {
-                    isFastChargeExist = true
-                    fastChargeTitle = chargeTitle
-                    fastChargeValue = value
-                } else {
-                    isFastChargeExist = false
-                }
-                
-                if let activity = batteryInfo.todayActivity, let goal = batteryInfo.activityGoal {
-                    isEnergyGoalExist = true
-                    todayEnergy = activity
-                    energyGoal = goal
-                }
-                
-                if let goal = batteryInfo.sleepGoal {
-                    isSleepGoalExist = true
-                    if let sleep = batteryInfo.todaySleep {
-                        isTodaySleepAmountExist = true
-                        todaySleepAmount = sleep
-                        if sleep >= goal {
-                            sleepCondition = "Good"
-                        } else if sleep >= goal / 2 {
-                            sleepCondition = "Bad"
-                        } else {
-                            sleepCondition = "Terrible"
-                        }
-                    }
-                }
-            }
-            if healthAuth {
-                healthStore?.getActivityEnergyBurned(completion: { energy in
-                    batteryVM.postEnergy(todayEnergy: Int(energy))
-                })
-            }
+            fetchData()
+            postEnergy()
         }
         .refreshable {
-            
+            fetchData()
         }
     }
     
@@ -180,6 +145,51 @@ struct BatteryDashboardView: View {
                 .font(.system(size: 28))
                 .foregroundColor(.Gray400)
                 .padding(.leading, 20)
+        }
+    }
+    
+    func fetchData() {
+        batteryVM.getBattery { batteryInfo in
+            print(batteryInfo)
+            battery = batteryInfo.battery
+            
+            if let chargeTitle = batteryInfo.fastChargeTitle, let value = batteryInfo.fastChargeValue {
+                isFastChargeExist = true
+                fastChargeTitle = chargeTitle
+                fastChargeValue = value
+            } else {
+                isFastChargeExist = false
+            }
+            
+            if let activity = batteryInfo.todayActivity, let goal = batteryInfo.activityGoal {
+                isEnergyGoalExist = true
+                todayEnergy = activity
+                energyGoal = goal
+            }
+            
+            if let goal = batteryInfo.sleepGoal {
+                isSleepGoalExist = true
+                sleepGoal = goal
+                if let sleep = batteryInfo.todaySleep {
+                    isTodaySleepAmountExist = true
+                    todaySleepAmount = sleep
+                    if sleep >= goal {
+                        sleepCondition = "Good"
+                    } else if sleep >= goal / 2 {
+                        sleepCondition = "Bad"
+                    } else {
+                        sleepCondition = "Terrible"
+                    }
+                }
+            }
+        }
+    }
+    
+    func postEnergy() {
+        if healthAuth {
+            healthStore?.getActivityEnergyBurned(completion: { energy in
+                batteryVM.postEnergy(todayEnergy: Int(energy))
+            })
         }
     }
 }
