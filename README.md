@@ -4,6 +4,7 @@
 
 ```ipa 파일 위치```
 https://github.com/kusitms-com/27th_Meetup_T8_SeeSaw_ipa
+
 ```Backend repository```
 https://github.com/kusitms-com/27th_Meetup_T8_SeeSaw_back
 
