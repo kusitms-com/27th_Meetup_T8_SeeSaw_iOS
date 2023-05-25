@@ -19,8 +19,8 @@ struct BatteryDashboardView: View {
     @State var showFastChargeExistPopUp: Bool = false
     
     @State var isEnergyGoalExist: Bool = true
-    @State var energyGoal: Int = 250
-    @State var todayEnergy: Int = 160
+    @State var energyGoal: Int = 111
+    @State var todayEnergy: Int = 111
     
     @State var isSleepGoalExist: Bool = true
     @State var sleepGoal: Int = 0
@@ -145,6 +145,8 @@ struct BatteryDashboardView: View {
                 isEnergyGoalExist = true
                 todayEnergy = activity
                 energyGoal = goal
+            } else {
+                isEnergyGoalExist = false
             }
             
             if let goal = batteryInfo.sleepGoal {
@@ -161,6 +163,8 @@ struct BatteryDashboardView: View {
                         sleepCondition = "Terrible"
                     }
                 }
+            } else {
+                isSleepGoalExist = false
             }
         }
     }
