@@ -31,6 +31,24 @@ struct WriteFinalReviewView: View {
                     .foregroundColor(.Gray900)
                 
                 Spacer()
+<<<<<<< HEAD
+=======
+                    .frame(height: 38)
+                Button {
+                    finalAnswerArray[questionNum - 1] = answerText
+                    isFullQuestion[questionNum - 1] = 1
+                    if isFullQuestion[0] == 1 && isFullQuestion[1] == 1 && isFullQuestion[2] == 1 && isFullQuestion[3] == 1 && isFullQuestion[4] == 1 && isFullQuestion[5] == 1 && isFullQuestion[6] == 0 && isFullQuestion[7] == 1{
+                        isFull = true
+                    }
+                    middleFinalReviewVM.postRemeberanceAnswer(projectQnaId: qnaId, answerContent: answerText) { response in
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    CapsuleButtonView(color: ((answerText.count == 0 || disabledButton) ? .Gray400 : .SeeSawGreen), text: "답변 저장", size: .large)
+                        .frame(width: 350)
+                }
+                .disabled(answerText.count == 0 || disabledButton)
+>>>>>>> dbaa4b2799fdfd0f11ad9ee84a1c3bf499770cd4
             }
             .padding(20)
             .padding(.top, 40)

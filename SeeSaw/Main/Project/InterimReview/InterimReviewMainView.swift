@@ -45,14 +45,5 @@ struct InterimReviewMainView: View {
                 .padding(20)
                 .background(Color.Gray200)
         }
-        .navigationBarItems(trailing:
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text("회고 완료")
-                    .foregroundColor(.SeeSawGreen)
-            }
-            .disabled(!isFull)
-        )
     }
 }

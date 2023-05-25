@@ -69,6 +69,7 @@ struct ProjectRectangleVIew: View {
                         Spacer()
                         
                         // 넘어가는 버튼
+
                         Image(systemName: "arrow.up.right")
                             .frame(width: 28, height: 28)
                             .foregroundColor(.Gray900)
@@ -117,7 +118,6 @@ struct ProjectRectangleVIew: View {
             }
             projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
                 projectDetailInfo = project
-                
             }
         }
     }

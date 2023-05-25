@@ -27,6 +27,7 @@ struct ProjectDetailInfo: Codable, Hashable {
     var middleRemembranceId: Int? = nil
     var isFinished: Bool = false
     var finalRemembranceId: Int? = nil
+    var isProjectReport: Bool = false
     var valueId: Int = 0
     var valueName: String = ""
     var likeCnt: Int = 0
