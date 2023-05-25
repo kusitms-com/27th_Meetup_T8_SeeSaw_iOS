@@ -55,6 +55,7 @@ struct SleepHistoryView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 100)
+                        .padding(.bottom, 8)
                     
                     Text("\(todaySleepAmount)시간")
                         .font(.ssHeading3)
