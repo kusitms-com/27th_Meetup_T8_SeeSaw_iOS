@@ -9,10 +9,15 @@ import SwiftUI
 
 struct WriteFinalReviewView: View {
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
     var questionNum: Int
     var questionTitle: String
-    @State var answerText: String = ""
     @Binding var finalAnswerArray: [String]
+    @Binding var isFullQuestion: [Int]
+    @Binding var isFull: Bool
+    @State var answerText: String = ""
+    var disabledButton: Bool = true
+    var qnaId: Int = 0
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -44,11 +49,18 @@ struct WriteFinalReviewView: View {
                     .frame(height: 38)
                 Button {
                     finalAnswerArray[questionNum - 1] = answerText
+                    isFullQuestion[questionNum - 1] = 1
+                    if isFullQuestion[0] == 1 && isFullQuestion[1] == 1 && isFullQuestion[2] == 1 && isFullQuestion[3] == 1 && isFullQuestion[4] == 1 && isFullQuestion[5] == 1 {
+                        isFull = true
+                    }
+                    middleFinalReviewVM.postRemeberanceAnswer(projectQnaId: qnaId, answerContent: answerText) { response in
+                    }
                     presentationMode.wrappedValue.dismiss()
                 } label: {
-                    CapsuleButtonView(color: (answerText.count == 0 ? .Gray400 : .SeeSawGreen), text: "답변 저장", size: .large)
+                    CapsuleButtonView(color: ((answerText.count == 0 || disabledButton) ? .Gray400 : .SeeSawGreen), text: "답변 저장", size: .large)
                         .frame(width: 350)
                 }
+                .disabled(answerText.count == 0 || disabledButton)
             }
             .padding(20)
             .background(Color.Gray200)
@@ -70,11 +82,5 @@ struct WriteFinalReviewView: View {
         .onAppear {
             answerText = finalAnswerArray[questionNum - 1]
         }
-    }
-}
-
-struct WriteFinalReviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        WriteFinalReviewView(questionNum: 1, questionTitle: "안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요", finalAnswerArray: .constant(["", "", "", "", "", "", ""]))
     }
 }

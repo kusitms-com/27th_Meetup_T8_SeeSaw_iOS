@@ -10,7 +10,8 @@ import SwiftUI
 struct ProjectRetrospectionView: View {
     @State var emojiNum: [Int] = [0, 0, 0, 0, 0]
     @State var isMiddle: Bool = false
-    var isFinal: Bool = false
+    @State var isFinal: Bool = false
+    var projectTitle: String
     var projectId: Int = 0
     var isProjectReport: Bool = false
     var emojiList: [String] = ["LIKE", "NICE", "IDK", "ANGRY", "SAD"]
@@ -18,9 +19,23 @@ struct ProjectRetrospectionView: View {
     var halfDate: String = ""
     var endedAt: String = ""
     @StateObject var projectDetailVM = ProjectDetailViewModel()
-    var middleRemembranceId: Int = 0
+    @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
+    @State var middleRemembranceId: Int = 0
+    @State var finalRemembranceId: Int = 0
+    @State var isMiddleRemembrance: Bool = false
+    @State var isFinalRemembrance: Bool = false
     var body: some View {
         VStack(alignment: .leading) {
+            Button {
+                isMiddle.toggle()
+            } label: {
+                Text("middleToggle")
+            }
+            Button {
+                isFinal.toggle()
+            } label: {
+                Text("finalToggle")
+            }
             Text("프로젝트에서 느낀 감정을 자유롭게 눌러주세요")
             HStack(spacing: 24) {
                 ForEach(numbers, id: \.self) { number in
@@ -28,7 +43,6 @@ struct ProjectRetrospectionView: View {
                         Button {
                             emojiNum[number] += 1
                             projectDetailVM.postProjectEmotion(projectId: projectId, emotion: emojiList[number])
-                            print(projectId)
                         } label: {
                             Image(emojiList[number])
                         }
@@ -55,7 +69,7 @@ struct ProjectRetrospectionView: View {
                                 .offset(x: 40, y: -40)
                         }
                     }
-                    ZStack {
+                    ZStack(alignment: .topTrailing) {
                         RoundedRectangle(cornerRadius: 50)
                             .frame(width: 180, height: 180)
                             .foregroundColor(.SeeSawYellow.opacity(isMiddle ? 1 : 0.6))
@@ -72,17 +86,22 @@ struct ProjectRetrospectionView: View {
                                 }
                             )
                         if isMiddle {
-                            NavigationLink(destination: InterimReviewView(middleRemembranceId: middleRemembranceId)) {
-                                EmptyView()
+                            NavigationLink(destination: InterimReviewView(projectTitle: projectTitle, middleRemembranceId: middleRemembranceId)) {
+                                ArrowUpRightView()
                             }
-                            .frame(width: 180, height: 180)
-                            ArrowUpRightView()
-                                .offset(x: 40, y: -40)
+                            .simultaneousGesture(TapGesture().onEnded {
+                                if !isMiddleRemembrance {
+                                    middleFinalReviewVM.postRemembranceId(type: "MIDDLE", projectId: projectId)
+                                    isMiddleRemembrance = true
+                                }
+                            })
+                            .padding(.top, 30)
+                            .padding(.trailing, 30)
                         }
                     }
                 }
                 HStack(spacing: 0) {
-                    ZStack {
+                    ZStack(alignment: .topTrailing) {
                         RoundedRectangle(cornerRadius: 30)
                             .frame(width: 180, height: 180)
                             .foregroundColor(.SeeSawYellow.opacity(isFinal ? 1 : 0.6))
@@ -99,10 +118,17 @@ struct ProjectRetrospectionView: View {
                                 }
                             )
                         if isFinal {
-                            NavigationLink(destination: InterimReviewView(middleRemembranceId: middleRemembranceId)) {
+                            NavigationLink(destination: FinalReviewView(projectTitle: projectTitle, finalRemembranceId: finalRemembranceId)) {
                                 ArrowUpRightView()
-                                    .offset(x: 40, y: -40)
                             }
+                            .simultaneousGesture(TapGesture().onEnded {
+                                if !isFinalRemembrance {
+                                    middleFinalReviewVM.postRemembranceId(type: "FINAL", projectId: projectId)
+                                }
+                            })
+                            .padding(.top, 30)
+                            .padding(.trailing, 30)
+                            
                         }
                     }
                     ZStack {
@@ -147,11 +173,5 @@ struct ProjectRetrospectionView: View {
         }
         .padding(20)
         .background(Color.Gray200)
-    }
-}
-
-struct ProjectRetrospectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectRetrospectionView()
     }
 }

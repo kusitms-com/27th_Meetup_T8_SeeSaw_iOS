@@ -12,7 +12,12 @@ struct FinalReviewView: View {
     @State var showNext: Bool = false
     @AppStorage("nickname") var nickname: String = ""
     var projectTitle: String = "큐시즘 밋업데이"
+    @State var finalQuestionArray: [String] = ["", "", "", "", "", "", "", ""]
+    @State var finalAnswerArray: [String] = ["", "", "", "", "", "", "", ""]
+    @State var questionArray: [QnaQuestion] = []
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
+    @State var finalRemembranceId: Int
     var body: some View {
         VStack(alignment: .leading) {
             if showNext == false {
@@ -47,7 +52,7 @@ struct FinalReviewView: View {
                     .animation(.easeInOut(duration: 1.0).delay(2.0), value: show)
                 Spacer()
             } else {
-                FinalReviewMainView(projectTitle: self.projectTitle)
+                FinalReviewMainView(projectTitle: self.projectTitle, finalQuestionArray: finalQuestionArray, finalAnswerArray: finalAnswerArray, questionArray: questionArray, rememberanceId: finalRemembranceId)
             }
         }
         .onAppear {
@@ -55,7 +60,18 @@ struct FinalReviewView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
               showNext = true
             }
-          }
+            middleFinalReviewVM.getRemeberanceQuestion(remembranceId: finalRemembranceId) { contents in
+                questionArray = contents
+                for number in 0..<8 {
+                    if questionArray[number].answerContent == nil {
+                        finalAnswerArray[number] = ""
+                    } else {
+                        finalAnswerArray[number] = questionArray[number].answerContent!
+                    }
+                    finalQuestionArray[number] = questionArray[number].question
+                }
+            }
+        }
         .padding(20)
         .navigationBarTitle("마지막 회고", displayMode: .inline)
         .foregroundColor(.Gray500)
@@ -72,8 +88,3 @@ struct FinalReviewView: View {
     }
 }
 
-struct FinalReviewView_Previews: PreviewProvider {
-    static var previews: some View {
-        FinalReviewView()
-    }
-}
