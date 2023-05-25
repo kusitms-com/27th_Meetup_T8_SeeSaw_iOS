@@ -72,7 +72,7 @@ struct SleepHistoryView: View {
                 CalendarView(context: HistoryContext.sleep)
                     .environmentObject(dateHolder)
                     .padding(.horizontal, 8)
-                    .padding(.bottom, 60)
+                    .padding(.bottom, 40)
                     .background(
                         Rectangle()
                             .cornerRadius(12, corners: .allCorners)
