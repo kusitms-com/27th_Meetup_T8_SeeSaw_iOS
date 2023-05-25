@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct EditEnergyGoalView: View {
-    @Binding var activityGoal: Int
+    @StateObject private var setGoalVM = SetGoalViewModel()
+    @StateObject private var batteryVM = BatteryViewModel()
+    
+    @State var activityGoal: Int = 0
     @Binding var showEditActivityGoal: Bool
-    @StateObject var setGoalVM = SetGoalViewModel()
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -39,6 +41,9 @@ struct EditEnergyGoalView: View {
             }
         }
         .padding(20)
+        .onAppear {
+            fetchData()
+        }
     }
     
     var buttonRow: some View {
@@ -79,6 +84,14 @@ struct EditEnergyGoalView: View {
             }
             
             Spacer()
+        }
+    }
+    
+    func fetchData() {
+        batteryVM.getBattery { batteryInfo in
+            if let goal = batteryInfo.activityGoal {
+                activityGoal = goal
+            }
         }
     }
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct ActivityHistoryView: View {
     @EnvironmentObject var dateHolder: DateHolder
     @State var showEditActivityGoal: Bool = false
-    @State var activityGoal: Int = 220
     
     var body: some View {
         GeometryReader { geometry in
@@ -53,12 +52,10 @@ struct ActivityHistoryView: View {
             }
             .sheet(isPresented: $showEditActivityGoal) {
                 if #available(iOS 16.0, *) {
-                    EditEnergyGoalView(activityGoal: $activityGoal,
-                                       showEditActivityGoal: $showEditActivityGoal)
+                    EditEnergyGoalView(showEditActivityGoal: $showEditActivityGoal)
                         .presentationDetents([.height(400)])
                 } else {
-                    EditEnergyGoalView(activityGoal: $activityGoal,
-                                       showEditActivityGoal: $showEditActivityGoal)
+                    EditEnergyGoalView(showEditActivityGoal: $showEditActivityGoal)
                 }
             }
         }
