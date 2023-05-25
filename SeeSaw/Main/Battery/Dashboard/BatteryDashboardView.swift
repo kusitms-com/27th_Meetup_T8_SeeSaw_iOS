@@ -48,28 +48,8 @@ struct BatteryDashboardView: View {
                                 .padding(.top, 10)
                                 .padding(.horizontal, 20)
                             
-                            HStack {
-                                Button {
-                                    isFastChargeExist.toggle()
-                                } label: {
-                                    Text("고속충전 toggle")
-                                }
-                                
-                                Button {
-                                    isEnergyGoalExist.toggle()
-                                } label: {
-                                    Text("활동량 toggle")
-                                }
-                                
-                                Button {
-                                    isSleepGoalExist.toggle()
-                                } label: {
-                                    Text("수면 toggle")
-                                }
-                            }
-                            
                             // 배터리
-                            ZStack(alignment: .topLeading) {
+                            ZStack(alignment: .topTrailing) {
                                 // 배터리 원형 그래프
                                 BatteryProgressCircleView(geometry: geometry, battery: $battery)
                                 
@@ -144,13 +124,13 @@ struct BatteryDashboardView: View {
             Image(systemName: "questionmark.circle")
                 .font(.system(size: 28))
                 .foregroundColor(.Gray400)
-                .padding(.leading, 20)
+                .padding(.trailing, 20)
         }
     }
     
+    // 배터리 정보 데이터 가져오기
     func fetchData() {
         batteryVM.getBattery { batteryInfo in
-            print(batteryInfo)
             battery = batteryInfo.battery
             
             if let chargeTitle = batteryInfo.fastChargeTitle, let value = batteryInfo.fastChargeValue {
