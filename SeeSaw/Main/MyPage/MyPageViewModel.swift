@@ -78,5 +78,8 @@ class MyPageViewModel: ObservableObject {
                     print("delete user: \(error)")
                 }
             }
+        
+        AuthViewModel(isLoggedIn: false).isOnboardingCompleted = false
+        AuthViewModel(isLoggedIn: false).logout()
     }
 }

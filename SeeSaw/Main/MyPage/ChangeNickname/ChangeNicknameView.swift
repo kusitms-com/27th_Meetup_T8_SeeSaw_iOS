@@ -110,11 +110,11 @@ struct ChangeNicknameView: View {
             nickname = newNickname
             showChangeNicknameView = false
         } label: {
-            CapsuleButtonView(color: newNickname.isEmpty ? Color.Gray400 : Color.Gray900,
+            CapsuleButtonView(color: newNickname.isEmpty == true || isNotVaildNickname ? Color.Gray400 : Color.Gray900,
                               text: "저장하기",
                               size: .large)
         }
-        .disabled(isNotVaildNickname == false)
+        .disabled(isNotVaildNickname)
     }
     
     func isValidNickname(_ nickname: String) -> Bool {

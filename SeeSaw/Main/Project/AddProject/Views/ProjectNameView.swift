@@ -17,18 +17,17 @@ struct ProjectNameView: View {
                 .font(.ssBlackTitle2)
                 .foregroundColor(.Gray900)
             HStack {
-                TextField("", text: Binding(
-                    get: { self.projectName },
-                    set: { newValue in
-                        if newValue.count <= maxLength {
-                            self.projectName = newValue
-                        }
-                        if newValue.count > 0 {
-                            self.isName = true
-                        }
-                    }
-                ))
+                TextField("", text: $projectName)
+                    .font(.ssBlackBody1)
+                    .foregroundColor(.Gray900)
+                    .textInputAutocapitalization(.never)
+                    .onChange(of: projectName, perform: {
+                              projectName = String($0.prefix(maxLength))
+                        if projectName.count > 0 { isName = true} else { isName = false }
+                            })
+                
                 Spacer()
+                
                 Text("\(projectName.count)/15")
                     .font(.ssBlackBody3)
                     .foregroundColor(.Gray600)

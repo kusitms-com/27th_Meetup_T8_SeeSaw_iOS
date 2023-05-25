@@ -47,7 +47,7 @@ struct SelectValuesView: View {
                 Divider()
                 
                 Text("내년 1월 1일 전까지 수정할 수 없어요. 신중하게 고민해볼까요?")
-                    .font(.ssBlackBody3)
+                    .font(.ssBlackBody2)
                     .foregroundColor(.Gray500)
                     .padding(.vertical, 20)
                 
@@ -211,7 +211,7 @@ struct SelectValuesView: View {
                             newValue = String($0.prefix(6))
                         })
                     Text("가치는 6글자까지 입력할 수 있어요!")
-                        .font(.ssBlackBody4)
+                        .font(.ssWhiteBody3)
                         .foregroundColor(.SeeSawRed)
                         .padding(.leading)
                 }

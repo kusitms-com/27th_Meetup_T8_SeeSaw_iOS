@@ -9,7 +9,7 @@ import Foundation
 
 enum ProvisioningEnergyDescription {
     static let allowTitle = """
-시소가 건강앱에
+시소가 건강 앱에
 접근할 수 있도록 허용하시겠어요?
 """
     static let allowMessage = """

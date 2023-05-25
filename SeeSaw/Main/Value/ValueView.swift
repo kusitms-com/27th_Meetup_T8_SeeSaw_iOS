@@ -19,30 +19,43 @@ struct ValueView: View {
             MainToolBar(feature: .valueLog)
             
             VStack(alignment: .leading, spacing: 8) {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack {
+                        Spacer()
+                    }
                     Text("가치 설계도")
                         .font(.ssHeading1)
+                        .padding(.bottom, 8)
                     Text("\(nickname)님의 일과 삶의 균형을 위해")
                         .fontWeight(.medium)
                         .font(.system(size: 14))
                         .foregroundColor(.Gray600)
+                        .padding(.bottom, 4)
                     Text("일상과 프로젝트에서 이 가치를 찾아보아요")
                         .fontWeight(.medium)
                         .font(.system(size: 14))
                         .foregroundColor(.Gray600)
-                    GifImage("ValueImage")
-                        .frame(width: 350, height: 185)
                 }
-                
-                Rectangle()
-                    .foregroundColor(.green)
-                    .frame(width: 80, height: 5)
-                
+            }
+            .padding(.horizontal, 20)
+            
+            GifImage("ValueImage")
+                .frame(height: 185)
+
+//                Rectangle()
+//                    .foregroundColor(.green)
+//                    .frame(width: 80, height: 5)
+            
+            VStack(alignment: .leading, spacing: 8) {
                 Text("\(nickname)님의")
                     .font(.ssHeading1)
+                
                 Text("\(formattedNumber(valuesExistingYear[valueYear]))년의 가치는")
                     .font(.ssHeading1)
+                    .padding(.bottom, 4)
+                
                 ValueYearView(valueYear: self.values)
+                    .padding(.bottom, 16)
                 
                 ScrollView(.horizontal) {
                     HStack {
@@ -68,8 +81,8 @@ struct ValueView: View {
                 Spacer()
             }
             .padding(20)
-            .background(Color.Gray200)
         }
+        .background(Color.Gray200)
         .navigationTitle("")
         .onAppear {
             valueVM.getValueYear { years in

@@ -23,12 +23,16 @@ struct ProjectDetailView: View {
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
+            // 타이틀
             Text("\(firstHalf)\n\(secondHalf)")
                 .font(.ssHeading1)
                 .foregroundColor(.Gray900)
                 .padding(.horizontal, 20)
+            
+            // 강도, 목표
             HStack {
                 Text("\(projectDetailInfo.intensity)")
+                    .font(.ssWhiteBody3)
                     .foregroundColor(.Gray100)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 2)
@@ -39,8 +43,10 @@ struct ProjectDetailView: View {
                     .foregroundColor(.Gray900)
             }
             .padding(.horizontal, 20)
+            
+            // 진행률
             ZStack {
-                ValueProgressView(value: Double(projectDetailInfo.projectId) / 100, backColor: .Gray300, foreColor: .Gray900)
+                ValueProgressView(value: Double(projectDetailInfo.progressRate) / 100, backColor: .Gray400, foreColor: .Gray900)
                     .frame(height: 20)
                 HStack {
                     Text("\(projectDetailInfo.startedAt)")
@@ -49,15 +55,20 @@ struct ProjectDetailView: View {
                     Spacer()
                     Text("\(projectDetailInfo.endedAt)")
                         .font(.ssBlackBody3)
-                        .foregroundColor(.Gray900)
+                        .foregroundColor(.white)
                 }
                 .padding(.horizontal, 10)
             }
             .padding(.horizontal, 20)
+            
+            // 구분선
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.Gray300)
-            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], isMiddle:  projectDetailInfo.isHalfProgressed, isFinal: projectDetailInfo.isFinished, projectId: projectDetailInfo.projectId, halfDate: projectDetailInfo.halfDate, endedAt: projectDetailInfo.endedAt, middleRemembranceId: projectDetailInfo.middleRemembranceId ?? 0)
+                .padding(.vertical, 12)
+            
+            //
+            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], isMiddle: projectDetailInfo.isHalfProgressed, isFinal: projectDetailInfo.isFinished, projectTitle: projectDetailInfo.projectName, projectId: projectDetailInfo.projectId, halfDate: projectDetailInfo.halfDate, endedAt: projectDetailInfo.endedAt, middleRemembranceId: projectDetailInfo.middleRemembranceId ?? 0, finalRemembranceId: projectDetailInfo.finalRemembranceId ?? 0, isMiddleRemembrance: projectDetailInfo.middleRemembranceId != nil, isFinalRemembrance: projectDetailInfo.finalRemembranceId != nil)
         }
         .onAppear {
             projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
@@ -66,7 +77,7 @@ struct ProjectDetailView: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         .padding(20)
-        .navigationBarTitle("프로젝트 리포트", displayMode: .inline)
+        .navigationBarTitle("프로젝트", displayMode: .inline)
         .foregroundColor(.Gray500)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
@@ -79,6 +90,7 @@ struct ProjectDetailView: View {
         )
         .background(Color.Gray200)
     }
+    
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yy.MM.dd"

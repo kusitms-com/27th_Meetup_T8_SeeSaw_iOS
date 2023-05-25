@@ -12,7 +12,11 @@ struct InterimReviewView: View {
     @State var showNext: Bool = false
     @AppStorage("nickname") var nickname: String = ""
     var projectTitle: String = "큐시즘 밋업데이"
+    @State var interimQuestionArray: [String] = ["", "", "", "", "", ""]
+    @State var interimAnswerArray: [String] = ["", "", "", "", "", ""]
+    @State var questionArray: [QnaQuestion] = []
     @Environment(\.presentationMode) var presentationMode
+    @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
     @State var middleRemembranceId: Int
     var body: some View {
         VStack(alignment: .leading) {
@@ -48,7 +52,7 @@ struct InterimReviewView: View {
                     .animation(.easeInOut(duration: 1.0).delay(2.0), value: show)
                 Spacer()
             } else {
-                InterimReviewMainView(projectTitle: self.projectTitle)
+                InterimReviewMainView(projectTitle: self.projectTitle, interimQuestionArray: interimQuestionArray, interimAnswerArray: interimAnswerArray, questionArray: questionArray, rememberanceId: middleRemembranceId)
             }
         }
         .onAppear {
@@ -56,7 +60,18 @@ struct InterimReviewView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
               showNext = true
             }
-          }
+            middleFinalReviewVM.getRemeberanceQuestion(remembranceId: middleRemembranceId) { contents in
+                questionArray = contents
+                for number in 0..<6 {
+                    if questionArray[number].answerContent == nil {
+                        interimAnswerArray[number] = ""
+                    } else {
+                        interimAnswerArray[number] = questionArray[number].answerContent!
+                    }
+                    interimQuestionArray[number] = questionArray[number].question
+                }
+            }
+        }
         .padding(20)
         .navigationBarTitle("중간 회고", displayMode: .inline)
         .foregroundColor(.Gray500)
@@ -72,4 +87,3 @@ struct InterimReviewView: View {
         .background(Color.Gray200)
     }
 }
-

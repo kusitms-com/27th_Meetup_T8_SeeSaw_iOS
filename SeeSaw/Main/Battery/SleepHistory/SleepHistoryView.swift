@@ -55,6 +55,7 @@ struct SleepHistoryView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 100)
+                        .padding(.bottom, 8)
                     
                     Text("\(todaySleepAmount)시간")
                         .font(.ssHeading3)
@@ -72,7 +73,7 @@ struct SleepHistoryView: View {
                 CalendarView(context: HistoryContext.sleep)
                     .environmentObject(dateHolder)
                     .padding(.horizontal, 8)
-                    .padding(.bottom, 60)
+                    .padding(.bottom, 0)
                     .background(
                         Rectangle()
                             .cornerRadius(12, corners: .allCorners)

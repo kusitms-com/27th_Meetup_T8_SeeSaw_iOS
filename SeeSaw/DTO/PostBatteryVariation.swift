@@ -72,7 +72,7 @@ struct ActivityHistory: Codable {
         guard let activityAmount = activityAmount else { return "" }
         guard let activityGoal = activityGoal else { return "" }
         
-        if activityAmount > activityGoal + 50 {
+        if activityAmount >= activityGoal + 50 {
             return "너무 많이 움직였어요"
         } else if activityAmount >= activityGoal {
             return "알맞게 움직였어요"

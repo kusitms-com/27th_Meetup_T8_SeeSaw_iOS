@@ -13,7 +13,7 @@ struct BatteryHistoryCardRow: View {
     let description: String
     let variation: Int
     var isVariationPositive: Bool {
-        return variation > 0
+        return variation >= 0
     }
     
     var body: some View {
