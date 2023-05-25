@@ -50,7 +50,7 @@ struct WriteFinalReviewView: View {
                 Button {
                     finalAnswerArray[questionNum - 1] = answerText
                     isFullQuestion[questionNum - 1] = 1
-                    if isFullQuestion[0] == 1 && isFullQuestion[1] == 1 && isFullQuestion[2] == 1 && isFullQuestion[3] == 1 && isFullQuestion[4] == 1 && isFullQuestion[5] == 1 {
+                    if isFullQuestion[0] == 1 && isFullQuestion[1] == 1 && isFullQuestion[2] == 1 && isFullQuestion[3] == 1 && isFullQuestion[4] == 1 && isFullQuestion[5] == 1 && isFullQuestion[6] == 0 && isFullQuestion[7] == 1{
                         isFull = true
                     }
                     middleFinalReviewVM.postRemeberanceAnswer(projectQnaId: qnaId, answerContent: answerText) { response in

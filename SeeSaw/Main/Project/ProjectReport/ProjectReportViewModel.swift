@@ -17,41 +17,42 @@ struct GetProjectReportFirstResponse: Codable {
 }
 
 struct ProjectReportFirstResult: Codable {
-    let projectReportInfoDto: ProjectReportInfo
-    let emotion1: String
-    let emotion2: String
-    let projectMiddleFinalQnaDto: ProjectMiddleFinalQna
-    let todayAnswerCount: Int
-    let recordAnswerCount: Int
-    let simpleRecordInfo: [SimpleRecordInfo]
-    let answerContentList: [AnswerContentList]
+    var projectReportInfoDto: ProjectReportInfo
+    var emotion1: String
+    var emotion2: String
+    var projectMiddleFinalQnaDto: ProjectMiddleFinalQna
+    var todayAnswerCount: Int
+    var recordAnswerCount: Int
+    var simpleRecordInfo: [SimpleRecordInfo]
+    var answerContentList: [AnswerContentList]
 }
 
-struct ProjectReportInfo: Codable {
-    let value: String
-    let projectName: String
-    let startedAt: String
-    let endedAt: String
-    let projectIntensity: String
-    let projectGoal: String
-    let jointProject: [String]
+struct ProjectReportInfo: Codable, Hashable {
+    var value: String = ""
+    var projectName: String = ""
+    var startedAt: String = ""
+    var endedAt: String = ""
+    var projectIntensity: String = ""
+    var projectGoal: String = ""
+    var jointProject: [String] = []
 }
 
-struct ProjectMiddleFinalQna: Codable {
-    let middleAnswer: String
-    let finalAnswer: String
+struct ProjectMiddleFinalQna: Codable, Hashable {
+    var middleAnswer: String = ""
+    var finalAnswer: String = ""
 }
 
 struct SimpleRecordInfo: Codable {
-    let createdAt: String
-    let content: String
+    var createdAt: String
+    var content: String
 }
 
 struct AnswerContentList: Codable {
-    let remembranceType: String
-    let choice: Int?
-    let content: String
+    var remembranceType: String
+    var choice: Int?
+    var content: String
 }
+
 
 class ProjectReportViewModel: ObservableObject {
     let keychain = KeychainSwift()
@@ -75,7 +76,7 @@ class ProjectReportViewModel: ObservableObject {
     }
     
     func getProjectReportSecond(projectId: Int, completion: @escaping (ProjectReportSecondResult) -> Void) {
-        let url = "\(baseUrl)/api/project/{projectId}/report/battery"
+        let url = "\(baseUrl)/api/project/\(projectId)/report/battery"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
         ]
@@ -91,7 +92,6 @@ class ProjectReportViewModel: ObservableObject {
             }
     }
 }
-
 struct GetProjectReportSecondResponse: Codable {
     let isSuccess: Bool
     let code: Int
@@ -100,27 +100,27 @@ struct GetProjectReportSecondResponse: Codable {
 }
 
 struct ProjectReportSecondResult: Codable {
-    let energyReport: EnergyReport
-    let chargeReport: ChargeReport
-    let healthReport: HealthReport
+    var energyReport: EnergyReport
+    var chargeReport: ChargeReport
+    var healthReport: HealthReport
 }
 
 struct EnergyReport: Codable {
-    let avg: Int
-    let max: Int
-    let min: Int
+    var avg: Int
+    var max: Int
+    var min: Int
 }
 
 struct ChargeReport: Codable {
-    let valueCountList: [ValueCount]
+    var valueCountList: [ValueCount]
 }
 
 struct ValueCount: Codable {
-    let name: String
-    let count: Int
+    var name: String
+    var count: Int
 }
 
 struct HealthReport: Codable {
-    let activityAvg: Int
-    let sleepAvg: Int
+    var activityAvg: Int
+    var sleepAvg: Int
 }

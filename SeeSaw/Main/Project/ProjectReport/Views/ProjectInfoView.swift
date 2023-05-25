@@ -9,28 +9,13 @@ import SwiftUI
 
 struct ProjectInfoView: View {
     var projectColor: Color = .SeeSawBlue
-    var projectValue: String = "성장"
-    var projectTitle: String = "인지심리학 대학원 연구 프로젝트"
-    var projectStartDate: Date {
-        var components = DateComponents()
-        components.year = 2023
-        components.month = 3
-        components.day = 13
-
-        let calendar = Calendar.current
-        return calendar.date(from: components)!
-    }
-    var projectEndDate: Date {
-        var components = DateComponents()
-        components.year = 2023
-        components.month = 5
-        components.day = 23
-
-        let calendar = Calendar.current
-        return calendar.date(from: components)!
-    }
-    var projectStrength: String = "Medium"
-    var projectGoal: String = "인지심리학으로 진로에 대한 확신 얻기"
+    var projectReportInfo = ProjectReportInfo()
+    @State var projectValue: String = "성장"
+    @State var projectTitle: String = "인지심리학 대학원 연구 프로젝트"
+    @State var projectStartDate: String = ""
+    @State var projectEndDate: String = ""
+    @State var projectStrength: String = "Medium"
+    @State var projectGoal: String = "인지심리학으로 진로에 대한 확신 얻기"
     var words: [String] {
         projectTitle.split(separator: " ").map { String($0) }
     }
@@ -62,7 +47,7 @@ struct ProjectInfoView: View {
                 .font(.ssHeading1)
                 .foregroundColor(.Gray100)
             HStack {
-                Text("\(formatDate(date: projectStartDate)) - \(formatDate(date: projectEndDate))")
+                Text("\(projectStartDate) - \(projectEndDate)")
                     .font(.ssBlackTitle2)
                     .foregroundColor(.Gray100)
             }
@@ -85,6 +70,15 @@ struct ProjectInfoView: View {
                 .foregroundColor(.Gray900)
                 
         }
+        .onAppear {
+            projectValue = projectReportInfo.value
+            projectTitle = projectReportInfo.projectName
+            projectStartDate = projectReportInfo.startedAt
+            projectEndDate = projectReportInfo.endedAt
+            projectStrength = projectReportInfo.projectIntensity
+            projectGoal = projectReportInfo.projectGoal
+            
+        }
         .padding(20)
         .background(projectColor)
     }
@@ -96,8 +90,3 @@ struct ProjectInfoView: View {
     }
 }
 
-struct ProjectInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProjectInfoView()
-    }
-}

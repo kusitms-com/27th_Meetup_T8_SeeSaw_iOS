@@ -65,8 +65,7 @@ struct ProjectRectangleVIew: View {
                     
                     // 넘어가는 버튼
                     NavigationLink {
-                        ProjectDetailView(projectDetailInfo: projectDetailInfo,
-                                          projectId: progressProject.projectId)
+                        ProjectDetailView(projectDetailInfo: projectDetailInfo, projectId: progressProject.projectId)
                     } label: {
                         Image(systemName: "arrow.up.right")
                             .frame(width: 28, height: 28)
@@ -115,7 +114,6 @@ struct ProjectRectangleVIew: View {
             }
             projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
                 projectDetailInfo = project
-                
             }
         }
     }
