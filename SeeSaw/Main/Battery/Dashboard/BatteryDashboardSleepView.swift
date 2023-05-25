@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BatteryDashboardSleepView: View {
     @Binding var isSleepGoalExist: Bool
+    @Binding var sleepGoal: Int
     @Binding var todaySleepAmount: Int
     @Binding var isTodaySleepAmountExist: Bool
     @Binding var sleepCondition: String
@@ -125,14 +126,14 @@ struct BatteryDashboardSleepView: View {
             
             Spacer()
             
-            Text("\(todaySleepAmount)시간")
+            Text("\(sleepGoal)시간")
                 .font(.ssHeading1)
                 .foregroundColor(.Gray400)
                 
             HStack {
                 Button {
-                    if todaySleepAmount > 0 {
-                        todaySleepAmount -= 1
+                    if sleepGoal > 0 {
+                        sleepGoal -= 1
                     }
                 } label: {
                     Image(systemName: "minus.circle.fill")
@@ -140,8 +141,8 @@ struct BatteryDashboardSleepView: View {
                         .foregroundColor(.SeeSawRed)
                 }
                 Button {
-                    if todaySleepAmount < 18 {
-                        todaySleepAmount += 1
+                    if sleepGoal < 18 {
+                        sleepGoal += 1
                     }
                 } label: {
                     Image(systemName: "plus.circle.fill")
@@ -154,7 +155,8 @@ struct BatteryDashboardSleepView: View {
             
             Button {
                 isTodaySleepAmountExist = true
-                batteryVM.postSleep(todaySleep: todaySleepAmount)
+                todaySleepAmount = sleepGoal
+                batteryVM.postSleep(todaySleep: sleepGoal)
             } label: {
                 CapsuleButtonView(color: .Gray900, text: "입력 완료", size: .large)
                     .padding(.horizontal, 12)

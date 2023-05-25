@@ -15,7 +15,7 @@ struct BatteryDashboardView: View {
     
     @State var isFastChargeExist: Bool = true
     @State var fastChargeTitle: String = "홍제천 산책하기"
-    @State var fastChargeValue: String = "여유"
+    @State var fastChargeValue: String = "가치"
     @State var showFastChargeExistPopUp: Bool = false
     
     @State var isEnergyGoalExist: Bool = true
@@ -23,6 +23,7 @@ struct BatteryDashboardView: View {
     @State var todayEnergy: Int = 160
     
     @State var isSleepGoalExist: Bool = true
+    @State var sleepGoal: Int = 0
     @State var todaySleepAmount: Int = 8
     @State var isTodaySleepAmountExist: Bool = false
     @State var sleepCondition: String = "Good"
@@ -47,28 +48,8 @@ struct BatteryDashboardView: View {
                                 .padding(.top, 10)
                                 .padding(.horizontal, 20)
                             
-                            HStack {
-                                Button {
-                                    isFastChargeExist.toggle()
-                                } label: {
-                                    Text("고속충전 toggle")
-                                }
-                                
-                                Button {
-                                    isEnergyGoalExist.toggle()
-                                } label: {
-                                    Text("활동량 toggle")
-                                }
-                                
-                                Button {
-                                    isSleepGoalExist.toggle()
-                                } label: {
-                                    Text("수면 toggle")
-                                }
-                            }
-                            
                             // 배터리
-                            ZStack(alignment: .topLeading) {
+                            ZStack(alignment: .topTrailing) {
                                 // 배터리 원형 그래프
                                 BatteryProgressCircleView(geometry: geometry, battery: $battery)
                                 
@@ -85,7 +66,7 @@ struct BatteryDashboardView: View {
                                 HStack {
                                     BatteryDashboardEnergyView(isEnergyGoalExist: $isEnergyGoalExist, energyGoal: $energyGoal, todayEnergy: $todayEnergy)
                                     
-                                    BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
+                                    BatteryDashboardSleepView(isSleepGoalExist: $isSleepGoalExist, sleepGoal: $sleepGoal, todaySleepAmount: $todaySleepAmount, isTodaySleepAmountExist: $isTodaySleepAmountExist, sleepCondition: $sleepCondition)
                                 }
                                 .padding(12)
                                 .padding(.bottom, 8)
@@ -114,17 +95,11 @@ struct BatteryDashboardView: View {
         })
         .onAppear {
             print("DEBUG BatteryDashoboard: onAppear")
-            if healthAuth {
-                healthStore?.getActivityEnergyBurned(completion: { energy in
-                    batteryVM.postEnergy(todayEnergy: Int(energy))
-                })
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                battery = 80
-            }
+            fetchData()
+            postEnergy()
         }
         .refreshable {
-            
+            fetchData()
         }
     }
     
@@ -149,7 +124,52 @@ struct BatteryDashboardView: View {
             Image(systemName: "questionmark.circle")
                 .font(.system(size: 28))
                 .foregroundColor(.Gray400)
-                .padding(.leading, 20)
+                .padding(.trailing, 20)
+        }
+    }
+    
+    // 배터리 정보 데이터 가져오기
+    func fetchData() {
+        batteryVM.getBattery { batteryInfo in
+            battery = batteryInfo.battery
+            
+            if let chargeTitle = batteryInfo.fastChargeTitle, let value = batteryInfo.fastChargeValue {
+                isFastChargeExist = true
+                fastChargeTitle = chargeTitle
+                fastChargeValue = value
+            } else {
+                isFastChargeExist = false
+            }
+            
+            if let activity = batteryInfo.todayActivity, let goal = batteryInfo.activityGoal {
+                isEnergyGoalExist = true
+                todayEnergy = activity
+                energyGoal = goal
+            }
+            
+            if let goal = batteryInfo.sleepGoal {
+                isSleepGoalExist = true
+                sleepGoal = goal
+                if let sleep = batteryInfo.todaySleep {
+                    isTodaySleepAmountExist = true
+                    todaySleepAmount = sleep
+                    if sleep >= goal {
+                        sleepCondition = "Good"
+                    } else if sleep >= goal / 2 {
+                        sleepCondition = "Bad"
+                    } else {
+                        sleepCondition = "Terrible"
+                    }
+                }
+            }
+        }
+    }
+    
+    func postEnergy() {
+        if healthAuth {
+            healthStore?.getActivityEnergyBurned(completion: { energy in
+                batteryVM.postEnergy(todayEnergy: Int(energy))
+            })
         }
     }
 }

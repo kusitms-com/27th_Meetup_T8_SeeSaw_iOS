@@ -9,9 +9,54 @@ import Alamofire
 import Foundation
 import KeychainSwift
 
+struct BatteryInfo: Codable {
+    let battery: Int
+    let fastChargeTitle: String?
+    let fastChargeValue: String?
+    let todayActivity: Int?
+    let activityGoal: Int?
+    let todaySleep: Int?
+    let sleepGoal: Int?
+    
+    private enum CodingKeys: String, CodingKey {
+        case battery = "curBattery"
+        case fastChargeTitle = "chargeName"
+        case fastChargeValue = "valueName"
+        case todayActivity = "curActivity"
+        case activityGoal = "activityGoal"
+        case todaySleep = "curSleep"
+        case sleepGoal = "sleepGoal"
+    }
+}
+
+struct GetBatteryResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: BatteryInfo
+}
+
 class BatteryViewModel: ObservableObject {
     let keychain = KeychainSwift()
     let baseUrl = "http://\(Bundle.main.infoDictionary?["BASE_URL"] ?? "nil baseUrl")"
+    
+    func getBattery(completion: @escaping (BatteryInfo) -> Void) {
+        let url = "\(baseUrl)/api/battery"
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
+        ]
+        
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: GetBatteryResponse.self) { response in
+                switch response.result {
+                case .success(let res):
+                    let batteryInfo = res.result
+                    completion(batteryInfo)
+                case .failure(let error):
+                    print("DEBUG get battery: \(error)")
+                }
+            }
+    }
     
     func postEnergy(todayEnergy: Int) {
         let url = "\(baseUrl)/api/battery/activity"

@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ActivityProgressHalfCircleView: View {
+    @StateObject private var batteryVM = BatteryViewModel()
+    
     @State private var todayActivity: Int = 160
     @State private var activityGoal: Int = 250
     var activityRatio: Double {
         return Double(todayActivity) / Double(activityGoal)
     }
+    
     let geometry: GeometryProxy
     
     var body: some View {
@@ -34,5 +37,17 @@ struct ActivityProgressHalfCircleView: View {
                 .offset(x: 60, y: 12)
         }
         .frame(height: geometry.size.width * 0.35 + 32)
+        .onAppear {
+            fetchData()
+        }
+    }
+    
+    func fetchData() {
+        batteryVM.getBattery { batteryInfo in
+            if let activity = batteryInfo.todayActivity, let goal = batteryInfo.activityGoal {
+                todayActivity = activity
+                activityGoal = goal
+            }
+        }
     }
 }
