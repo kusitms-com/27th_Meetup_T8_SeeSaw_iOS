@@ -15,7 +15,7 @@ struct BatteryDashboardView: View {
     
     @State var isFastChargeExist: Bool = true
     @State var fastChargeTitle: String = "홍제천 산책하기"
-    @State var fastChargeValue: String = "여유"
+    @State var fastChargeValue: String = "가치"
     @State var showFastChargeExistPopUp: Bool = false
     
     @State var isEnergyGoalExist: Bool = true
@@ -114,13 +114,43 @@ struct BatteryDashboardView: View {
         })
         .onAppear {
             print("DEBUG BatteryDashoboard: onAppear")
+            batteryVM.getBattery { batteryInfo in
+                print(batteryInfo)
+                battery = batteryInfo.battery
+                
+                if let chargeTitle = batteryInfo.fastChargeTitle, let value = batteryInfo.fastChargeValue {
+                    isFastChargeExist = true
+                    fastChargeTitle = chargeTitle
+                    fastChargeValue = value
+                } else {
+                    isFastChargeExist = false
+                }
+                
+                if let activity = batteryInfo.todayActivity, let goal = batteryInfo.activityGoal {
+                    isEnergyGoalExist = true
+                    todayEnergy = activity
+                    energyGoal = goal
+                }
+                
+                if let goal = batteryInfo.sleepGoal {
+                    isSleepGoalExist = true
+                    if let sleep = batteryInfo.todaySleep {
+                        isTodaySleepAmountExist = true
+                        todaySleepAmount = sleep
+                        if sleep >= goal {
+                            sleepCondition = "Good"
+                        } else if sleep >= goal / 2 {
+                            sleepCondition = "Bad"
+                        } else {
+                            sleepCondition = "Terrible"
+                        }
+                    }
+                }
+            }
             if healthAuth {
                 healthStore?.getActivityEnergyBurned(completion: { energy in
                     batteryVM.postEnergy(todayEnergy: Int(energy))
                 })
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                battery = 80
             }
         }
         .refreshable {

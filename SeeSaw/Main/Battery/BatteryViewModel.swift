@@ -11,12 +11,12 @@ import KeychainSwift
 
 struct BatteryInfo: Codable {
     let battery: Int
-    let fastChargeTitle: String
-    let fastChargeValue: String
-    let todayActivity: Int
-    let activityGoal: Int
-    let todaySleep: Int
-    let sleepGoal: Int
+    let fastChargeTitle: String?
+    let fastChargeValue: String?
+    let todayActivity: Int?
+    let activityGoal: Int?
+    let todaySleep: Int?
+    let sleepGoal: Int?
     
     private enum CodingKeys: String, CodingKey {
         case battery = "curBattery"
@@ -40,7 +40,7 @@ class BatteryViewModel: ObservableObject {
     let keychain = KeychainSwift()
     let baseUrl = "http://\(Bundle.main.infoDictionary?["BASE_URL"] ?? "nil baseUrl")"
     
-    func getBattery(year: Int, month: Int, completion: @escaping (BatteryInfo) -> Void) {
+    func getBattery(completion: @escaping (BatteryInfo) -> Void) {
         let url = "\(baseUrl)/api/battery"
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(keychain.get("accessToken") ?? "")"
