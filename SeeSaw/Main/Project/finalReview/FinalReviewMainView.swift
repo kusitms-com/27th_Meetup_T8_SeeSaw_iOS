@@ -10,6 +10,14 @@ import SwiftUI
 struct FinalReviewMainView: View {
     @AppStorage("nickname") var nickname: String = ""
     var projectTitle: String
+    @Environment(\.presentationMode) var presentationMode
+    @State var finalQuestionArray: [String] = ["", "", "", "", "", "", "", ""]
+    @State var finalAnswerArray: [String] = ["", "", "", "", "", "", "", ""]
+    @State var isFull: Bool = false
+    @State var isFullQuestion: [Int] = [0, 0, 0, 0, 0, 0]
+    @State var questionArray: [QnaQuestion] = []
+    @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
+    var rememberanceId: Int = 0
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(alignment: .leading) {
@@ -30,12 +38,20 @@ struct FinalReviewMainView: View {
             Rectangle()
                 .frame(width: UIScreen.main.bounds.size.width, height: 1)
                 .foregroundColor(.Gray300)
-            FinalReviewQuestionView()
+            FinalReviewQuestionView(isFull: $isFull, finalQuestionArray: finalQuestionArray, finalAnswerArray: finalAnswerArray, questionArray: questionArray, isFullQuestion: $isFullQuestion)
                 .frame(width: UIScreen.main.bounds.width)
                 .padding(20)
                 .background(Color.Gray200)
         }
-        .padding(20)
+        .navigationBarItems(trailing:
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Text("회고 완료")
+                    .foregroundColor(.SeeSawGreen)
+            }
+            .disabled(!isFull)
+        )
     }
 }
 

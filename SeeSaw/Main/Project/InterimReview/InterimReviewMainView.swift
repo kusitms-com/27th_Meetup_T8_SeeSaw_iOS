@@ -10,6 +10,14 @@ import SwiftUI
 struct InterimReviewMainView: View {
     @AppStorage("nickname") var nickname: String = ""
     var projectTitle: String
+    @Environment(\.presentationMode) var presentationMode
+    @State var interimQuestionArray: [String] = ["", "", "", "", "", ""]
+    @State var interimAnswerArray: [String] = ["", "", "", "", "", ""]
+    @State var isFull: Bool = false
+    @State var isFullQuestion: [Int] = [0, 0, 0, 0, 0, 0]
+    @State var questionArray: [QnaQuestion] = []
+    @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
+    var rememberanceId: Int = 0
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(alignment: .leading) {
@@ -30,16 +38,19 @@ struct InterimReviewMainView: View {
             Rectangle()
                 .frame(width: UIScreen.main.bounds.size.width, height: 1)
                 .foregroundColor(.Gray300)
-            InterimReviewQuestionView()
+            InterimReviewQuestionView(isFull: $isFull, interimQuestionArray: interimQuestionArray, interimAnswerArray: interimAnswerArray, questionArray: questionArray, isFullQuestion: $isFullQuestion)
                 .frame(width: UIScreen.main.bounds.width)
                 .padding(20)
                 .background(Color.Gray200)
         }
-    }
-}
-
-struct InterimReviewMainView_Previews: PreviewProvider {
-    static var previews: some View {
-        InterimReviewMainView(nickname: "에몽", projectTitle: "큐시즘 밋업데이")
+        .navigationBarItems(trailing:
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Text("회고 완료")
+                    .foregroundColor(.SeeSawGreen)
+            }
+            .disabled(!isFull)
+        )
     }
 }

@@ -57,7 +57,7 @@ struct ProjectDetailView: View {
             Rectangle()
                 .frame(height: 1)
                 .foregroundColor(.Gray300)
-            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], isMiddle:  projectDetailInfo.isHalfProgressed, isFinal: projectDetailInfo.isFinished, projectId: projectDetailInfo.projectId, halfDate: projectDetailInfo.halfDate, endedAt: projectDetailInfo.endedAt, middleRemembranceId: projectDetailInfo.middleRemembranceId ?? 0)
+            ProjectRetrospectionView(emojiNum: [projectDetailInfo.likeCnt, projectDetailInfo.niceCnt, projectDetailInfo.idkCnt, projectDetailInfo.angryCnt, projectDetailInfo.sadCnt], isMiddle:  projectDetailInfo.isHalfProgressed, isFinal: projectDetailInfo.isFinished, projectTitle: projectDetailInfo.projectName, projectId: projectDetailInfo.projectId, halfDate: projectDetailInfo.halfDate, endedAt: projectDetailInfo.endedAt, middleRemembranceId: projectDetailInfo.middleRemembranceId ?? 0, finalRemembranceId: projectDetailInfo.finalRemembranceId ?? 0, isMiddleRemembrance: projectDetailInfo.middleRemembranceId != nil, isFinalRemembrance: projectDetailInfo.finalRemembranceId != nil)
         }
         .onAppear {
             projectDetailVM.getProjectDetailInfo(projectId: self.projectId) { project in
