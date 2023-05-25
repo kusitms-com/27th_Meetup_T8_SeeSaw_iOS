@@ -65,7 +65,7 @@ struct ProjectRegularRetrospectionView: View {
             }
         }
         .padding(20)
-        .navigationBarTitle("상시회고", displayMode: .inline)
+        .navigationBarTitle("상시 회고", displayMode: .inline)
         .foregroundColor(.Gray500)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:

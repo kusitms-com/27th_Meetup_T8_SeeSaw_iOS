@@ -32,7 +32,7 @@ struct MainToolBar: View {
         }
         .padding(.horizontal, 20)
         .padding(.bottom, 8)
-        .background(Color.Gray100)
+        .background(Color.Gray200)
     }
     
     func switchFeature(feature: Feature) -> String {

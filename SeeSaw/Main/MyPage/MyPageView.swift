@@ -63,7 +63,7 @@ struct MyPageView: View {
                         }
                     } else {
                         NavigationLink {
-                            Text("seesaw.8attery@gmail.com 로 문의주시기 바랍니다.")
+                            ContactView()
                         } label: {
                             MyPageRow(isRowTop: false,
                                       title: "문의하기",

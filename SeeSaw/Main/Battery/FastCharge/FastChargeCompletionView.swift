@@ -44,11 +44,11 @@ struct FastChargeCompletionView: View {
     }
     
     var checkSelectedValue: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Rectangle()
-                .frame(width: 80, height: 6)
-                .foregroundColor(.SeeSawGreen)
-            
+        VStack(alignment: .leading, spacing: 12) {
+//            Rectangle()
+//                .frame(width: 80, height: 6)
+//                .foregroundColor(.SeeSawGreen)
+//            
             Text("\(nickname)님!")
             Text("오늘은")
             HStack {
