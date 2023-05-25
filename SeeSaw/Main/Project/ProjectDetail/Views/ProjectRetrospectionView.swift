@@ -11,19 +11,21 @@ struct ProjectRetrospectionView: View {
     @State var emojiNum: [Int] = [0, 0, 0, 0, 0]
     @State var isMiddle: Bool = false
     @State var isFinal: Bool = false
+    @State var isProjectReport: Bool = false
     var projectTitle: String
     var projectId: Int = 0
-    var isProjectReport: Bool = false
     var emojiList: [String] = ["LIKE", "NICE", "IDK", "ANGRY", "SAD"]
     let numbers = 0...4
     var halfDate: String = ""
     var endedAt: String = ""
     @StateObject var projectDetailVM = ProjectDetailViewModel()
     @StateObject var middleFinalReviewVM = MiddleFinalReviewViewModel()
+    @StateObject var projectReportVM = ProjectReportViewModel()
     @State var middleRemembranceId: Int = 0
     @State var finalRemembranceId: Int = 0
     @State var isMiddleRemembrance: Bool = false
     @State var isFinalRemembrance: Bool = false
+    @State var projectReportInfo: ProjectReportInfo = ProjectReportInfo()
     var body: some View {
         VStack(alignment: .leading) {
             Button {
@@ -35,6 +37,11 @@ struct ProjectRetrospectionView: View {
                 isFinal.toggle()
             } label: {
                 Text("finalToggle")
+            }
+            Button {
+                isProjectReport.toggle()
+            } label: {
+                Text("projectReportToggle")
             }
             Text("프로젝트에서 느낀 감정을 자유롭게 눌러주세요")
             HStack(spacing: 24) {
@@ -146,23 +153,27 @@ struct ProjectRetrospectionView: View {
                                         Spacer()
                                             .frame(height: 40)
                                     } else {
-                                        HStack {
-                                            Image("OpenBubbleImage")
-                                                .padding(7)
-                                            Spacer()
+                                        NavigationLink(destination: ProjectReportView(projectId: projectId, projectReportInfo: projectReportInfo)) {
+                                            VStack {
+                                                HStack {
+                                                    Image("OpenBubbleImage")
+                                                        .padding(7)
+                                                    Spacer()
+                                                }
+                                                Spacer()
+                                                    .frame(height: 23)
+                                                Text("프로젝트\n리포트")
+                                                    .font(.ssBlackTitle2)
+                                                    .foregroundColor(.Gray500)
+                                                    .multilineTextAlignment(.center)
+                                                Spacer()
+                                            }
                                         }
-                                        Spacer()
-                                            .frame(height: 23)
-                                        Text("프로젝트\n리포트")
-                                            .font(.ssBlackTitle2)
-                                            .foregroundColor(.Gray500)
-                                            .multilineTextAlignment(.center)
-                                        Spacer()
                                     }
                                 }
                             )
                         if isProjectReport {
-                            NavigationLink(destination: ProjectReportView()) {
+                            NavigationLink(destination: ProjectReportView(projectId: projectId, projectReportInfo: projectReportInfo)) {
                                 ArrowUpRightView()
                                     .offset(x: 40, y: -40)
                             }
@@ -173,5 +184,10 @@ struct ProjectRetrospectionView: View {
         }
         .padding(20)
         .background(Color.Gray200)
+        .onAppear {
+            projectReportVM.getProjectReportFirst(projectId: projectId) { response in
+                projectReportInfo = response.projectReportInfoDto
+            }
+        }
     }
 }

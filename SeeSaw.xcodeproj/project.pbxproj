@@ -785,6 +785,28 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		BE6227402A1FEDEA00C8B383 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE7C07182A1AEEC300C7D647 /* ProjectReportVIew.swift */,
+				BE7C071A2A1AF00900C7D647 /* ProjectInfoView.swift */,
+				BE7C071C2A1AF4E600C7D647 /* ProjectEmotionView.swift */,
+				BE7C071E2A1AFAE200C7D647 /* ProjectTodayAnswerTimeView.swift */,
+				BE7C07202A1AFD7800C7D647 /* ProjectRegularAnswerTimeView.swift */,
+				BE7C07222A1AFE9500C7D647 /* ProjectLearnView.swift */,
+				BE7C07242A1B013500C7D647 /* ProjectSorryVIew.swift */,
+				BE7C07262A1B01A700C7D647 /* ProjectReachGoalView.swift */,
+				BE7C07282A1B05A100C7D647 /* ProjectPersonView.swift */,
+				BE7C072C2A1B06C800C7D647 /* ProjectWantPersonView.swift */,
+				BE7C072A2A1B067100C7D647 /* ProjectEnergyView.swift */,
+				BE7C07302A1B182800C7D647 /* ProjectFastChargeView.swift */,
+				BE7C07322A1B21F900C7D647 /* ProjectCalorieView.swift */,
+				BE7C072E2A1B157C00C7D647 /* ProjectBatteryView.swift */,
+				BE7C07342A1B233600C7D647 /* ProjectSleepView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BE7C07092A1894FA00C7D647 /* AddProject */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,21 +849,7 @@
 		BE7C07172A1AEEAF00C7D647 /* ProjectReport */ = {
 			isa = PBXGroup;
 			children = (
-				BE7C07182A1AEEC300C7D647 /* ProjectReportVIew.swift */,
-				BE7C071A2A1AF00900C7D647 /* ProjectInfoView.swift */,
-				BE7C071C2A1AF4E600C7D647 /* ProjectEmotionView.swift */,
-				BE7C071E2A1AFAE200C7D647 /* ProjectTodayAnswerTimeView.swift */,
-				BE7C07202A1AFD7800C7D647 /* ProjectRegularAnswerTimeView.swift */,
-				BE7C07222A1AFE9500C7D647 /* ProjectLearnView.swift */,
-				BE7C07242A1B013500C7D647 /* ProjectSorryVIew.swift */,
-				BE7C07262A1B01A700C7D647 /* ProjectReachGoalView.swift */,
-				BE7C07282A1B05A100C7D647 /* ProjectPersonView.swift */,
-				BE7C072C2A1B06C800C7D647 /* ProjectWantPersonView.swift */,
-				BE7C072A2A1B067100C7D647 /* ProjectEnergyView.swift */,
-				BE7C07302A1B182800C7D647 /* ProjectFastChargeView.swift */,
-				BE7C07322A1B21F900C7D647 /* ProjectCalorieView.swift */,
-				BE7C072E2A1B157C00C7D647 /* ProjectBatteryView.swift */,
-				BE7C07342A1B233600C7D647 /* ProjectSleepView.swift */,
+				BE6227402A1FEDEA00C8B383 /* Views */,
 				513297C32A1F58D5003F6852 /* ProjectReportViewModel.swift */,
 			);
 			path = ProjectReport;
