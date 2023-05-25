@@ -21,19 +21,20 @@ struct SelectDeleteAccountView: View {
             Text("정말 시소를 떠날 건가요?")
                 .font(.ssHeading2)
                 .foregroundColor(.Gray900)
-                .padding(.top, 32)
+                .padding(.top, 60)
                 .padding(.bottom, 12)
             Text("지금 시소를 탈퇴하게 되면\n모든 데이터와 기록이 사라지고\n복원되지 않아요")
                 .lineSpacing(2)
                 .font(.ssBlackBody1)
                 .foregroundColor(.Gray900)
+                .padding(.bottom, 100)
             
             Spacer()
             
             HStack {
                 Spacer()
                 GifImage("SignOut")
-                    .frame(width: 260)
+                    .frame(width: 280, height: 280)
                 Spacer()
             }
             

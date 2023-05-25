@@ -63,7 +63,13 @@ struct MyPageView: View {
                         }
                     } else {
                         NavigationLink {
-                            Text("seesaw.8attery@gmail.com 로 문의주시기 바랍니다.")
+                            VStack {
+                                Spacer()
+                                Text("seesaw.8attery@gmail.com 로 문의주시기 바랍니다")
+                                Spacer()
+                                Spacer()
+                            }
+                            .background(Color.Gray200)
                         } label: {
                             MyPageRow(isRowTop: false,
                                       title: "문의하기",
